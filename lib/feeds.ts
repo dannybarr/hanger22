@@ -1,0 +1,88 @@
+import { cutLabel, marketNote } from "@/lib/cut";
+import { getPublicItems, getSourcesFor } from "@/lib/data";
+import { acpPrice } from "@/lib/money";
+import { acpFeedSchema, catalogFeedSchema, type PublicItem } from "@/lib/schema";
+
+const ACP_CONDITION: Record<PublicItem["condition"], string> = {
+  new: "new",
+  "new-with-defects": "used",
+  excellent: "used",
+  good: "used",
+  fair: "used",
+};
+
+function acpAvailability(item: PublicItem) {
+  return item.availability === "in_vault" ? "in_stock" : "preorder";
+}
+
+function fulfilmentLine(item: PublicItem) {
+  return item.availability === "in_vault"
+    ? "In the Vault, ships now."
+    : "Sourced to order, 5–10 days.";
+}
+
+export function toCatalog(origin: string, generatedAt = new Date().toISOString()) {
+  const feed = {
+    version: 1 as const,
+    generated_at: generatedAt,
+    items: getPublicItems().map((item) => ({
+      id: item.id,
+      slug: item.slug,
+      title: item.title,
+      shortTitle: item.shortTitle,
+      brand: item.brand,
+      collabId: item.collabId,
+      category: item.category,
+      guidePriceGBP: item.guidePriceGBP,
+      condition: item.condition,
+      status: item.status,
+      availability: item.availability,
+      cutReason: item.cutReason,
+      sourceMarket: item.sourceMarket,
+      ...(item.authConfidence === "high" ? { authConfidence: "high" as const } : {}),
+      placeholder: item.images.placeholder,
+      imageStatus: item.images.imageStatus,
+      url: `${origin}/p/${item.slug}`,
+      image: item.images.source ?? item.images.front,
+      tags: item.tags,
+    })),
+  };
+  return catalogFeedSchema.parse(feed);
+}
+
+export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()) {
+  const feed = {
+    version: "2026-04-17" as const,
+    generated_at: generatedAt,
+    items: getPublicItems().map((item) => {
+      const source = getSourcesFor(item.id)[0];
+      const imagePath = item.images.source ?? item.images.front;
+      return {
+        id: item.id,
+        title: item.title,
+        description: [
+          item.story,
+          `${cutLabel(item.cutReason)}. ${marketNote(item.sourceMarket)}.`,
+          item.authConfidence === "high" ? "Authentication confidence is high." : "",
+          fulfilmentLine(item),
+          item.images.imageStatus === "placeholder"
+            ? "Image is a placeholder silhouette; no listing photograph on file."
+            : "",
+          source ? `Source: ${source.url}` : "",
+          `Guide ${item.guidePriceGBP.min}–${item.guidePriceGBP.max} GBP. We do not check out on this site.`,
+        ]
+          .filter(Boolean)
+          .join(" "),
+        link: `${origin}/p/${item.slug}`,
+        image_link: new URL(imagePath, origin).toString(),
+        brand: item.brand,
+        condition: ACP_CONDITION[item.condition],
+        price: acpPrice(item.guidePriceGBP.min),
+        availability: acpAvailability(item),
+        enable_search: true as const,
+        enable_checkout: false as const,
+      };
+    }),
+  };
+  return acpFeedSchema.parse(feed);
+}

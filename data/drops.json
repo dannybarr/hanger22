@@ -1,0 +1,105 @@
+[
+  {
+    "slug": "palace-oakley",
+    "collabId": "col-palace-oakley",
+    "title": "Palace x Oakley",
+    "kicker": "Late 2010s to the FW24 hood",
+    "dek": "Hardware, snow, and a logo hood in off white. The FW24 XL is a desk note, not a jacket on the rail.",
+    "story": [
+      "Palace and Oakley have been in and out of each other’s seasons since the late 2010s: eyewear, snow kit, and the odd fleece that sells out and then sits on resale for years. This page is that story, not a warehouse.",
+      "The public rail this week is five jackets. The Palace x Oakley logo hood, off white, FW24, size XL, is not one of them.",
+      "If a clean hood turns up again, a request is how the desk starts. Nothing is charged on this site."
+    ],
+    "timeline": [
+      { "year": "Late 2010s", "label": "The hardware years", "text": "Oakley lenses and frames start showing up in Palace drops. Snow and skate share a line." },
+      { "year": "FW24", "label": "Logo hood", "text": "Off white fleece, Oakley wordmark on the chest, size XL. It is not hanging this week." },
+      { "year": "Now", "label": "Off the rail", "text": "The homepage hangs five live jackets. This hood stays in the story." }
+    ],
+    "frames": [
+      { "art": "hoodie", "caption": "Off white, hanger shot from the listing", "image": "/cutouts/palace-hoodie-front.webp" },
+      { "art": "hoodie", "caption": "The seller’s photograph, background knocked out for the rail", "image": "/sources/palace-hoodie.webp" },
+      { "art": "vault-goggle", "caption": "Snow hardware stays in the story. The goggle on the vault rail is not a listing." }
+    ]
+  },
+  {
+    "slug": "moncler-zellerfeld",
+    "collabId": "col-zellerfeld",
+    "title": "Trailgrip, printed",
+    "kicker": "Moncler x Zellerfeld",
+    "dek": "A khaki Trailgrip 3D in the vault. Never worn, dust bag in the description, size noted as about EU 38. Not on the hanger rail.",
+    "story": [
+      "Zellerfeld prints footwear rather than moulding it. Moncler put that process under the Trailgrip name. The pair we hold is khaki, from a Joli Closet listing described as never worn, no tags, with a dust bag.",
+      "The cut-out is that listing photograph with the white ground removed. It lives on the product page. Trainers stay off the hanger rail.",
+      "Guide price is the euro ask converted at our October 2026 rate, then the usual margin. The pair is in the vault and ships now."
+    ],
+    "timeline": [
+      { "year": "2025", "label": "Listing photographs", "text": "The Joli Closet images are dated 2025. We fetched the page on 21 Oct 2026 and it was still up." },
+      { "year": "EU 38", "label": "Size, as described", "text": "The seller estimates EU 38. We will not pretend to have measured it." },
+      { "year": "Request", "label": "Then we buy", "text": "Nothing is charged on this site. A request is how the desk starts." }
+    ],
+    "frames": [
+      { "art": "trailgrip", "caption": "Khaki Trailgrip, listing cut-out", "image": "/cutouts/trailgrip-front.webp" },
+      { "art": "trailgrip", "caption": "In the vault, on its own page, not on the hanger rail" }
+    ]
+  },
+  {
+    "slug": "moncler-genius-palm-angels",
+    "collabId": "col-palm",
+    "title": "Genius, guest chapter",
+    "kicker": "Moncler x Palm Angels",
+    "dek": "Black jacket, Vestiaire 72059216, size M, very good. The seller left the style name blank. The rail uses the flat lay.",
+    "story": [
+      "Moncler Genius invites other houses in for a season. Palm Angels joined as 8 Moncler Palm Angels, first shown for autumn/winter 2019. That is the programme, not a style name this seller wrote.",
+      "The jacket on the rail is Vestiaire listing 72059216, black, size M International, condition very good, payable price $1,205 on 21 October 2026. The description was empty. The photograph is the seller’s flat lay, with no one in it.",
+      "Vestiaire states that a physical inspection is included before delivery. We do not invent a Moncler boutique stamp the page never gave."
+    ],
+    "timeline": [
+      { "year": "2019", "label": "Guest chapter", "text": "Palm Angels entered Moncler Genius for autumn/winter 2019. This listing does not date itself to that season." },
+      { "year": "21 Oct 2026", "label": "The ask", "text": "Vestiaire showed $1,511 and $1,205. The lower figure is the payable price. Add to Bag was on the page." },
+      { "year": "Rail", "label": "Flat lay", "text": "The hanger uses the seller’s garment-only photograph. A worn shot in the same listing was rejected." }
+    ],
+    "frames": [
+      { "art": "moncler-palm-angels-72059216", "caption": "Seller’s flat lay, cut out for the rail", "image": "/cutouts/palm-72059216.webp" }
+    ]
+  },
+  {
+    "slug": "bape-asus",
+    "collabId": "col-bape-asus",
+    "title": "A shark on a lid",
+    "kicker": "BAPE x ASUS Vivobook",
+    "dek": "Vivobook S 15 OLED, K5504VA, i5, 16GB, 512GB. Used, from a JP seller, or best offer.",
+    "story": [
+      "BAPE and ASUS put the house print on a Vivobook S 15 OLED. The listing we are tracking is eBay UK item 376659464010: K5504VA, i5, 16GB, 512GB, used, JP seller, free returns, $1,355 or best offer.",
+      "The search index still showed it on 6 Oct 2026. A direct fetch was blocked, and the seed has no photograph. It is not on the public rail.",
+      "If you request it we open the listing, confirm the spec, and talk before anyone pays. A laptop that has been used needs a plainer conversation than a sealed hoodie."
+    ],
+    "timeline": [
+      { "year": "K5504VA", "label": "The spec in the title", "text": "i5, 16GB, 512GB, 15-inch OLED. That is the seller’s title, not a bench test." },
+      { "year": "6 Oct 2026", "label": "Last index update", "text": "We could not open the page as a bot. Treat the link as the source of truth." },
+      { "year": "Silhouette", "label": "No photo on file", "text": "The hanger is drawn. It is not a render of that exact unit." }
+    ],
+    "frames": [
+      { "art": "laptop", "caption": "Placeholder sleeve. No listing photograph." }
+    ]
+  },
+  {
+    "slug": "lv-ice",
+    "collabId": "col-lv-ice",
+    "title": "LV Ice",
+    "kicker": "Limited to 200",
+    "dek": "A snowboard with a retail reference of ¥66,000. No resale listing pinned. Vault candidate.",
+    "story": [
+      "Louis Vuitton’s LV Ice snowboard is limited to 200. The page we can cite is the retail reference on louisvuitton.cn, ¥66,000, which answered 200 on 21 Oct 2026. We have not found a resale ask we are willing to pin.",
+      "There is no board on the public rail. No. 047/200 was a studio rack mark, not a serial Louis Vuitton issued.",
+      "Because of the price and the missing listing, this sits with the Rolex as a vault candidate: we will only go further with a real seller, a real board, and an authentication route you have agreed."
+    ],
+    "timeline": [
+      { "year": "200", "label": "Edition size", "text": "The retail page states the limitation. We do not have piece numbers beyond that." },
+      { "year": "¥66,000", "label": "Retail, not resale", "text": "The guide in pounds is that figure converted and margined. A real resale ask will replace it." },
+      { "year": "Rack mark", "label": "No. 047/200", "text": "Engraved on our hanger. It is not the manufacturer’s serial." }
+    ],
+    "frames": [
+      { "art": "snowboard", "caption": "Placeholder board. Retail reference only." }
+    ]
+  }
+]

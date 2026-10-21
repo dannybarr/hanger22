@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800">
+  <rect width="640" height="800" fill="#E9E7E2"/>
+  <g fill="none" stroke="#4A5275" stroke-width="8" stroke-linecap="round">
+    <path d="M320 90c0-28 36-40 52-18"/>
+    <path d="M250 168c40-28 100-28 140 0l46 36c22 18 18 48-8 60l-28 210c-6 40-40 62-80 62s-74-22-80-62l-28-210c-26-12-30-42-8-60z"/>
+  </g>
+  <text x="320" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#4A5275">Placeholder silhouette</text>
+</svg>

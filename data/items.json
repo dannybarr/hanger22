@@ -1,0 +1,1940 @@
+[
+  {
+    "id": "h22-trailgrip",
+    "slug": "moncler-zellerfeld-trailgrip-3d-khaki",
+    "title": "Moncler x Zellerfeld Trailgrip 3D",
+    "shortTitle": "Trailgrip 3D",
+    "brand": "Moncler",
+    "collabId": "col-zellerfeld",
+    "category": "footwear",
+    "year": 2025,
+    "story": "Khaki Trailgrip 3D, the Moncler sole printed with Zellerfeld. Joli Closet describes it as never worn, no tags, with a dust bag, size about EU 38. The cut-out is their photograph with the white ground removed. This pair is in the vault and ships now. It stays on its product page, not on the hanger rail. The Joli Closet page is the listing we bought.",
+    "specs": {
+      "Colour": "Khaki",
+      "Size": "est. EU 38",
+      "Construction": "3D-printed Trailgrip",
+      "Includes": "Dust bag",
+      "Tags": "None, per the listing"
+    },
+    "images": {
+      "front": "/cutouts/trailgrip-front.webp",
+      "source": "/sources/trailgrip.webp",
+      "placeholder": false,
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Joli Closet. Not licensed for reuse outside this site.",
+      "imageStatus": "cutout"
+    },
+    "art": "trailgrip",
+    "suspension": "lace",
+    "guidePriceGBP": {
+      "min": 280,
+      "max": 315
+    },
+    "condition": "excellent",
+    "authRoute": "Seller description on Joli Closet, then our own photographs when it arrives. This is not a Moncler boutique certificate.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-trailgrip"
+    ],
+    "tags": [
+      "moncler",
+      "zellerfeld",
+      "trailgrip",
+      "footwear"
+    ],
+    "availability": "in_vault",
+    "costBasis": {
+      "amount": 276,
+      "currency": "EUR"
+    },
+    "markupPct": 27.9,
+    "estimatedMarginGBP": 65,
+    "demandSignal": 0.48,
+    "cutReason": "collab",
+    "sourceMarket": "EU",
+    "authConfidence": "high"
+  },
+  {
+    "id": "h22-palm-puffer",
+    "slug": "moncler-genius-palm-angels-puffer-black",
+    "title": "Moncler Genius x Palm Angels Puffer Jacket",
+    "shortTitle": "Palm Angels Puffer",
+    "brand": "Moncler",
+    "collabId": "col-palm",
+    "category": "outerwear",
+    "story": "Black Moncler Genius puffer from the Palm Angels chapter, size 5, listed on Grailed as gently used and Grailed-verified. The listing photograph is a person outdoors, so the rail carries a studio silhouette and the photograph stays on the page.",
+    "specs": {
+      "Colour": "Black",
+      "Size": "5",
+      "Line": "Moncler Genius x Palm Angels",
+      "Wear": "Gently used"
+    },
+    "images": {
+      "front": "/sources/moncler-palm-angels.webp",
+      "source": "/sources/moncler-palm-angels.webp",
+      "placeholder": false,
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Grailed. Not licensed for reuse outside this site.",
+      "imageStatus": "listing-photo"
+    },
+    "art": "puffer",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 950,
+      "max": 1070
+    },
+    "condition": "good",
+    "authRoute": "Grailed verification as stated on the listing, then a physical check on arrival. We do not add a Moncler stamp the seller did not provide.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-palm"
+    ],
+    "tags": [
+      "moncler",
+      "palm angels",
+      "genius",
+      "puffer"
+    ],
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 1050,
+      "currency": "USD"
+    },
+    "markupPct": 27.7,
+    "estimatedMarginGBP": 219,
+    "demandSignal": 0.55,
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "high"
+  },
+  {
+    "id": "h22-palace-hood",
+    "slug": "palace-oakley-logo-hood-off-white",
+    "title": "Palace x Oakley Logo Hood",
+    "shortTitle": "Oakley Logo Hood",
+    "brand": "Palace",
+    "collabId": "col-palace-oakley",
+    "category": "apparel",
+    "year": 2024,
+    "story": "Palace x Oakley logo hood, off white, FW24, size XL, listed new and sealed on Grailed. The cut-out is the seller\u2019s hanger photograph with the white ground removed. The wooden hanger in our rail is ours; the fleece is theirs. This hood is in the vault and ships now. The Grailed page is the listing we bought.",
+    "specs": {
+      "Colour": "Off white",
+      "Size": "XL",
+      "Season": "FW24",
+      "Condition note": "New, sealed, per the listing"
+    },
+    "images": {
+      "front": "/cutouts/palace-hoodie-front.webp",
+      "source": "/sources/palace-hoodie.webp",
+      "placeholder": false,
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Grailed. Not licensed for reuse outside this site.",
+      "imageStatus": "listing-photo"
+    },
+    "art": "hoodie",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 250,
+      "max": 280
+    },
+    "condition": "new",
+    "authRoute": "New and sealed, per the Grailed listing. We photograph the seal before it is broken.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-palace"
+    ],
+    "tags": [
+      "palace",
+      "oakley",
+      "hoodie",
+      "fw24"
+    ],
+    "availability": "in_vault",
+    "costBasis": {
+      "amount": 275,
+      "currency": "USD"
+    },
+    "markupPct": 27.9,
+    "estimatedMarginGBP": 58,
+    "demandSignal": 0.7,
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "high"
+  },
+  {
+    "id": "h22-lv-ice",
+    "slug": "louis-vuitton-lv-ice-snowboard",
+    "title": "Louis Vuitton LV Ice Snowboard",
+    "shortTitle": "LV Ice Snowboard",
+    "brand": "Louis Vuitton",
+    "collabId": "col-lv-ice",
+    "category": "objects",
+    "rarity": {
+      "edition": 200,
+      "hangerMark": "No. 047/200",
+      "note": "Studio rack mark, not a Louis Vuitton serial."
+    },
+    "story": "LV Ice snowboard, limited to 200. The only figure we can cite is the retail reference of \u00a566,000 on the Louis Vuitton site. No resale listing is pinned. The board on the rail is a placeholder silhouette. The hanger reads No. 047/200 as a studio rack mark, not a manufacturer serial. Vault candidate.",
+    "specs": {
+      "Edition": "Limited to 200",
+      "Retail reference": "\u00a566,000",
+      "Rack mark": "No. 047/200, studio only",
+      "Listing": "None pinned"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "snowboard",
+    "suspension": "webbing",
+    "guidePriceGBP": {
+      "min": 8350,
+      "max": 9400
+    },
+    "condition": "new",
+    "authRoute": "No resale piece in hand. If a board surfaces, an independent specialist checks it before we hand it over. We will not treat the retail page as proof of a specific used board.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-lv-ice"
+    ],
+    "tags": [
+      "louis vuitton",
+      "snowboard",
+      "limited",
+      "vault-candidate"
+    ],
+    "vaultCandidate": true,
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 66000,
+      "currency": "CNY"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 1912,
+    "demandSignal": 0.66,
+    "cutReason": "limited",
+    "sourceMarket": "CN",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-speedmaster-310",
+    "slug": "omega-speedmaster-moonwatch-310",
+    "title": "Omega Speedmaster Professional Moonwatch 310.30.42.50.01.001",
+    "shortTitle": "Speedmaster 310",
+    "brand": "Omega",
+    "collabId": null,
+    "category": "watches",
+    "year": 2026,
+    "story": "Current Speedmaster Moonwatch, reference 310.30.42.50.01.001, listed on eBay UK as new with box and papers. The ask is in US dollars. The index updated 29 Sep 2026; the page blocked a direct fetch. No photograph in the seed, so the dial on the rail is a placeholder silhouette, not a picture of that watch.",
+    "specs": {
+      "Reference": "310.30.42.50.01.001",
+      "Papers": "Box and papers, per the listing",
+      "Listing currency": "USD",
+      "Photograph": "None on file"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "moonwatch",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 6000,
+      "max": 6750
+    },
+    "condition": "new",
+    "authRoute": "Independent watchmaker before handover. eBay Authenticity Guarantee if the listing is enrolled. Papers checked against the reference, not taken on faith.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-speedy-310"
+    ],
+    "tags": [
+      "omega",
+      "speedmaster",
+      "moonwatch"
+    ],
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 6650,
+      "currency": "USD"
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 1366,
+    "demandSignal": 0.5,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-bape-laptop",
+    "slug": "bape-asus-vivobook-s15-oled",
+    "title": "BAPE x ASUS Vivobook S 15 OLED",
+    "shortTitle": "Vivobook S 15",
+    "brand": "BAPE",
+    "collabId": "col-bape-asus",
+    "category": "tech",
+    "story": "BAPE x ASUS Vivobook S 15 OLED, model K5504VA in the listing title, i5, 16GB, 512GB. eBay UK, used, JP seller, free returns, $1,355 or best offer. Search last updated 6 Oct 2026. Direct fetch was blocked and there is no photograph, so the sleeve is a placeholder silhouette.",
+    "specs": {
+      "Model": "K5504VA",
+      "CPU": "i5, per the title",
+      "Memory": "16GB",
+      "Storage": "512GB",
+      "Display": "15-inch OLED",
+      "Offer": "Or best offer"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "laptop",
+    "suspension": "webbing",
+    "guidePriceGBP": {
+      "min": 1220,
+      "max": 1380
+    },
+    "condition": "good",
+    "authRoute": "Seller\u2019s eBay description and returns window. We power it on and photograph the spec screen before it comes to you. There is no brand authentication programme for this collab.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-laptop"
+    ],
+    "tags": [
+      "bape",
+      "asus",
+      "vivobook",
+      "tech"
+    ],
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 1355,
+      "currency": "USD"
+    },
+    "markupPct": 27.4,
+    "estimatedMarginGBP": 279,
+    "demandSignal": 0.42,
+    "cutReason": "collab",
+    "sourceMarket": "JP",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-submariner",
+    "slug": "rolex-submariner-126610ln-2023",
+    "title": "Rolex Submariner Date 126610LN",
+    "shortTitle": "Submariner Date",
+    "brand": "Rolex",
+    "collabId": null,
+    "category": "watches",
+    "year": 2023,
+    "story": "Submariner Date 126610LN, 2023, full set, on eBay UK at \u00a310,950 with 14-day returns. We only have the search index; the page blocked a fetch, and there is no photograph. Placeholder silhouette. Vault candidate: we will not move a watch at this price without an independent watchmaker and the papers in the same room.",
+    "specs": {
+      "Reference": "126610LN",
+      "Year": "2023",
+      "Set": "Full set, per the listing",
+      "Returns": "14-day, per the listing",
+      "Photograph": "None on file"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "submariner",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 13150,
+      "max": 14800
+    },
+    "condition": "excellent",
+    "authRoute": "Independent watchmaker. Papers and serial checked in person. Not a Rolex service centre job unless you ask for that wait.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-sub"
+    ],
+    "tags": [
+      "rolex",
+      "submariner",
+      "vault-candidate"
+    ],
+    "vaultCandidate": true,
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 10950,
+      "currency": "GBP"
+    },
+    "markupPct": 27.6,
+    "estimatedMarginGBP": 3025,
+    "demandSignal": 0.8,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-speedmaster-3570",
+    "slug": "omega-speedmaster-3570-50",
+    "title": "Omega Speedmaster Professional Moonwatch 3570.50",
+    "shortTitle": "Speedmaster 3570.50",
+    "brand": "Omega",
+    "collabId": null,
+    "category": "watches",
+    "story": "The previous Moonwatch, reference 3570.50. This eBay UK listing sold on 25 Sep 2026 for \u00a33,576.70. The title says it was serviced in July 2026. We keep it as a comparable so the guide for a 3570.50 has a real number under it. It is not a watch you can buy from that link today. The rail photograph is Torsten Bolten's public-domain picture of a Speedmaster Professional, not that listing.",
+    "specs": {
+      "Reference": "3570.50",
+      "Service": "July 2026, per the sold title",
+      "Comp": "Sold \u00a33,576.70 on 25 Sep 2026",
+      "Photograph": "None on file"
+    },
+    "images": {
+      "front": "/cutouts/speedmaster-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Photograph of an Omega Speedmaster Professional by Torsten Bolten, released to the public domain on Wikimedia Commons. It identifies the reference, not the sold eBay listing.",
+      "credit": "Torsten Bolten, public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:OMEGA-Speedmaster-Professional-Front_(cropped).jpg"
+    },
+    "art": "moonwatch-vintage",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 4290,
+      "max": 4830
+    },
+    "condition": "excellent",
+    "authRoute": "This comp is sold. A live 3570.50 would go to an independent watchmaker, with the service history read, not assumed.",
+    "status": "available-to-source",
+    "sourceListingIds": [
+      "src-speedy-3570"
+    ],
+    "tags": [
+      "omega",
+      "speedmaster",
+      "sold-comp"
+    ],
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 3576.7,
+      "currency": "GBP"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 983,
+    "demandSignal": 0.36,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-si-dior",
+    "slug": "stone-island-dior-technical-jacket",
+    "title": "Stone Island x Dior Technical Jacket",
+    "shortTitle": "Dior Technical Jacket",
+    "brand": "Stone Island",
+    "collabId": "col-si-dior",
+    "category": "outerwear",
+    "year": 2024,
+    "story": "The 2024 Dior and Stone Island technical jacket, Kim Jones\u2019s cut on a Stone Island cloth. No live marketplace listing is pinned. The price is a desk comp for what we would pay, and the hanger is a labelled placeholder until a photograph is cut out. Sourced to order.",
+    "specs": {
+      "Season": "2024",
+      "Cloth": "Technical",
+      "Listing": "None pinned",
+      "Photograph": "Placeholder"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "si-dior",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 2520,
+      "max": 2840
+    },
+    "condition": "excellent",
+    "authRoute": "If a jacket surfaces, we check the Stone Island badge, the Dior labels, and the seller\u2019s photographs against the cloth before it is bought. We do not treat a brand homepage as proof of a specific used piece.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 2100,
+      "currency": "GBP"
+    },
+    "markupPct": 27.6,
+    "estimatedMarginGBP": 580,
+    "demandSignal": 0.63,
+    "sourceListingIds": [
+      "src-si-dior"
+    ],
+    "tags": [
+      "stone island",
+      "dior",
+      "technical",
+      "outerwear"
+    ],
+    "cutReason": "collab",
+    "sourceMarket": "EU",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-si-ghost",
+    "slug": "stone-island-ghost-jacket",
+    "title": "Stone Island Ghost Jacket",
+    "shortTitle": "Ghost Jacket",
+    "brand": "Stone Island",
+    "collabId": "col-si-ghost",
+    "category": "outerwear",
+    "story": "A Stone Island Ghost jacket: the cloth is dyed after the seams are sewn, so the construction stays pale. This one is in the vault and ships now. There is no listing photograph, so the rail carries a labelled placeholder until the studio cut-out exists.",
+    "specs": {
+      "Programme": "Ghost",
+      "Colour": "Undyed seams",
+      "Listing": "Held, no public listing",
+      "Photograph": "Placeholder"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "ghost",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 1970,
+      "max": 2210
+    },
+    "condition": "excellent",
+    "authRoute": "In hand. Badge, cloth and seams checked on the piece we hold. The placeholder is not a photograph of it.",
+    "status": "available-to-source",
+    "availability": "in_vault",
+    "costBasis": {
+      "amount": 1640,
+      "currency": "GBP"
+    },
+    "markupPct": 27.4,
+    "estimatedMarginGBP": 450,
+    "demandSignal": 0.77,
+    "sourceListingIds": [
+      "src-si-ghost"
+    ],
+    "tags": [
+      "stone island",
+      "ghost",
+      "outerwear"
+    ],
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "authConfidence": "high"
+  },
+  {
+    "id": "h22-lv-skis",
+    "slug": "louis-vuitton-monogram-skis",
+    "title": "Louis Vuitton Monogram Skis",
+    "shortTitle": "Monogram Skis",
+    "brand": "Louis Vuitton",
+    "collabId": "col-lv-ski",
+    "category": "objects",
+    "story": "Louis Vuitton monogram skis, the sports object next to the LV Ice board. No resale listing is pinned. The price is a desk comp, and the pair on the rail is a labelled placeholder. Sourced to order if a clean pair turns up.",
+    "specs": {
+      "Object": "Skis",
+      "Listing": "None pinned",
+      "Photograph": "Placeholder"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "skis",
+    "suspension": "webbing",
+    "guidePriceGBP": {
+      "min": 5750,
+      "max": 6500
+    },
+    "condition": "excellent",
+    "authRoute": "An independent check of the pair, the bindings if they come with it, and the seller\u2019s photographs. A Louis Vuitton homepage is not proof of a specific pair.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 4800,
+      "currency": "GBP"
+    },
+    "markupPct": 27.6,
+    "estimatedMarginGBP": 1325,
+    "demandSignal": 0.52,
+    "sourceListingIds": [
+      "src-lv-skis"
+    ],
+    "tags": [
+      "louis vuitton",
+      "skis",
+      "objects"
+    ],
+    "cutReason": "limited",
+    "sourceMarket": "EU",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-daytona-lemans",
+    "slug": "rolex-daytona-le-mans-126529ln",
+    "title": "Rolex Cosmograph Daytona Le Mans 126529LN",
+    "shortTitle": "Daytona Le Mans",
+    "brand": "Rolex",
+    "collabId": null,
+    "category": "watches",
+    "year": 2023,
+    "story": "Cosmograph Daytona reference 126529LN, the 2023 Le Mans centenary watch. We do not hold one. The figure is a desk bid for a full set, not a Rolex offer and not a live eBay ask. Placeholder dial. Vault candidate: nothing moves at this price without an independent watchmaker and the papers in the same room.",
+    "specs": {
+      "Reference": "126529LN",
+      "Year": "2023",
+      "Set": "Full set, if sourced",
+      "Photograph": "Placeholder",
+      "Listing": "None pinned"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "daytona",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 50400,
+      "max": 56700
+    },
+    "condition": "excellent",
+    "authRoute": "Independent watchmaker. Papers and serial checked in person. Not a Rolex service-centre job unless you ask for that wait.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 42000,
+      "currency": "GBP"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 11550,
+    "demandSignal": 0.92,
+    "sourceListingIds": [
+      "src-daytona"
+    ],
+    "tags": [
+      "rolex",
+      "daytona",
+      "le mans",
+      "limited",
+      "vault-candidate"
+    ],
+    "rarity": {
+      "note": "2023 centenary reference. Not a serial we hold."
+    },
+    "vaultCandidate": true,
+    "cutReason": "limited",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-lv-af1",
+    "slug": "louis-vuitton-nike-air-force-1",
+    "title": "Louis Vuitton x Nike Air Force 1",
+    "shortTitle": "LV Air Force 1",
+    "brand": "Louis Vuitton",
+    "collabId": "col-lv-nike",
+    "category": "footwear",
+    "year": 2022,
+    "story": "Louis Vuitton x Nike Air Force 1, the 2022 Virgil Abloh pair. Colourway not pinned: the desk comp is for a clean pair, not a specific size we hold. The shoe on the rail is a labelled placeholder. Sourced to order.",
+    "specs": {
+      "Year": "2022",
+      "Model": "Air Force 1",
+      "Listing": "None pinned",
+      "Photograph": "Placeholder"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "af1",
+    "suspension": "lace",
+    "guidePriceGBP": {
+      "min": 3840,
+      "max": 4320
+    },
+    "condition": "excellent",
+    "authRoute": "Size, colourway and insole labels checked against the seller\u2019s photographs before we buy. Neither house\u2019s campaign imagery is used here.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 3200,
+      "currency": "GBP"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 880,
+    "demandSignal": 0.84,
+    "sourceListingIds": [
+      "src-lv-af1"
+    ],
+    "tags": [
+      "louis vuitton",
+      "nike",
+      "air force 1",
+      "footwear"
+    ],
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-ap-travis",
+    "slug": "audemars-piguet-travis-scott-royal-oak",
+    "title": "Audemars Piguet x Travis Scott Royal Oak",
+    "shortTitle": "AP Royal Oak",
+    "brand": "Audemars Piguet",
+    "collabId": "col-ap-travis",
+    "category": "watches",
+    "rarity": {
+      "note": "The collaboration is the cut. No reference is pinned, and none is in the building."
+    },
+    "story": "Audemars Piguet and Travis Scott, the Royal Oak they made together. There is no price floor and no ceiling on this rail: the piece is here because the collaboration is the thing, not the number. No papers are in the building and no live listing is pinned. The dial is a labelled placeholder. If one surfaces, an independent watchmaker sees it before anyone else does.",
+    "specs": {
+      "Houses": "Audemars Piguet and Travis Scott",
+      "Model": "Royal Oak",
+      "Listing": "None pinned",
+      "Photograph": "Placeholder"
+    },
+    "images": {
+      "front": "/art/placeholder.svg",
+      "placeholder": true,
+      "imageStatus": "placeholder"
+    },
+    "art": "royal-oak",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 198000,
+      "max": 222750
+    },
+    "condition": "excellent",
+    "authRoute": "Not in hand. An independent watchmaker, the papers, and the seller\u2019s photographs in the same room before any offer. A brand homepage is not authentication.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 165000,
+      "currency": "GBP"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 45375,
+    "demandSignal": 0.88,
+    "sourceListingIds": [
+      "src-ap-travis"
+    ],
+    "tags": [
+      "audemars piguet",
+      "travis scott",
+      "royal oak",
+      "collab"
+    ],
+    "vaultCandidate": true
+  },
+  {
+    "id": "h22-vault-sample",
+    "slug": "unlisted-genius-sample",
+    "title": "Unlisted Genius sample",
+    "shortTitle": "Unlisted sample",
+    "brand": "Hanger 22",
+    "collabId": null,
+    "category": "outerwear",
+    "story": "An unlisted hanger. There is no marketplace listing, no seller, and no photograph. It exists so the vault has a puffer-shaped piece when the rail goes dark. The price is a desk estimate, not a comp. Ask us and we will tell you plainly if there is anything real to hunt.",
+    "specs": {
+      "Listing": "None",
+      "Photograph": "None",
+      "Price": "Desk estimate"
+    },
+    "images": {
+      "front": "/cutouts/hoodie-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Reference cut-out from Hoodie m7agar, CC0, via Wikimedia Commons. Unlisted.",
+      "credit": "YoussefTahoun, CC0",
+      "pixelWidth": 884,
+      "pixelHeight": 1195,
+      "alphaCoverage": 0.668
+    },
+    "art": "vault-sample",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 4000,
+      "max": 7000
+    },
+    "condition": "excellent",
+    "authRoute": "Nothing to authenticate until a real piece is named.",
+    "status": "vault",
+    "sourceListingIds": [],
+    "tags": [
+      "unlisted",
+      "vault"
+    ],
+    "unlisted": true,
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 4800,
+      "currency": "GBP"
+    },
+    "markupPct": 22,
+    "estimatedMarginGBP": 1100,
+    "demandSignal": 0.1,
+    "cutReason": "one_off",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-vault-goggle",
+    "slug": "unlisted-snow-goggle",
+    "title": "Unlisted snow goggle",
+    "shortTitle": "Unlisted goggle",
+    "brand": "Hanger 22",
+    "collabId": "col-palace-oakley",
+    "category": "accessories",
+    "story": "A goggle-shaped hanger for the Palace x Oakley story. It is not a model number and not a listing. Placeholder silhouette, desk estimate, vault only.",
+    "specs": {
+      "Listing": "None",
+      "Photograph": "None"
+    },
+    "images": {
+      "front": "/cutouts/jeans-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Reference cut-out from a CC BY-SA Wikimedia photograph. Unlisted.",
+      "credit": "Wikimedia Commons, CC BY-SA",
+      "pixelWidth": 541,
+      "pixelHeight": 917,
+      "alphaCoverage": 0.571
+    },
+    "art": "vault-goggle",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 400,
+      "max": 700
+    },
+    "condition": "excellent",
+    "authRoute": "Nothing to authenticate until a real piece is named.",
+    "status": "vault",
+    "sourceListingIds": [],
+    "tags": [
+      "unlisted",
+      "vault",
+      "palace",
+      "oakley"
+    ],
+    "unlisted": true,
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 380,
+      "currency": "GBP"
+    },
+    "markupPct": 18,
+    "estimatedMarginGBP": 90,
+    "demandSignal": 0.12,
+    "cutReason": "limited",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "id": "h22-vault-chrono",
+    "slug": "unlisted-chronograph",
+    "title": "Unlisted chronograph",
+    "shortTitle": "Unlisted chrono",
+    "brand": "Hanger 22",
+    "collabId": null,
+    "category": "watches",
+    "story": "A watch-shaped hanger with no reference and no papers. It is not a Rolex and not an Omega. Placeholder silhouette, desk estimate, vault only.",
+    "specs": {
+      "Listing": "None",
+      "Reference": "None"
+    },
+    "images": {
+      "front": "/cutouts/pants-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Reference cut-out from a CC BY-SA Wikimedia photograph. Unlisted.",
+      "credit": "Wikimedia Commons, CC BY-SA",
+      "pixelWidth": 806,
+      "pixelHeight": 917,
+      "alphaCoverage": 0.468
+    },
+    "art": "vault-chrono",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 8000,
+      "max": 12000
+    },
+    "condition": "excellent",
+    "authRoute": "Nothing to authenticate until a real piece is named.",
+    "status": "vault",
+    "sourceListingIds": [],
+    "tags": [
+      "unlisted",
+      "vault"
+    ],
+    "unlisted": true,
+    "availability": "sourced",
+    "costBasis": {
+      "amount": 9000,
+      "currency": "GBP"
+    },
+    "markupPct": 20,
+    "estimatedMarginGBP": 2000,
+    "demandSignal": 0.08,
+    "cutReason": "one_off",
+    "sourceMarket": "UK",
+    "authConfidence": "medium"
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-premoon",
+    "slug": "omega-speedmaster-pre-moon",
+    "title": "Omega Speedmaster Pre-Moon",
+    "shortTitle": "Pre-Moon",
+    "brand": "Omega",
+    "category": "watches",
+    "year": 1967,
+    "story": "A pre-moon Speedmaster, the case and dial from before the 1969 moon watch. The photograph is Shane Lin's, CC BY-SA 2.0, on Wikimedia Commons. There is no live listing behind this hanger. The guide is a desk composite for a pre-moon, not an ask we can buy today.",
+    "specs": {
+      "Reference": "Pre-moon",
+      "Photograph": "Shane Lin"
+    },
+    "images": {
+      "front": "/cutouts/premoon-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Shane Lin, CC BY-SA 2.0, via Wikimedia Commons. Photograph of a vintage pre-moon Speedmaster.",
+      "credit": "Shane Lin, CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vintage_Omega_Speedmaster_%22Pre-moon%22.jpg"
+    },
+    "art": "premoon",
+    "suspension": "strap",
+    "authRoute": "The photograph is the reference. A pre-moon we sourced would be opened and checked before it shipped. This is not an Omega extract.",
+    "sourceListingIds": [
+      "src-premoon"
+    ],
+    "tags": [
+      "omega",
+      "speedmaster",
+      "pre-moon"
+    ],
+    "demandSignal": 0.42,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "guidePriceGBP": {
+      "min": 5050,
+      "max": 5650
+    },
+    "markupPct": 27.4,
+    "estimatedMarginGBP": 1150,
+    "costBasis": {
+      "amount": 4200,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-pvc-down",
+    "slug": "black-pvc-down-jacket",
+    "title": "Black PVC down jacket",
+    "shortTitle": "PVC Down",
+    "brand": "Unbranded",
+    "category": "outerwear",
+    "story": "A black PVC down jacket, photographed by Ralph Schulz and released CC BY-SA 3.0. It is not a Stone Island Ghost and not a Moncler. It is on the rail because the cut-out is clean and the garment reads edge-on. The guide is a desk composite, not a live ask.",
+    "specs": {
+      "Colour": "Black",
+      "Material": "PVC down",
+      "Photograph": "Ralph Schulz"
+    },
+    "images": {
+      "front": "/cutouts/down-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Ralph Schulz, CC BY-SA 3.0, via Wikimedia Commons.",
+      "credit": "Ralph Schulz, CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Men%27s_black_PVC_down_jacket_02.jpg"
+    },
+    "art": "pvc-down",
+    "suspension": "wood",
+    "authRoute": "The photograph is the piece we can show. A jacket we sourced would be checked in hand.",
+    "sourceListingIds": [
+      "src-pvc-down"
+    ],
+    "tags": [
+      "outerwear",
+      "down"
+    ],
+    "demandSignal": 0.2,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 190,
+      "max": 215
+    },
+    "markupPct": 26.6,
+    "estimatedMarginGBP": 43,
+    "costBasis": {
+      "amount": 160,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-dress-shirt",
+    "slug": "spread-collar-dress-shirt",
+    "title": "Spread-collar dress shirt",
+    "shortTitle": "Dress Shirt",
+    "brand": "Arnaud Rousseau",
+    "category": "apparel",
+    "story": "A white dress shirt with a modern spread collar, photographed for Wikimedia under CC BY-SA 3.0. It is a reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Colour": "White",
+      "Collar": "Spread"
+    },
+    "images": {
+      "front": "/cutouts/shirt-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 3.0, via Wikimedia Commons. File: Arnaud Rousseau Dress Shirt with a Modern Spread Collar.",
+      "credit": "Wikimedia Commons, CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arnaud_Rousseau_Dress_Shirt_with_a_Modern_Spread_Collar.jpg"
+    },
+    "art": "dress-shirt",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this shirt is held.",
+    "sourceListingIds": [
+      "src-dress-shirt"
+    ],
+    "tags": [
+      "shirt"
+    ],
+    "demandSignal": 0.15,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 95,
+      "max": 110
+    },
+    "markupPct": 28.1,
+    "estimatedMarginGBP": 23,
+    "costBasis": {
+      "amount": 80,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-jeans",
+    "slug": "akings-stretch-jeans",
+    "title": "AKINGS stretch jeans",
+    "shortTitle": "Stretch Jeans",
+    "brand": "AKINGS",
+    "category": "apparel",
+    "story": "Stretch jeans photographed by their maker for Wikimedia, CC BY-SA 4.0. A reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Type": "Stretch jeans"
+    },
+    "images": {
+      "front": "/cutouts/jeans-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 4.0, via Wikimedia Commons. File: Stretch Jeans from AKINGS.",
+      "credit": "AKINGS, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stretch_Jeans_from_AKINGS.jpg",
+      "pixelWidth": 541,
+      "pixelHeight": 917,
+      "alphaCoverage": 0.571
+    },
+    "art": "stretch-jeans",
+    "suspension": "wood",
+    "authRoute": "Photograph only.",
+    "sourceListingIds": [
+      "src-jeans"
+    ],
+    "tags": [
+      "jeans"
+    ],
+    "demandSignal": 0.12,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 85,
+      "max": 95
+    },
+    "markupPct": 28.6,
+    "estimatedMarginGBP": 20,
+    "costBasis": {
+      "amount": 70,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-pants",
+    "slug": "training-pants",
+    "title": "Training pants",
+    "shortTitle": "Training Pants",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "Training pants on a white ground, photographed for Wikimedia under CC BY-SA 3.0. A reference cut-out. The guide is a desk composite.",
+    "specs": {
+      "Type": "Training pants"
+    },
+    "images": {
+      "front": "/cutouts/pants-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 3.0, via Wikimedia Commons. File: Trainingpants.",
+      "credit": "Wikimedia Commons, CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trainingpants.jpg",
+      "pixelWidth": 806,
+      "pixelHeight": 917,
+      "alphaCoverage": 0.468
+    },
+    "art": "training-pants",
+    "suspension": "wood",
+    "authRoute": "Photograph only.",
+    "sourceListingIds": [
+      "src-pants"
+    ],
+    "tags": [
+      "pants"
+    ],
+    "demandSignal": 0.1,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 50,
+      "max": 55
+    },
+    "markupPct": 31.3,
+    "estimatedMarginGBP": 13,
+    "costBasis": {
+      "amount": 40,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-jersey",
+    "slug": "high-collar-jersey",
+    "title": "High-collar jersey",
+    "shortTitle": "Jersey",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A high-collar jersey on a white ground, CC BY-SA 3.0 on Wikimedia Commons. A reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Type": "Jersey"
+    },
+    "images": {
+      "front": "/cutouts/jersey-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 3.0, via Wikimedia Commons. File: Jersei-coll-alt.",
+      "credit": "Wikimedia Commons, CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jersei-coll-alt.jpg"
+    },
+    "art": "jersey",
+    "suspension": "wood",
+    "authRoute": "Photograph only.",
+    "sourceListingIds": [
+      "src-jersey"
+    ],
+    "tags": [
+      "jersey"
+    ],
+    "demandSignal": 0.1,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 55,
+      "max": 60
+    },
+    "markupPct": 27.8,
+    "estimatedMarginGBP": 13,
+    "costBasis": {
+      "amount": 45,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-striped",
+    "slug": "striped-sweater",
+    "title": "Striped sweater",
+    "shortTitle": "Striped Sweater",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A black and white striped sweater, photographed by Kauey for Wikimedia under CC BY-SA 4.0. A reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Pattern": "Stripe",
+      "Knit": "Sweater"
+    },
+    "images": {
+      "front": "/cutouts/striped-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 4.0, via Wikimedia Commons. File: Black and white striped sweater.",
+      "credit": "Kauey, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_and_white_striped_sweater.jpg",
+      "alphaCoverage": 0.579,
+      "pixelWidth": 668,
+      "pixelHeight": 1317
+    },
+    "art": "striped-sweater",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-striped"
+    ],
+    "tags": [
+      "sweater",
+      "knit"
+    ],
+    "demandSignal": 0.16,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 115,
+      "max": 130
+    },
+    "markupPct": 28.9,
+    "estimatedMarginGBP": 28,
+    "costBasis": {
+      "amount": 95,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-hoodie",
+    "slug": "plain-hoodie",
+    "title": "Plain hoodie",
+    "shortTitle": "Hoodie",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A grey marl hoodie with a kangaroo pocket, released to the public domain by YoussefTahoun. A reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Type": "Hoodie",
+      "Colour": "Grey marl"
+    },
+    "images": {
+      "front": "/cutouts/hoodie-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC0, via Wikimedia Commons. File: Hoodie m7agar.",
+      "credit": "YoussefTahoun, CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoodie_m7agar.jpg",
+      "alphaCoverage": 0.668,
+      "pixelWidth": 884,
+      "pixelHeight": 1195
+    },
+    "art": "plain-hoodie",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-hoodie"
+    ],
+    "tags": [
+      "hoodie"
+    ],
+    "demandSignal": 0.2,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 85,
+      "max": 95
+    },
+    "markupPct": 28.6,
+    "estimatedMarginGBP": 20,
+    "costBasis": {
+      "amount": 70,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-cricket",
+    "slug": "cable-knit-cricket",
+    "title": "Cable-knit cricket pullover",
+    "shortTitle": "Cable Knit",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A cable-knit cricket pullover photographed by Acabashi at Epping Foresters Cricket Club, CC BY-SA 4.0. A reference cut-out, not club kit we hold. The guide is a desk composite.",
+    "specs": {
+      "Knit": "Cable",
+      "Colour": "Cream"
+    },
+    "images": {
+      "front": "/cutouts/cricket-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 4.0, via Wikimedia Commons. File: Cable knit cricket pullover jersey at Epping Foresters Cricket Club.",
+      "credit": "Acabashi, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cable_knit_cricket_pullover_jersey_at_Epping_Foresters_Cricket_Club.jpg",
+      "alphaCoverage": 0.638,
+      "pixelWidth": 763,
+      "pixelHeight": 1291
+    },
+    "art": "cable-knit",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-cricket"
+    ],
+    "tags": [
+      "knit",
+      "cricket"
+    ],
+    "demandSignal": 0.18,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "guidePriceGBP": {
+      "min": 145,
+      "max": 160
+    },
+    "markupPct": 27.1,
+    "estimatedMarginGBP": 33,
+    "costBasis": {
+      "amount": 120,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-bow",
+    "slug": "schiaparelli-bow-sweater",
+    "title": "Schiaparelli bow-knot sweater",
+    "shortTitle": "Bow Sweater",
+    "brand": "Schiaparelli",
+    "category": "apparel",
+    "story": "A bow-knot sweater from a scanned Schiaparelli magazine page, public domain on Wikimedia Commons. The photograph is a reference, not a piece in hand. The guide is a desk composite.",
+    "specs": {
+      "Detail": "Bow knot",
+      "House": "Schiaparelli"
+    },
+    "images": {
+      "front": "/cutouts/bow-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Public domain, via Wikimedia Commons. File: Bow-knot sweater Schiaparelli.",
+      "credit": "Unknown photographer, public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bow-knot_sweater_Schiaparelli.jpg",
+      "alphaCoverage": 0.391,
+      "pixelWidth": 723,
+      "pixelHeight": 1253
+    },
+    "art": "bow-sweater",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-bow"
+    ],
+    "tags": [
+      "sweater",
+      "knit"
+    ],
+    "demandSignal": 0.22,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 190,
+      "max": 215
+    },
+    "markupPct": 26.6,
+    "estimatedMarginGBP": 43,
+    "costBasis": {
+      "amount": 160,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-dip",
+    "slug": "dip-hoodie",
+    "title": "DIP-8 hoodie",
+    "shortTitle": "DIP Hoodie",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A hoodie printed with a DIP-8 integrated circuit, photographed by Siarhei Besarab under CC BY-SA 4.0. A reference cut-out, not a collab. The guide is a desk composite.",
+    "specs": {
+      "Print": "DIP-8",
+      "Type": "Hoodie"
+    },
+    "images": {
+      "front": "/cutouts/dip-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY-SA 4.0, via Wikimedia Commons. File: Hoodie with a DIP-8 integrated circuit design.",
+      "credit": "Siarhei Besarab, CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoodie_with_a_DIP-8_integrated_circuit_design.jpg",
+      "alphaCoverage": 0.601,
+      "pixelWidth": 682,
+      "pixelHeight": 1400
+    },
+    "art": "dip-hoodie",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-dip"
+    ],
+    "tags": [
+      "hoodie"
+    ],
+    "demandSignal": 0.17,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 100,
+      "max": 115
+    },
+    "markupPct": 26.5,
+    "estimatedMarginGBP": 23,
+    "costBasis": {
+      "amount": 85,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-polo",
+    "slug": "aztec-down-jacket",
+    "title": "Aztec-print down jacket",
+    "shortTitle": "Down Jacket",
+    "brand": "Polo Ralph Lauren",
+    "category": "outerwear",
+    "story": "A Polo Ralph Lauren down jacket with an Aztec-style print, photographed by Menswear Market under CC BY 2.0. A reference cut-out of that jacket, not stock we hold. The guide is a desk composite.",
+    "specs": {
+      "Type": "Down jacket",
+      "Print": "Aztec"
+    },
+    "images": {
+      "front": "/cutouts/polo-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC BY 2.0, via Wikimedia Commons. File: Polo Ralph Lauren down jacket with Aztec style print.",
+      "credit": "Menswear Market, CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polo_Ralph_Lauren_down_jacket_with_Aztec_style_print.jpg",
+      "alphaCoverage": 0.676,
+      "pixelWidth": 946,
+      "pixelHeight": 1184
+    },
+    "art": "aztec-down",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-polo"
+    ],
+    "tags": [
+      "jacket",
+      "down"
+    ],
+    "demandSignal": 0.24,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "US",
+    "guidePriceGBP": {
+      "min": 180,
+      "max": 205
+    },
+    "markupPct": 28.3,
+    "estimatedMarginGBP": 43,
+    "costBasis": {
+      "amount": 150,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-gigli",
+    "slug": "gigli-knit-dress",
+    "title": "Romeo Gigli knit dress",
+    "shortTitle": "Knit Dress",
+    "brand": "Romeo Gigli",
+    "category": "apparel",
+    "story": "A 1990s Romeo Gigli knit dress, photographed for the RISD Museum and released CC0. A reference cut-out, not a piece in hand. The guide is a desk composite.",
+    "specs": {
+      "Decade": "1990s",
+      "Type": "Knit dress"
+    },
+    "images": {
+      "front": "/cutouts/gigli-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "CC0, via Wikimedia Commons. File: Romeo Gigli knit dress and shrug, 1990s 01.",
+      "credit": "RISD Museum staff photographer, CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Romeo_Gigli_knit_dress_and_shrug,_1990s_01.jpg",
+      "alphaCoverage": 0.549,
+      "pixelWidth": 330,
+      "pixelHeight": 866
+    },
+    "art": "gigli-knit",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-gigli"
+    ],
+    "tags": [
+      "knit",
+      "dress"
+    ],
+    "demandSignal": 0.19,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "US",
+    "guidePriceGBP": {
+      "min": 240,
+      "max": 270
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 55,
+    "costBasis": {
+      "amount": 200,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-frock",
+    "slug": "silk-wool-frock-coat",
+    "title": "Silk and wool frock coat",
+    "shortTitle": "Frock Coat",
+    "brand": "Unbranded",
+    "category": "outerwear",
+    "story": "A man's silk and wool twill frock coat, about 1820, photographed for a museum collection and released to the public domain. A reference cut-out, not a piece in hand. The guide is a desk composite.",
+    "specs": {
+      "Date": "c. 1820",
+      "Cloth": "Silk and wool twill"
+    },
+    "images": {
+      "front": "/cutouts/frock-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Public domain, via Wikimedia Commons. File: Man's silk and wool twill frock coat c. 1820.",
+      "credit": "Unknown photographer, public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Man%27s_silk_and_wool_twill_frock_coat_c._1820.jpg",
+      "alphaCoverage": 0.625,
+      "pixelWidth": 387,
+      "pixelHeight": 1070
+    },
+    "art": "frock-coat",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-frock"
+    ],
+    "tags": [
+      "coat"
+    ],
+    "demandSignal": 0.14,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 265,
+      "max": 295
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 60,
+    "costBasis": {
+      "amount": 220,
+      "currency": "GBP"
+    }
+  },
+  {
+    "status": "available-to-source",
+    "availability": "sourced",
+    "authConfidence": "medium",
+    "condition": "excellent",
+    "collabId": null,
+    "vaultCandidate": false,
+    "id": "h22-suit",
+    "slug": "lounge-suit-1875",
+    "title": "Lounge suit, 1875",
+    "shortTitle": "Lounge Suit",
+    "brand": "Unbranded",
+    "category": "apparel",
+    "story": "A man's two-piece lounge suit, 1875\u20131880, photographed for a museum collection and released to the public domain. A reference cut-out, not a piece in hand. The guide is a desk composite.",
+    "specs": {
+      "Date": "1875\u20131880",
+      "Type": "Lounge suit"
+    },
+    "images": {
+      "front": "/cutouts/suit-front.webp",
+      "placeholder": false,
+      "imageStatus": "listing-photo",
+      "licence": "Public domain, via Wikimedia Commons. File: Man's two-piece lounge suit 1875-1880 (cut).",
+      "credit": "Unknown photographer, public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Man%27s_two-piece_lounge_suit_1875-1880_(cut).jpg",
+      "alphaCoverage": 0.643,
+      "pixelWidth": 758,
+      "pixelHeight": 1064
+    },
+    "art": "lounge-suit",
+    "suspension": "wood",
+    "authRoute": "Photograph only. Nothing of this piece is held.",
+    "sourceListingIds": [
+      "src-suit"
+    ],
+    "tags": [
+      "suit"
+    ],
+    "demandSignal": 0.13,
+    "cutReason": "rare_from_range",
+    "sourceMarket": "EU",
+    "guidePriceGBP": {
+      "min": 215,
+      "max": 245
+    },
+    "markupPct": 27.8,
+    "estimatedMarginGBP": 50,
+    "costBasis": {
+      "amount": 180,
+      "currency": "GBP"
+    }
+  },
+  {
+    "id": "h22-ghost-4100044",
+    "slug": "stone-island-ghost-4100044-grey",
+    "title": "Stone Island Ghost 4100044 cotton canvas jacket",
+    "shortTitle": "Ghost 4100044",
+    "brand": "Stone Island",
+    "collabId": "col-si-ghost",
+    "category": "outerwear",
+    "story": "Stone Island\u2019s Ghost Piece dyes the compass badge into the cloth, so the mark only reads up close. Style 4100044 is the grey all-weather cotton canvas jacket. Farfetch\u2019s text, read on 21 October 2026, describes a knit stand collar, knit sleeves and hem, flap pockets, a concealed two-way zip, and the Ghost badge on the left sleeve. The composition on that page is organic cotton for the outer and virgin wool for the rib. The listing was open at $1,450 with duties included, an Add to Bag control, and delivery from 26 October to 2 November 2026. A size selector was on the page; in-stock sizes and the boutique name were not. No run size is published for 4100044. The Farfetch frame is a model, so the rail uses Bloomingdale\u2019s UAE ghost-mannequin packshot of the same light-grey jacket. Sources: Farfetch item 34030355 and Bloomingdale\u2019s UAE CLO219203135, both checked 21 October 2026.",
+    "specs": {
+      "Style": "4100044",
+      "Colour": "Grey",
+      "Size": "Selector on the page; in-stock sizes not printed in the extract",
+      "Seller": "Farfetch marketplace; boutique not named on the rendered page",
+      "Checked": "21 October 2026",
+      "Picture": "Bloomingdale\u2019s UAE packshot. The Farfetch listing photo showed a model."
+    },
+    "images": {
+      "front": "/cutouts/ghost-4100044.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Retailer packshot of the same model, used because the Farfetch listing frame showed a person. Copyright stays with the retailer. Not licensed for reuse outside this site.",
+      "credit": "Bloomingdale\u2019s UAE ghost-mannequin packshot of the All-Weather Cotton Canvas S.I. Ghost jacket, light grey. Farfetch image 1 was a model and was not used.",
+      "sourceUrl": "https://bloomingdales.ae/stone-island-all-weather-cotton-canvas-s.i.-ghost-jacket-CLO219203135xLIGHTGREY.html",
+      "alphaCoverage": 0.686,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024
+    },
+    "art": "stone-island-ghost-4100044-grey",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 1310,
+      "max": 1470
+    },
+    "condition": "new",
+    "authRoute": "Farfetch listing checked 21 October 2026, Add to Bag at $1,450. The listing photograph is a model, so the rail uses Bloomingdale\u2019s UAE packshot of the same light-grey 4100044. YuNet found no face on that packshot. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "rare_from_range",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 1450,
+      "currency": "USD"
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 298,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-ghost-4100044"
+    ],
+    "tags": [
+      "pilot",
+      "live-2026-10-21"
+    ]
+  },
+  {
+    "id": "h22-palm-72059216",
+    "slug": "moncler-palm-angels-72059216",
+    "title": "Moncler x Palm Angels black jacket",
+    "shortTitle": "Palm Angels jacket",
+    "brand": "Moncler x Palm Angels",
+    "collabId": "col-palm",
+    "category": "outerwear",
+    "story": "This is the black polyester Moncler x Palm Angels jacket listed by Giovanni in Italy on Vestiaire Collective, reference 72059216. On 21 October 2026 the page loaded with Add to Bag and Make an Offer. It showed $1,511 and $1,205. The lower figure is the payable price recorded here. Size is M International. Condition is very good. Vestiaire states that a physical inspection is included before delivery. The seller\u2019s description was empty, so the page does not say whether this is a Simoom, a track top, or another cut from Francesco Ragazzi\u2019s work with Moncler. Palm Angels joined the Genius programme as 8 Moncler Palm Angels, first shown for autumn/winter 2019. This listing has been online since 9 October 2026 and states neither a season nor a run size. The rail photograph is the seller\u2019s flat lay, which shows the jacket alone. Sources: Vestiaire Collective listing 72059216, checked 21 October 2026; Moncler\u2019s Genius guest history for the programme, not a style name on this page.",
+    "specs": {
+      "Reference": "72059216",
+      "Colour": "Black",
+      "Size": "M International",
+      "Seller": "Giovanni, Italy",
+      "Checked": "21 October 2026"
+    },
+    "images": {
+      "front": "/cutouts/palm-72059216.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Seller photograph from the live listing, cut out for the rail. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Giovanni, Italy, Vestiaire listing 72059216, flat lay",
+      "sourceUrl": "https://us.vestiairecollective.com/men-clothing/jackets/moncler-x-palm-angels/black-polyester-moncler-x-palm-angels-jacket-72059216.shtml",
+      "alphaCoverage": 0.66,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024
+    },
+    "art": "moncler-palm-angels-72059216",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 1090,
+      "max": 1230
+    },
+    "condition": "excellent",
+    "authRoute": "Vestiaire listing 72059216 checked 21 October 2026, Add to Bag at $1,205. The rail uses the seller\u2019s flat lay. YuNet found no face on that frame; a worn shot in the same listing was rejected. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "EU",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 1205,
+      "currency": "USD"
+    },
+    "markupPct": 27.8,
+    "estimatedMarginGBP": 252,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-palm-72059216"
+    ],
+    "tags": [
+      "pilot",
+      "live-2026-10-21"
+    ]
+  },
+  {
+    "id": "h22-komae-70832580",
+    "slug": "moncler-1952-komae-70832580",
+    "title": "2 Moncler 1952 Komae reversible down jacket",
+    "shortTitle": "Komae down",
+    "brand": "Moncler Genius",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2021,
+    "story": "Vestiaire listing 70832580 is a black polyamide jacket offered by christine in the United Kingdom. On 21 October 2026 the page had Add to Bag and Make an Offer, size M International, condition never worn, and the two prices $1,317 and $659. The lower figure is the payable price used here. The seller\u2019s description calls it an authentic 2 Moncler 1952 Komae reversible down jacket from the autumn/winter 2021 Moncler Genius collection, and names menswear designer Sergio Zambon. That attribution is the seller\u2019s, not a certificate in hand. Moncler Genius is the house\u2019s guest-designer programme. The listing has been online since 8 September 2026 and still offered checkout when checked. Vestiaire includes a physical inspection before delivery. No serial and no run size appear on the page. The rail uses the seller\u2019s flat lay, a jacket on a hanger with no one in it. Sources: Vestiaire Collective listing 70832580, checked 21 October 2026.",
+    "specs": {
+      "Reference": "70832580",
+      "Colour": "Black",
+      "Size": "M International",
+      "Seller": "christine, United Kingdom",
+      "Season": "AW21, per the seller",
+      "Checked": "21 October 2026"
+    },
+    "images": {
+      "front": "/cutouts/komae-70832580.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Seller photograph from the live listing, cut out for the rail. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "christine, United Kingdom, Vestiaire listing 70832580, flat lay on a hanger",
+      "sourceUrl": "https://us.vestiairecollective.com/men-clothing/jackets/moncler-genius/black-polyamide-moncler-genius-jacket-70832580.shtml",
+      "alphaCoverage": 0.732,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024
+    },
+    "art": "moncler-1952-komae-70832580",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 600,
+      "max": 670
+    },
+    "condition": "new",
+    "authRoute": "Vestiaire listing 70832580 checked 21 October 2026, Add to Bag at $659. The rail uses the seller\u2019s hanging flat lay. YuNet found no face on that frame; a worn shot in the same listing was rejected. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 659,
+      "currency": "USD"
+    },
+    "markupPct": 27.9,
+    "estimatedMarginGBP": 139,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-komae-70832580"
+    ],
+    "tags": [
+      "pilot",
+      "live-2026-10-21"
+    ]
+  },
+  {
+    "id": "h22-kapital-42633272",
+    "slug": "kapital-bandana-patchwork-42633272",
+    "title": "Kapital purple bandana patchwork jacket",
+    "shortTitle": "Bandana jacket",
+    "brand": "Kapital",
+    "collabId": null,
+    "category": "outerwear",
+    "story": "Kapital\u2019s purple bandana patchwork jacket, Vestiaire reference 42633272, was still for sale on 21 October 2026. Seller Olivers Archive, in the United Kingdom, lists it as size 4, which the seller says fits a men\u2019s S or M. Vestiaire\u2019s size field reads S International. Condition is never worn, with tag. The page showed $411.39 and $494. The lower figure is the payable price. Add to Bag and Make an Offer were both present. The seller gives measurements: 22 inches pit to pit, 22 inches from the shoulder to the hem, and 24 inches from the shoulder to the cuff. The listing has been online since 26 March 2024 and had not sold when the page was opened. Kapital, the Okayama label, is known for bandana cotton and reconstructed cloth. This page does not give a season or a run size. The rail uses the seller\u2019s flat lay of the jacket alone. Sources: Vestiaire Collective listing 42633272, checked 21 October 2026.",
+    "specs": {
+      "Reference": "42633272",
+      "Colour": "Purple",
+      "Size": "S International; seller says size 4, fits S/M",
+      "Seller": "Olivers Archive, United Kingdom",
+      "Checked": "21 October 2026"
+    },
+    "images": {
+      "front": "/cutouts/kapital-42633272.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Seller photograph from the live listing, cut out for the rail. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Olivers Archive, United Kingdom, Vestiaire listing 42633272, flat lay",
+      "sourceUrl": "https://us.vestiairecollective.com/men-clothing/jackets/kapital/purple-cotton-kapital-jacket-42633272.shtml",
+      "alphaCoverage": 0.734,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024
+    },
+    "art": "kapital-bandana-patchwork-42633272",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 370,
+      "max": 420
+    },
+    "condition": "new",
+    "authRoute": "Vestiaire listing 42633272 checked 21 October 2026, Add to Bag at $411.39. The rail uses the seller\u2019s flat lay. YuNet found no face on that frame. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 411.39,
+      "currency": "USD"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 85,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-kapital-42633272"
+    ],
+    "tags": [
+      "pilot",
+      "live-2026-10-21"
+    ]
+  },
+  {
+    "id": "h22-supreme-si-69748871",
+    "slug": "supreme-stone-island-69748871",
+    "title": "Supreme x Stone Island black synthetic jacket",
+    "shortTitle": "Supreme x Stone Island",
+    "brand": "Supreme x Stone Island",
+    "collabId": "col-supreme-si",
+    "category": "outerwear",
+    "story": "Supreme x Stone Island black synthetic jacket, Vestiaire reference 69748871, listed by GustavsArchive in the Netherlands. On 21 October 2026 the page loaded with Add to Bag and Make an Offer at $548, size S International, condition good. Vestiaire states that a physical inspection is included before delivery. The seller is a professional account, profile 33772930, and the listing has been online since 9 August 2026. The description field was empty, so this record does not name a season, a jacket style, or a run size. Supreme and Stone Island are a known streetwear pairing; that is context for the two brands on the label, not a date this page never gave. The rail photograph is the seller\u2019s flat lay, the jacket on its own against a white ground. The piece replaces a mainline Sacai wool jacket that was not a collaboration. Sources: Vestiaire Collective listing 69748871, checked 21 October 2026.",
+    "specs": {
+      "Reference": "69748871",
+      "Colour": "Black",
+      "Size": "S International",
+      "Seller": "GustavsArchive, Netherlands",
+      "Condition": "Good",
+      "Checked": "21 October 2026"
+    },
+    "images": {
+      "front": "/cutouts/supreme-si-69748871.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Seller photograph from the live listing, cut out for the rail. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "GustavsArchive, Netherlands, Vestiaire listing 69748871, flat lay",
+      "sourceUrl": "https://us.vestiairecollective.com/men-clothing/jackets/supreme-x-stone-island/black-synthetic-supreme-x-stone-island-jacket-69748871.shtml",
+      "alphaCoverage": 0.761,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024
+    },
+    "art": "supreme-stone-island-69748871",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 495,
+      "max": 560
+    },
+    "condition": "good",
+    "authRoute": "Vestiaire listing 69748871 checked 21 October 2026, Add to Bag at $548. The rail uses the seller\u2019s flat lay. YuNet found no face on that frame. The garment is not in hand. It replaces a mainline Sacai jacket that was not a collaboration.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "EU",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 548,
+      "currency": "USD"
+    },
+    "markupPct": 27.8,
+    "estimatedMarginGBP": 115,
+    "demandSignal": 0.62,
+    "sourceListingIds": [
+      "src-h22-supreme-si-69748871"
+    ],
+    "tags": [
+      "pilot",
+      "live-2026-10-21"
+    ]
+  }
+]

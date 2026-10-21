@@ -1,0 +1,294 @@
+@import "tailwindcss";
+@import "@fontsource-variable/instrument-sans";
+@import "@fontsource/playfair-display/latin-500.css";
+@import "@fontsource/playfair-display/latin-500-italic.css";
+@import "@fontsource/dm-mono/latin-500.css";
+
+/* Wardrobe Vaulted tokens, verbatim from src/styles/wardrobe/styles.css
+   and the landing wash / dot grid in landing-page.css. */
+@theme {
+  --font-sans: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-script: "Playfair Display", Georgia, serif;
+  --color-paper: #ece5da;
+  --color-ink: #3a2c20;
+  --color-ink-hover: #4b392a;
+  --color-muted: #66625d;
+  --color-line: #cfc8bc;
+  --color-accent: #6e302e;
+  --color-body: #3a2c20;
+  --color-vault-lime: #e0a955;
+  --color-vault-clay: #b98a5e;
+}
+
+:root {
+  --paper: #ece5da;
+  --ink: #3a2c20;
+  --ink-hover: #4b392a;
+  --muted: #66625d;
+  --line: #cfc8bc;
+  --accent: #6e302e;
+  --paper-wash:
+    radial-gradient(120% 55% at 50% -12%, rgba(224, 169, 85, 0.42), rgba(224, 169, 85, 0) 62%),
+    linear-gradient(180deg, #f2ece2 0%, var(--paper) 42%, #e3d9cb 100%);
+  --vault-ink: #3a2c20;
+  --vault-paper: #ece5da;
+  --vault-lime: #e0a955;
+  --vault-clay: #b98a5e;
+  font-synthesis: none;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--paper-wash);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #f7f4ee;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+html[data-night="1"] {
+  --paper: #1c1714;
+  --ink: #ece5da;
+  --ink-hover: #f2ece2;
+  --muted: #b7aea3;
+  --line: #3a322c;
+  --paper-wash: linear-gradient(180deg, #241c17 0%, #1c1714 42%, #14110e 100%);
+  --color-paper: #1c1714;
+  --color-ink: #ece5da;
+  --color-body: #ece5da;
+  --color-muted: #b7aea3;
+  --color-line: #3a322c;
+  color-scheme: dark;
+}
+
+.dotgrid {
+  background: transparent;
+  position: relative;
+}
+
+.dotgrid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(58, 44, 32, 0.18) 0.65px, transparent 0.65px);
+  background-size: 5px 5px;
+  animation: dotfade 200ms ease both;
+}
+
+html[data-night="1"] .dotgrid::before,
+[data-vault="open"] .dotgrid::before {
+  background-image: radial-gradient(circle, rgba(224, 196, 138, 0.16) 1.15px, transparent 1.35px);
+}
+
+[data-vault="open"] {
+  --paper: #1a140f;
+  --ink: #e0a955;
+  --muted: #cbb89a;
+  --line: #3a3228;
+  --color-paper: #1a140f;
+  --color-ink: #e0a955;
+  --color-body: #f2ece2;
+  --color-muted: #cbb89a;
+  --color-line: #3a3228;
+  background-color: #1a140f;
+  color: var(--color-body);
+}
+
+@keyframes dotfade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.rail-draw {
+  transform-origin: center center;
+  animation: railGrow 400ms cubic-bezier(0.22, 0.8, 0.22, 1) 200ms both;
+}
+
+@keyframes railGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.piece-drop {
+  animation-name: dropHang;
+  animation-duration: 460ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.22, 1);
+  animation-fill-mode: backwards;
+  animation-delay: var(--drop-delay, 600ms);
+}
+
+@keyframes dropHang {
+  0% { transform: translateY(-32px); opacity: 0; }
+  55% { opacity: 1; }
+  78% { transform: translateY(4px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.marquee {
+  height: 32px;
+  background: var(--ink);
+  color: #f2ece2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+[data-vault="open"] .marquee {
+  color: #1a1408;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation-name: marquee;
+  animation-duration: 46s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 1.1s;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.hanger-swing.is-swinging {
+  animation: railSwing 720ms ease-out;
+}
+
+@keyframes railSwing {
+  0% { transform: rotate(0deg); }
+  22% { transform: rotate(2.1deg); }
+  48% { transform: rotate(-1.5deg); }
+  72% { transform: rotate(0.7deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.empty-swing {
+  transform-origin: 50% 0;
+  animation: emptySwing 2.4s ease-in-out infinite;
+}
+
+@keyframes emptySwing {
+  0%, 100% { transform: rotate(-2.4deg); }
+  50% { transform: rotate(2.4deg); }
+}
+
+.js-price,
+.js-price * {
+  cursor: url("/cursors/tag-gun.svg") 2 2, crosshair;
+}
+
+.nav-link {
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-body);
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-ink);
+  padding: 6px 14px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: transparent;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.pill-btn:hover {
+  background: var(--color-ink);
+  color: #f7f4ee;
+}
+
+[data-vault="open"] .pill-btn:hover {
+  color: #1a1408;
+}
+
+.display,
+.font-script {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.piece-shadow {
+  filter: drop-shadow(0 18px 18px rgba(39, 31, 23, 0.16));
+}
+
+.piece-shadow.is-forward {
+  filter: drop-shadow(0 24px 23px rgba(39, 31, 23, 0.21));
+}
+
+.field {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 35%, transparent);
+  background: transparent;
+  color: var(--color-body);
+  padding: 8px 10px;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  width: 100%;
+}
+
+.field:focus {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .piece-drop,
+  .rail-draw,
+  .dotgrid::before,
+  .hanger-swing.is-swinging,
+  .empty-swing {
+    animation: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,530 @@
+[
+  {
+    "id": "src-trailgrip",
+    "itemId": "h22-trailgrip",
+    "platform": "jolicloset",
+    "url": "https://www.jolicloset.com/en/designers-women/moncler/womens-shoes/sneakers/baskets-kaki-trailgrip-3d--2212043",
+    "priceShown": {
+      "amount": 276,
+      "currency": "EUR"
+    },
+    "condition": "Never worn, no tags, dust bag, est. EU 38",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Page fetched 21 Oct 2026, in stock",
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-palm",
+    "itemId": "h22-palm-puffer",
+    "platform": "grailed",
+    "url": "https://www.grailed.com/listings/93299455-moncler-genius-x-palm-angels-moncler-genius-x-palm-angels-puffer-jacket",
+    "priceShown": {
+      "amount": 1050,
+      "currency": "USD"
+    },
+    "condition": "Gently used, Grailed-verified",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "note": "Page fetched 21 Oct 2026",
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Grailed. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-palace",
+    "itemId": "h22-palace-hood",
+    "platform": "grailed",
+    "url": "https://www.grailed.com/listings/82970994-palace-palace-x-oakley-logo-hoodie-size-xl",
+    "priceShown": {
+      "amount": 275,
+      "currency": "USD"
+    },
+    "condition": "New, sealed",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Page fetched 21 Oct 2026",
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Grailed. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-laptop",
+    "itemId": "h22-bape-laptop",
+    "platform": "ebay",
+    "url": "https://www.ebay.co.uk/itm/376659464010",
+    "priceShown": {
+      "amount": 1355,
+      "currency": "USD"
+    },
+    "condition": "Used, JP seller, free returns",
+    "seenAt": "2026-10-06T00:00:00.000Z",
+    "sold": false,
+    "note": "Search index showed the listing live, last updated 6 Oct 2026. Direct fetch was bot-blocked. Or best offer. Seed approx \u00a31,020.64.",
+    "licence": "No listing photograph in the seed. Source URL kept. Do not scrape a replacement photo for commercial reuse."
+  },
+  {
+    "id": "src-speedy-310",
+    "itemId": "h22-speedmaster-310",
+    "platform": "ebay",
+    "url": "https://www.ebay.co.uk/itm/126546758212",
+    "priceShown": {
+      "amount": 6650,
+      "currency": "USD"
+    },
+    "condition": "New with box and papers (2026)",
+    "seenAt": "2026-09-29T00:00:00.000Z",
+    "sold": false,
+    "note": "Search index showed the listing live, updated 29 Sep 2026. Direct fetch was bot-blocked. Seed approx \u00a35,032.54.",
+    "licence": "No listing photograph in the seed. Source URL kept."
+  },
+  {
+    "id": "src-speedy-3570",
+    "itemId": "h22-speedmaster-3570",
+    "platform": "ebay",
+    "url": "https://www.ebay.co.uk/itm/227501368865",
+    "priceShown": {
+      "amount": 3576.7,
+      "currency": "GBP"
+    },
+    "condition": "Pre-owned, excellent, serviced July 2026",
+    "seenAt": "2026-09-25T00:00:00.000Z",
+    "sold": true,
+    "note": "Sold 25 Sep 2026 for \u00a33,576.70. Kept as a comparable, not a live listing.",
+    "licence": "No listing photograph in the seed. Source URL kept."
+  },
+  {
+    "id": "src-sub",
+    "itemId": "h22-submariner",
+    "platform": "ebay",
+    "url": "https://www.ebay.co.uk/itm/256617855271",
+    "priceShown": {
+      "amount": 10950,
+      "currency": "GBP"
+    },
+    "condition": "Pre-owned, full set, 14-day returns",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Search index only. Direct fetch was bot-blocked.",
+    "licence": "No listing photograph in the seed. Source URL kept."
+  },
+  {
+    "id": "src-lv-ice",
+    "itemId": "h22-lv-ice",
+    "platform": "retail",
+    "url": "https://www.louisvuitton.cn/zhs-cn/products/snowboard-lv-ice-nvprod4750030v/R95542",
+    "priceShown": {
+      "amount": 66000,
+      "currency": "CNY"
+    },
+    "condition": "New (retail reference)",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Retail reference page returned 200 on 21 Oct 2026. No resale listing pinned. \u00a566,000 is the retail figure, not a secondary ask.",
+    "licence": "No product photograph stored. Retail URL kept. Louis Vuitton imagery is not reproduced."
+  },
+  {
+    "id": "src-si-dior",
+    "itemId": "h22-si-dior",
+    "platform": "other",
+    "url": "https://www.stoneisland.com/en-gb/",
+    "priceShown": {
+      "amount": 2100,
+      "currency": "GBP"
+    },
+    "condition": "Desk comp, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk comp for the 2024 Dior and Stone Island technical jacket. No live marketplace listing is pinned. The figure is what the desk would pay, not a Stone Island retail price.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+  },
+  {
+    "id": "src-si-ghost",
+    "itemId": "h22-si-ghost",
+    "platform": "other",
+    "url": "https://www.stoneisland.com/en-gb/",
+    "priceShown": {
+      "amount": 1640,
+      "currency": "GBP"
+    },
+    "condition": "Held in the vault",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk cost for the Ghost jacket we hold. No marketplace listing is attached. Stone Island imagery is not reproduced.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+  },
+  {
+    "id": "src-lv-skis",
+    "itemId": "h22-lv-skis",
+    "platform": "other",
+    "url": "https://www.louisvuitton.com",
+    "priceShown": {
+      "amount": 4800,
+      "currency": "GBP"
+    },
+    "condition": "Desk comp, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk comp for Louis Vuitton monogram skis. No resale listing pinned. Louis Vuitton imagery is not reproduced.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+  },
+  {
+    "id": "src-daytona",
+    "itemId": "h22-daytona-lemans",
+    "platform": "other",
+    "url": "https://www.rolex.com/watches/cosmograph-daytona",
+    "priceShown": {
+      "amount": 42000,
+      "currency": "GBP"
+    },
+    "condition": "Desk target, reference 126529LN",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk bid for a 126529LN. No live listing pinned. Not a Rolex retail price.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+  },
+  {
+    "id": "src-lv-af1",
+    "itemId": "h22-lv-af1",
+    "platform": "other",
+    "url": "https://www.nike.com/gb/",
+    "priceShown": {
+      "amount": 3200,
+      "currency": "GBP"
+    },
+    "condition": "Desk comp, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk comp for a Louis Vuitton x Nike Air Force 1. No live listing pinned. Nike and Louis Vuitton imagery is not reproduced.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+  },
+  {
+    "id": "src-ap-travis",
+    "itemId": "h22-ap-travis",
+    "platform": "other",
+    "url": "https://www.audemarspiguet.com/com/en/home.html",
+    "priceShown": {
+      "amount": 165000,
+      "currency": "GBP"
+    },
+    "condition": "Desk comp, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk bid for the Audemars Piguet x Travis Scott Royal Oak. No live listing pinned. Not an Audemars Piguet price. The figure is high because the collaboration is scarce, not because the rail has a price floor.",
+    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Audemars Piguet imagery is not reproduced."
+  },
+  {
+    "id": "src-premoon",
+    "itemId": "h22-premoon",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Vintage_Omega_Speedmaster_%22Pre-moon%22.jpg",
+    "priceShown": {
+      "amount": 4200,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Guide is a desk composite for a pre-moon Speedmaster. The Commons file is the photograph, not a marketplace listing.",
+    "licence": "Shane Lin, CC BY-SA 2.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-pvc-down",
+    "itemId": "h22-pvc-down",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Men%27s_black_PVC_down_jacket_02.jpg",
+    "priceShown": {
+      "amount": 160,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite for a black PVC down jacket. Not a Stone Island or Moncler listing.",
+    "licence": "Ralph Schulz, CC BY-SA 3.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-dress-shirt",
+    "itemId": "h22-dress-shirt",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Arnaud_Rousseau_Dress_Shirt_with_a_Modern_Spread_Collar.jpg",
+    "priceShown": {
+      "amount": 80,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 3.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-jeans",
+    "itemId": "h22-jeans",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Stretch_Jeans_from_AKINGS.jpg",
+    "priceShown": {
+      "amount": 70,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 4.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-pants",
+    "itemId": "h22-pants",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Trainingpants.jpg",
+    "priceShown": {
+      "amount": 40,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 3.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-jersey",
+    "itemId": "h22-jersey",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Jersei-coll-alt.jpg",
+    "priceShown": {
+      "amount": 45,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 3.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-striped",
+    "itemId": "h22-striped",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Black_and_white_striped_sweater.jpg",
+    "priceShown": {
+      "amount": 95,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 4.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-hoodie",
+    "itemId": "h22-hoodie",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Hoodie_m7agar.jpg",
+    "priceShown": {
+      "amount": 70,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-cricket",
+    "itemId": "h22-cricket",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Cable_knit_cricket_pullover_jersey_at_Epping_Foresters_Cricket_Club.jpg",
+    "priceShown": {
+      "amount": 120,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 4.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-bow",
+    "itemId": "h22-bow",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Bow-knot_sweater_Schiaparelli.jpg",
+    "priceShown": {
+      "amount": 160,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "Public domain, via Wikimedia Commons."
+  },
+  {
+    "id": "src-dip",
+    "itemId": "h22-dip",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Hoodie_with_a_DIP-8_integrated_circuit_design.jpg",
+    "priceShown": {
+      "amount": 85,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY-SA 4.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-polo",
+    "itemId": "h22-polo",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Polo_Ralph_Lauren_down_jacket_with_Aztec_style_print.jpg",
+    "priceShown": {
+      "amount": 150,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC BY 2.0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-gigli",
+    "itemId": "h22-gigli",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Romeo_Gigli_knit_dress_and_shrug,_1990s_01.jpg",
+    "priceShown": {
+      "amount": 200,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "CC0, via Wikimedia Commons."
+  },
+  {
+    "id": "src-frock",
+    "itemId": "h22-frock",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Man%27s_silk_and_wool_twill_frock_coat_c._1820.jpg",
+    "priceShown": {
+      "amount": 220,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "Public domain, via Wikimedia Commons."
+  },
+  {
+    "id": "src-suit",
+    "itemId": "h22-suit",
+    "platform": "other",
+    "url": "https://commons.wikimedia.org/wiki/File:Man%27s_two-piece_lounge_suit_1875-1880_(cut).jpg",
+    "priceShown": {
+      "amount": 180,
+      "currency": "GBP"
+    },
+    "condition": "Desk composite, not a live ask",
+    "seenAt": "2026-10-21T00:00:00.000Z",
+    "sold": false,
+    "note": "Desk composite. The Commons file is the photograph.",
+    "licence": "Public domain, via Wikimedia Commons."
+  },
+  {
+    "id": "src-h22-ghost-4100044",
+    "itemId": "h22-ghost-4100044",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/shopping/men/stone-island-4100044-all-weather-cotton-canvassi-ghost-jacket-item-34030355.aspx",
+    "priceShown": {
+      "amount": 1450,
+      "currency": "USD"
+    },
+    "condition": "New, Farfetch. Size selector present; in-stock sizes were not in the rendered text. Seller boutique not named.",
+    "seenAt": "2026-10-21T13:30:00.000Z",
+    "sold": false,
+    "note": "Fetched 21 Oct 2026, HTTP 200, Add to Bag, delivery 26 Oct\u20132 Nov 2026, $1,450 duties included. Image URL on the page: https://cdn-images.farfetch-contents.com/34/03/03/55/34030355_65156346_1000.jpg. Not hung until that photo clears the person check. Seller: Farfetch marketplace, boutique not named in the rendered text.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-palm-72059216",
+    "itemId": "h22-palm-72059216",
+    "platform": "vestiaire",
+    "url": "https://us.vestiairecollective.com/men-clothing/jackets/moncler-x-palm-angels/black-polyester-moncler-x-palm-angels-jacket-72059216.shtml",
+    "priceShown": {
+      "amount": 1205,
+      "currency": "USD"
+    },
+    "condition": "Very good, size M International. Page also showed $1,511.",
+    "seenAt": "2026-10-21T13:30:00.000Z",
+    "sold": false,
+    "note": "Fetched 21 Oct 2026. Add to Bag and Make an Offer. Online since 2026-10-09. Prices on the page: $1,511 and $1,205. Payable price recorded as the lower figure. Description field empty, so the style name is not claimed. Vestiaire physical inspection included. Seller feedback percentage was not on the page. Seller: Giovanni, Italy, individual seller, profile 33619019.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-komae-70832580",
+    "itemId": "h22-komae-70832580",
+    "platform": "vestiaire",
+    "url": "https://us.vestiairecollective.com/men-clothing/jackets/moncler-genius/black-polyamide-moncler-genius-jacket-70832580.shtml",
+    "priceShown": {
+      "amount": 659,
+      "currency": "USD"
+    },
+    "condition": "Never worn, size M International. Page also showed $1,317.",
+    "seenAt": "2026-10-21T13:30:00.000Z",
+    "sold": false,
+    "note": "Fetched 21 Oct 2026. Add to Bag and Make an Offer. Online since 2026-09-08. Prices on the page: $1,317 and $659. Payable price recorded as the lower figure. Seller describes it as 2 Moncler 1952 Komae reversible down, AW21, Sergio Zambon. Vestiaire physical inspection included. No feedback percentage on the page. Seller: christine, United Kingdom, individual seller, profile 21574452.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-kapital-42633272",
+    "itemId": "h22-kapital-42633272",
+    "platform": "vestiaire",
+    "url": "https://us.vestiairecollective.com/men-clothing/jackets/kapital/purple-cotton-kapital-jacket-42633272.shtml",
+    "priceShown": {
+      "amount": 411.39,
+      "currency": "USD"
+    },
+    "condition": "Never worn, with tag. Vestiaire size S. Seller size 4, fits S/M. Page also showed $494.",
+    "seenAt": "2026-10-21T13:30:00.000Z",
+    "sold": false,
+    "note": "Fetched 21 Oct 2026. Add to Bag and Make an Offer. Online since 2024-03-26 and still buyable. Prices on the page: $411.39 and $494. Payable price recorded as the lower figure. Measurements from the seller. Vestiaire physical inspection included. No feedback percentage on the page. Seller: Olivers Archive, United Kingdom, individual seller, profile 4884898.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-supreme-si-69748871",
+    "itemId": "h22-supreme-si-69748871",
+    "platform": "vestiaire",
+    "url": "https://us.vestiairecollective.com/men-clothing/jackets/supreme-x-stone-island/black-synthetic-supreme-x-stone-island-jacket-69748871.shtml",
+    "priceShown": {
+      "amount": 548,
+      "currency": "USD"
+    },
+    "condition": "good",
+    "seenAt": "2026-10-21T13:40:00.000Z",
+    "sold": false,
+    "note": "Add to Bag and Make an Offer on 21 October 2026. Single price shown, $548. Size S International. Seller GustavsArchive, Netherlands, professional, profile 33772930. Online since 9 August 2026. Description empty. Vestiaire physical inspection stated. Flat lay used; worn frames were not the chosen photograph.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Listing facts recorded from the live page. The photograph is the seller\u2019s."
+  }
+]
