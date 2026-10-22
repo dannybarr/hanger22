@@ -1,47 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HOUSES, type House } from "@/lib/brands";
-
-function Cubby({ house }: { house: House }) {
-  return (
-    <Link href={`/brands/${house.slug}`} className="brand-cubby" aria-label={house.name}>
-      <Image src={`/brands/${house.file}`} alt="" width={240} height={120} unoptimized />
-    </Link>
-  );
-}
-
-function Wall({ side, houses }: { side: "left" | "right"; houses: House[] }) {
-  return (
-    <div className={`brand-wall brand-wall-${side}`}>
-      {houses.map((house) => (
-        <Cubby key={house.slug} house={house} />
-      ))}
-    </div>
-  );
-}
+import { getHouse } from "@/lib/brands";
+import { CUBBIES } from "@/lib/cubbies";
 
 export function BrandWall() {
-  const left = HOUSES.slice(0, 16);
-  const right = HOUSES.slice(16);
   return (
-    <>
-      <div className="brand-corridor" aria-hidden="true">
-        <div className="brand-ceiling">
-          {Array.from({ length: 5 }, (_, index) => (
-            <span key={index} className="brand-light" />
-          ))}
-        </div>
-        <div className="brand-steel brand-steel-l" />
-        <div className="brand-steel brand-steel-r" />
-        <div className="brand-marble">
-          <span className="brand-marble-face" />
-        </div>
-        <div className="brand-hall-floor" />
+    <div className="wall-frame">
+      <div className="wall-stage">
+        <Image
+          src="/brands/wall.png"
+          alt=""
+          fill
+          priority
+          quality={92}
+          sizes="100vw"
+          className="object-cover"
+        />
+        {CUBBIES.map((cubby) => {
+          if (!cubby.slug) return null;
+          const house = getHouse(cubby.slug);
+          if (!house) return null;
+          return (
+            <Link
+              key={cubby.id}
+              href={`/brands/${house.slug}`}
+              className="trophy"
+              style={{ left: `${cubby.x}%`, top: `${cubby.y}%`, width: `${cubby.w}%`, height: `${cubby.h}%` }}
+              aria-label={house.name}
+            >
+              <Image src={`/brands/${house.file}`} alt="" width={160} height={80} unoptimized />
+            </Link>
+          );
+        })}
       </div>
-      <div className="brand-lintel" aria-hidden="true" />
-      <Wall side="left" houses={left} />
-      <Wall side="right" houses={right} />
-      <div className="brand-forefloor" aria-hidden="true" />
-    </>
+    </div>
   );
 }

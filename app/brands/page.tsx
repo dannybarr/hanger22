@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function BrandsPage() {
   return (
-    <main id="content" className="brand-room">
-      <header className="brand-nav">
+    <main id="content" className="wall-room">
+      <header className="wall-nav">
         <nav aria-label="Primary" className="flex gap-5">
           <Link href="/pieces" className="nav-link">
             Pieces
