@@ -280,13 +280,286 @@ html[data-night="1"] .dotgrid::before,
   outline-offset: 1px;
 }
 
+.brand-room {
+  position: relative;
+  height: 100dvh;
+  min-height: 640px;
+  overflow: hidden;
+  background: #c98445;
+  perspective: 1600px;
+  perspective-origin: 50% 46%;
+}
+
+.brand-nav {
+  position: absolute;
+  z-index: 6;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.4vh 4vw 0;
+  pointer-events: none;
+}
+
+.brand-nav a {
+  pointer-events: auto;
+  color: #3a2c20;
+  text-shadow: 0 1px 0 rgba(255, 236, 210, 0.55);
+}
+
+.brand-corridor {
+  position: absolute;
+  z-index: 0;
+  top: 8vh;
+  bottom: 18%;
+  left: 31%;
+  right: 31%;
+  overflow: hidden;
+  background: #efe7da;
+}
+
+.brand-ceiling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 8% 12%;
+  background: linear-gradient(180deg, #f8f4ee 0%, #e6ddd0 100%);
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%);
+}
+
+.brand-light {
+  width: 7%;
+  background: linear-gradient(180deg, #fffef8, #ffe7b0);
+  box-shadow: 0 0 12px 3px rgba(255, 236, 180, 0.95);
+}
+
+.brand-steel {
+  position: absolute;
+  top: 38%;
+  width: 18%;
+  height: 32%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 26%),
+    repeating-linear-gradient(90deg, #8d949b 0 1px, #d8dcE0 2px, #aeb4ba 8px, #7c838a 9px);
+  box-shadow: inset 0 0 12px rgba(30, 34, 38, 0.2);
+}
+
+.brand-steel-l { left: 3%; }
+.brand-steel-r { right: 3%; }
+
+.brand-marble {
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  right: 28%;
+  height: 20%;
+  background:
+    linear-gradient(112deg, transparent 0 36%, rgba(150, 150, 150, 0.5) 37.4%, transparent 40%),
+    linear-gradient(68deg, transparent 0 60%, rgba(130, 130, 130, 0.38) 61.2%, transparent 64%),
+    radial-gradient(ellipse at 30% 24%, rgba(255, 255, 255, 0.8), transparent 48%),
+    linear-gradient(180deg, #fbf8f4, #e4dcd2);
+  box-shadow: 0 16px 22px rgba(48, 36, 24, 0.18);
+}
+
+.brand-marble-face {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -22%;
+  height: 24%;
+  background:
+    linear-gradient(108deg, transparent 0 40%, rgba(150, 150, 150, 0.28) 41%, transparent 43%),
+    linear-gradient(180deg, #ddd6cc, #c9c0b4);
+}
+
+.brand-hall-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 26%;
+  background: linear-gradient(180deg, #f7f3ec, #e8e1d4);
+}
+
+.brand-lintel {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 24%;
+  right: 24%;
+  height: 8vh;
+  background:
+    linear-gradient(180deg, #efc892 0%, #d7a15c 38%, #b6793c 100%);
+  box-shadow:
+    inset 0 -8px 12px rgba(90, 46, 14, 0.18),
+    0 10px 16px rgba(70, 36, 10, 0.18);
+}
+
+.brand-wall {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 16%;
+  display: grid;
+  width: 31%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 11px;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, #f0d0a0 0%, #e2b56e 18%, #c4894a 100%);
+  box-shadow: inset 0 0 0 2px rgba(120, 68, 24, 0.28);
+}
+
+.brand-wall-left {
+  left: 0;
+  transform-origin: left center;
+  transform: rotateY(11deg);
+  border-bottom-left-radius: 40% 8%;
+}
+
+.brand-wall-right {
+  right: 0;
+  transform-origin: right center;
+  transform: rotateY(-11deg);
+  border-bottom-right-radius: 40% 8%;
+}
+
+.brand-cubby {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(255, 214, 150, 0.95) 0%, rgba(255, 176, 90, 0.28) 24%, transparent 52%),
+    linear-gradient(180deg, #a86834 0%, #7c4c26 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(62, 30, 8, 0.55),
+    inset 0 16px 18px rgba(255, 196, 120, 0.28),
+    inset 0 -18px 22px rgba(42, 18, 6, 0.4);
+}
+
+.brand-cubby::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7%;
+  right: 7%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffe6bc 18%, #fff8ea 50%, #ffe6bc 82%, transparent);
+  box-shadow:
+    0 8px 12px 1px rgba(255, 170, 64, 0.62),
+    0 1px 4px rgba(255, 226, 170, 0.9);
+  pointer-events: none;
+}
+
+.brand-cubby::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 42%;
+  background: linear-gradient(180deg, rgba(255, 198, 120, 0.38), transparent);
+  pointer-events: none;
+}
+
+.brand-cubby img {
+  position: relative;
+  z-index: 1;
+  width: 76%;
+  height: 54%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 6px rgba(48, 22, 6, 0.38));
+  transition: transform 460ms cubic-bezier(0.22, 0.8, 0.22, 1), filter 460ms ease;
+}
+
+.brand-cubby:hover img,
+.brand-cubby:focus-visible img {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 14px 10px rgba(40, 18, 6, 0.48));
+}
+
+.brand-forefloor {
+  position: absolute;
+  z-index: 4;
+  right: -18%;
+  bottom: -30%;
+  left: -18%;
+  height: 48%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 28%, #f8f4ee 0%, #f3eee6 58%, #e7dccb 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .brand-room {
+    display: flex;
+    height: auto;
+    min-height: 100dvh;
+    flex-direction: column;
+    perspective: none;
+    overflow: visible;
+    background: #c98445;
+  }
+
+  .brand-nav {
+    position: relative;
+    padding: 18px 22px 8px;
+    background: #e7c392;
+  }
+
+  .brand-corridor {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    order: 2;
+    width: 100%;
+    height: 280px;
+  }
+
+  .brand-wall {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+    grid-template-rows: repeat(4, 88px);
+    border-radius: 0;
+  }
+
+  .brand-wall-left,
+  .brand-wall-right {
+    right: auto;
+    left: auto;
+    padding: 10px;
+  }
+
+  .brand-wall-left { order: 1; }
+  .brand-wall-right { order: 3; }
+
+  .brand-lintel,
+  .brand-forefloor {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
   .piece-drop,
   .rail-draw,
   .dotgrid::before,
   .hanger-swing.is-swinging,
-  .empty-swing {
+  .empty-swing,
+  .brand-cubby img {
     animation: none !important;
     transform: none !important;
   }

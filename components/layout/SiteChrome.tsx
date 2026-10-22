@@ -8,6 +8,9 @@ export function SiteHeader() {
           <Link href="/pieces" className="nav-link">
             Pieces
           </Link>
+          <Link href="/brands" className="nav-link">
+            Brands
+          </Link>
         </nav>
         <Link href="/" className="text-center leading-none text-ink">
           <span className="block font-script text-[26px] leading-none">Hanger</span>
@@ -30,6 +33,7 @@ export function SiteFooter() {
         <p className="font-script text-[28px] text-ink">Hanger 22</p>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
           <Link href="/pieces">Pieces</Link>
+          <Link href="/brands">Brands</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/legal/terms">Terms</Link>
           <Link href="/legal/privacy">Privacy</Link>

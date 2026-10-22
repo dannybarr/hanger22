@@ -54,6 +54,15 @@ export function Storefront({ items }: { items: PublicItem[] }) {
           </li>
         ))}
       </ul>
+      <div className="mt-28 flex flex-col gap-6 border-t border-line pt-16 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-[11px] tracking-[0.16em] text-ink uppercase">The houses</p>
+          <h2 className="display mt-3 text-4xl text-ink sm:text-6xl">Brand story</h2>
+        </div>
+        <Link href="/brands" className="nav-link">
+          The wall
+        </Link>
+      </div>
     </section>
   );
 }

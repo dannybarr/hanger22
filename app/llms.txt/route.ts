@@ -17,6 +17,10 @@ ${origin}/api/catalog
 
 ${pieces}
 
+## Houses
+
+${origin}/brands
+
 ## Policies
 
 - Terms: ${origin}/legal/terms

@@ -153,9 +153,14 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
     >
       <header className={`absolute inset-x-0 top-[1.4vh] z-20 px-[4vw] transition-opacity duration-300 ${focused ? "pointer-events-none opacity-0" : "opacity-100"}`}>
         <nav aria-label="Primary" className="flex items-start justify-between">
-          <Link href="/pieces" className="nav-link">
-            Pieces
-          </Link>
+          <span className="flex gap-5">
+            <Link href="/pieces" className="nav-link">
+              Pieces
+            </Link>
+            <Link href="/brands" className="nav-link">
+              Brands
+            </Link>
+          </span>
           <Link href="/contact" className="nav-link">
             Contact
           </Link>
