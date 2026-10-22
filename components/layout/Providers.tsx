@@ -3,7 +3,7 @@
 import Lenis from "lenis";
 import { MotionConfig } from "motion/react";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { isRailClosed, nightRequested } from "@/lib/night";
 
 declare global {
@@ -40,16 +40,9 @@ function SmoothScroll() {
 
 function NightWatch() {
   const pathname = usePathname();
-  const [night, setNight] = useState(false);
   useEffect(() => {
     const on = nightRequested(window.location.search) || isRailClosed();
-    setNight(on);
     document.documentElement.dataset.night = on ? "1" : "0";
   }, [pathname]);
-  if (!night || pathname === "/") return null;
-  return (
-    <p className="border-b border-line bg-paper px-6 py-2 text-center text-[12px] text-ink">
-      The rail’s still open for requests.
-    </p>
-  );
+  return null;
 }

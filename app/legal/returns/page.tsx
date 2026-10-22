@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Returns" };
+export const metadata: Metadata = { title: "Shipping and returns" };
 
 export default function ReturnsPage() {
   return (
     <>
-      <h1 className="display text-5xl text-ink">Returns</h1>
-      <p>The Trailgrip in the vault ships from the desk. The five jackets on the rail are sourced to order, so a return follows the listing we buy from, or the terms agreed before anyone pays.</p>
-      <p>A sold comparable is not for sale and cannot be returned. If a piece needs a specialist to authenticate it, that check happens before it ships, and we agree what happens if they disagree with the listing.</p>
+      <h1 className="display text-5xl text-ink">Shipping and returns</h1>
+      <p>Shipping and returns follow the marketplace listing linked on the piece. Write to the desk if something arrives not as described.</p>
     </>
   );
 }

@@ -8,9 +8,7 @@ import { ShoulderWire } from "@/components/rail/ShoulderWire";
 import { EASE } from "@/lib/motion";
 import { formatRange } from "@/lib/money";
 import { cutLabel, marketNote } from "@/lib/cut";
-import { AvailabilityBadge } from "@/components/piece/AvailabilityBadge";
 import type { PublicItem } from "@/lib/schema";
-import { PLACEHOLDER_NOTE } from "@/lib/site";
 
 type Box = { left: number; top: number; width: number; height: number };
 
@@ -34,7 +32,6 @@ export function RailFocus({
   vault,
   onClose,
   onIndex,
-  onRequest,
 }: {
   items: PublicItem[];
   index: number;
@@ -42,7 +39,6 @@ export function RailFocus({
   vault: boolean;
   onClose: () => void;
   onIndex: (index: number) => void;
-  onRequest: (item: PublicItem) => void;
 }) {
   const item = items[index];
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -240,13 +236,9 @@ export function RailFocus({
           {item.shortTitle}
         </h2>
         <p className="sr-only">{cutLabel(item.cutReason)}. {marketNote(item.sourceMarket)}</p>
-        <AvailabilityBadge availability={item.availability} />
-        {item.images.placeholder ? (
-          <p className="text-[11px] tracking-[0.04em] text-muted">{PLACEHOLDER_NOTE}</p>
-        ) : null}
-        <button type="button" className="pill-btn" onClick={() => onRequest(item)}>
-          Request this piece
-        </button>
+        <a href={`/p/${item.slug}`} className="nav-link">
+          View the piece
+        </a>
         <a href={`/p/${item.slug}`} className="sr-only">
           View details
         </a>

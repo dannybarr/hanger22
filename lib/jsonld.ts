@@ -1,5 +1,5 @@
 import { cutLabel, marketNote } from "@/lib/cut";
-import { getCollab, getItem } from "@/lib/data";
+import { getItem } from "@/lib/data";
 import type { PublicItem } from "@/lib/schema";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
@@ -50,7 +50,6 @@ export function organizationJsonLd(origin: string) {
 export function productJsonLd(slug: string, origin: string) {
   const item = getItem(slug);
   if (!item) return null;
-  const collab = item.collabId ? getCollab(item.collabId) : undefined;
   const imagePath = item.images.source ?? item.images.front;
   const availability =
     item.availability === "in_vault"
@@ -64,13 +63,7 @@ export function productJsonLd(slug: string, origin: string) {
     "@type": "Product",
     name: item.title,
     sku: item.id,
-    description: [
-      item.story,
-      `${cutLabel(item.cutReason)}. ${marketNote(item.sourceMarket)}.`,
-      item.authConfidence === "high" ? "Authentication confidence is high." : "",
-    ]
-      .filter(Boolean)
-      .join(" "),
+    description: [item.story, `${cutLabel(item.cutReason)}. ${marketNote(item.sourceMarket)}.`].filter(Boolean).join(" "),
     image: new URL(imagePath, origin).toString(),
     brand: { "@type": "Brand", name: item.brand },
     category: item.category,
@@ -89,14 +82,5 @@ export function productJsonLd(slug: string, origin: string) {
         priceCurrency: "GBP",
       },
     },
-    ...(collab
-      ? {
-          isRelatedTo: {
-            "@type": "Product",
-            name: collab.name,
-            url: `${origin}/drops/${collab.slug}`,
-          },
-        }
-      : {}),
   };
 }

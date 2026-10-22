@@ -5,12 +5,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Marquee } from "@/components/marquee/Marquee";
 import { Rail } from "@/components/rail/Rail";
 import { RailFocus } from "@/components/rail/RailFocus";
-import { RequestSheet } from "@/components/request/RequestSheet";
-import { isRailClosed, nightRequested } from "@/lib/night";
 import { playClink } from "@/lib/sound";
 import { cutLabel } from "@/lib/cut";
 import type { PublicItem } from "@/lib/schema";
-import { PLACEHOLDER_NOTE } from "@/lib/site";
 
 const KONAMI = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "b", "a"];
 
@@ -22,7 +19,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
   const [focusIndex, setFocusIndex] = useState<number | null>(null);
   const [origin, setOrigin] = useState<Box | null>(null);
   const [sound, setSound] = useState(false);
-  const [night, setNight] = useState(false);
   const [swinging, setSwinging] = useState(false);
   const [revealId, setRevealId] = useState<string | null>(null);
   const [caption, setCaption] = useState<{
@@ -32,7 +28,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
     availability: PublicItem["availability"];
     cut: string;
   } | null>(null);
-  const [request, setRequest] = useState<PublicItem | null | undefined>(undefined);
   const [hydrated, setHydrated] = useState(false);
   const openerId = useRef<string | null>(null);
   const clusterRef = useRef<HTMLDivElement>(null);
@@ -41,7 +36,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
   useEffect(() => {
     const saved = window.localStorage.getItem("hanger22.sound");
     if (saved === "on") setSound(true);
-    setNight(nightRequested(window.location.search) || isRailClosed());
     setHydrated(true);
   }, []);
 
@@ -159,8 +153,8 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
     >
       <header className={`absolute inset-x-0 top-[1.4vh] z-20 px-[4vw] transition-opacity duration-300 ${focused ? "pointer-events-none opacity-0" : "opacity-100"}`}>
         <nav aria-label="Primary" className="flex items-start justify-between">
-          <Link href="/about" className="nav-link">
-            About
+          <Link href="/pieces" className="nav-link">
+            Pieces
           </Link>
           <Link href="/contact" className="nav-link">
             Contact
@@ -172,11 +166,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
             <span className="block font-script text-[18px]">22</span>
           </h1>
         </Link>
-        {night ? (
-          <p className="pointer-events-none absolute top-16 left-1/2 w-max -translate-x-1/2 text-center text-[12px] text-ink">
-            The rail’s still open for requests.
-          </p>
-        ) : null}
         {vault ? (
           <p className="pointer-events-none absolute top-[4.5rem] left-1/2 w-max -translate-x-1/2 text-[11px] tracking-[0.16em] text-ink uppercase" role="status">
             The vault — three hangers with no listing
@@ -209,19 +198,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
           </p>
         </div>
       </div>
-      <div className={`absolute top-[87.5vh] left-1/2 z-20 -translate-x-1/2 transition-opacity duration-300 ${focused ? "pointer-events-none opacity-0" : "opacity-100"}`}>
-        <button
-          type="button"
-          className="pill-btn"
-          onClick={() => {
-            const piece = shown.find((item) => item.id === activeId) ?? null;
-            setRequest(piece);
-          }}
-        >
-          Request a piece
-        </button>
-      </div>
-
       <div className={`absolute inset-x-0 bottom-0 z-20 transition-opacity duration-300 ${focused ? "opacity-0" : "opacity-100"}`}>
         <Marquee />
       </div>
@@ -234,15 +210,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
           vault={vault}
           onClose={() => setFocusIndex(null)}
           onIndex={setFocusIndex}
-          onRequest={(item) => setRequest(item)}
-        />
-      ) : null}
-
-      {request !== undefined ? (
-        <RequestSheet
-          itemId={request?.id}
-          title={request?.shortTitle}
-          onClose={() => setRequest(undefined)}
         />
       ) : null}
 
@@ -254,12 +221,6 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
               Close
             </button>
           </div>
-          {reveal.images.placeholder ? <p className="mt-2 text-[13px]">{PLACEHOLDER_NOTE}</p> : null}
-          {reveal.images.source && !reveal.images.placeholder ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={reveal.images.source} alt="" className="mt-3 max-h-48 w-full object-contain" />
-          ) : null}
-          {reveal.images.licence ? <p className="mt-2 text-[11px] leading-relaxed text-muted">{reveal.images.licence}</p> : null}
           <a className="mt-3 inline-block text-[13px] text-ink underline" href={`/p/${reveal.slug}`}>
             Open the piece
           </a>

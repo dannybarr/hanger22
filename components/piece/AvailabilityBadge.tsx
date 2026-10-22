@@ -1,7 +1,7 @@
 import type { PublicItem } from "@/lib/schema";
 
 export function fulfilmentCopy(availability: PublicItem["availability"]) {
-  return availability === "in_vault" ? "In the Vault, ships now" : "Sourced to order, 5–10 days";
+  return availability === "in_vault" ? "In house" : "Available";
 }
 
 export function AvailabilityBadge({ availability }: { availability: PublicItem["availability"] }) {

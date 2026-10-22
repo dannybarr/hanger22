@@ -1,10 +1,8 @@
 export const SITE_NAME = "Hanger 22";
 
-export const SITE_DESCRIPTION =
-  "Hanger 22 is a London desk for rare collabs and grails. Some pieces are already in the vault and ship now. The rest are sourced to order from marketplace listings.";
+export const SITE_DESCRIPTION = "Hanger 22, London. Rare collabs and grails.";
 
-export const MARQUEE_PHRASE =
-  "IN THE VAULT, SHIPS NOW  •  SOURCED TO ORDER, 5–10 DAYS  •  NEW GRAILS ON THE RAIL  •  ";
+export const MARQUEE_PHRASE = "STONE ISLAND  •  MONCLER  •  KAPITAL  •  SUPREME  •  PALACE  •  ";
 
 export const PHOTO_LICENCE =
   "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site. The source URL is kept on the listing.";

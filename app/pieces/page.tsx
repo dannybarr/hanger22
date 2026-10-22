@@ -7,7 +7,7 @@ import { PRICE_BANDS } from "@/lib/money";
 
 export const metadata: Metadata = {
   title: "Pieces",
-  description: "A curated edit of rare collabs, ghost pieces and luxury objects. Some ship from the vault. The rest are sourced to order.",
+  description: "The Hanger 22 edit. Rare collabs and grails.",
 };
 
 type SP = Record<string, string | string[] | undefined>;
@@ -48,9 +48,7 @@ export default async function PiecesPage({ searchParams }: { searchParams: Promi
       <main id="content" className="mx-auto max-w-6xl px-6 py-12">
         <p className="text-[11px] tracking-[0.16em] text-ink uppercase">Catalogue</p>
         <h1 className="display mt-3 text-5xl text-ink">The edit</h1>
-        <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
-          {all.length} pieces in the edit. The rail itself is five jackets. In the vault means we hold it. Sourced to order means five to ten days, if the listing is still there.
-        </p>
+        <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">{all.length} pieces.</p>
         <form className="mt-8 flex max-w-md gap-2" action="/pieces">
           <label className="sr-only" htmlFor="q">
             Search
@@ -70,16 +68,6 @@ export default async function PiecesPage({ searchParams }: { searchParams: Promi
           <FilterRow label="Brand" current={query.brand} options={brands.map((id) => ({ id, label: id }))} query={query} param="brand" />
           <FilterRow label="Collab" current={query.collab} options={collabs.map((collab) => ({ id: collab.id, label: collab.name }))} query={query} param="collab" />
           <FilterRow label="Price" current={query.band} options={PRICE_BANDS.map((band) => ({ id: band.id, label: band.label }))} query={query} param="band" />
-          <FilterRow
-            label="Ships"
-            current={query.availability}
-            options={[
-              { id: "in_vault", label: "In the Vault" },
-              { id: "sourced", label: "Sourced to order" },
-            ]}
-            query={query}
-            param="availability"
-          />
         </div>
         {items.length === 0 ? (
           <p className="mt-16 text-[16px]">
