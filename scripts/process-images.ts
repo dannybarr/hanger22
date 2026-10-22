@@ -2,10 +2,12 @@
  * Cut-out stage, ported from Wardrobe Vaulted's pixels.ts.
  *
  * The original ran in a browser canvas because that app cannot ship `sharp`.
- * This script is the same maths on raw RGBA: trim where alpha > 8, centre on a
- * 1024 canvas at 88% occupancy, chroma-key distance with feather 80, spill
- * removal, and the same contamination check. Background removal itself is done
- * before this step (rembg, or a chroma render). The shadow stays in CSS.
+ * This script is the same maths on raw RGBA: trim where alpha > 8, centre at
+ * 88% occupancy, chroma-key distance with feather 80, spill removal, and the
+ * same contamination check. The canvas aims for 1600px but never enlarges a
+ * source: a smaller cut-out stays at its native long edge. Background removal
+ * itself is done before this step (rembg, or a chroma render). The shadow stays
+ * with the garment in the scene, not baked into the pixels.
  *
  *   node --experimental-strip-types scripts/process-images.ts <in.png> <out.webp>
  */
@@ -75,8 +77,8 @@ function stripSpill(raster: Raster, keyed: number[], neutral: number[]): void {
   }
 }
 
-/** Trim to the visible piece, then centre it on a square transparent canvas. */
-export function frameTransparentGarment(raster: Raster, canvasSize = 1024, occupancy = 0.88): Raster {
+/** Trim to the visible piece, then centre it. Never scales a source up. */
+export function frameTransparentGarment(raster: Raster, canvasSize = 1600, occupancy = 0.88): Raster {
   const { data, width, height } = raster;
   let minX = width;
   let minY = height;
@@ -95,27 +97,61 @@ export function frameTransparentGarment(raster: Raster, canvasSize = 1024, occup
 
   const trimWidth = maxX - minX + 1;
   const trimHeight = maxY - minY + 1;
-  const target = Math.max(1, Math.round(canvasSize * Math.max(0.5, Math.min(0.96, occupancy))));
-  const scale = Math.min(target / trimWidth, target / trimHeight);
+  const occ = Math.max(0.5, Math.min(0.96, occupancy));
+  const maxDraw = Math.max(1, Math.round(canvasSize * occ));
+  const scale = Math.min(1, maxDraw / Math.max(trimWidth, trimHeight));
   const drawWidth = Math.max(1, Math.round(trimWidth * scale));
   const drawHeight = Math.max(1, Math.round(trimHeight * scale));
-  const destX = Math.floor((canvasSize - drawWidth) / 2);
-  const destY = Math.floor((canvasSize - drawHeight) / 2);
+  const side = Math.min(canvasSize, Math.max(drawWidth, drawHeight, Math.round(Math.max(drawWidth, drawHeight) / occ)));
+  const destX = Math.floor((side - drawWidth) / 2);
+  const destY = Math.floor((side - drawHeight) / 2);
 
-  const out = new Uint8ClampedArray(canvasSize * canvasSize * 4);
+  const out = new Uint8ClampedArray(side * side * 4);
+  const area = scale < 1;
   for (let y = 0; y < drawHeight; y += 1) {
-    const srcY = minY + Math.min(trimHeight - 1, Math.floor((y * trimHeight) / drawHeight));
+    const srcY0 = minY + (y * trimHeight) / drawHeight;
+    const srcY1 = minY + ((y + 1) * trimHeight) / drawHeight;
     for (let x = 0; x < drawWidth; x += 1) {
-      const srcX = minX + Math.min(trimWidth - 1, Math.floor((x * trimWidth) / drawWidth));
-      const src = (srcY * width + srcX) * 4;
-      const dst = ((destY + y) * canvasSize + (destX + x)) * 4;
-      out[dst] = data[src]!;
-      out[dst + 1] = data[src + 1]!;
-      out[dst + 2] = data[src + 2]!;
-      out[dst + 3] = data[src + 3]!;
+      const dst = ((destY + y) * side + (destX + x)) * 4;
+      if (!area) {
+        const srcX = minX + Math.min(trimWidth - 1, Math.round((x * trimWidth) / drawWidth));
+        const srcY = minY + Math.min(trimHeight - 1, Math.round((y * trimHeight) / drawHeight));
+        const src = (srcY * width + srcX) * 4;
+        out[dst] = data[src]!;
+        out[dst + 1] = data[src + 1]!;
+        out[dst + 2] = data[src + 2]!;
+        out[dst + 3] = data[src + 3]!;
+        continue;
+      }
+      const srcX0 = minX + (x * trimWidth) / drawWidth;
+      const srcX1 = minX + ((x + 1) * trimWidth) / drawWidth;
+      let r = 0;
+      let g = 0;
+      let b = 0;
+      let a = 0;
+      let n = 0;
+      const yStart = Math.max(minY, Math.floor(srcY0));
+      const yEnd = Math.min(maxY, Math.ceil(srcY1) - 1);
+      const xStart = Math.max(minX, Math.floor(srcX0));
+      const xEnd = Math.min(maxX, Math.ceil(srcX1) - 1);
+      for (let sy = yStart; sy <= yEnd; sy += 1) {
+        for (let sx = xStart; sx <= xEnd; sx += 1) {
+          const src = (sy * width + sx) * 4;
+          r += data[src]!;
+          g += data[src + 1]!;
+          b += data[src + 2]!;
+          a += data[src + 3]!;
+          n += 1;
+        }
+      }
+      if (n === 0) continue;
+      out[dst] = Math.round(r / n);
+      out[dst + 1] = Math.round(g / n);
+      out[dst + 2] = Math.round(b / n);
+      out[dst + 3] = Math.round(a / n);
     }
   }
-  return { data: out, width: canvasSize, height: canvasSize };
+  return { data: out, width: side, height: side };
 }
 
 export type ChromaDiagnostics = { contaminatedPixels: number; maxSpill: number };
@@ -189,7 +225,7 @@ export async function writeRaster(raster: Raster, file: string) {
   const encoded = await sharp(Buffer.from(raster.data), {
     raw: { width: raster.width, height: raster.height, channels: 4 },
   })
-    .webp({ quality: 90, alphaQuality: 100 })
+    .webp({ quality: 95, alphaQuality: 100, effort: 5 })
     .toBuffer();
   await writeFile(file, encoded);
 }

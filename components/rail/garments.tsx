@@ -42,7 +42,8 @@ export function Garment({
           alt=""
           fill
           priority={priority}
-          sizes="(max-width: 760px) 180px, 320px"
+          quality={92}
+          sizes="(max-width: 760px) 70vw, 512px"
           className={align === "top" ? "object-contain object-top" : "object-contain object-bottom"}
         />
         {pose === "side" ? (

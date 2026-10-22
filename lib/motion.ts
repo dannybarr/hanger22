@@ -1,10 +1,10 @@
 export const EASE = [0.22, 0.8, 0.22, 1] as const;
 
-/** Settles in about 550ms, matching the reference hover (frame diffs fall under 4 by ~0.6s). */
+/** Near-critical settle. About a third softer than the first rail, with almost no overshoot. */
 export const railSpring = {
   type: "spring" as const,
-  stiffness: 100,
-  damping: 16,
+  stiffness: 72,
+  damping: 18,
   mass: 1,
 };
 

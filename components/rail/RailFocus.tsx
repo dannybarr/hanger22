@@ -17,7 +17,7 @@ type Box = { left: number; top: number; width: number; height: number };
 function targetBox(): Box {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
-  const height = vh * 0.48;
+  const height = Math.min(vh * 0.48, 512);
   const width = Math.min(vw * 0.3, height * 0.9);
   return {
     left: (vw - width) / 2,

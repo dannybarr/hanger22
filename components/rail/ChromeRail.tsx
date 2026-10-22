@@ -2,33 +2,24 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
-import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { fulfilmentCopy } from "@/components/piece/AvailabilityBadge";
 import { EMPTY_SHOULDER, measureShoulder, type ShoulderFit } from "@/lib/hangerFit";
 import { formatRange } from "@/lib/money";
+import { layoutCenters, SIDE_YAW, stepRailBody, type RailBody } from "@/lib/railPhysics";
 import type { PublicItem } from "@/lib/schema";
 
 const BAR_Y = 0.74;
 const BAR_R = 0.028;
-const SIDE_YAW = 1.16;
-const GARMENT_H = 1.04;
-const SIDE_HALF = 0.14;
-const ACTIVE_HALF = 0.46;
-const SLOT_GAP = 0.4;
-const PITCH = SIDE_HALF * 2 + SLOT_GAP;
-const MAX_FLICK = 1.8;
+const GARMENT_H = 0.9;
+const PITCH = 0.68;
+const MAX_FLICK = 1.15;
 /** Where the neck meets the collar. The arms run from here into the shoulders. */
 const COLLAR_Y = -0.05;
 
-type Body = {
-  x: number;
-  vx: number;
-  yaw: number;
-  swing: number;
-  sw: number;
-};
+type Body = RailBody;
 
 type World = {
   bodies: Body[];
@@ -193,10 +184,42 @@ function hangerGeometry(hang: Hang) {
   };
 }
 
-function FittedPiece({ url, width, gold }: { url: string; width: number; gold: boolean }) {
-  const texture = useTexture(url);
+function shadowTexture() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 256;
+  canvas.height = 128;
+  const ctx = canvas.getContext("2d");
+  if (ctx) {
+    const gradient = ctx.createRadialGradient(128, 64, 8, 128, 64, 120);
+    gradient.addColorStop(0, "rgba(39, 31, 23, 0.28)");
+    gradient.addColorStop(1, "rgba(39, 31, 23, 0)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 256, 128);
+  }
+  const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
-  texture.anisotropy = 8;
+  return texture;
+}
+
+function FittedPiece({
+  url,
+  width,
+  gold,
+  spin,
+}: {
+  url: string;
+  width: number;
+  gold: boolean;
+  spin: RefObject<THREE.Group | null>;
+}) {
+  const texture = useTexture(url);
+  const gl = useThree((state) => state.gl);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.generateMipmaps = true;
+  texture.needsUpdate = true;
   const [fit, setFit] = useState<ShoulderFit>(EMPTY_SHOULDER);
   useLayoutEffect(() => {
     const image = texture.image as HTMLImageElement | undefined;
@@ -223,20 +246,43 @@ function FittedPiece({ url, width, gold }: { url: string; width: number; gold: b
       }),
     [gold],
   );
+  const cloth = useMemo(
+    () =>
+      new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        alphaTest: 0.04,
+        toneMapped: false,
+        side: THREE.DoubleSide,
+      }),
+    [texture],
+  );
+  const shadow = useMemo(() => shadowTexture(), []);
+  useEffect(() => {
+    return () => {
+      cloth.dispose();
+      shadow.dispose();
+    };
+  }, [cloth, shadow]);
   return (
     <group>
       <mesh geometry={parts.hook} material={material} />
-      <mesh geometry={parts.neck} material={material} />
-      {parts.left.map((geometry, index) => (
-        <mesh key={`l${index}`} geometry={geometry} material={material} />
-      ))}
-      {parts.right.map((geometry, index) => (
-        <mesh key={`r${index}`} geometry={geometry} material={material} />
-      ))}
-      <mesh position={[0, hang.centerY, 0]}>
-        <planeGeometry args={[width, GARMENT_H]} />
-        <meshStandardMaterial map={texture} transparent alphaTest={0.12} roughness={0.86} metalness={0.02} side={THREE.DoubleSide} />
-      </mesh>
+      <group ref={spin}>
+        <mesh geometry={parts.neck} material={material} />
+        {parts.left.map((geometry, index) => (
+          <mesh key={`l${index}`} geometry={geometry} material={material} />
+        ))}
+        {parts.right.map((geometry, index) => (
+          <mesh key={`r${index}`} geometry={geometry} material={material} />
+        ))}
+        <mesh position={[0, hang.centerY, 0.012]} material={cloth}>
+          <planeGeometry args={[width, GARMENT_H]} />
+        </mesh>
+        <mesh position={[0.02, hang.centerY - GARMENT_H * 0.34, -0.04]} rotation={[-0.4, 0, 0]}>
+          <planeGeometry args={[width * 0.78, GARMENT_H * 0.28]} />
+          <meshBasicMaterial map={shadow} transparent depthWrite={false} toneMapped={false} />
+        </mesh>
+      </group>
     </group>
   );
 }
@@ -255,6 +301,7 @@ function Piece({
   register: (index: number, object: THREE.Object3D | null) => void;
 }) {
   const ref = useRef<THREE.Group>(null);
+  const spin = useRef<THREE.Group>(null);
   const pixelsW = item.images.pixelWidth ?? 700;
   const pixelsH = item.images.pixelHeight ?? 1000;
   const width = Math.min(0.86, Math.max(0.46, GARMENT_H * (pixelsW / pixelsH)));
@@ -271,14 +318,16 @@ function Piece({
     const body = state?.bodies[index];
     if (!group || !body) return;
     group.position.set(body.x, BAR_Y, 0);
+    group.rotation.x = 0;
+    group.rotation.y = 0;
     group.rotation.z = body.swing;
-    group.rotation.y = body.yaw;
+    if (spin.current) spin.current.rotation.y = body.yaw;
   });
 
   return (
     <group ref={ref}>
       <Suspense fallback={null}>
-        <FittedPiece url={src} width={width} gold={gold} />
+        <FittedPiece url={src} width={width} gold={gold} spin={spin} />
       </Suspense>
     </group>
   );
@@ -306,29 +355,36 @@ function Simulator({
     const dt = Math.min(0.033, delta);
     const coastDt = Math.min(0.1, delta);
     const active = state.active;
-    const halves = Array.from({ length: count }, (_, i) => (!state.dragging && !state.flick && i === active ? ACTIVE_HALF : SIDE_HALF));
-    let cursor = 0;
-    const centers: number[] = [];
-    for (let i = 0; i < count; i += 1) {
-      centers.push(cursor + halves[i]!);
-        cursor += halves[i]! * 2 + SLOT_GAP;
+    let focus = active;
+    if (focus < 0 || state.dragging || state.flick) {
+      focus = 0;
+      let best = Number.POSITIVE_INFINITY;
+      state.bodies.forEach((body, i) => {
+        const distance = Math.abs(body.x);
+        if (distance < best) {
+          best = distance;
+          focus = i;
+        }
+      });
     }
-    const mid = cursor / 2;
+    const frontIndex = !state.dragging && !state.flick && active >= 0 ? active : -1;
+    const layout = layoutCenters(count, focus, frontIndex);
+    const centers = layout.centers;
     if (!state.dragging) {
-      state.scrollV *= Math.exp(-2.4 * coastDt);
+      state.scrollV *= Math.exp(-3.6 * coastDt);
       state.scroll += state.scrollV * coastDt;
-      if (state.scroll > 2.35) {
-        state.scroll = 2.35;
+      if (state.scroll > 2.1) {
+        state.scroll = 2.1;
         state.scrollV = 0;
-      } else if (state.scroll < -2.35) {
-        state.scroll = -2.35;
+      } else if (state.scroll < -2.1) {
+        state.scroll = -2.1;
         state.scrollV = 0;
       }
-        if (state.flick && Math.abs(state.scrollV) < 0.22) {
+      if (state.flick && Math.abs(state.scrollV) < 0.16) {
         let nearest = 0;
         let best = Number.POSITIVE_INFINITY;
         for (let i = 0; i < count; i += 1) {
-          const distance = Math.abs(centers[i]! - mid + state.scroll);
+          const distance = Math.abs(centers[i]! + state.scroll);
           if (distance < best) {
             best = distance;
             nearest = i;
@@ -337,33 +393,27 @@ function Simulator({
         state.flick = false;
         state.scrollV = 0;
         state.active = nearest;
-        state.scroll = mid - centers[nearest]!;
+        state.scroll = -centers[nearest]!;
         onSettle(nearest);
-      } else if (!state.flick && Math.abs(state.scrollV) < 0.04 && active >= 0) {
-        const desired = mid - centers[active]!;
-        state.scroll += (desired - state.scroll) * (1 - Math.exp(-12 * dt));
+      } else if (!state.flick && Math.abs(state.scrollV) < 0.03 && active >= 0) {
+        const desired = -centers[active]!;
+        state.scroll += (desired - state.scroll) * (1 - Math.exp(-8 * dt));
       }
     }
 
     state.bodies.forEach((body, i) => {
-      const target = centers[i]! - mid + state.scroll;
+      const target = centers[i]! + state.scroll;
+      const facing = i === frontIndex;
+      const yawTarget = facing ? 0 : SIDE_YAW * (i < focus ? -1 : 1);
       if (state.reduced) {
         body.x = target;
         body.vx = 0;
-        body.yaw = !state.dragging && !state.flick && i === active ? 0 : SIDE_YAW;
+        body.yaw = yawTarget;
         body.swing = 0;
         body.sw = 0;
         return;
       }
-      const step = Math.min(0.05, delta);
-      const accel = (target - body.x) * 16 - body.vx * 9;
-      body.vx += accel * step;
-      body.x += body.vx * step;
-      const yawTarget = !state.dragging && !state.flick && i === active ? 0 : SIDE_YAW;
-      body.yaw += (yawTarget - body.yaw) * (1 - Math.exp(-7 * dt));
-      body.sw += (-8.5 * body.swing - body.vx * 2.8) * dt;
-      body.sw *= Math.exp(-1.7 * dt);
-      body.swing += body.sw * dt;
+      stepRailBody(body, target, delta, yawTarget);
     });
 
     const list = nodes.current;
@@ -523,7 +573,7 @@ export function ChromeRail({
         className="h-full w-full"
         camera={{ position: [0, 0.02, 5.4], fov: 26, near: 0.1, far: 20 }}
         gl={{ antialias: true, alpha: true }}
-        dpr={[1, 1.75]}
+        dpr={[1, 2]}
       >
         <EnvironmentRig />
         <KeyLight />
