@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/instrument-sans";
 @import "@fontsource/playfair-display/latin-500.css";
-@import "@fontsource/playfair-display/latin-500-italic.css";
 @import "@fontsource/dm-mono/latin-500.css";
 
 /* Wardrobe Vaulted tokens, verbatim from src/styles/wardrobe/styles.css
@@ -252,7 +251,7 @@ html[data-night="1"] .dotgrid::before,
 .display,
 .font-script {
   font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   letter-spacing: -0.03em;
 }
