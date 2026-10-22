@@ -1,12 +1,12 @@
 # Run Hanger 22 locally
 
-Install Node.js 20 or later.
+Install Node.js 22 and pnpm 10.33.4 (`corepack enable` picks that up from `package.json`).
 
 Then, from this folder:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open http://localhost:3000.

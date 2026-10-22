@@ -6,11 +6,11 @@ The homepage is a chrome rail. Five live jackets hang side-on until a hover turn
 
 ## Run
 
-Local setup is in [LOCAL.md](LOCAL.md): Node 20 or later, then `npm install` and `npm run dev`. Open [http://localhost:3000](http://localhost:3000). The public site does not need environment variables.
+Local setup is in [LOCAL.md](LOCAL.md): Node 22, then `pnpm install` and `pnpm dev`. Open [http://localhost:3000](http://localhost:3000). The public site does not need environment variables.
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ```bash
