@@ -27,7 +27,6 @@ export function organizationJsonLd(origin: string) {
           addressLocality: "London",
           addressCountry: "GB",
         },
-        email: "requests@hanger22.example",
       },
       {
         "@type": "WebSite",

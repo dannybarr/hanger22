@@ -5,7 +5,7 @@ import { SITE_DESCRIPTION, SITE_NAME, siteOrigin } from "@/lib/site";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
-const origin = siteOrigin("https://hanger22.example");
+const origin = siteOrigin("https://hanger22.vercel.app");
 
 export const metadata: Metadata = {
   metadataBase: new URL(origin),

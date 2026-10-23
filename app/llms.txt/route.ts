@@ -25,12 +25,12 @@ ${origin}/brands
 
 - Terms: ${origin}/legal/terms
 - Privacy: ${origin}/legal/privacy
-- Shipping and returns: ${origin}/legal/returns
+- Delivery and returns: ${origin}/legal/returns
+- How reserving works: ${origin}/reserving
 
 ## Contact
 
 London, United Kingdom
-requests@hanger22.example
 ${origin}/contact
 `;
   return new Response(body, {

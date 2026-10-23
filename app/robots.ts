@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteOrigin } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const origin = siteOrigin("https://hanger22.example");
+  const origin = siteOrigin("https://hanger22.vercel.app");
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow: "/studio" },
