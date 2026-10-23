@@ -1,68 +1,127 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatGBP, priceOf } from "@/lib/money";
+import { PieceCard } from "@/components/piece/PieceCard";
+import { HOUSES, housesFor } from "@/lib/brands";
 import type { PublicItem } from "@/lib/schema";
 
-function Cutout({ item, priority = false }: { item: PublicItem; priority?: boolean }) {
-  const width = item.images.pixelWidth ?? 1024;
-  const height = item.images.pixelHeight ?? 1024;
-  return (
-    <Image
-      src={item.images.front}
-      alt=""
-      width={width}
-      height={height}
-      quality={92}
-      priority={priority}
-      sizes="(max-width: 768px) 80vw, 420px"
-      className="piece-shadow h-auto w-full"
-    />
-  );
-}
+const STEPS = [
+  {
+    title: "Reserve",
+    body: "Choose a piece and tell us your size. It takes a minute and nothing is charged.",
+  },
+  {
+    title: "We confirm",
+    body: "We secure the piece, check it against its labels and send you photographs of the details and any wear.",
+  },
+  {
+    title: "Pay, then wear",
+    body: "Happy with what you see? Pay by secure link and we send it on. You still have 14 days to change your mind.",
+  },
+];
 
 export function Storefront({ items }: { items: PublicItem[] }) {
-  const [lead, ...rest] = items;
-  if (!lead) return null;
+  if (items.length === 0) return null;
+  const carried = HOUSES.filter((house) => items.some((item) => housesFor(item.brand).includes(house)));
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pt-8 pb-24">
-      <p className="text-[11px] tracking-[0.16em] text-ink uppercase">The edit</p>
-      <h2 className="display mt-3 text-4xl text-ink sm:text-6xl">Pieces</h2>
-      <Link href={`/p/${lead.slug}`} className="group mt-16 grid items-end gap-10 md:grid-cols-[minmax(0,420px)_1fr] md:gap-16">
-        <div className="mx-auto w-full max-w-[420px] transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
-          <Cutout item={lead} priority />
+    <>
+      <section className="mx-auto max-w-7xl px-5 pt-20 pb-24 sm:px-8" aria-labelledby="edit-title">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">On the rail now</p>
+            <h2 id="edit-title" className="display mt-3 text-[40px] text-ink sm:text-[56px]">
+              The edit
+            </h2>
+          </div>
+          <Link href="/pieces" className="nav-link mb-2 shrink-0">
+            Shop all {items.length}
+          </Link>
         </div>
-        <div className="max-w-xl pb-2">
-          <p className="text-[11px] tracking-[0.16em] text-muted uppercase">{lead.brand}</p>
-          <h3 className="display mt-3 text-4xl text-ink sm:text-5xl">{lead.shortTitle}</h3>
-          <p className="mt-5 text-[16px] leading-relaxed text-ink">{formatGBP(priceOf(lead))}</p>
-          <p className="mt-6 line-clamp-4 text-[15px] leading-relaxed text-muted">{lead.story}</p>
-          <span className="mt-8 inline-block text-[11px] tracking-[0.16em] text-ink uppercase">View the piece</span>
+        <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3">
+          {items.map((item, index) => (
+            <li key={item.id}>
+              <PieceCard item={item} priority={index < 3} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="tile" aria-labelledby="how-title">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
+            <div>
+              <p className="eyebrow">How buying works</p>
+              <h2 id="how-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
+                See it before you pay
+              </h2>
+              <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-muted">
+                Rare pieces deserve a careful handover. You pay nothing until you have seen the piece up close and said yes.
+              </p>
+              <Link href="/reserving" className="nav-link mt-8 inline-block">
+                How reserving works
+              </Link>
+            </div>
+            <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
+              {STEPS.map((step, index) => (
+                <li key={step.title} className="border-t border-ink pt-5">
+                  <p className="mono text-[12px] text-muted">{String(index + 1).padStart(2, "0")}</p>
+                  <h3 className="display mt-4 text-[26px] text-ink">{step.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
-      </Link>
-      <ul className="mt-24 grid gap-x-12 gap-y-20 sm:grid-cols-2">
-        {rest.map((item) => (
-          <li key={item.id}>
-            <Link href={`/p/${item.slug}`} className="group block">
-              <div className="mx-auto w-full max-w-[420px] transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
-                <Cutout item={item} />
-              </div>
-              <p className="mt-6 text-[11px] tracking-[0.16em] text-muted uppercase">{item.brand}</p>
-              <h3 className="display mt-2 text-[32px] text-ink">{item.shortTitle}</h3>
-              <p className="mt-2 text-[15px] text-ink">{formatGBP(priceOf(item))}</p>
+      </section>
+
+      {carried.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="houses-title">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">The houses</p>
+              <h2 id="houses-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
+                Brands on the rail
+              </h2>
+            </div>
+            <Link href="/brands" className="nav-link mb-2 shrink-0">
+              All brands
             </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-28 flex flex-col gap-6 border-t border-line pt-16 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-[11px] tracking-[0.16em] text-ink uppercase">The houses</p>
-          <h2 className="display mt-3 text-4xl text-ink sm:text-6xl">Brand story</h2>
+          </div>
+          <ul className="mt-10 grid grid-cols-2 border-t border-l border-line sm:grid-cols-4">
+            {carried.map((house) => (
+              <li key={house.slug} className="border-r border-b border-line">
+                <Link href={`/brands/${house.slug}`} className="group flex h-32 items-center justify-center px-8 sm:h-40" aria-label={house.name}>
+                  <Image
+                    src={`/brands/${house.file}`}
+                    alt=""
+                    width={160}
+                    height={56}
+                    unoptimized
+                    className="h-10 w-auto max-w-full object-contain opacity-80 grayscale transition duration-300 group-hover:opacity-100 sm:h-12"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="border-t border-line" aria-labelledby="hunt-title">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Looking for something else</p>
+            <h2 id="hunt-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
+              Tell us the grail. We will hunt it down
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed text-muted">
+              The rail is small on purpose. Behind it, we search with trusted sellers and collectors across the UK, Europe and Japan.
+            </p>
+          </div>
+          <Link href="/contact" className="pill-btn">
+            Ask for a piece
+          </Link>
         </div>
-        <Link href="/brands" className="nav-link">
-          The wall
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

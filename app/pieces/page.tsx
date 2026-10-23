@@ -2,21 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 import { PieceCard } from "@/components/piece/PieceCard";
-import { filterItems, getCollabs, getPublicItems, type CatalogueQuery } from "@/lib/data";
-import { PRICE_BANDS } from "@/lib/money";
+import { filterItems, getPublicItems, type CatalogueQuery } from "@/lib/data";
+import { PRICE_BANDS, priceOf } from "@/lib/money";
+import { CATEGORY_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pieces",
-  description: "The Hanger 22 edit. Rare collabs and grails.",
+  title: "Shop all",
+  description: "Every piece on the Hanger 22 rail. Rare collaborations and hard-to-find pieces, one of each.",
 };
 
 type SP = Record<string, string | string[] | undefined>;
+
+const SORTS = [
+  { id: "", label: "Featured" },
+  { id: "price-asc", label: "Price, low to high" },
+  { id: "price-desc", label: "Price, high to low" },
+] as const;
 
 function one(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;
 }
 
-function hrefFor(current: CatalogueQuery, patch: CatalogueQuery) {
+type Query = CatalogueQuery & { sort?: string };
+
+function hrefFor(current: Query, patch: Query) {
   const next = { ...current, ...patch };
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(next)) {
@@ -28,56 +37,106 @@ function hrefFor(current: CatalogueQuery, patch: CatalogueQuery) {
 
 export default async function PiecesPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;
-  const query: CatalogueQuery = {
+  const query: Query = {
     category: one(sp.category),
     brand: one(sp.brand),
-    collab: one(sp.collab),
     band: one(sp.band),
-    availability: one(sp.availability),
     q: one(sp.q),
+    sort: one(sp.sort),
   };
   const all = getPublicItems();
-  const items = filterItems(all, query);
+  let items = filterItems(all, query);
+  if (query.sort === "price-asc") items = [...items].sort((a, b) => priceOf(a) - priceOf(b));
+  if (query.sort === "price-desc") items = [...items].sort((a, b) => priceOf(b) - priceOf(a));
   const brands = [...new Set(all.map((item) => item.brand))].sort();
-  const categories = [...new Set(all.map((item) => item.category))].sort();
-  const collabs = getCollabs().filter((collab) => all.some((item) => item.collabId === collab.id));
+  const categories = Object.keys(CATEGORY_LABEL).filter((id) => all.some((item) => item.category === id)) as (keyof typeof CATEGORY_LABEL)[];
+  const bands = PRICE_BANDS.filter((band) => all.some((item) => priceOf(item) >= band.min && priceOf(item) < band.max));
+  const title = query.category ? CATEGORY_LABEL[query.category as keyof typeof CATEGORY_LABEL] ?? "Shop all" : "Shop all";
+  const filtered = Boolean(query.brand || query.band || query.q);
 
   return (
     <>
       <SiteHeader />
-      <main id="content" className="mx-auto max-w-6xl px-6 py-12">
-        <p className="text-[11px] tracking-[0.16em] text-ink uppercase">Catalogue</p>
-        <h1 className="display mt-3 text-5xl text-ink">The edit</h1>
-        <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">{all.length} pieces.</p>
-        <form className="mt-8 flex max-w-md gap-2" action="/pieces">
-          <label className="sr-only" htmlFor="q">
-            Search
-          </label>
-          <input id="q" name="q" defaultValue={query.q ?? ""} placeholder="Search the rail" className="field" />
-          {query.category ? <input type="hidden" name="category" value={query.category} /> : null}
-          {query.brand ? <input type="hidden" name="brand" value={query.brand} /> : null}
-          {query.collab ? <input type="hidden" name="collab" value={query.collab} /> : null}
-          {query.band ? <input type="hidden" name="band" value={query.band} /> : null}
-          {query.availability ? <input type="hidden" name="availability" value={query.availability} /> : null}
-          <button className="pill-btn" type="submit">
-            Search
-          </button>
-        </form>
-        <div className="mt-8 flex flex-col gap-4">
-          <FilterRow label="Category" current={query.category} options={categories.map((id) => ({ id, label: id }))} query={query} param="category" />
-          <FilterRow label="Brand" current={query.brand} options={brands.map((id) => ({ id, label: id }))} query={query} param="brand" />
-          <FilterRow label="Collab" current={query.collab} options={collabs.map((collab) => ({ id: collab.id, label: collab.name }))} query={query} param="collab" />
-          <FilterRow label="Price" current={query.band} options={PRICE_BANDS.map((band) => ({ id: band.id, label: band.label }))} query={query} param="band" />
+      <main id="content" className="mx-auto max-w-7xl px-5 pt-10 pb-24 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Hanger 22</p>
+            <h1 className="display mt-3 text-[48px] text-ink sm:text-[64px]">{title}</h1>
+          </div>
+          <form id="search" action="/pieces" className="flex w-full max-w-sm gap-2 sm:w-auto">
+            <label className="sr-only" htmlFor="q">
+              Search the rail
+            </label>
+            <input id="q" name="q" type="search" defaultValue={query.q ?? ""} placeholder="Moncler, Kapital, jacket" className="field" />
+            {query.category ? <input type="hidden" name="category" value={query.category} /> : null}
+            <button className="pill-btn shrink-0" type="submit">
+              Search
+            </button>
+          </form>
         </div>
+
+        <nav aria-label="Categories" className="mt-10 flex gap-7 overflow-x-auto overflow-y-hidden border-b border-line">
+          <Tab href={hrefFor({ ...query, category: undefined }, {})} active={!query.category}>
+            All
+          </Tab>
+          {categories.map((id) => (
+            <Tab key={id} href={hrefFor(query, { category: id })} active={query.category === id}>
+              {CATEGORY_LABEL[id]}
+            </Tab>
+          ))}
+        </nav>
+
+        <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <FilterRow label="Brand" current={query.brand} options={brands.map((id) => ({ id, label: id }))} query={query} param="brand" />
+          {bands.length > 1 ? (
+            <FilterRow label="Price" current={query.band} options={bands.map((band) => ({ id: band.id, label: band.label }))} query={query} param="band" />
+          ) : null}
+          <div className="flex items-center gap-3 text-[13px] lg:ml-auto">
+            <span className="field-label">Sort</span>
+            {SORTS.map((sort) => (
+              <Link
+                key={sort.id}
+                href={hrefFor(query, { sort: sort.id || undefined })}
+                className={(query.sort ?? "") === sort.id ? "text-ink underline underline-offset-4" : "text-muted hover:text-ink"}
+                aria-current={(query.sort ?? "") === sort.id ? "true" : undefined}
+              >
+                {sort.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-6 text-[13px] text-muted" aria-live="polite">
+          {items.length} {items.length === 1 ? "piece" : "pieces"}
+          {filtered ? (
+            <>
+              {" "}
+              ·{" "}
+              <Link href={hrefFor({ category: query.category }, {})} className="text-ink underline underline-offset-4">
+                Clear filters
+              </Link>
+            </>
+          ) : null}
+        </p>
+
         {items.length === 0 ? (
-          <p className="mt-16 text-[16px]">
-            Nothing in the edit matches that filter. <Link href="/pieces" className="text-ink underline">Clear it</Link>.
-          </p>
+          <div className="mt-16 max-w-md">
+            <p className="display text-[28px] text-ink">Nothing on the rail matches that</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-muted">Tell us what you are looking for and we will search for it.</p>
+            <div className="mt-6 flex gap-3">
+              <Link href="/contact" className="pill-btn">
+                Ask for a piece
+              </Link>
+              <Link href="/pieces" className="pill-btn">
+                Clear search
+              </Link>
+            </div>
+          </div>
         ) : (
-          <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
-            {items.map((item) => (
+          <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
+            {items.map((item, index) => (
               <li key={item.id}>
-                <PieceCard item={item} />
+                <PieceCard item={item} priority={index < 4} />
               </li>
             ))}
           </ul>
@@ -85,6 +144,18 @@ export default async function PiecesPage({ searchParams }: { searchParams: Promi
       </main>
       <SiteFooter />
     </>
+  );
+}
+
+function Tab({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      aria-current={active ? "page" : undefined}
+      className={`-mb-px shrink-0 border-b-2 pb-3 text-[13px] font-medium tracking-[0.1em] uppercase transition-colors ${active ? "border-ink text-ink" : "border-transparent text-muted hover:text-ink"}`}
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -98,20 +169,21 @@ function FilterRow({
   label: string;
   current?: string;
   options: { id: string; label: string }[];
-  query: CatalogueQuery;
-  param: keyof CatalogueQuery;
+  query: Query;
+  param: keyof Query;
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="w-20 text-[11px] tracking-[0.14em] text-muted uppercase">{label}</span>
-      <Link href={hrefFor(query, { [param]: undefined })} className={chip(!current)} aria-current={!current ? "true" : undefined}>
-        All
-      </Link>
+      <span className="field-label mr-1">{label}</span>
       {options.map((option) => (
         <Link
           key={option.id}
           href={hrefFor(query, { [param]: current === option.id ? undefined : option.id })}
-          className={chip(current === option.id)}
+          className={
+            current === option.id
+              ? "border border-ink bg-ink px-3 py-1.5 text-[12px] text-paper"
+              : "border border-line px-3 py-1.5 text-[12px] text-body transition-colors hover:border-ink"
+          }
           aria-current={current === option.id ? "true" : undefined}
         >
           {option.label}
@@ -119,10 +191,4 @@ function FilterRow({
       ))}
     </div>
   );
-}
-
-function chip(on: boolean) {
-  return on
-    ? "rounded-full bg-ink px-3 py-1 text-[12px] text-paper"
-    : "rounded-full border border-line px-3 py-1 text-[12px] text-body hover:border-ink";
 }
