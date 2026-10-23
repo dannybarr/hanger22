@@ -1,6 +1,6 @@
 import { cutLabel, marketNote } from "@/lib/cut";
-import { getPublicItems, getSourcesFor } from "@/lib/data";
-import { acpPrice } from "@/lib/money";
+import { getPublicItems } from "@/lib/data";
+import { acpPrice, priceOf } from "@/lib/money";
 import { acpFeedSchema, catalogFeedSchema, type PublicItem } from "@/lib/schema";
 
 const ACP_CONDITION: Record<PublicItem["condition"], string> = {
@@ -18,7 +18,7 @@ function acpAvailability(item: PublicItem) {
 function fulfilmentLine(item: PublicItem) {
   return item.availability === "in_vault"
     ? "In the Vault, ships now."
-    : "Sourced to order, 5–10 days.";
+    : "Sourced to order. The delivery date is confirmed when you reserve.";
 }
 
 export function toCatalog(origin: string, generatedAt = new Date().toISOString()) {
@@ -33,7 +33,7 @@ export function toCatalog(origin: string, generatedAt = new Date().toISOString()
       brand: item.brand,
       collabId: item.collabId,
       category: item.category,
-      guidePriceGBP: item.guidePriceGBP,
+      priceGBP: priceOf(item),
       condition: item.condition,
       status: item.status,
       availability: item.availability,
@@ -43,7 +43,7 @@ export function toCatalog(origin: string, generatedAt = new Date().toISOString()
       placeholder: item.images.placeholder,
       imageStatus: item.images.imageStatus,
       url: `${origin}/p/${item.slug}`,
-      image: item.images.source ?? item.images.front,
+      image: item.images.front,
       tags: item.tags,
     })),
   };
@@ -55,8 +55,7 @@ export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()
     version: "2026-04-17" as const,
     generated_at: generatedAt,
     items: getPublicItems().map((item) => {
-      const source = getSourcesFor(item.id)[0];
-      const imagePath = item.images.source ?? item.images.front;
+      const imagePath = item.images.front;
       return {
         id: item.id,
         title: item.title,
@@ -68,8 +67,7 @@ export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()
           item.images.imageStatus === "placeholder"
             ? "Image is a placeholder silhouette; no listing photograph on file."
             : "",
-          source ? `Source: ${source.url}` : "",
-          `Guide ${item.guidePriceGBP.min}–${item.guidePriceGBP.max} GBP. We do not check out on this site.`,
+          `${priceOf(item)} GBP. Reserve on the site; payment follows once Hanger 22 confirms the piece.`,
         ]
           .filter(Boolean)
           .join(" "),
@@ -77,7 +75,7 @@ export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()
         image_link: new URL(imagePath, origin).toString(),
         brand: item.brand,
         condition: ACP_CONDITION[item.condition],
-        price: acpPrice(item.guidePriceGBP.min),
+        price: acpPrice(priceOf(item)),
         availability: acpAvailability(item),
         enable_search: true as const,
         enable_checkout: false as const,

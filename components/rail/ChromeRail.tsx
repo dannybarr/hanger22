@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { fulfilmentCopy } from "@/components/piece/AvailabilityBadge";
 import { EMPTY_SHOULDER, measureShoulder, type ShoulderFit } from "@/lib/hangerFit";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import { layoutCenters, SIDE_YAW, stepRailBody, type RailBody } from "@/lib/railPhysics";
 import type { PublicItem } from "@/lib/schema";
 
@@ -609,7 +609,7 @@ export function ChromeRail({
                 data-piece-id={item.id}
                 data-unlisted={item.unlisted ? "true" : undefined}
                 data-state={front ? "front" : "side"}
-                aria-label={`${item.shortTitle}, ${item.brand}, guide ${formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}. ${fulfilmentCopy(item.availability)}`}
+                aria-label={`${item.shortTitle}, ${item.brand}, ${formatGBP(priceOf(item))}. ${fulfilmentCopy(item.availability)}`}
                 className="absolute cursor-grab border-0 bg-transparent p-0"
                 style={{ width: 72, height: "42vh", left: `${8 + index * 18}%`, top: "28%" }}
                 onPointerEnter={(event) => {

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { HANGER_H, RailHanger } from "@/components/rail/Hanger";
 import { GARMENT_TOP, pieceSize, type RailMetrics } from "@/components/rail/Rail";
 import { fulfilmentCopy } from "@/components/piece/AvailabilityBadge";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import { railSpring, restAngle, sideScale, sideYaw } from "@/lib/motion";
 import type { PublicItem } from "@/lib/schema";
 
@@ -74,7 +74,7 @@ export function RailItem({
         type="button"
         data-piece-id={item.id}
         data-state={active ? "front" : "side"}
-        aria-label={`${item.shortTitle}, ${item.brand}, guide ${formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}. ${fulfilmentCopy(item.availability)}`}
+        aria-label={`${item.shortTitle}, ${item.brand}, ${formatGBP(priceOf(item))}. ${fulfilmentCopy(item.availability)}`}
         className="relative block w-full cursor-pointer border-0 bg-transparent p-0 text-left touch-manipulation"
         style={{ height: GARMENT_TOP + size.height }}
         onPointerEnter={(event) => {

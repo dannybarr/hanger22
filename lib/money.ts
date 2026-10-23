@@ -73,3 +73,8 @@ export function formatSeen(iso: string) {
 export function acpPrice(min: number) {
   return `${min.toFixed(2)} GBP`;
 }
+
+/** The single price a piece is sold at. */
+export function priceOf(item: { priceGBP?: number; guidePriceGBP: { max: number } }) {
+  return item.priceGBP ?? item.guidePriceGBP.max;
+}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import type { PublicItem } from "@/lib/schema";
 
 function Cutout({ item, priority = false }: { item: PublicItem; priority?: boolean }) {
@@ -35,7 +35,7 @@ export function Storefront({ items }: { items: PublicItem[] }) {
         <div className="max-w-xl pb-2">
           <p className="text-[11px] tracking-[0.16em] text-muted uppercase">{lead.brand}</p>
           <h3 className="display mt-3 text-4xl text-ink sm:text-5xl">{lead.shortTitle}</h3>
-          <p className="mt-5 text-[16px] leading-relaxed text-ink">{formatRange(lead.guidePriceGBP.min, lead.guidePriceGBP.max)}</p>
+          <p className="mt-5 text-[16px] leading-relaxed text-ink">{formatGBP(priceOf(lead))}</p>
           <p className="mt-6 line-clamp-4 text-[15px] leading-relaxed text-muted">{lead.story}</p>
           <span className="mt-8 inline-block text-[11px] tracking-[0.16em] text-ink uppercase">View the piece</span>
         </div>
@@ -49,7 +49,7 @@ export function Storefront({ items }: { items: PublicItem[] }) {
               </div>
               <p className="mt-6 text-[11px] tracking-[0.16em] text-muted uppercase">{item.brand}</p>
               <h3 className="display mt-2 text-[32px] text-ink">{item.shortTitle}</h3>
-              <p className="mt-2 text-[15px] text-ink">{formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}</p>
+              <p className="mt-2 text-[15px] text-ink">{formatGBP(priceOf(item))}</p>
             </Link>
           </li>
         ))}

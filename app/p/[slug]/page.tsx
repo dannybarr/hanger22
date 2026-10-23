@@ -5,7 +5,7 @@ import { PieceCard } from "@/components/piece/PieceCard";
 import { ProductStage, type StageImage } from "@/components/product/ProductStage";
 import { getItem, getPublicItems, getSourcesFor, similarItems } from "@/lib/data";
 import { productJsonLd } from "@/lib/jsonld";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import { siteOrigin } from "@/lib/site";
 import type { PublicItem } from "@/lib/schema";
 
@@ -84,7 +84,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 text-[15px]">
               <div>
                 <dt className="text-[11px] tracking-[0.14em] text-muted uppercase">Price</dt>
-                <dd className="mt-2 text-ink">{formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}</dd>
+                <dd className="mt-2 text-ink">{formatGBP(priceOf(item))}</dd>
               </div>
               <div>
                 <dt className="text-[11px] tracking-[0.14em] text-muted uppercase">Size</dt>

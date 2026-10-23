@@ -1,11 +1,11 @@
 import { getPublicItems } from "@/lib/data";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import { SITE_DESCRIPTION, siteOrigin } from "@/lib/site";
 
 export function GET(request: Request) {
   const origin = siteOrigin(new URL(request.url).origin);
   const pieces = getPublicItems()
-    .map((item) => `- ${item.title} — ${item.brand} — ${origin}/p/${item.slug} — ${formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}`)
+    .map((item) => `- ${item.title} — ${item.brand} — ${origin}/p/${item.slug} — ${formatGBP(priceOf(item))}`)
     .join("\n");
   const body = `# Hanger 22
 

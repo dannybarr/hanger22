@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import type { PublicItem } from "@/lib/schema";
 
 export function PieceCard({ item }: { item: PublicItem }) {
@@ -22,7 +22,7 @@ export function PieceCard({ item }: { item: PublicItem }) {
         </div>
         <p className="mt-5 text-[11px] tracking-[0.14em] text-muted uppercase">{item.brand}</p>
         <h2 className="display mt-1 text-[22px] text-ink">{item.shortTitle}</h2>
-        <p className="mt-2 text-[13px] text-ink">{formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}</p>
+        <p className="mt-2 text-[13px] text-ink">{formatGBP(priceOf(item))}</p>
       </Link>
     </article>
   );

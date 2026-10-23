@@ -51,7 +51,7 @@ export const sourceMarketSchema = z.enum(["UK", "JP", "EU", "US", "CN"]);
 export const authConfidenceSchema = z.enum(["high", "medium"]);
 
 /** Never serialise these onto a public page, feed, or client prop. */
-export const PRIVATE_ITEM_KEYS = ["costBasis", "markupPct", "estimatedMarginGBP", "demandSignal"] as const;
+export const PRIVATE_ITEM_KEYS = ["costBasis", "markupPct", "estimatedMarginGBP", "demandSignal", "notes", "priceProvisional"] as const;
 
 export const itemSchema = z.object({
   id: z.string().min(1),
@@ -71,6 +71,8 @@ export const itemSchema = z.object({
     })
     .optional(),
   story: z.string().min(1),
+  /** Desk research behind the story. Server and /studio only. */
+  notes: z.string().optional(),
   specs: z.record(z.string(), z.string()),
   images: z.object({
     front: z.string().min(1),
@@ -92,6 +94,10 @@ export const itemSchema = z.object({
     min: z.number().nonnegative(),
     max: z.number().nonnegative(),
   }),
+  /** The one price the shop shows. Falls back to the top of the guide. */
+  priceGBP: z.number().positive().optional(),
+  /** True until Danny confirms the price. Server and /studio only. */
+  priceProvisional: z.boolean().optional(),
   condition: conditionSchema,
   authRoute: z.string().min(1),
   status: statusSchema,
@@ -190,7 +196,7 @@ export const catalogItemSchema = z.object({
   brand: z.string(),
   collabId: z.string().nullable(),
   category: categorySchema,
-  guidePriceGBP: z.object({ min: z.number(), max: z.number() }),
+  priceGBP: z.number(),
   condition: conditionSchema,
   status: statusSchema,
   availability: availabilitySchema,

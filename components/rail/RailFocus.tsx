@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import { Garment } from "@/components/rail/garments";
 import { ShoulderWire } from "@/components/rail/ShoulderWire";
 import { EASE } from "@/lib/motion";
-import { formatRange } from "@/lib/money";
+import { formatGBP, priceOf } from "@/lib/money";
 import { cutLabel, marketNote } from "@/lib/cut";
 import type { PublicItem } from "@/lib/schema";
 
@@ -242,7 +242,7 @@ export function RailFocus({
         <a href={`/p/${item.slug}`} className="sr-only">
           View details
         </a>
-        <p className="sr-only">{formatRange(item.guidePriceGBP.min, item.guidePriceGBP.max)}</p>
+        <p className="sr-only">{formatGBP(priceOf(item))}</p>
       </div>
 
       <div

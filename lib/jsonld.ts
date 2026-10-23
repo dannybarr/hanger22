@@ -1,5 +1,6 @@
 import { cutLabel, marketNote } from "@/lib/cut";
 import { getItem } from "@/lib/data";
+import { priceOf } from "@/lib/money";
 import type { PublicItem } from "@/lib/schema";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
@@ -69,18 +70,11 @@ export function productJsonLd(slug: string, origin: string) {
     category: item.category,
     itemCondition: CONDITION[item.condition],
     offers: {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
       priceCurrency: "GBP",
-      lowPrice: item.guidePriceGBP.min,
-      highPrice: item.guidePriceGBP.max,
+      price: priceOf(item),
       availability,
       url: `${origin}/p/${item.slug}`,
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: item.guidePriceGBP.min,
-        maxPrice: item.guidePriceGBP.max,
-        priceCurrency: "GBP",
-      },
     },
   };
 }

@@ -2,7 +2,7 @@ import collabsJson from "@/data/collabs.json";
 import dropsJson from "@/data/drops.json";
 import itemsJson from "@/data/items.json";
 import sourcesJson from "@/data/sources.json";
-import { inBand } from "@/lib/money";
+import { inBand, priceOf } from "@/lib/money";
 import {
   collabSchema,
   dropSchema,
@@ -21,11 +21,13 @@ const sources = sourceSchema.array().parse(sourcesJson);
 const drops = dropSchema.array().parse(dropsJson);
 
 export function toPublicItem(item: Item): PublicItem {
-  const { costBasis, markupPct, estimatedMarginGBP, demandSignal, authConfidence, ...publicItem } = item;
+  const { costBasis, markupPct, estimatedMarginGBP, demandSignal, notes, priceProvisional, authConfidence, ...publicItem } = item;
   void costBasis;
   void markupPct;
   void estimatedMarginGBP;
   void demandSignal;
+  void notes;
+  void priceProvisional;
   if (authConfidence !== "high") return publicItem;
   return { ...publicItem, authConfidence: "high" };
 }
@@ -130,7 +132,7 @@ export function filterItems(list: PublicItem[], query: CatalogueQuery) {
     if (query.brand && item.brand !== query.brand) return false;
     if (query.collab && item.collabId !== query.collab) return false;
     if (query.availability && item.availability !== query.availability) return false;
-    if (query.band && !inBand(item.guidePriceGBP.min, item.guidePriceGBP.max, query.band)) return false;
+    if (query.band && !inBand(priceOf(item), priceOf(item), query.band)) return false;
     if (q) {
       const collab = item.collabId ? getCollab(item.collabId)?.name ?? "" : "";
       const hay = `${item.title} ${item.shortTitle} ${item.brand} ${collab} ${item.tags.join(" ")}`.toLowerCase();
