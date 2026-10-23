@@ -41,3 +41,33 @@ export function playClink() {
   ng.connect(audio.destination);
   src.start(now);
 }
+
+let hum: { osc: OscillatorNode; gain: GainNode; filter: BiquadFilterNode } | null = null;
+
+/** Low conveyor motor. Level runs 0 to 1 with rail speed; 0 lets it fall silent. */
+export function motorHum(level: number) {
+  if (typeof window === "undefined") return;
+  const audio = context();
+  if (!audio) return;
+  if (!hum) {
+    if (level <= 0) return;
+    if (audio.state === "suspended") void audio.resume();
+    const osc = audio.createOscillator();
+    const filter = audio.createBiquadFilter();
+    const gain = audio.createGain();
+    osc.type = "sawtooth";
+    osc.frequency.value = 48;
+    filter.type = "lowpass";
+    filter.frequency.value = 220;
+    gain.gain.value = 0.0001;
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audio.destination);
+    osc.start();
+    hum = { osc, gain, filter };
+  }
+  const now = audio.currentTime;
+  const clamped = Math.max(0, Math.min(1, level));
+  hum.gain.gain.setTargetAtTime(0.0001 + clamped * 0.03, now, 0.06);
+  hum.osc.frequency.setTargetAtTime(44 + clamped * 18, now, 0.08);
+}

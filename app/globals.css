@@ -222,6 +222,8 @@ html[data-night="1"] .dotgrid::before,
   cursor: url("/cursors/tag-gun.svg") 2 2, crosshair;
 }
 
+/* Shared shop components. Layered so Tailwind utilities can still adjust them. */
+@layer components {
 .nav-link {
   position: relative;
   font-size: 12px;
@@ -354,6 +356,7 @@ details.fold > summary .fold-mark {
 
 details.fold[open] > summary .fold-mark {
   transform: rotate(45deg);
+}
 }
 
 .piece-shadow {

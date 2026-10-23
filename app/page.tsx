@@ -1,14 +1,18 @@
 import { BelowFold } from "@/components/home/BelowFold";
+import { SiteHeader } from "@/components/layout/SiteChrome";
 import { HomeHero } from "@/components/rail/HomeHero";
-import { getPublicItems, getRailItems, getVaultItems } from "@/lib/data";
+import { getPublicItems, getRailItems } from "@/lib/data";
 
 export default function HomePage() {
   const rail = getRailItems();
   const rest = getPublicItems().filter((item) => !rail.some((piece) => piece.id === item.id));
   return (
-    <main id="content">
-      <HomeHero items={rail} vaultItems={getVaultItems()} />
-      <BelowFold items={[...rail, ...rest]} />
-    </main>
+    <>
+      <SiteHeader />
+      <main id="content">
+        <HomeHero items={rail} />
+        <BelowFold items={[...rail, ...rest]} />
+      </main>
+    </>
   );
 }
