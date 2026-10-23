@@ -497,3 +497,20 @@ details.fold[open] > summary .fold-mark {
     transform: none !important;
   }
 }
+
+@keyframes sheetIn {
+  from { transform: translateX(28px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes riseIn {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="sheetIn"],
+  .rise-in {
+    animation: none !important;
+  }
+}

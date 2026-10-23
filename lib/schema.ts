@@ -183,6 +183,7 @@ export const requestSchema = z.object({
   itemId: z.string().min(1).optional(),
   name: z.string().trim().min(1, "Name is required").max(120),
   email: z.string().trim().email("Enter a valid email").max(200),
+  phone: z.string().trim().max(40).optional(),
   size: z.string().trim().max(40).optional(),
   budgetGBP: z.number().positive().max(1_000_000).optional(),
   notes: z.string().trim().max(2000).optional(),

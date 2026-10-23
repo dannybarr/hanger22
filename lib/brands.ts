@@ -208,3 +208,23 @@ export const HOUSES: House[] = [
 export function getHouse(slug: string) {
   return HOUSES.find((house) => house.slug === slug);
 }
+
+function slugify(name: string) {
+  return name
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/** Houses named on a piece. "Moncler x Palm Angels" gives both; "Moncler Genius" gives Moncler. */
+export function housesFor(brand: string): House[] {
+  const found: House[] = [];
+  for (const part of brand.split(/\s+x\s+/i)) {
+    const slug = slugify(part);
+    const house = HOUSES.find((entry) => slug === entry.slug || slug.startsWith(`${entry.slug}-`));
+    if (house && !found.includes(house)) found.push(house);
+  }
+  return found;
+}

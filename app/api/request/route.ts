@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     itemId: typeof raw.itemId === "string" && raw.itemId.trim() ? raw.itemId.trim() : undefined,
     name: raw.name,
     email: raw.email,
+    phone: typeof raw.phone === "string" && raw.phone.trim() ? raw.phone.trim() : undefined,
     size: typeof raw.size === "string" && raw.size.trim() ? raw.size.trim() : undefined,
     notes: typeof raw.notes === "string" && raw.notes.trim() ? raw.notes.trim() : undefined,
     budgetGBP: raw.budgetGBP === "" || raw.budgetGBP == null ? undefined : Number(raw.budgetGBP),
