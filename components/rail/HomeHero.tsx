@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Wordmark } from "@/components/layout/Wordmark";
 import { Marquee } from "@/components/marquee/Marquee";
 import { Rail } from "@/components/rail/Rail";
 import { RailFocus } from "@/components/rail/RailFocus";
@@ -166,9 +167,9 @@ export function HomeHero({ items, vaultItems }: { items: PublicItem[]; vaultItem
           </Link>
         </nav>
         <Link href="/" className="absolute top-0 left-1/2 -translate-x-1/2 text-ink">
-          <h1 className="text-center leading-[0.9]">
-            <span className="block font-script text-[26px]">Hanger</span>
-            <span className="block font-script text-[18px]">22</span>
+          <h1>
+            <span className="sr-only">Hanger 22</span>
+            <Wordmark />
           </h1>
         </Link>
         {vault ? (

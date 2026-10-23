@@ -1,32 +1,37 @@
 @import "tailwindcss";
-@import "@fontsource-variable/instrument-sans";
-@import "@fontsource/playfair-display/latin-500.css";
+@import "@fontsource/archivo-narrow/latin-500.css";
+@import "@fontsource/archivo-narrow/latin-600.css";
+@import "@fontsource/inter-tight/latin-400.css";
+@import "@fontsource/inter-tight/latin-500.css";
+@import "@fontsource/dm-mono/latin-400.css";
 @import "@fontsource/dm-mono/latin-500.css";
 
-/* Wardrobe Vaulted tokens, verbatim from src/styles/wardrobe/styles.css
-   and the landing wash / dot grid in landing-page.css. */
+/* Paper, shadows and cut-outs follow Wardrobe Vaulted. Type is direction C:
+   Archivo Narrow for names, Inter Tight for the shop, DM Mono for tickets. */
 @theme {
-  --font-sans: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Archivo Narrow", "Arial Narrow", sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;
-  --font-script: "Playfair Display", Georgia, serif;
+  --font-script: "Archivo Narrow", "Arial Narrow", sans-serif;
   --color-paper: #ece5da;
-  --color-ink: #3a2c20;
-  --color-ink-hover: #4b392a;
-  --color-muted: #66625d;
-  --color-line: #cfc8bc;
+  --color-tile: #e4dccf;
+  --color-ink: #17130f;
+  --color-ink-hover: #2c2520;
+  --color-muted: #6b645b;
+  --color-line: #d3cabc;
   --color-accent: #6e302e;
-  --color-body: #3a2c20;
+  --color-body: #2b241d;
+  --color-ticket: #efe2c4;
   --color-vault-lime: #e0a955;
   --color-vault-clay: #b98a5e;
 }
 
 :root {
   --paper: #ece5da;
-  --ink: #3a2c20;
-  --ink-hover: #4b392a;
-  --muted: #66625d;
-  --line: #cfc8bc;
+  --ink: #17130f;
+  --ink-hover: #2c2520;
+  --muted: #6b645b;
+  --line: #d3cabc;
   --accent: #6e302e;
   --paper-wash:
     radial-gradient(120% 55% at 50% -12%, rgba(224, 169, 85, 0.42), rgba(224, 169, 85, 0) 62%),
@@ -49,7 +54,8 @@ body {
   min-width: 320px;
   background: transparent;
   color: var(--ink);
-  font-family: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "tnum" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -81,6 +87,7 @@ html[data-night="1"] {
   --line: #3a322c;
   --paper-wash: linear-gradient(180deg, #241c17 0%, #1c1714 42%, #14110e 100%);
   --color-paper: #1c1714;
+  --color-tile: #241e1a;
   --color-ink: #ece5da;
   --color-body: #ece5da;
   --color-muted: #b7aea3;
@@ -216,32 +223,71 @@ html[data-night="1"] .dotgrid::before,
 }
 
 .nav-link {
-  font-size: 11px;
-  line-height: 1;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-body);
-}
-
-.pill-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  border: 1px solid var(--color-ink);
-  padding: 6px 14px;
-  font-size: 11px;
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Square buttons. Outline for secondary actions, solid for the one that matters. */
+.pill-btn,
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  padding: 0 22px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
   background: transparent;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .pill-btn:hover {
   background: var(--color-ink);
-  color: #f7f4ee;
+  color: var(--color-paper);
+}
+
+.btn-solid {
+  min-height: 54px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-solid:hover {
+  background: var(--color-ink-hover);
+}
+
+.btn-solid:disabled {
+  opacity: 0.6;
 }
 
 [data-vault="open"] .pill-btn:hover {
@@ -250,10 +296,64 @@ html[data-night="1"] .dotgrid::before,
 
 .display,
 .font-script {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
   font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.mono {
+  font-family: "DM Mono", ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+
+.utility-bar {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tile {
+  background: var(--color-tile);
+}
+
+.field-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+details.fold > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.fold > summary .fold-mark {
+  transition: transform 260ms cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+
+details.fold[open] > summary .fold-mark {
+  transform: rotate(45deg);
 }
 
 .piece-shadow {
@@ -266,10 +366,12 @@ html[data-night="1"] .dotgrid::before,
 
 .field {
   border: 1px solid color-mix(in srgb, var(--color-ink) 35%, transparent);
+  border-radius: 0;
   background: transparent;
   color: var(--color-body);
-  padding: 8px 10px;
-  font-size: 14px;
+  min-height: 46px;
+  padding: 10px 12px;
+  font-size: 15px;
   letter-spacing: 0;
   text-transform: none;
   width: 100%;
