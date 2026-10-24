@@ -38,3 +38,9 @@ export const PLACEHOLDER_NOTE =
 export function siteOrigin(fallback: string) {
   return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || fallback;
 }
+
+/**
+ * Hanger 22's social accounts. Brand stories link here once accounts exist.
+ * Empty until Danny confirms the handles, so no page links to an account that is not live.
+ */
+export const SOCIAL: { label: string; url: string }[] = [];
