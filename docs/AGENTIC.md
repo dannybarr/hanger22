@@ -1,16 +1,16 @@
 # Agentic commerce
 
-Hanger 22 does not check out. A request is an enquiry. The feeds below tell an agent what can be sourced, in pounds, and that payment is not available on the site.
+Hanger 22 does not check out on the site. A customer reserves a piece, and payment follows by link once we confirm it. The feeds below tell an agent what is on the rail, in pounds, and that checkout is not available. For adding products, see AGENTS.md at the repo root.
 
 ## What is live in V1
 
-- JSON-LD `Product` on `/p/[slug]`, with `Brand`, an `AggregateOffer` in GBP, and `isRelatedTo` when the piece belongs to a collab. `availability` is `InStock` when the piece is in the vault, `LimitedAvailability` for a vault candidate still sourced to order, otherwise `PreOrder`. The homepage carries `Organization` and `WebSite` with a `SearchAction` pointed at `/pieces?q=`.
+- JSON-LD `Product` on `/p/[slug]`, with `Brand`, a single `Offer` in GBP, and `isRelatedTo` when the piece belongs to a collab. `availability` is `InStock` when the piece is in the vault, `LimitedAvailability` for a vault candidate still sourced to order, otherwise `PreOrder`. The homepage carries `Organization` and `WebSite` with a `SearchAction` pointed at `/pieces?q=`.
 - `/llms.txt` — a markdown brief: how requests work, the catalogue, policies, contact.
 - `/api/catalog` — `{ version: 1, generated_at, items }`. Public pieces only. `revalidate` is 3600 seconds. Vault hangers are excluded.
-- `/api/acp-feed` — an ACP-shaped product feed. Each item has `id`, `title`, `description`, `link`, `image_link`, `brand`, `condition`, `price` (guide minimum, `GBP`), `availability`, `enable_search: true`, `enable_checkout: false`.
+- `/api/acp-feed` — an ACP-shaped product feed. Each item has `id`, `title`, `description`, `link`, `image_link`, `brand`, `condition`, `price` (the shop price, `GBP`), `availability`, `enable_search: true`, `enable_checkout: false`.
 - `robots.txt` allows GPTBot, Google-Extended, PerplexityBot and OAI-SearchBot. `sitemap.xml` lists the public URLs.
 
-The public catalogue is cut-outs only. Items carry `imageStatus`, `availability` (`in_vault` or `sourced`), `cutReason` and `sourceMarket`. `authConfidence` is included only when it is `high`. The ACP description leads with the story, the cut and the market; the guide price comes after. The ACP item uses `in_stock` or `preorder` for the vault split. Cost, markup, margin and the demand signal are not in JSON-LD, `/llms.txt`, `/api/catalog` or `/api/acp-feed`. `/studio` is a noindex desk and is disallowed in `robots.txt`.
+The public catalogue is cut-outs only. Items carry `imageStatus`, `availability` and `cutReason`. Source market, tags, status and sourcing details are never served. The ACP description leads with the story and the cut; the price comes after. The ACP item uses `in_stock` or `preorder` for the vault split. Cost, markup, margin and the demand signal are not in JSON-LD, `/llms.txt`, `/api/catalog` or `/api/acp-feed`. `/studio` is a noindex desk and is disallowed in `robots.txt`.
 
 ## ACP checkout, later
 
