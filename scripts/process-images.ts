@@ -187,7 +187,7 @@ export async function writeRaster(raster: Raster, file: string) {
   const encoded = await sharp(Buffer.from(raster.data), {
     raw: { width: raster.width, height: raster.height, channels: 4 },
   })
-    .webp({ quality: 95, alphaQuality: 100, effort: 5 })
+    .webp({ lossless: true, effort: 5 })
     .toBuffer();
   await writeFile(file, encoded);
 }

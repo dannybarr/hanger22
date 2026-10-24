@@ -8,7 +8,7 @@ export function Reveal({ children, className, delay = 0 }: { children: React.Rea
   const reduced = useReducedMotion();
   return (
     <motion.div
-      className={className}
+      className={`reveal ${className ?? ""}`}
       initial={reduced ? false : { opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -12% 0px" }}

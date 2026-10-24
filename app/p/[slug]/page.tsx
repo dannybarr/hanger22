@@ -85,7 +85,14 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
         </nav>
 
         <div className="mt-6 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
-          <ProductStage front={frontImage(item)} spin={item.images.spin ?? []} title={item.shortTitle} />
+          <div>
+            <ProductStage front={frontImage(item)} spin={item.images.spin ?? []} title={item.shortTitle} />
+            {item.images.studio ? (
+              <p className="mt-2 text-[12px] leading-relaxed text-muted">
+                Studio image, rebuilt from the seller&rsquo;s photograph. We send you real photographs of this piece before you pay.
+              </p>
+            ) : null}
+          </div>
 
           <div className="lg:sticky lg:top-8">
             <p className="eyebrow">

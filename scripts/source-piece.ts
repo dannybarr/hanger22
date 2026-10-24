@@ -18,15 +18,22 @@
  *
  * Optional: --box x,y,w,h on WV's 0-1000 grid, --secondary "#hex",
  * --tags "stand collar,flap pockets", --tolerance 46.
- * Writes public/cutouts/<id>-<view>.webp and records it in data/items.json.
+ * It writes a candidate and a preview to sourcing/.work/<id>. Nothing goes live
+ * until a person checks it and reruns with --accept, which copies it into
+ * public/cutouts, records credit and source, backs up items.json and refreshes
+ * fit.json. --credit and --source-url are required so provenance is never lost.
  */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 // @ts-expect-error Node runs this file directly, so the import keeps its .ts extension.
 import { chooseChromaKey, processChromaBackground, readRaster, writeRaster } from "./process-images.ts";
 
 type PieceMetadata = { name?: string; part?: string; color?: string | null; secondaryColor?: string | null; tags?: string[] };
+
+/** WV's own-key path. Its built-in path uses a different model through a gateway this script cannot call. */
+const MODEL = "gpt-image-2";
 
 const VIEWS = ["front", "right", "back", "left"] as const;
 type View = (typeof VIEWS)[number];
@@ -72,7 +79,8 @@ function arg(name: string) {
 
 /** WV cropDetectedItem: box on a 0-1000 grid, 8% padding, minimum 12px. */
 async function crop(photo: Buffer, box: string | undefined): Promise<Buffer> {
-  const upright = await sharp(photo).rotate().toColourspace("srgb").png().toBuffer();
+  // WV caps the working image at 2400px before cropping, so a 48MP phone photo never reaches the model whole.
+  const upright = await sharp(photo).rotate().toColourspace("srgb").resize({ width: 2400, height: 2400, fit: "inside", withoutEnlargement: true }).png().toBuffer();
   if (!box) return upright;
   const [bx, by, bw, bh] = box.split(",").map(Number);
   const meta = await sharp(upright).metadata();
@@ -99,7 +107,7 @@ async function reconstruct(image: Buffer, prompt: string): Promise<Buffer> {
   const key = process.env.OPENAI_API_KEY;
   if (!key) throw new Error("Set OPENAI_API_KEY to run the reconstruction stage.");
   const form = new FormData();
-  form.set("model", process.env.OPENAI_IMAGE_MODEL || "gpt-image-2");
+  form.set("model", MODEL);
   form.set("prompt", prompt);
   form.set("size", "1024x1024");
   form.set("quality", "high");
@@ -118,10 +126,22 @@ async function reconstruct(image: Buffer, prompt: string): Promise<Buffer> {
 
 async function main() {
   const id = arg("id");
-  const photo = arg("photo");
   const view = (arg("view") || "front") as View;
-  if (!id || !photo || !VIEWS.includes(view)) {
-    console.error("usage: source-piece.ts --id <item id> --photo <file> [--view front|right|back|left] [--name] [--part] [--color #hex] [--box x,y,w,h]");
+  if (!id || !VIEWS.includes(view)) {
+    console.error("usage: source-piece.ts --id <item id> --photo <file> --credit <who took it> --source-url <url> [--view front|right|back|left] [--name] [--part] [--color #hex] [--box x,y,w,h]\n       source-piece.ts --id <item id> --view <view> --accept");
+    process.exit(1);
+  }
+  const work = path.join("sourcing", ".work", id);
+  if (process.argv.includes("--accept")) {
+    await accept(id, view, work);
+    return;
+  }
+
+  const photo = arg("photo");
+  const credit = arg("credit");
+  const sourceUrl = arg("source-url");
+  if (!photo || !credit || !sourceUrl) {
+    console.error("--photo, --credit and --source-url are all required, so every image keeps its provenance.");
     process.exit(1);
   }
   const metadata: PieceMetadata = {
@@ -132,7 +152,6 @@ async function main() {
     tags: arg("tags")?.split(",").map((tag) => tag.trim()).filter(Boolean),
   };
   const chromaKey = chooseChromaKey(metadata.color ?? undefined);
-  const work = path.join("sourcing", ".work", id);
   await mkdir(work, { recursive: true });
 
   const cropped = await crop(await readFile(photo), arg("box"));
@@ -156,9 +175,30 @@ async function main() {
   }
   if (!accepted) throw new Error(`Chroma left on the edge. Check ${generatedFile} and rerun with --tolerance, or regenerate.`);
 
-  const output = `public/cutouts/${id}-${view}.webp`;
-  await writeRaster(accepted.raster, output);
+  // Nothing goes live yet. The candidate waits in sourcing/.work for a person to look at it.
+  const candidate = path.join(work, `${view}-cutout.webp`);
+  await writeRaster(accepted.raster, candidate);
+  const preview = path.join(work, `${view}-preview.png`);
+  const { data, width, height } = accepted.raster;
+  await sharp({ create: { width, height, channels: 4, background: "#ece5da" } })
+    .composite([{ input: await sharp(Buffer.from(data), { raw: { width, height, channels: 4 } }).png().toBuffer() }])
+    .png()
+    .toFile(preview);
+  await writeFile(
+    path.join(work, `${view}-run.json`),
+    `${JSON.stringify({ model: MODEL, prompt, chromaKey, tolerance: accepted.tolerance, photo, credit, sourceUrl, at: new Date().toISOString() }, null, 2)}\n`,
+  );
+  console.log(`Candidate ready. Check ${preview} against the real photo, then publish with:\n  node --experimental-strip-types scripts/source-piece.ts --id ${id} --view ${view} --accept`);
+}
 
+/** Publish a reviewed candidate: copy it into the site, record provenance, back up the data, refresh the fit. */
+async function accept(id: string, view: View, work: string) {
+  const candidate = path.join(work, `${view}-cutout.webp`);
+  const run = JSON.parse(await readFile(path.join(work, `${view}-run.json`), "utf8")) as { credit: string; sourceUrl: string };
+  const output = `public/cutouts/${id}-${view}.webp`;
+  await copyFile(candidate, output);
+
+  await copyFile("data/items.json", path.join(work, `items-before-${Date.now()}.json`));
   const items = JSON.parse(await readFile("data/items.json", "utf8")) as Array<{ id: string; images: Record<string, unknown> & { spin?: string[] } }>;
   const item = items.find((entry) => entry.id === id);
   if (!item) throw new Error(`No item ${id} in data/items.json`);
@@ -169,12 +209,17 @@ async function main() {
     item.images.pixelHeight = 1024;
     item.images.imageStatus = "cutout";
     item.images.placeholder = false;
+    item.images.credit = run.credit;
+    item.images.sourceUrl = run.sourceUrl;
+    item.images.studio = true;
   }
   const spin: Record<string, string> = Object.fromEntries((item.images.spin ?? []).map((src: string) => [src.match(/-(front|right|back|left)\.webp$/)?.[1] ?? src, src]));
   spin[view] = url;
   item.images.spin = VIEWS.filter((name) => spin[name]).map((name) => spin[name]);
   await writeFile("data/items.json", `${JSON.stringify(items, null, 2)}\n`);
-  console.log(`saved ${output}. Run node scripts/measure-fit.mjs to refresh the fit data.`);
+
+  execFileSync(process.execPath, ["scripts/measure-fit.mjs"], { stdio: "inherit" });
+  console.log(`Published ${output}. data/items.json and data/fit.json are updated; the old items.json is backed up in ${work}.`);
 }
 
 main().catch((error) => {

@@ -85,6 +85,8 @@ export const itemSchema = z.object({
     sourceUrl: z.string().optional(),
     /** Cut-outs from around the piece, in turning order (front, right, back, left). Drives the 360 view. */
     spin: z.array(z.string()).optional(),
+    /** True when the cut-out was rebuilt by the image model from the seller's photo. The page says so. */
+    studio: z.boolean().optional(),
     /** Share of the tight alpha bounding box that is opaque. The rail rejects 0.8 and above. */
     alphaCoverage: z.number().min(0).max(1).optional(),
     pixelWidth: z.number().int().positive().optional(),

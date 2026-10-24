@@ -1,25 +1,26 @@
 "use client";
 
 import { ArrowsOutSimple, MagnifyingGlassMinus } from "@phosphor-icons/react";
-import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export type StageImage = { src: string; alt: string; width: number; height: number };
 
 const FRAME_PX = 140; // drag distance that turns the piece by one view
+const MIN_VIEWS = 4; // fewer real views than this is not a turn, so no 360 toggle
 
 /**
- * The piece in full focus on its own tile. Tap or click to look closer, and the
- * zoom follows your hand. When we have cut-outs from around the piece, the 360
- * toggle lets you turn it by dragging.
+ * The piece in full focus on its own tile. Tap or click to look closer; the zoom
+ * follows your pointer or finger. When we have at least four real views of the
+ * piece, the 360 toggle lets you turn it by dragging.
  */
 export function ProductStage({ front, spin, title }: { front: StageImage; spin: string[]; title: string }) {
-  const reduced = useReducedMotion();
-  const canSpin = spin.length >= 2;
+  const canSpin = spin.length >= MIN_VIEWS;
   const [mode, setMode] = useState<"still" | "zoom" | "spin">("still");
   const [origin, setOrigin] = useState({ x: 50, y: 50 });
   const tileRef = useRef<HTMLDivElement>(null);
+  const press = useRef<{ x: number; y: number } | null>(null);
+  const moved = useRef(false);
 
   function pointAt(clientX: number, clientY: number) {
     const rect = tileRef.current?.getBoundingClientRect();
@@ -34,49 +35,77 @@ export function ProductStage({ front, spin, title }: { front: StageImage; spin: 
     <div>
       <div
         ref={tileRef}
-        className={`tile relative aspect-[4/5] touch-pan-y overflow-hidden select-none ${mode === "zoom" ? "cursor-zoom-out" : mode === "spin" ? "cursor-ew-resize" : "cursor-zoom-in"}`}
+        className={`tile relative aspect-[4/5] overflow-hidden select-none ${mode === "zoom" ? "cursor-zoom-out" : mode === "spin" ? "cursor-ew-resize" : "cursor-zoom-in"}`}
+        style={{ touchAction: mode === "still" ? "pan-y" : "none" }}
+        onPointerDown={(event) => {
+          press.current = { x: event.clientX, y: event.clientY };
+          moved.current = false;
+        }}
+        onPointerMove={(event) => {
+          if (mode !== "zoom") return;
+          if (press.current && Math.hypot(event.clientX - press.current.x, event.clientY - press.current.y) > 6) moved.current = true;
+          // A mouse looks around by hovering; a finger looks around by dragging.
+          if (event.pointerType === "mouse" || press.current) pointAt(event.clientX, event.clientY);
+        }}
+        onPointerUp={() => {
+          press.current = null;
+        }}
         onClick={(event) => {
-          if (mode === "spin") return;
+          if (mode === "spin" || moved.current) return;
           pointAt(event.clientX, event.clientY);
           setMode((current) => (current === "zoom" ? "still" : "zoom"));
         }}
-        onPointerMove={(event) => {
-          if (mode === "zoom") pointAt(event.clientX, event.clientY);
-        }}
       >
-        <div aria-hidden className="pointer-events-none absolute inset-x-[18%] bottom-[7%] h-[5%] rounded-[50%] bg-[rgba(39,31,23,0.16)] blur-[18px]" />
         {mode === "spin" ? (
-          <Spin frames={spin} title={title} reduced={Boolean(reduced)} />
+          <Spin frames={spin} title={title} />
         ) : (
-          <motion.div
-            className="absolute inset-[6%]"
-            initial={reduced ? false : { opacity: 0, y: 18, scale: 0.985 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.22, 0.8, 0.22, 1] }}
-          >
+          <div className="rise-in absolute inset-[7%]">
             <div
-              className="relative h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,0.8,0.22,1)]"
+              className="relative h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,0.8,0.22,1)] motion-reduce:transition-none"
               style={{ transform: mode === "zoom" ? "scale(2.2)" : "scale(1)", transformOrigin: `${origin.x}% ${origin.y}%` }}
             >
-              <Image src={front.src} alt={front.alt} fill quality={92} priority sizes="(max-width: 1024px) 92vw, 640px" className="object-contain" />
+              <Image
+                src={front.src}
+                alt={front.alt}
+                fill
+                quality={92}
+                priority
+                sizes={mode === "zoom" ? "1100px" : "(max-width: 1024px) 92vw, 640px"}
+                className="object-contain [filter:drop-shadow(0_26px_22px_rgba(39,31,23,0.2))]"
+              />
             </div>
-          </motion.div>
+          </div>
         )}
+        {canSpin && mode !== "spin" ? (
+          // Mounted early and hidden, so every view is loaded before the first turn.
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0">
+            {spin.map((src) => (
+              <Image key={src} src={src} alt="" fill quality={92} sizes="(max-width: 1024px) 92vw, 640px" className="object-contain" />
+            ))}
+          </div>
+        ) : null}
+      </div>
 
-        <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-3" onClick={(event) => event.stopPropagation()}>
-          <button
-            type="button"
-            className="flex h-10 items-center gap-2 border border-line bg-paper/85 px-3 text-[11px] font-medium tracking-[0.12em] text-ink uppercase backdrop-blur-sm transition-colors hover:border-ink"
-            aria-pressed={mode === "zoom"}
-            onClick={() => setMode((current) => (current === "zoom" ? "still" : "zoom"))}
-          >
-            {mode === "zoom" ? <MagnifyingGlassMinus size={15} aria-hidden /> : <ArrowsOutSimple size={15} aria-hidden />}
-            {mode === "zoom" ? "Zoom out" : "Zoom"}
-          </button>
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-[12px] text-muted" aria-live="polite">
+          {mode === "spin" ? "Drag to turn the piece, or use the arrow keys." : mode === "zoom" ? "Move to look around. Tap to zoom out." : "Tap the piece to look closer."}
+        </p>
+        <div className="flex gap-2">
+          {mode !== "spin" ? (
+            <button
+              type="button"
+              className="flex h-10 items-center gap-2 border border-line px-3 text-[11px] font-medium tracking-[0.12em] text-ink uppercase transition-colors hover:border-ink"
+              aria-pressed={mode === "zoom"}
+              onClick={() => setMode((current) => (current === "zoom" ? "still" : "zoom"))}
+            >
+              {mode === "zoom" ? <MagnifyingGlassMinus size={15} aria-hidden /> : <ArrowsOutSimple size={15} aria-hidden />}
+              {mode === "zoom" ? "Zoom out" : "Zoom"}
+            </button>
+          ) : null}
           {canSpin ? (
             <button
               type="button"
-              className={`flex h-10 items-center gap-2 border px-3 text-[11px] font-medium tracking-[0.12em] uppercase backdrop-blur-sm transition-colors ${mode === "spin" ? "border-ink bg-ink text-paper" : "border-line bg-paper/85 text-ink hover:border-ink"}`}
+              className={`flex h-10 items-center gap-2 border px-3 text-[11px] font-medium tracking-[0.12em] uppercase transition-colors ${mode === "spin" ? "border-ink bg-ink text-paper" : "border-line text-ink hover:border-ink"}`}
               aria-pressed={mode === "spin"}
               onClick={() => setMode((current) => (current === "spin" ? "still" : "spin"))}
             >
@@ -86,22 +115,18 @@ export function ProductStage({ front, spin, title }: { front: StageImage; spin: 
           ) : null}
         </div>
       </div>
-      <p className="mt-3 text-[12px] text-muted">
-        {mode === "spin" ? "Drag to turn the piece. Arrow keys work too." : "Tap the piece to look closer."}
-      </p>
     </div>
   );
 }
 
 /** A turntable built from real views. Neighbouring views cross over as the piece turns. */
-function Spin({ frames, title, reduced }: { frames: string[]; title: string; reduced: boolean }) {
+function Spin({ frames, title }: { frames: string[]; title: string }) {
   const count = frames.length;
   const [angle, setAngle] = useState(0);
   const angleRef = useRef(0);
   const velocity = useRef(0);
   const drag = useRef<{ x: number; angle: number; t: number } | null>(null);
   const frame = useRef(0);
-  const stageRef = useRef<HTMLDivElement>(null);
 
   function settle() {
     cancelAnimationFrame(frame.current);
@@ -123,40 +148,31 @@ function Spin({ frames, title, reduced }: { frames: string[]; title: string; red
     frame.current = requestAnimationFrame(tick);
   }
 
-  useEffect(() => {
-    stageRef.current?.focus({ preventScroll: true });
-    if (reduced) return;
-    // One gentle quarter turn and back, so it is clear the piece can move.
-    velocity.current = 2.4;
+  function turnTo(target: number) {
+    velocity.current = 0;
+    angleRef.current = target;
     settle();
-    const back = window.setTimeout(() => {
-      velocity.current = -2.4;
-      settle();
-    }, 650);
-    return () => {
-      window.clearTimeout(back);
-      cancelAnimationFrame(frame.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }
+
+  useEffect(() => () => cancelAnimationFrame(frame.current), []);
 
   const wrapped = ((angle % count) + count) % count;
   const from = Math.floor(wrapped) % count;
   const to = (from + 1) % count;
   const t = wrapped - Math.floor(wrapped);
   const blend = t * t * (3 - 2 * t);
-  const squash = 1 - 0.16 * Math.sin(Math.PI * t);
+  const snapped = ((Math.round(angle) % count) + count) % count;
+  const degrees = Math.round((snapped / count) * 360) % 360;
 
   return (
     <div
-      ref={stageRef}
       tabIndex={0}
       role="slider"
       aria-label={`Turn ${title}`}
       aria-valuemin={0}
       aria-valuemax={359}
-      aria-valuenow={Math.round((wrapped / count) * 360) % 360}
-      aria-valuetext={`${Math.round((wrapped / count) * 360) % 360} degrees`}
+      aria-valuenow={degrees}
+      aria-valuetext={`View ${snapped + 1} of ${count}, ${degrees} degrees`}
       className="absolute inset-0 outline-none focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-[var(--color-ink)]"
       onPointerDown={(event) => {
         cancelAnimationFrame(frame.current);
@@ -186,25 +202,26 @@ function Spin({ frames, title, reduced }: { frames: string[]; title: string; red
         settle();
       }}
       onKeyDown={(event) => {
-        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        const base = Math.round(angleRef.current);
+        if (event.key === "ArrowRight" || event.key === "ArrowUp") turnTo(base + 1);
+        else if (event.key === "ArrowLeft" || event.key === "ArrowDown") turnTo(base - 1);
+        else if (event.key === "Home") turnTo(base - snapped);
+        else if (event.key === "End") turnTo(base - snapped + count - 1);
+        else return;
         event.preventDefault();
-        velocity.current = 0;
-        angleRef.current = Math.round(angleRef.current) + (event.key === "ArrowRight" ? 1 : -1);
-        settle();
       }}
     >
       {frames.map((src, index) => {
         const opacity = index === from ? 1 - blend : index === to ? blend : 0;
-        // Every view stays mounted so all are loaded before the first turn.
         return (
-          <div key={src} className="absolute inset-[6%]" style={{ opacity, transform: `scaleX(${squash.toFixed(4)})` }}>
-            <Image src={src} alt="" fill quality={92} priority sizes="(max-width: 1024px) 92vw, 640px" className="pointer-events-none object-contain" draggable={false} />
+          <div key={src} className="absolute inset-[7%]" style={{ opacity }}>
+            <Image src={src} alt="" fill quality={92} sizes="(max-width: 1024px) 92vw, 640px" className="pointer-events-none object-contain [filter:drop-shadow(0_26px_22px_rgba(39,31,23,0.2))]" draggable={false} />
           </div>
         );
       })}
       <div aria-hidden className="absolute top-3 right-3 h-9 w-9 rounded-full border border-line bg-paper/80">
         <span
-          className="absolute top-1/2 left-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
+          className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-ink"
           style={{ transform: `translate(-50%, -50%) rotate(${(wrapped / count) * 360}deg) translateY(-12px)` }}
         />
       </div>
