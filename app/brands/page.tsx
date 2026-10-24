@@ -11,19 +11,32 @@ export const metadata: Metadata = {
   description: "The houses Hanger 22 hunts for, each with its story. The lit ones are on the rail now.",
 };
 
-/** Houses with a story or stock sit at eye level, beside the doorway. */
+const WALL_COLUMNS = 4;
+
+/**
+ * Houses with a story or stock sit at eye level, beside the doorway: the middle
+ * rows, filling outwards from the columns nearest the opening, alternating sides.
+ */
 function arrange(houses: House[], featured: Set<string>) {
   const perSide = Math.ceil(houses.length / 2);
-  const eyeLevel = [perSide - 9, perSide + 4, perSide - 5, perSide + 8, perSide - 10, perSide + 5];
+  const rows = Math.ceil(perSide / WALL_COLUMNS);
+  const middle = [...new Set([Math.floor((rows - 1) / 2), Math.ceil((rows - 1) / 2)])];
+  const rowsByReach = [...middle, ...Array.from({ length: rows }, (_, row) => row).filter((row) => !middle.includes(row))];
+  const eyeLevel: number[] = [];
+  for (let reach = 0; reach < WALL_COLUMNS; reach += 1) {
+    for (const row of rowsByReach) {
+      eyeLevel.push(row * WALL_COLUMNS + (WALL_COLUMNS - 1 - reach), perSide + row * WALL_COLUMNS + reach);
+    }
+  }
   const front = houses.filter((house) => featured.has(house.slug));
   const rest = houses.filter((house) => !featured.has(house.slug));
   const slots: (House | undefined)[] = new Array(houses.length).fill(undefined);
   front.forEach((house, index) => {
-    const slot = eyeLevel[index];
-    if (slot != null && slot >= 0 && slot < slots.length) slots[slot] = house;
+    const slot = eyeLevel.find((candidate, position) => position >= index && candidate < slots.length && !slots[candidate]);
+    if (slot != null) slots[slot] = house;
     else rest.unshift(house);
   });
-  return slots.map((slot) => slot ?? rest.shift()!).filter(Boolean);
+  return slots.map((slot) => slot ?? rest.shift()).filter((house): house is House => Boolean(house));
 }
 
 export default function BrandsPage() {
@@ -39,7 +52,7 @@ export default function BrandsPage() {
       <main id="content">
         <section className="house-room pt-10 pb-16 sm:pt-14 sm:pb-24" aria-labelledby="houses-title">
           <TrophyWall houses={wall} stocked={stocked}>
-            <div className="flex h-full flex-col justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.35)_100%)] px-4 pt-6 pb-2 text-center lg:px-6 lg:pb-10">
+            <div>
               <p className="mono text-[11px] tracking-[0.2em] text-[#d9bb75] uppercase">Hanger 22</p>
               <h1 id="houses-title" className="display mt-4 text-[52px] text-[#f6ecda] sm:text-[72px]">
                 The houses
@@ -53,6 +66,9 @@ export default function BrandsPage() {
               </p>
             </div>
           </TrophyWall>
+          <p className="mx-auto mt-14 max-w-2xl px-5 text-center text-[12px] leading-relaxed text-[#9c8c76]">
+            Hanger 22 is an independent reseller and is not affiliated with, or endorsed by, the houses on this wall. Their names and marks belong to them.
+          </p>
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="archive">

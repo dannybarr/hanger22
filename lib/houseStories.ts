@@ -1,7 +1,7 @@
 /**
- * The long-form story of each house. Every line must trace to a source in the
- * house's `sources` list. A house without an entry shows a short page instead,
- * so nothing is written from memory.
+ * The long-form story of each house. Each fact is checked against the house's
+ * `sources` list before it goes in, and anything a source does not support is
+ * left out. A house without an entry shows a short page instead.
  */
 
 export type Chapter = { year: string; title: string; body: string };
@@ -26,12 +26,12 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
     founders: "Massimo Osti",
     line: "A house that starts with the cloth.",
     intro:
-      "Stone Island began with a lorry tarpaulin. Massimo Osti, already running C.P. Company, studied a heavy canvas that was a different colour on each side and stone-washed it until it softened. The cloth became Tela Stella, and seven outerwear pieces cut from it became the first Stone Island collection.",
+      "Stone Island began with a lorry tarpaulin. Massimo Osti, already running C.P. Company, studied a heavy tarpaulin canvas and stone-washed it until it softened. The cloth became Tela Stella, and seven outerwear pieces cut from it became the first Stone Island collection.",
     chapters: [
       {
         year: "1982",
         title: "Seven jackets and a badge",
-        body: "The first collection was seven pieces of outerwear in Tela Stella. The first jacket carried a compass on a fabric badge, a nod to where the cloth came from and where the house meant to go. The name came from the novels of Joseph Conrad.",
+        body: "The first collection was seven pieces of outerwear in Tela Stella. The first jacket carried a compass on a fabric badge, and the name came from the novels of Joseph Conrad.",
       },
       {
         year: "1983",
@@ -120,7 +120,7 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
     founders: "Francesco Ragazzi",
     line: "A photo book that became a label.",
     intro:
-      "Palm Angels started with a camera. Francesco Ragazzi, then art director at Moncler, began photographing skaters on trips to Los Angeles. The pictures became a book, and the book's name became a label.",
+      "Palm Angels started with a camera. Francesco Ragazzi, then creative director at Moncler, began photographing skaters on trips to Los Angeles. The pictures became a book, and the book's name became a label.",
     chapters: [
       {
         year: "2011",
@@ -140,12 +140,11 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
       {
         year: "2018",
         title: "8 Moncler Palm Angels",
-        body: "When Moncler launched Genius in February 2018, Palm Angels was one of the eight original collections. The Moncler logo was reworked with a palm tree and angel wings.",
+        body: "When Moncler announced Genius in Milan in February 2018, 8 Moncler Palm Angels was one of the eight original collections.",
       },
     ],
     codes: [
       { name: "Skate photography", body: "The brand's eye comes from Ragazzi's camera and the Los Angeles skate scene." },
-      { name: "The palm and the wings", body: "Symbols that turn up across the line, including on its Moncler work." },
     ],
     sources: [
       { label: "Dazed, Francesco Ragazzi and Palm Angels", url: "https://www.dazeddigital.com/fashion/article/44745/1/palm-angels-francesco-ragazzi-moncler-8-collaboration" },
@@ -161,7 +160,7 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
     founders: "James Jebbia",
     line: "A skate shop on Lafayette Street.",
     intro:
-      "Supreme opened in April 1994 in a former office space on Lafayette Street in Lower Manhattan. James Jebbia, who had worked at Union and Stüssy, built the shop around skateboarders, and the clothes grew out of the shop.",
+      "Supreme opened in April 1994 in a former office space on Lafayette Street in Lower Manhattan. James Jebbia built the shop around skateboarders, and the clothes grew out of the shop.",
     chapters: [
       {
         year: "1994",
@@ -176,12 +175,12 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
       {
         year: "2024",
         title: "EssilorLuxottica",
-        body: "EssilorLuxottica agreed to buy Supreme from VF for about $1.5 billion. The deal was announced in July 2024.",
+        body: "EssilorLuxottica bought Supreme from VF for about $1.5 billion. The deal was announced in July 2024.",
       },
     ],
     codes: [
       { name: "The box logo", body: "Red and white in Futura Heavy Oblique. It took its cue from the work of the artist Barbara Kruger, after Jebbia shared a book of her work. The very first shirts used a simpler logo." },
-      { name: "Collaboration", body: "Supreme has worked with other houses, Stone Island among them. Pieces that carry both names are the kind we hunt for." },
+      { name: "Collaboration", body: "Supreme has worked with many houses over the years, Stone Island among them, across several seasons." },
     ],
     sources: [
       { label: "Wikipedia, Supreme (brand)", url: "https://en.wikipedia.org/wiki/Supreme_(brand)" },

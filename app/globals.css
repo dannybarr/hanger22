@@ -428,105 +428,196 @@ details.fold[open] > summary .fold-mark {
 }
 
 .house-room {
+  position: relative;
   background: radial-gradient(120% 70% at 50% 0%, #2b1a0e 0%, #160d07 60%, #0e0804 100%);
   color: #f3e8d6;
+  isolation: isolate;
+}
+
+/* Fine film grain over the whole room so flat gradients read as a photograph. */
+.house-room::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wall-stage {
+  perspective: 1900px;
+  perspective-origin: 50% 40%;
+}
+
+@media (min-width: 1024px) {
+  .wall-left {
+    transform: rotateY(11deg);
+    transform-origin: right center;
+  }
+  .wall-right {
+    transform: rotateY(-11deg);
+    transform-origin: left center;
+  }
+}
+
+.wall-reflect {
+  -webkit-box-reflect: below 6px linear-gradient(transparent 74%, rgba(0, 0, 0, 0.16));
 }
 
 .oak-frame {
   background-color: #a8743f;
-  background-image: var(--oak-grain), linear-gradient(180deg, #b98449 0%, #9b6634 100%);
-  box-shadow: inset 0 0 0 1px rgba(255, 220, 170, 0.08), 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+  background-image:
+    linear-gradient(90deg, rgba(255, 226, 180, 0.1), rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 86%, rgba(0, 0, 0, 0.22)),
+    var(--oak-grain),
+    linear-gradient(180deg, #c08a4d 0%, #a26a36 55%, #8d5a2c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 228, 186, 0.35),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.35),
+    0 40px 70px -30px rgba(0, 0, 0, 0.85);
 }
 
+@property --lit {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.3;
+}
+
+/* One opening, built as a box seen from the front: back panel, two side walls
+   that recede, a dark ceiling and a shelf floor, lit by a strip at the front. */
 .cubby {
+  --lit: 0.3;
   position: relative;
   display: block;
   aspect-ratio: 1 / 1.08;
   overflow: hidden;
-  background-color: #5a3418;
-  background-image:
-    radial-gradient(90% 70% at 50% 0%, rgba(255, 200, 132, var(--lit, 0.22)) 0%, rgba(255, 170, 90, 0) 72%),
-    var(--oak-grain),
-    linear-gradient(180deg, #7a4823 0%, #4b2a12 78%, #3a200d 100%);
-  box-shadow: inset 0 10px 18px -6px rgba(0, 0, 0, 0.55), inset 8px 0 14px -10px rgba(0, 0, 0, 0.6), inset -8px 0 14px -10px rgba(0, 0, 0, 0.6);
-  transition: --lit 420ms ease;
+  background: #24140a;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 226, 180, 0.22);
   outline: none;
-}
-
-.cubby::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(255, 214, 160, 0.4), #ffe2b0 20%, #ffe2b0 80%, rgba(255, 214, 160, 0.4));
-  box-shadow: 0 0 14px 2px rgba(255, 190, 120, calc(var(--lit, 0.22) + 0.15));
-  opacity: calc(0.45 + var(--lit, 0.22));
-}
-
-.cubby::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 16%;
-  background-image: var(--oak-grain), linear-gradient(180deg, #8d5a2c 0%, #6b3f1c 100%);
-  box-shadow: 0 -1px 0 rgba(255, 210, 160, 0.18);
+  transition: --lit 480ms ease;
 }
 
 .cubby[data-stocked="true"] {
-  --lit: 0.72;
+  --lit: 0.78;
+}
+
+.cubby:hover,
+.cubby:focus-visible {
+  --lit: 1;
+}
+
+.cubby > span {
+  position: absolute;
+  pointer-events: none;
+}
+
+.c-back {
+  inset: 9% 11% 20% 11%;
+  background-image:
+    radial-gradient(85% 75% at 50% 0%, rgba(255, 200, 135, calc(var(--lit) * 0.85)) 0%, rgba(255, 170, 90, 0) 75%),
+    var(--oak-grain),
+    linear-gradient(180deg, #6e4120 0%, #4a2913 70%, #351c0b 100%);
+}
+
+.c-side {
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(255, 196, 128, calc(var(--lit) * 0.5)) 0%, rgba(255, 170, 90, 0) 55%),
+    var(--oak-grain),
+    linear-gradient(90deg, #2a1709 0%, #563217 100%);
+}
+
+.c-side.left {
+  clip-path: polygon(0 0, 11% 9%, 11% 80%, 0 100%);
+}
+
+.c-side.right {
+  clip-path: polygon(100% 0, 89% 9%, 89% 80%, 100% 100%);
+  background-image:
+    linear-gradient(180deg, rgba(255, 196, 128, calc(var(--lit) * 0.42)) 0%, rgba(255, 170, 90, 0) 55%),
+    var(--oak-grain),
+    linear-gradient(270deg, #1f1107 0%, #4c2b13 100%);
+}
+
+.c-top {
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 89% 9%, 11% 9%);
+  background: linear-gradient(180deg, #120a04 0%, #2a170a 100%);
+}
+
+.c-floor {
+  inset: 0;
+  clip-path: polygon(0 100%, 100% 100%, 89% 80%, 11% 80%);
+  background-image:
+    radial-gradient(60% 120% at 50% 0%, rgba(255, 206, 145, calc(var(--lit) * 0.55)) 0%, rgba(255, 180, 100, 0) 70%),
+    var(--oak-grain),
+    linear-gradient(0deg, #6a3d1b 0%, #8f5a2b 100%);
+}
+
+.c-led {
+  inset: 0 3% auto 3%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 226, 176, 0.2), #fff1d2 15%, #fff1d2 85%, rgba(255, 226, 176, 0.2));
+  opacity: calc(0.35 + var(--lit) * 0.65);
+  box-shadow: 0 0 10px 2px rgba(255, 196, 120, calc(var(--lit) * 0.9)), 0 4px 22px 6px rgba(255, 180, 100, calc(var(--lit) * 0.35));
+}
+
+.c-cone {
+  inset: 0;
+  background: radial-gradient(70% 62% at 50% 0%, rgba(255, 214, 158, calc(var(--lit) * 0.28)) 0%, rgba(255, 214, 158, 0) 100%);
+  mix-blend-mode: screen;
+}
+
+.trophy-pool {
+  z-index: 1;
+  left: 50%;
+  bottom: 7%;
+  width: 54%;
+  height: 6%;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(15, 6, 1, 0.75), rgba(15, 6, 1, 0));
+  transition: opacity 420ms ease, scale 520ms ease;
+}
+
+.trophy-stand {
+  z-index: 2;
+  left: 50%;
+  bottom: 9%;
+  width: 32%;
+  height: 4.5%;
+  translate: -50% 0;
+  background: linear-gradient(180deg, #3a2614 0%, #160c05 45%, #0b0602 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 220, 160, calc(0.15 + var(--lit) * 0.3)), 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .trophy-cast {
-  position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: 50%;
-  bottom: 21%;
-  width: 66%;
-  height: 34%;
+  bottom: 13.5%;
+  width: 58%;
+  height: 30%;
   translate: -50% 0;
-  background: var(--brass);
-  background-size: 200% 200%;
-  background-position: 30% 30%;
+  background:
+    linear-gradient(180deg, rgba(255, 244, 214, calc(var(--lit) * 0.5)) 0%, rgba(255, 244, 214, 0) 45%),
+    var(--brass);
+  background-size: 100% 100%, 220% 220%;
+  background-position: 0 0, 30% 30%;
   mask-repeat: no-repeat;
   mask-position: center bottom;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center bottom;
   -webkit-mask-size: contain;
-  filter: drop-shadow(0 6px 4px rgba(20, 8, 2, 0.55)) drop-shadow(0 1px 0 rgba(255, 236, 190, 0.35));
-  transition: translate 520ms cubic-bezier(0.22, 0.8, 0.22, 1), background-position 900ms ease, filter 420ms ease;
-}
-
-.trophy-pool {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  bottom: 13%;
-  width: 60%;
-  height: 7%;
-  translate: -50% 0;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(20, 8, 2, 0.6), rgba(20, 8, 2, 0));
-  transition: opacity 420ms ease, scale 520ms ease;
-}
-
-.trophy-stand {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  bottom: 16%;
-  width: 38%;
-  height: 5%;
-  translate: -50% 0;
-  background: linear-gradient(180deg, #2a1a0c 0%, #120a04 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 220, 160, 0.25), 0 3px 6px rgba(0, 0, 0, 0.55);
+  filter: drop-shadow(0 5px 3px rgba(12, 5, 1, 0.6)) drop-shadow(0 -1px 0 rgba(255, 240, 200, 0.35));
+  transition: translate 560ms cubic-bezier(0.22, 0.8, 0.22, 1), background-position 1100ms ease, filter 420ms ease;
 }
 
 .trophy-plate {
-  position: absolute;
-  z-index: 3;
+  z-index: 4;
   left: 50%;
-  bottom: 4%;
+  bottom: 1.5%;
   translate: -50% 4px;
   padding: 2px 7px 1px;
   background: var(--brass);
@@ -541,22 +632,17 @@ details.fold[open] > summary .fold-mark {
   transition: opacity 320ms ease, translate 320ms ease;
 }
 
-.cubby:hover,
-.cubby:focus-visible {
-  --lit: 0.95;
-}
-
 .cubby:hover .trophy-cast,
 .cubby:focus-visible .trophy-cast {
-  translate: -50% -9%;
-  background-position: 70% 70%;
-  filter: drop-shadow(0 14px 8px rgba(20, 8, 2, 0.5)) drop-shadow(0 0 16px rgba(255, 206, 140, 0.55));
+  translate: -50% -7%;
+  background-position: 0 0, 72% 72%;
+  filter: drop-shadow(0 12px 7px rgba(12, 5, 1, 0.55)) drop-shadow(0 0 14px rgba(255, 206, 140, 0.45));
 }
 
 .cubby:hover .trophy-pool,
 .cubby:focus-visible .trophy-pool {
-  opacity: 0.55;
-  scale: 0.85;
+  opacity: 0.6;
+  scale: 0.86;
 }
 
 .cubby:hover .trophy-plate,
@@ -569,12 +655,54 @@ details.fold[open] > summary .fold-mark {
   box-shadow: inset 0 0 0 2px #ffe2b0;
 }
 
-@property --lit {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0.22;
+/* The doorway between the two walls: oak lintel, bronze returns, a lit corridor. */
+.doorway {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 30% at 50% 100%, rgba(214, 196, 168, 0.22) 0%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(180deg, #120b06 0%, #0b0703 55%, #1a130d 100%);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8);
 }
 
+.doorway > span {
+  position: absolute;
+  pointer-events: none;
+}
+
+.doorway-lintel {
+  inset: 0 0 auto 0;
+  height: 9%;
+  background-image: var(--oak-grain), linear-gradient(180deg, #c08a4d 0%, #9b6634 100%);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.35), 0 10px 24px rgba(0, 0, 0, 0.55);
+}
+
+.doorway-return {
+  top: 9%;
+  bottom: 0;
+  width: 13%;
+  background: linear-gradient(90deg, #2c2722 0%, #57504a 45%, #2a2520 100%);
+  opacity: 0.85;
+}
+
+.doorway-return.left {
+  left: 0;
+  clip-path: polygon(0 0, 100% 8%, 100% 92%, 0 100%);
+}
+
+.doorway-return.right {
+  right: 0;
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+}
+
+.doorway-light {
+  left: 50%;
+  height: 5px;
+  translate: -50% 0;
+  border-radius: 1px;
+  background: linear-gradient(180deg, #fff8ea, #f3dcb5);
+  box-shadow: 0 0 14px 3px rgba(255, 226, 180, 0.55), 0 10px 40px 8px rgba(255, 210, 150, 0.12);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .trophy-cast,
@@ -583,6 +711,7 @@ details.fold[open] > summary .fold-mark {
     transition: none !important;
   }
 }
+
 
 .brass-text {
   background: var(--brass);

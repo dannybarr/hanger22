@@ -97,6 +97,9 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Hanger 22, London</p>
           <p>Prices in pounds sterling</p>
         </div>
+        <p className="mx-auto max-w-7xl px-5 pb-6 text-[12px] leading-relaxed text-muted sm:px-8">
+          Hanger 22 is an independent reseller. We are not affiliated with, or endorsed by, any house shown on this site. All names and marks belong to their owners.
+        </p>
       </div>
     </footer>
   );
