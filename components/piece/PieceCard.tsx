@@ -20,7 +20,6 @@ export function PieceCard({ item, priority = false }: { item: PublicItem; priori
             sizes="(max-width: 1024px) 46vw, 320px"
             className="piece-shadow absolute inset-0 m-auto h-[82%] w-[82%] object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,0.8,0.22,1)] group-hover:-translate-y-2 group-hover:scale-[1.03]"
           />
-          <span className="mono absolute top-3 left-3 border border-line bg-paper/70 px-1.5 py-0.5 text-[10px] text-muted uppercase">One available</span>
         </div>
         <p className="eyebrow mt-4">{item.brand}</p>
         <h3 className="mt-1.5 text-[15px] leading-snug text-ink">{item.shortTitle}</h3>

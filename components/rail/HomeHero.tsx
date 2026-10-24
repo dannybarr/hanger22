@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { Conveyor } from "@/components/rail/Conveyor";
-import type { PublicItem } from "@/lib/schema";
+import type { ShopItem } from "@/lib/data";
 
 const KONAMI = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "b", "a"];
 
-export function HomeHero({ items }: { items: PublicItem[] }) {
+export function HomeHero({ items }: { items: ShopItem[] }) {
   const [gold, setGold] = useState(false);
   const [sound, setSound] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -54,7 +54,7 @@ export function HomeHero({ items }: { items: PublicItem[] }) {
       data-vault={gold ? "open" : "closed"}
       className="relative h-[min(calc(100dvh-97px),calc(100vw*1.05+230px))] min-h-[540px] lg:h-[calc(100dvh-97px)]"
     >
-      <h2 className="sr-only">The rail</h2>
+      <h1 className="sr-only">Hanger 22, London. Rare collaborations and hard-to-find pieces</h1>
       <div className="absolute top-3 right-5 z-20 flex items-center gap-5 sm:right-8">
         {gold ? (
           <p className="eyebrow text-[var(--color-ink)]" role="status">

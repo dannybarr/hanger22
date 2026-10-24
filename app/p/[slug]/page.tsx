@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 function stageImages(item: PublicItem): StageImage[] {
   const fit = FIT[item.images.front];
   const point = fit?.pivot ?? fit?.collar;
-  const images: StageImage[] = [
+  return [
     {
       src: item.images.front,
       alt: `${item.title}, front`,
@@ -53,10 +53,6 @@ function stageImages(item: PublicItem): StageImage[] {
       hang: item.category === "outerwear" || item.category === "apparel" ? { x: point?.[0] ?? 0.5, y: point?.[1] ?? 0.08, ownHook: Boolean(fit?.pivot) } : undefined,
     },
   ];
-  if (item.images.source && item.images.source !== item.images.front) {
-    images.push({ src: item.images.source, alt: `${item.title}, photographed`, width: 1000, height: 1000 });
-  }
-  return images;
 }
 
 export default async function PiecePage({ params }: { params: Promise<Params> }) {
@@ -115,7 +111,6 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             <h1 className="display mt-3 text-[40px] text-ink sm:text-[52px]">{item.shortTitle}</h1>
             <div className="mt-5 flex items-center gap-4">
               <p className="text-[22px] font-medium text-ink">{price}</p>
-              <span className="mono border border-line px-2 py-1 text-[11px] text-muted uppercase">One available</span>
             </div>
 
             <dl className="mt-8 grid gap-6 border-t border-line pt-6">

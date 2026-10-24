@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { economicsFromGuide } from "@/lib/desk";
-import { getCollabs, getDrops, getItems, getPublicItems, getRailItems, getSources, getSourcesFor, getVaultItems, toPublicItem } from "@/lib/data";
+import { getCollabs, getDrops, getItems, getPublicItems, getRailItems, getSources, getSourcesFor, getVaultItems, toPublicItem, toShopItem } from "@/lib/data";
 import { toAcpFeed, toCatalog } from "@/lib/feeds";
 import { productJsonLd } from "@/lib/jsonld";
 import { FX_TO_GBP, guideFromSource, inBand, roundGuide } from "@/lib/money";
@@ -23,8 +23,8 @@ describe("seed data", () => {
     expect(items.length).toBeGreaterThanOrEqual(12);
     const publicItems = getPublicItems();
     expect(publicItems.length).toBe(6);
-    expect(publicItems.some((item) => item.availability === "in_vault")).toBe(true);
-    expect(publicItems.some((item) => item.availability === "sourced")).toBe(true);
+    // Nothing is held in stock yet, so no live piece may claim to ship now.
+    expect(publicItems.every((item) => item.availability === "sourced")).toBe(true);
     expect(publicItems.every((item) => item.images.imageStatus === "cutout" && !item.images.placeholder)).toBe(true);
     const rail = getRailItems();
     expect(rail.map((item) => item.id)).toEqual([
@@ -121,8 +121,20 @@ describe("feeds", () => {
     const feed = toCatalog(origin, "2026-10-21T00:00:00.000Z");
     expect(catalogFeedSchema.parse(feed).version).toBe(1);
     expect(feed.items).toHaveLength(getPublicItems().length);
-    expect(feed.items.every((item) => item.status !== "vault")).toBe(true);
+    const vault = new Set(getItems().filter((item) => item.status === "vault").map((item) => item.id));
+    expect(feed.items.every((item) => !vault.has(item.id))).toBe(true);
     expect(feed.items[0]?.url).toBe(`${origin}/p/${feed.items[0]?.slug}`);
+  });
+
+  it("keeps sourcing details out of everything a page or feed serves", () => {
+    const served = JSON.stringify([
+      getRailItems().map(toShopItem),
+      toCatalog(origin, "2026-10-21T00:00:00.000Z"),
+      toAcpFeed(origin, "2026-10-21T00:00:00.000Z"),
+    ]).toLowerCase();
+    for (const word of ["vestiaire", "farfetch", "joli", "bloomingdale", "authroute", "sourceurl", "sourcemarket", "costbasis", "markup"]) {
+      expect(served).not.toContain(word);
+    }
   });
 
   it("builds an ACP stub with search on and checkout off", () => {

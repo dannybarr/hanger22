@@ -3,7 +3,8 @@
 import { List, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useModal } from "@/components/forms/Field";
 import { createPortal } from "react-dom";
 import type { NavLink } from "@/components/layout/SiteChrome";
 
@@ -33,7 +34,7 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
       </button>
       {open
         ? createPortal(
-            <div className="fixed inset-0 z-50 bg-paper" role="dialog" aria-modal="true" aria-label="Menu">
+            <MenuPanel>
               <div className="flex h-16 items-center justify-between px-5">
                 <span className="eyebrow">Menu</span>
                 <button type="button" className="-mr-2 flex h-11 w-11 items-center justify-center text-ink" aria-label="Close menu" onClick={() => setOpen(false)}>
@@ -49,10 +50,20 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
                   </li>
                 ))}
               </ul>
-            </div>,
+            </MenuPanel>,
             document.body,
           )
         : null}
     </>
+  );
+}
+
+function MenuPanel({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useModal(ref);
+  return (
+    <div ref={ref} className="fixed inset-0 z-50 bg-paper" role="dialog" aria-modal="true" aria-label="Menu">
+      {children}
+    </div>
   );
 }

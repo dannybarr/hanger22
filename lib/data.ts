@@ -32,6 +32,32 @@ export function toPublicItem(item: Item): PublicItem {
   return { ...publicItem, authConfidence: "high" };
 }
 
+/**
+ * The only shape a client component may receive. An allowlist, so a new field
+ * on the record can never leak sourcing details into page source by default.
+ */
+export type ShopItem = {
+  id: string;
+  slug: string;
+  title: string;
+  shortTitle: string;
+  brand: string;
+  priceGBP: number;
+  images: { front: string; pixelWidth?: number; pixelHeight?: number };
+};
+
+export function toShopItem(item: PublicItem): ShopItem {
+  return {
+    id: item.id,
+    slug: item.slug,
+    title: item.title,
+    shortTitle: item.shortTitle,
+    brand: item.brand,
+    priceGBP: priceOf(item),
+    images: { front: item.images.front, pixelWidth: item.images.pixelWidth, pixelHeight: item.images.pixelHeight },
+  };
+}
+
 /** Full records, including cost and margin. Desk route and tests only. Never pass to a client component. */
 export function getItems(): Item[] {
   return items;

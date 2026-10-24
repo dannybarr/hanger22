@@ -5,7 +5,7 @@ import { SITE_DESCRIPTION, siteOrigin } from "@/lib/site";
 export function GET(request: Request) {
   const origin = siteOrigin(new URL(request.url).origin);
   const pieces = getPublicItems()
-    .map((item) => `- ${item.title} — ${item.brand} — ${origin}/p/${item.slug} — ${formatGBP(priceOf(item))}`)
+    .map((item) => `- ${item.title} | ${item.brand} | ${origin}/p/${item.slug} | ${formatGBP(priceOf(item))}`)
     .join("\n");
   const body = `# Hanger 22
 

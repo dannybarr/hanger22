@@ -4,11 +4,12 @@ import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 import { PieceCard } from "@/components/piece/PieceCard";
 import { filterItems, getPublicItems, type CatalogueQuery } from "@/lib/data";
 import { PRICE_BANDS, priceOf } from "@/lib/money";
+import { housesFor } from "@/lib/brands";
 import { CATEGORY_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shop all",
-  description: "Every piece on the Hanger 22 rail. Rare collaborations and hard-to-find pieces, one of each.",
+  description: "Every piece on the Hanger 22 rail. Rare collaborations and hard-to-find pieces.",
 };
 
 type SP = Record<string, string | string[] | undefined>;
@@ -45,10 +46,11 @@ export default async function PiecesPage({ searchParams }: { searchParams: Promi
     sort: one(sp.sort),
   };
   const all = getPublicItems();
-  let items = filterItems(all, query);
+  let items = filterItems(all, { ...query, brand: undefined });
+  if (query.brand) items = items.filter((item) => housesFor(item.brand).some((house) => house.slug === query.brand));
   if (query.sort === "price-asc") items = [...items].sort((a, b) => priceOf(a) - priceOf(b));
   if (query.sort === "price-desc") items = [...items].sort((a, b) => priceOf(b) - priceOf(a));
-  const brands = [...new Set(all.map((item) => item.brand))].sort();
+  const houses = [...new Map(all.flatMap((item) => housesFor(item.brand)).map((house) => [house.slug, house])).values()].sort((a, b) => a.name.localeCompare(b.name));
   const categories = Object.keys(CATEGORY_LABEL).filter((id) => all.some((item) => item.category === id)) as (keyof typeof CATEGORY_LABEL)[];
   const bands = PRICE_BANDS.filter((band) => all.some((item) => priceOf(item) >= band.min && priceOf(item) < band.max));
   const title = query.category ? CATEGORY_LABEL[query.category as keyof typeof CATEGORY_LABEL] ?? "Shop all" : "Shop all";
@@ -87,7 +89,7 @@ export default async function PiecesPage({ searchParams }: { searchParams: Promi
         </nav>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <FilterRow label="Brand" current={query.brand} options={brands.map((id) => ({ id, label: id }))} query={query} param="brand" />
+          <FilterRow label="Brand" current={query.brand} options={houses.map((house) => ({ id: house.slug, label: house.name }))} query={query} param="brand" />
           {bands.length > 1 ? (
             <FilterRow label="Price" current={query.band} options={bands.map((band) => ({ id: band.id, label: band.label }))} query={query} param="band" />
           ) : null}

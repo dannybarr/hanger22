@@ -19,9 +19,14 @@ export default function PrivacyPage() {
         Only to handle your reservation or reply to your message, and to arrange payment and delivery if you buy. We do not sell your details, and we do not run advertising pixels or tracking on this site.
       </p>
 
+      <h2>Where it is kept</h2>
+      <p>
+        This site is hosted by Vercel, so your message passes through their servers. We keep your details until your reservation or enquiry is settled, and after a sale for as long as the law requires us to keep sales records.
+      </p>
+
       <h2>On your device</h2>
       <p>
-        This site remembers a few things in your own browser, such as whether you turned the rail sound on and the reservations you have made. You can clear them at any time in your browser settings.
+        This site remembers a few things in your own browser, such as whether you turned the rail sound on. You can clear them at any time in your browser settings.
       </p>
 
       <h2>Your choices</h2>

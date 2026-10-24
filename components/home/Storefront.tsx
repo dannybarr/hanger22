@@ -114,7 +114,7 @@ export function Storefront({ items }: { items: PublicItem[] }) {
               Tell us the grail. We will hunt it down
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-muted">
-              The rail is small on purpose. Behind it, we search with trusted sellers and collectors across the UK, Europe and Japan.
+              The rail is small on purpose. If it is not here, we will look for it.
             </p>
           </div>
           <Link href="/contact" className="pill-btn">

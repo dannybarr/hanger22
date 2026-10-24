@@ -8,13 +8,14 @@
     "collabId": "col-zellerfeld",
     "category": "footwear",
     "year": 2025,
-    "story": "Moncler's Trailgrip, rebuilt with Zellerfeld, the studio that 3D prints its shoes rather than stitching and gluing them. This khaki pair has the printed Trailgrip sole and dates from 2025. It has never been worn and comes with its dust bag, without tags, in a size of about EU 38. If you are between sizes, ask us before you reserve and we will measure the insole for you.",
+    "story": "Moncler's Trailgrip, rebuilt with Zellerfeld, whose 3D-printed sole gives the shoe its shape. This khaki pair dates from 2025. It has never been worn and comes with its dust bag, without tags, in a size of about EU 38. If you are between sizes, tell us when you reserve and we will confirm the insole length before you pay.",
     "specs": {
       "Colour": "Khaki",
       "Construction": "3D printed by Zellerfeld",
       "Year": "2025",
       "Size": "About EU 38",
-      "Includes": "Dust bag"
+      "Includes": "Dust bag",
+      "Tags": "None"
     },
     "images": {
       "front": "/cutouts/trailgrip-front.webp",
@@ -29,7 +30,7 @@
       "min": 280,
       "max": 315
     },
-    "condition": "excellent",
+    "condition": "new",
     "authRoute": "Seller description on Joli Closet, then our own photographs when it arrives. This is not a Moncler boutique certificate.",
     "status": "available-to-source",
     "sourceListingIds": [
@@ -41,7 +42,7 @@
       "trailgrip",
       "footwear"
     ],
-    "availability": "in_vault",
+    "availability": "sourced",
     "costBasis": {
       "amount": 276,
       "currency": "EUR"
@@ -51,7 +52,7 @@
     "demandSignal": 0.48,
     "cutReason": "collab",
     "sourceMarket": "EU",
-    "authConfidence": "high",
+    "authConfidence": "medium",
     "notes": "Research, 21 October 2026. The Trailgrip 3D is a khaki Moncler shoe with a sole printed by Zellerfeld. Joli Closet describes the pair as never worn, without tags, with a dust bag, in a size of about EU 38. The record gives the year as 2025. The colour is khaki and the construction is the 3D-printed Trailgrip sole. The listing price shown was €276. The photograph is the Joli Closet frame with the white ground removed. This is the pair from that listing, kept with its dust bag and without tags, and it is not one of the jackets on the rail.\n\nSpecs as recorded: {\"Colour\":\"Khaki\",\"Size\":\"est. EU 38\",\"Construction\":\"3D-printed Trailgrip\",\"Includes\":\"Dust bag\",\"Tags\":\"None, per the listing\"}",
     "priceGBP": 315,
     "priceProvisional": true
@@ -1724,15 +1725,16 @@
     "id": "h22-palm-72059216",
     "slug": "moncler-palm-angels-72059216",
     "title": "Moncler x Palm Angels black jacket",
-    "shortTitle": "Black jacket",
+    "shortTitle": "Padded jacket",
     "brand": "Moncler x Palm Angels",
     "collabId": "col-palm",
     "category": "outerwear",
-    "story": "Palm Angels joined Moncler's Genius programme as 8 Moncler Palm Angels, first shown for autumn/winter 2019. The pairing put a label built on Los Angeles skate culture into Moncler's outerwear. This is a black Moncler x Palm Angels jacket in polyester, size M, in excellent condition. Its exact style and season aren't on our record yet, so we will read both from the labels and send you photographs before you pay.",
+    "story": "Palm Angels joined Moncler's Genius programme as 8 Moncler Palm Angels, first shown for autumn/winter 2019. This is a black Moncler x Palm Angels padded jacket in polyester, size M, listed in very good condition. Its exact style and season aren't on our record yet, so we will read both from the labels and send you photographs before you pay.",
     "specs": {
       "Colour": "Black",
       "Material": "Polyester",
-      "Size": "M"
+      "Size": "M",
+      "Condition": "Very good, as listed"
     },
     "images": {
       "front": "/cutouts/palm-72059216.webp",
@@ -1751,7 +1753,7 @@
       "min": 1090,
       "max": 1230
     },
-    "condition": "excellent",
+    "condition": "good",
     "authRoute": "Vestiaire listing 72059216 checked 21 October 2026, Add to Bag at $1,205. The rail uses the seller’s flat lay. YuNet found no face on that frame; a worn shot in the same listing was rejected. The garment is not in hand.",
     "status": "available-to-source",
     "availability": "sourced",
@@ -1785,7 +1787,7 @@
     "collabId": null,
     "category": "outerwear",
     "year": 2021,
-    "story": "A reversible down jacket in black polyamide, never worn, size M. Its previous owner identifies it as the Komae from 2 Moncler 1952, part of the autumn/winter 2021 Moncler Genius collection. 2 Moncler 1952 takes its name from the year the house was founded, and Genius is the programme Moncler built for guest designers. Two jackets in one, from a season that has already left the shops. We will check the labels and send you photographs of both sides before you pay.",
+    "story": "A reversible down jacket in black polyamide, never worn, size M. Its previous owner identifies it as the Komae from 2 Moncler 1952, part of the autumn/winter 2021 Moncler Genius collection. 2 Moncler 1952 takes its name from the year the house was founded, and Genius is the programme Moncler built for guest designers. Two jackets in one. We will check the labels and send you photographs of both sides before you pay.",
     "specs": {
       "Colour": "Black",
       "Material": "Polyamide",
@@ -1843,7 +1845,7 @@
     "brand": "Kapital",
     "collabId": null,
     "category": "outerwear",
-    "story": "Kapital is the Okayama label known for bandana cotton and reconstructed cloth, and this jacket is both at once: purple bandana prints pieced together into a single patchwork coat. It has never been worn and still carries its tag. Kapital marks it size 4, which fits a men's small to medium. Laid flat, it measures 22 inches across the chest, 22 inches from the shoulder to the hem and 24 inches from the shoulder to the cuff.",
+    "story": "Kapital is the Okayama label known for bandana cotton and reconstructed cloth, and this jacket is both at once: purple bandana prints pieced together into a single patchwork coat. It has never been worn and still carries its tag. It is marked size 4, which its previous owner says fits a men's small to medium. Laid flat, it measures 22 inches across the chest, 22 inches from the shoulder to the hem and 24 inches from the shoulder to the cuff.",
     "specs": {
       "Colour": "Purple",
       "Material": "Cotton",
@@ -1899,13 +1901,13 @@
     "id": "h22-supreme-si-69748871",
     "slug": "supreme-stone-island-69748871",
     "title": "Supreme x Stone Island black synthetic jacket",
-    "shortTitle": "Black jacket",
+    "shortTitle": "Shell jacket",
     "brand": "Supreme x Stone Island",
     "collabId": "col-supreme-si",
     "category": "outerwear",
-    "story": "Supreme and Stone Island have worked together across several seasons. This one is black, in a synthetic shell, size S, in good condition with gentle signs of wear. The season and style name aren't on our record yet. We will read both from the labels and send you close photographs of any wear before you pay, so you know exactly what is coming.",
+    "story": "Supreme and Stone Island have worked together across several seasons. This jacket carries both names. It is listed as black in a synthetic shell, though it can read dark navy in photographs, size S, described by its previous owner as in good condition. The season and style name aren't on our record yet. We will read both from the labels and send you close photographs of the colour and any wear before you pay.",
     "specs": {
-      "Colour": "Black",
+      "Colour": "Black, as listed. Can read dark navy",
       "Material": "Synthetic",
       "Size": "S"
     },

@@ -1,7 +1,7 @@
 import { BelowFold } from "@/components/home/BelowFold";
 import { SiteHeader } from "@/components/layout/SiteChrome";
 import { HomeHero } from "@/components/rail/HomeHero";
-import { getPublicItems, getRailItems } from "@/lib/data";
+import { getPublicItems, getRailItems, toShopItem } from "@/lib/data";
 
 export default function HomePage() {
   const rail = getRailItems();
@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main id="content">
-        <HomeHero items={rail} />
+        <HomeHero items={rail.map(toShopItem)} />
         <BelowFold items={[...rail, ...rest]} />
       </main>
     </>

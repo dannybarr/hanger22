@@ -17,9 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const house = getHouse(slug);
   if (!house) return { title: "Brand" };
+  const stocked = getPublicItems().some((item) => housesFor(item.brand).some((entry) => entry.slug === house.slug));
   return {
+    robots: stocked ? undefined : { index: false, follow: true },
     title: house.name,
-    description: `${house.name} at Hanger 22. Rare pieces and collaborations, one of each.`,
+    description: `${house.name} at Hanger 22. Rare pieces and collaborations.`,
   };
 }
 

@@ -8,7 +8,7 @@ import fitJson from "@/data/fit.json";
 import { formatGBP, priceOf } from "@/lib/money";
 import { hangLength } from "@/lib/motion";
 import { motorHum, playClink } from "@/lib/sound";
-import type { PublicItem } from "@/lib/schema";
+import type { ShopItem } from "@/lib/data";
 
 /**
  * A dry-cleaner's conveyor. The rail only moves when something drives it:
@@ -30,7 +30,7 @@ const SWING_CAP = 0.42; // radians. A garment never swings off its hook.
 const TICKET_LEN = 38;
 
 type Piece = {
-  item: PublicItem;
+  item: ShopItem;
   fit: Fit;
   garmentH: number;
   imgW: number;
@@ -60,7 +60,7 @@ function mod(n: number, m: number) {
   return ((n % m) + m) % m;
 }
 
-function fitFor(item: PublicItem): Fit {
+function fitFor(item: ShopItem): Fit {
   return (
     FIT[item.images.front] ?? {
       box: [0.1, 0.06, 0.9, 0.94],
@@ -77,7 +77,7 @@ export function Conveyor({
   sound,
   reduced,
 }: {
-  items: PublicItem[];
+  items: ShopItem[];
   gold: boolean;
   sound: boolean;
   reduced: boolean;
@@ -116,7 +116,7 @@ export function Conveyor({
   /** Size every piece from the stage, then space them along a loop longer than the screen. */
   const measure = useCallback(() => {
     const stage = stageRef.current;
-    if (!stage) return;
+    if (!stage || items.length === 0) return;
     const width = stage.clientWidth;
     const height = stage.clientHeight;
     const railY = Math.round(Math.min(110, Math.max(44, height * 0.08)));
@@ -270,7 +270,7 @@ export function Conveyor({
     let wasMoving = false;
 
     const tick = (now: number) => {
-      const elapsed = Math.min(0.05, (now - last) / 1000);
+      const elapsed = Math.min(0.2, (now - last) / 1000);
       last = now;
       const { width, railY, loop } = layoutRef.current;
       const pieces = piecesRef.current;
@@ -324,7 +324,8 @@ export function Conveyor({
 
       let nearest = 0;
       let nearestDistance = Number.POSITIVE_INFINITY;
-      const substeps = 3;
+      // Slow frames get more, smaller steps so the swing keeps real time and stays stable.
+      const substeps = Math.max(3, Math.ceil(elapsed * 180));
       const dt = elapsed / substeps;
 
       pieces.forEach((piece, index) => {
@@ -551,7 +552,7 @@ export function Conveyor({
         aria-roledescription="carousel"
         aria-label="The rail. Use the arrow keys to run it."
         tabIndex={0}
-        className="relative min-h-0 flex-1 cursor-grab touch-pan-y overflow-hidden outline-none select-none active:cursor-grabbing"
+        className="relative min-h-0 flex-1 cursor-grab touch-pan-y overflow-hidden outline-none select-none focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-[var(--color-ink)] active:cursor-grabbing"
         onPointerDown={onStagePointerDown}
         onPointerMove={onStagePointerMove}
         onPointerUp={onStagePointerUp}
@@ -641,7 +642,7 @@ export function Conveyor({
           <div
             className="flex min-w-0 items-end gap-5 transition-opacity duration-300"
             style={{ opacity: moving ? 0.25 : 1 }}
-            aria-live="polite"
+            aria-live={moving ? "off" : "polite"}
           >
             <p className="mono shrink-0 pb-1 text-[12px] text-muted">
               {String(centre + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}

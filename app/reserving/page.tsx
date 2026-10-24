@@ -29,7 +29,7 @@ const STEPS = [
 const QUESTIONS = [
   {
     q: "Why not pay at checkout like everywhere else?",
-    a: "Because every piece here is one of one. We would rather you saw the labels and the condition for yourself before any money moves. It is how a good boutique would hand over something rare.",
+    a: "Because each piece is a single item, often pre-owned. We would rather you saw the labels and the condition for yourself before any money moves. It is how a good boutique would hand over something rare.",
   },
   {
     q: "How do you know a piece is authentic?",
@@ -41,7 +41,7 @@ const QUESTIONS = [
   },
   {
     q: "Can I ask for a piece that is not on the rail?",
-    a: "Yes. Most of what we find never reaches the site. Tell us what you are looking for on the contact page.",
+    a: "Yes. Tell us what you are looking for on the contact page.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ReservingPage() {
           <p className="eyebrow">Buying from Hanger 22</p>
           <h1 className="display mt-3 max-w-4xl text-[48px] text-ink sm:text-[72px]">See it before you pay</h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed">
-            Every piece on the rail is one of a kind, so we do not take your money first. You reserve, we confirm the piece with you, and you pay only once you have seen it up close and said yes.
+            Each piece on the rail is a single item, so we do not take your money first. You reserve, we confirm the piece with you, and you pay only once you have seen it up close and said yes.
           </p>
         </section>
 

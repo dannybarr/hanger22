@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Field, focusFirstError, Honeypot, PrivacyNote } from "@/components/forms/Field";
 
 type Fields = { name: string; email: string; notes: string; budget: string };
 
@@ -13,6 +14,8 @@ export function AskForm() {
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [trap, setTrap] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   function set<K extends keyof Fields>(key: K, value: string) {
     setFields((current) => ({ ...current, [key]: value }));
@@ -28,7 +31,10 @@ export function AskForm() {
     const budget = fields.budget.replace(/[£,\s]/g, "");
     if (budget && Number.isNaN(Number(budget))) next.budget = "Use a number, like 1500";
     setErrors(next);
-    if (Object.keys(next).length) return;
+    if (Object.keys(next).length) {
+      requestAnimationFrame(() => focusFirstError(formRef.current));
+      return;
+    }
 
     setPending(true);
     setFailed(false);
@@ -41,6 +47,7 @@ export function AskForm() {
           email: fields.email.trim(),
           notes: fields.notes.trim(),
           budgetGBP: budget ? Number(budget) : undefined,
+          company: trap || undefined,
         }),
       });
       if (!response.ok) {
@@ -65,7 +72,8 @@ export function AskForm() {
   }
 
   return (
-    <form className="grid gap-5 border-t border-ink pt-8" onSubmit={submit} noValidate>
+    <form ref={formRef} className="relative grid gap-5 border-t border-ink pt-8" onSubmit={submit} noValidate>
+      <Honeypot value={trap} onChange={setTrap} />
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" error={errors.name}>
           <input className="field" name="name" autoComplete="name" value={fields.name} onChange={(event) => set("name", event.target.value)} />
@@ -94,20 +102,8 @@ export function AskForm() {
       <button type="submit" className="btn-solid w-full sm:w-fit sm:px-12" disabled={pending}>
         {pending ? "Sending" : "Send"}
       </button>
+      <PrivacyNote />
     </form>
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
-  return (
-    <label className="grid gap-2">
-      <span className="field-label">{label}</span>
-      {children}
-      {error ? (
-        <span role="alert" className="text-[13px] text-[#8a2f22]">
-          {error}
-        </span>
-      ) : null}
-    </label>
-  );
-}

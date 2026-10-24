@@ -75,6 +75,6 @@ export function acpPrice(min: number) {
 }
 
 /** The single price a piece is sold at. */
-export function priceOf(item: { priceGBP?: number; guidePriceGBP: { max: number } }) {
-  return item.priceGBP ?? item.guidePriceGBP.max;
+export function priceOf(item: { priceGBP?: number; guidePriceGBP?: { max: number } }) {
+  return item.priceGBP ?? item.guidePriceGBP?.max ?? 0;
 }

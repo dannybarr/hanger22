@@ -11,6 +11,10 @@ export async function POST(request: Request) {
     return Response.json({ error: "invalid" }, { status: 400 });
   }
   const raw = body as Record<string, unknown>;
+  // Spam trap: people never see the company field, so anything in it came from a bot.
+  if (typeof raw.company === "string" && raw.company.trim()) {
+    return Response.json({ status: "new" }, { status: 202 });
+  }
   const parsed = requestSchema.safeParse({
     itemId: typeof raw.itemId === "string" && raw.itemId.trim() ? raw.itemId.trim() : undefined,
     name: raw.name,

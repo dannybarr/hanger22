@@ -3,6 +3,7 @@
 import { X } from "@phosphor-icons/react";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Field, focusFirstError, Honeypot, PrivacyNote, useModal } from "@/components/forms/Field";
 
 type Fields = { name: string; email: string; phone: string; size: string; notes: string };
 
@@ -43,6 +44,8 @@ export function ReserveButton({ piece }: { piece: ReservePiece }) {
 function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => void }) {
   const titleId = useId();
   const ref = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [trap, setTrap] = useState("");
   const [fields, setFields] = useState<Fields>({ ...EMPTY, size: piece.size ?? "" });
   const [errors, setErrors] = useState<Partial<Record<keyof Fields, string>>>({});
   const [pending, setPending] = useState(false);
@@ -50,6 +53,7 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
   const [failed, setFailed] = useState(false);
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
+  useModal(ref);
 
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -81,7 +85,10 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.trim())) next.email = "Enter an email we can reach you on";
     if (!piece.size && !fields.size.trim()) next.size = "Tell us your size";
     setErrors(next);
-    if (Object.keys(next).length) return;
+    if (Object.keys(next).length) {
+      requestAnimationFrame(() => focusFirstError(formRef.current));
+      return;
+    }
 
     setPending(true);
     setFailed(false);
@@ -92,6 +99,7 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
       phone: fields.phone.trim() || undefined,
       size: fields.size.trim() || undefined,
       notes: fields.notes.trim() || undefined,
+      company: trap || undefined,
     };
     try {
       const response = await fetch("/api/request", {
@@ -103,12 +111,6 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
         setFailed(true);
         return;
       }
-      try {
-        const key = "hanger22.reservations";
-        const existing = JSON.parse(window.localStorage.getItem(key) || "[]") as unknown[];
-        existing.push({ ...payload, createdAt: new Date().toISOString() });
-        window.localStorage.setItem(key, JSON.stringify(existing));
-      } catch {}
       setDone(fields.name.trim().split(/\s+/)[0] ?? "");
     } catch {
       setFailed(true);
@@ -158,7 +160,8 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
             </button>
           </div>
         ) : (
-          <form className="grid gap-5 px-6 py-6" onSubmit={submit} noValidate>
+          <form ref={formRef} className="relative grid gap-5 px-6 py-6" onSubmit={submit} noValidate>
+            <Honeypot value={trap} onChange={setTrap} />
             <ol className="grid gap-2 text-[13px] leading-relaxed text-muted">
               <li>1. Reserve now. Nothing is charged.</li>
               <li>2. We confirm the piece and send you photographs.</li>
@@ -194,6 +197,7 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
             <button type="submit" className="btn-solid w-full" disabled={pending}>
               {pending ? "Reserving" : "Reserve, pay later"}
             </button>
+            <PrivacyNote />
           </form>
         )}
       </div>
@@ -202,16 +206,3 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
-  return (
-    <label className="grid gap-2">
-      <span className="field-label">{label}</span>
-      {children}
-      {error ? (
-        <span role="alert" className="text-[13px] text-[#8a2f22]">
-          {error}
-        </span>
-      ) : null}
-    </label>
-  );
-}

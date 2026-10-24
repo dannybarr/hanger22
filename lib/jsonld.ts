@@ -1,4 +1,3 @@
-import { cutLabel, marketNote } from "@/lib/cut";
 import { getItem } from "@/lib/data";
 import { priceOf } from "@/lib/money";
 import type { PublicItem } from "@/lib/schema";
@@ -50,7 +49,7 @@ export function organizationJsonLd(origin: string) {
 export function productJsonLd(slug: string, origin: string) {
   const item = getItem(slug);
   if (!item) return null;
-  const imagePath = item.images.source ?? item.images.front;
+  const imagePath = item.images.front;
   const availability =
     item.availability === "in_vault"
       ? "https://schema.org/InStock"
@@ -63,7 +62,7 @@ export function productJsonLd(slug: string, origin: string) {
     "@type": "Product",
     name: item.title,
     sku: item.id,
-    description: [item.story, `${cutLabel(item.cutReason)}. ${marketNote(item.sourceMarket)}.`].filter(Boolean).join(" "),
+    description: item.story,
     image: new URL(imagePath, origin).toString(),
     brand: { "@type": "Brand", name: item.brand },
     category: item.category,

@@ -1,4 +1,4 @@
-import { cutLabel, marketNote } from "@/lib/cut";
+import { cutLabel } from "@/lib/cut";
 import { getPublicItems } from "@/lib/data";
 import { acpPrice, priceOf } from "@/lib/money";
 import { acpFeedSchema, catalogFeedSchema, type PublicItem } from "@/lib/schema";
@@ -35,16 +35,12 @@ export function toCatalog(origin: string, generatedAt = new Date().toISOString()
       category: item.category,
       priceGBP: priceOf(item),
       condition: item.condition,
-      status: item.status,
       availability: item.availability,
       cutReason: item.cutReason,
-      sourceMarket: item.sourceMarket,
-      ...(item.authConfidence === "high" ? { authConfidence: "high" as const } : {}),
       placeholder: item.images.placeholder,
       imageStatus: item.images.imageStatus,
       url: `${origin}/p/${item.slug}`,
       image: item.images.front,
-      tags: item.tags,
     })),
   };
   return catalogFeedSchema.parse(feed);
@@ -61,8 +57,7 @@ export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()
         title: item.title,
         description: [
           item.story,
-          `${cutLabel(item.cutReason)}. ${marketNote(item.sourceMarket)}.`,
-          item.authConfidence === "high" ? "Authentication confidence is high." : "",
+          `${cutLabel(item.cutReason)}.`,
           fulfilmentLine(item),
           item.images.imageStatus === "placeholder"
             ? "Image is a placeholder silhouette; no listing photograph on file."

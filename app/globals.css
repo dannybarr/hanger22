@@ -89,9 +89,11 @@ html[data-night="1"] {
   --color-paper: #1c1714;
   --color-tile: #241e1a;
   --color-ink: #ece5da;
+  --color-ink-hover: #d9d0c3;
   --color-body: #ece5da;
   --color-muted: #b7aea3;
   --color-line: #3a322c;
+  --color-ticket: #e6d6b2;
   color-scheme: dark;
 }
 

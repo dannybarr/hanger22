@@ -18,7 +18,7 @@ export default function ContactPage() {
             <p className="eyebrow">Contact</p>
             <h1 className="display mt-3 text-[48px] text-ink sm:text-[64px]">Ask us for a piece</h1>
             <p className="mt-6 max-w-md text-[16px] leading-relaxed">
-              The rail is small on purpose, and most of what we find never makes it online. Tell us the piece you are hunting for, the size, and what you would pay. A person reads every message.
+              The rail is small on purpose. Tell us the piece you are hunting for, the size, and what you would pay, and we will reply by email.
             </p>
             <dl className="mt-10 grid gap-6 border-t border-line pt-8 text-[15px]">
               <div>

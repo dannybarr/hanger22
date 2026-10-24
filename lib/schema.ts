@@ -199,16 +199,12 @@ export const catalogItemSchema = z.object({
   category: categorySchema,
   priceGBP: z.number(),
   condition: conditionSchema,
-  status: statusSchema,
   availability: availabilitySchema,
   cutReason: cutReasonSchema,
-  sourceMarket: sourceMarketSchema,
-  authConfidence: z.literal("high").optional(),
   placeholder: z.boolean(),
   imageStatus: imageStatusSchema,
   url: z.string().url(),
   image: z.string().optional(),
-  tags: z.array(z.string()),
 });
 
 export const catalogFeedSchema = z.object({

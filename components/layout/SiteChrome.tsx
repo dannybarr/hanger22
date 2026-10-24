@@ -72,7 +72,7 @@ export function SiteFooter() {
         <div className="max-w-xs">
           <Wordmark />
           <p className="mt-5 text-[14px] leading-relaxed text-muted">
-            A small rail of rare collaborations and hard-to-find pieces, kept in London.
+            A small rail of rare collaborations and hard-to-find pieces, based in London.
           </p>
         </div>
         <FooterColumn title="Shop" links={shop} />
