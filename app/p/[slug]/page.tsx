@@ -2,7 +2,6 @@ import { ArrowsClockwise, Camera, Lock } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import fitJson from "@/data/fit.json";
 import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 import { PieceCard } from "@/components/piece/PieceCard";
 import { ProductStage, type StageImage } from "@/components/product/ProductStage";
@@ -15,8 +14,6 @@ import { CATEGORY_LABEL, CONDITION_COPY, siteOrigin } from "@/lib/site";
 import type { PublicItem } from "@/lib/schema";
 
 type Params = { slug: string };
-type Fit = { collar: number[]; pivot: number[] | null };
-const FIT = fitJson as Record<string, Fit>;
 
 /** A size the buyer can rely on, or null when we confirm it at reservation. */
 function knownSize(item: PublicItem) {
@@ -41,18 +38,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-function stageImages(item: PublicItem): StageImage[] {
-  const fit = FIT[item.images.front];
-  const point = fit?.pivot ?? fit?.collar;
-  return [
-    {
-      src: item.images.front,
-      alt: `${item.title}, front`,
-      width: item.images.pixelWidth ?? 1024,
-      height: item.images.pixelHeight ?? 1024,
-      hang: item.category === "outerwear" || item.category === "apparel" ? { x: point?.[0] ?? 0.5, y: point?.[1] ?? 0.08, ownHook: Boolean(fit?.pivot) } : undefined,
-    },
-  ];
+function frontImage(item: PublicItem): StageImage {
+  return {
+    src: item.images.front,
+    alt: `${item.title}, front`,
+    width: item.images.pixelWidth ?? 1024,
+    height: item.images.pixelHeight ?? 1024,
+  };
 }
 
 export default async function PiecePage({ params }: { params: Promise<Params> }) {
@@ -93,7 +85,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
         </nav>
 
         <div className="mt-6 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
-          <ProductStage images={stageImages(item)} />
+          <ProductStage front={frontImage(item)} spin={item.images.spin ?? []} title={item.shortTitle} />
 
           <div className="lg:sticky lg:top-8">
             <p className="eyebrow">
