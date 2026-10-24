@@ -1,17 +1,13 @@
 /**
- * Cut-out stage, ported from Wardrobe Vaulted's pixels.ts.
- *
- * The original ran in a browser canvas because that app cannot ship `sharp`.
- * This script is the same maths on raw RGBA: trim where alpha > 8, centre at
- * 88% occupancy, chroma-key distance with feather 80, spill removal, and the
- * same contamination check. The canvas aims for 1600px but never enlarges a
- * source: a smaller cut-out stays at its native long edge. Background removal
- * itself is done before this step (rembg, or a chroma render). The shadow stays
- * with the garment in the scene, not baked into the pixels.
+ * Cut-out stage, ported from Wardrobe Vaulted's pixels.ts with the same maths:
+ * EXIF-aware decode, chroma-key distance with feather 80, spill removal, the
+ * contamination check, and framing on a 1024px canvas at 88% occupancy.
+ * The full sourcing pipeline (crop, AI reconstruction, this stage) lives in
+ * scripts/source-piece.ts. This file can also be run alone:
  *
  *   node --experimental-strip-types scripts/process-images.ts <in.png> <out.webp>
  */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -77,8 +73,12 @@ function stripSpill(raster: Raster, keyed: number[], neutral: number[]): void {
   }
 }
 
-/** Trim to the visible piece, then centre it. Never scales a source up. */
-export function frameTransparentGarment(raster: Raster, canvasSize = 1600, occupancy = 0.88): Raster {
+/**
+ * Trim to the visible piece, then centre it on a square transparent canvas.
+ * Exactly as Wardrobe Vaulted: 1024px, 88% occupancy, scaled up or down to fit,
+ * high-quality resampling (lanczos here, the canvas "high" setting there).
+ */
+export async function frameTransparentGarment(raster: Raster, canvasSize = 1024, occupancy = 0.88): Promise<Raster> {
   const { data, width, height } = raster;
   let minX = width;
   let minY = height;
@@ -97,61 +97,23 @@ export function frameTransparentGarment(raster: Raster, canvasSize = 1600, occup
 
   const trimWidth = maxX - minX + 1;
   const trimHeight = maxY - minY + 1;
-  const occ = Math.max(0.5, Math.min(0.96, occupancy));
-  const maxDraw = Math.max(1, Math.round(canvasSize * occ));
-  const scale = Math.min(1, maxDraw / Math.max(trimWidth, trimHeight));
+  const target = Math.max(1, Math.round(canvasSize * Math.max(0.5, Math.min(0.96, occupancy))));
+  const scale = Math.min(target / trimWidth, target / trimHeight);
   const drawWidth = Math.max(1, Math.round(trimWidth * scale));
   const drawHeight = Math.max(1, Math.round(trimHeight * scale));
-  const side = Math.min(canvasSize, Math.max(drawWidth, drawHeight, Math.round(Math.max(drawWidth, drawHeight) / occ)));
-  const destX = Math.floor((side - drawWidth) / 2);
-  const destY = Math.floor((side - drawHeight) / 2);
 
-  const out = new Uint8ClampedArray(side * side * 4);
-  const area = scale < 1;
-  for (let y = 0; y < drawHeight; y += 1) {
-    const srcY0 = minY + (y * trimHeight) / drawHeight;
-    const srcY1 = minY + ((y + 1) * trimHeight) / drawHeight;
-    for (let x = 0; x < drawWidth; x += 1) {
-      const dst = ((destY + y) * side + (destX + x)) * 4;
-      if (!area) {
-        const srcX = minX + Math.min(trimWidth - 1, Math.round((x * trimWidth) / drawWidth));
-        const srcY = minY + Math.min(trimHeight - 1, Math.round((y * trimHeight) / drawHeight));
-        const src = (srcY * width + srcX) * 4;
-        out[dst] = data[src]!;
-        out[dst + 1] = data[src + 1]!;
-        out[dst + 2] = data[src + 2]!;
-        out[dst + 3] = data[src + 3]!;
-        continue;
-      }
-      const srcX0 = minX + (x * trimWidth) / drawWidth;
-      const srcX1 = minX + ((x + 1) * trimWidth) / drawWidth;
-      let r = 0;
-      let g = 0;
-      let b = 0;
-      let a = 0;
-      let n = 0;
-      const yStart = Math.max(minY, Math.floor(srcY0));
-      const yEnd = Math.min(maxY, Math.ceil(srcY1) - 1);
-      const xStart = Math.max(minX, Math.floor(srcX0));
-      const xEnd = Math.min(maxX, Math.ceil(srcX1) - 1);
-      for (let sy = yStart; sy <= yEnd; sy += 1) {
-        for (let sx = xStart; sx <= xEnd; sx += 1) {
-          const src = (sy * width + sx) * 4;
-          r += data[src]!;
-          g += data[src + 1]!;
-          b += data[src + 2]!;
-          a += data[src + 3]!;
-          n += 1;
-        }
-      }
-      if (n === 0) continue;
-      out[dst] = Math.round(r / n);
-      out[dst + 1] = Math.round(g / n);
-      out[dst + 2] = Math.round(b / n);
-      out[dst + 3] = Math.round(a / n);
-    }
-  }
-  return { data: out, width: side, height: side };
+  const piece = await sharp(Buffer.from(data), { raw: { width, height, channels: 4 } })
+    .extract({ left: minX, top: minY, width: trimWidth, height: trimHeight })
+    .resize(drawWidth, drawHeight, { fit: "fill", kernel: "lanczos3" })
+    .png()
+    .toBuffer();
+  const out = await sharp({
+    create: { width: canvasSize, height: canvasSize, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+  })
+    .composite([{ input: piece, left: Math.floor((canvasSize - drawWidth) / 2), top: Math.floor((canvasSize - drawHeight) / 2) }])
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  return { data: new Uint8ClampedArray(out.data), width: out.info.width, height: out.info.height };
 }
 
 export type ChromaDiagnostics = { contaminatedPixels: number; maxSpill: number };
@@ -170,11 +132,11 @@ function verifyNoChromaSpill(raster: Raster, keyed: number[], neutral: number[])
 }
 
 /** Lift a flat chroma background, strip spill, and frame. Same tolerance and feather as the original. */
-export function processChromaBackground(
+export async function processChromaBackground(
   raster: Raster,
   key: string,
   options: { tolerance?: number } = {},
-): { raster: Raster; verification: ChromaDiagnostics; tolerance: number } {
+): Promise<{ raster: Raster; verification: ChromaDiagnostics; tolerance: number }> {
   const tolerance = cleanupTolerance(options.tolerance);
   const feather = 80;
   const { target, keyed, neutral } = keyChannels(key);
@@ -210,13 +172,13 @@ export function processChromaBackground(
   }
 
   stripSpill(raster, keyed, neutral);
-  const framed = frameTransparentGarment(raster);
+  const framed = await frameTransparentGarment(raster);
   stripSpill(framed, keyed, neutral);
   return { raster: framed, verification: verifyNoChromaSpill(framed, keyed, neutral), tolerance };
 }
 
 export async function readRaster(file: string): Promise<Raster> {
-  const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { data, info } = await sharp(file).rotate().toColourspace("srgb").ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   return { data: new Uint8ClampedArray(data), width: info.width, height: info.height };
 }
 
@@ -238,14 +200,14 @@ async function main() {
   }
   const raster = await readRaster(input);
   if (mode === "chroma") {
-    const result = processChromaBackground(raster, key || chooseChromaKey());
+    const result = await processChromaBackground(raster, key || chooseChromaKey());
     if (result.verification.contaminatedPixels > 1) {
       throw new Error(`Background cleanup left ${result.verification.contaminatedPixels} chroma-contaminated pixels`);
     }
     await writeRaster(result.raster, output);
     return;
   }
-  await writeRaster(frameTransparentGarment(raster), output);
+  await writeRaster(await frameTransparentGarment(raster), output);
 }
 
 if (process.argv[1]?.includes("process-images")) {
