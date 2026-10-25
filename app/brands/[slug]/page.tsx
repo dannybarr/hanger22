@@ -167,7 +167,7 @@ export default async function HousePage({ params }: { params: Promise<Params> })
             <p className="text-[22px] leading-relaxed text-ink">
               We are still writing the story of {house.name}. Every line will be checked before it goes up.
             </p>
-            <p className="mt-4 text-[15px] text-muted">Until then, tell us what you are looking for and we will hunt for it.</p>
+            <p className="mt-4 text-[15px] text-muted">Until then, tell us what you are looking for and our team will find it for you.</p>
             <Link href="/contact" className="pill-btn mt-8">
               Ask for a piece
             </Link>

@@ -14,7 +14,7 @@ export default function ReturnsPage() {
 
       <h2>Delivery</h2>
       <p>
-        Each piece is secured for you after you reserve it, so delivery times vary. We confirm the delivery method and date with you before you pay, and you can say no at that point without owing anything.
+        Your delivery method and date are confirmed in your personal checkout, before you pay.
       </p>
       <p>Once the piece is on its way, we send you the tracking details by email.</p>
 
@@ -28,7 +28,7 @@ export default function ReturnsPage() {
 
       <h2>If something is not right</h2>
       <p>
-        If a piece arrives damaged, or not as we described and photographed it, tell us within 14 days of delivery. We arrange and pay for the return and refund you in full. Otherwise, return postage is yours to arrange and pay.
+        If a piece arrives damaged, or not as we described it, tell us within 14 days of delivery. We arrange and pay for the return and refund you in full. Otherwise, return postage is yours to arrange and pay.
       </p>
 
       <h2>Your rights</h2>

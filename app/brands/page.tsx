@@ -8,7 +8,7 @@ import { HOUSE_STORIES } from "@/lib/houseStories";
 
 export const metadata: Metadata = {
   title: "The houses",
-  description: "The houses Hanger 22 hunts for, each with its story. The lit ones are on the rail now.",
+  description: "The houses behind the Hanger 22 edit, each with its story. The lit ones are in the edit now.",
 };
 
 const WALL_COLUMNS = 4;
@@ -58,11 +58,11 @@ export default function BrandsPage() {
                 The houses
               </h1>
               <p className="mx-auto mt-5 max-w-[30ch] text-[15px] leading-relaxed text-[#d8c9b2]">
-                Every trophy is a house we hunt for. Choose one to read its story.
+                Every trophy is a house with a story worth telling. Choose one to read it.
               </p>
               <p className="mt-6 flex items-center justify-center gap-2 text-[12px] text-[#bfae95]">
                 <span aria-hidden className="h-2 w-2 rounded-full bg-[#ffd79a] shadow-[0_0_10px_2px_rgba(255,200,120,0.7)]" />
-                Lit cubbies are on the rail now
+                Lit cubbies are in the edit now
               </p>
             </div>
           </TrophyWall>

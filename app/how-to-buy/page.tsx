@@ -3,58 +3,58 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "How reserving works",
-  description: "At Hanger 22 you reserve first, see the piece up close, and pay only when you are happy.",
+  title: "How to buy",
+  description: "Buying from Hanger 22 is simple. Choose your piece, express your intent to buy, and complete your private checkout.",
 };
 
 const STEPS = [
   {
-    title: "You reserve",
-    body: "Choose a piece, give us your name, email and size. That is all. Nothing is charged and you are not committed to anything.",
+    title: "Choose your piece",
+    body: "Every piece in the edit is limited, a collaboration or a rarity from its range. Read its story, check the size and condition, and press Buy now.",
   },
   {
-    title: "We secure and check it",
-    body: "We secure the piece for you and check it against its labels, its maker's details and its photographs. Then we email you close photographs of the labels and any wear.",
+    title: "Express your intent to buy",
+    body: "Leave your name, email and size. It takes a moment and no payment is taken at this stage.",
   },
   {
-    title: "You decide",
-    body: "If you are happy, we send a secure payment link along with the delivery method and date. If anything is not as described, or you have changed your mind, you owe nothing.",
+    title: "Complete your private checkout",
+    body: "We send a checkout link made for you by email. Your delivery date and method are confirmed there, and you pay securely to complete your order.",
   },
   {
-    title: "It arrives",
-    body: "We send it on once you have paid. You then have 14 days from delivery to change your mind and return it, unworn and as it arrived.",
+    title: "Delivered to you",
+    body: "Your piece is sent to your door. You then have 14 days from delivery to change your mind.",
   },
 ];
 
 const QUESTIONS = [
   {
-    q: "Why not pay at checkout like everywhere else?",
-    a: "Because each piece is a single item, often pre-owned. We would rather you saw the labels and the condition for yourself before any money moves. It is how a good boutique would hand over something rare.",
+    q: "Why a private checkout?",
+    a: "Our pieces are limited, and many exist in very small numbers. A private checkout means each piece goes to one buyer, with a moment to confirm size and delivery before you pay.",
   },
   {
-    q: "How do you know a piece is authentic?",
-    a: "We check each piece against its labels, its maker's details and its photographs before we offer it to you, and we send you those photographs too. If we are not confident in a piece, we do not sell it.",
+    q: "When do I pay?",
+    a: "Only when you complete your private checkout. Expressing your intent to buy is free and does not commit you to anything.",
   },
   {
-    q: "What if the piece has already gone?",
-    a: "Rare pieces move quickly and sometimes one sells before we can secure it. If that happens we tell you straight away. You will not have paid anything, and we are happy to hunt for another.",
+    q: "What if I change my mind?",
+    a: "You have 14 days from delivery to return a piece, unworn and as it arrived. Our delivery and returns page has the details.",
   },
   {
-    q: "Can I ask for a piece that is not on the rail?",
-    a: "Yes. Tell us what you are looking for on the contact page.",
+    q: "Can you find a piece that is not in the edit?",
+    a: "Yes. Our personal shopping team can look for almost anything. Tell us the piece, your size and your budget.",
   },
 ];
 
-export default function ReservingPage() {
+export default function HowToBuyPage() {
   return (
     <>
       <SiteHeader />
       <main id="content" className="pb-24">
         <section className="mx-auto max-w-7xl px-5 pt-10 sm:px-8">
-          <p className="eyebrow">Buying from Hanger 22</p>
-          <h1 className="display mt-3 max-w-4xl text-[48px] text-ink sm:text-[72px]">See it before you pay</h1>
+          <p className="eyebrow">Client services</p>
+          <h1 className="display mt-3 max-w-4xl text-[48px] text-ink sm:text-[72px]">How to buy</h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed">
-            Each piece on the rail is a single item, so we do not take your money first. You reserve, we confirm the piece with you, and you pay only once you have seen it up close and said yes.
+            Buying from Hanger 22 is simple and private. Every piece is sold through a personal checkout, so it goes to one buyer at a time.
           </p>
         </section>
 
@@ -92,13 +92,13 @@ export default function ReservingPage() {
         </section>
 
         <section className="mx-auto mt-20 flex max-w-7xl flex-wrap items-center justify-between gap-6 px-5 sm:px-8">
-          <p className="display text-[32px] text-ink">Ready to look?</p>
+          <p className="display text-[32px] text-ink">Ready to choose?</p>
           <div className="flex flex-wrap gap-3">
             <Link href="/pieces" className="btn-solid px-10">
               Shop all
             </Link>
             <Link href="/contact" className="pill-btn min-h-[54px] px-10">
-              Ask for a piece
+              Personal shopping
             </Link>
           </div>
         </section>

@@ -6,7 +6,7 @@ import { siteOrigin } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = siteOrigin("https://hanger22.vercel.app");
-  const staticRoutes = ["", "/pieces", "/brands", "/reserving", "/contact", "/legal/terms", "/legal/privacy", "/legal/returns"].map(
+  const staticRoutes = ["", "/pieces", "/brands", "/how-to-buy", "/contact", "/legal/terms", "/legal/privacy", "/legal/returns"].map(
     (path) => ({
       url: `${origin}${path || "/"}`,
     }),

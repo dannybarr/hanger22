@@ -7,7 +7,7 @@ import { Field, focusFirstError, Honeypot, PrivacyNote, useModal } from "@/compo
 
 type Fields = { name: string; email: string; phone: string; size: string; notes: string };
 
-export type ReservePiece = {
+export type BuyPiece = {
   id: string;
   brand: string;
   title: string;
@@ -18,12 +18,12 @@ export type ReservePiece = {
 
 const EMPTY: Fields = { name: "", email: "", phone: "", size: "", notes: "" };
 
-export function ReserveButton({ piece }: { piece: ReservePiece }) {
+export function BuyButton({ piece }: { piece: BuyPiece }) {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button type="button" className="btn-solid w-full" onClick={() => setOpen(true)}>
-        Reserve this piece
+        Buy now
       </button>
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 px-5 py-3 backdrop-blur lg:hidden">
         <div className="flex items-center gap-4">
@@ -31,17 +31,17 @@ export function ReserveButton({ piece }: { piece: ReservePiece }) {
             <p className="truncate text-[13px] text-muted">{piece.title}</p>
             <p className="text-[16px] font-medium text-ink">{piece.price}</p>
           </div>
-          <button type="button" className="btn-solid min-h-12 shrink-0" onClick={() => setOpen(true)}>
-            Reserve
+          <button type="button" className="btn-solid min-h-12 shrink-0 px-8" onClick={() => setOpen(true)}>
+            Buy now
           </button>
         </div>
       </div>
-      {open ? <ReserveSheet piece={piece} onClose={() => setOpen(false)} /> : null}
+      {open ? <BuySheet piece={piece} onClose={() => setOpen(false)} /> : null}
     </>
   );
 }
 
-function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => void }) {
+function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) {
   const titleId = useId();
   const ref = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -120,18 +120,18 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex justify-end bg-[rgba(23,19,15,0.42)]" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-[rgba(23,19,15,0.5)] backdrop-blur-[2px] sm:items-center sm:p-6" onClick={onClose}>
       <div
         ref={ref}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="flex h-full w-full max-w-[460px] flex-col overflow-y-auto bg-paper text-body shadow-[-20px_0_60px_rgba(23,19,15,0.18)] [animation:sheetIn_360ms_cubic-bezier(0.22,0.8,0.22,1)]"
+        className="flex max-h-[94dvh] w-full max-w-[520px] flex-col overflow-y-auto bg-paper text-body shadow-[0_30px_80px_rgba(23,19,15,0.35)] [animation:riseIn_420ms_cubic-bezier(0.22,0.8,0.22,1)]"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-line px-6 py-4">
           <p className="eyebrow" id={titleId}>
-            {done ? "Reserved" : "Reserve this piece"}
+            {done ? "Request received" : "Expression of intent to buy"}
           </p>
           <button type="button" className="-mr-2 flex h-10 w-10 items-center justify-center text-ink" aria-label="Close" onClick={onClose}>
             <X size={20} />
@@ -150,23 +150,21 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
 
         {done != null ? (
           <div className="px-6 py-8" role="status">
-            <p className="display text-[30px] text-ink">Thank you{done ? `, ${done}` : ""}</p>
+            <p className="display text-[32px] text-ink">Thank you{done ? `, ${done}` : ""}</p>
             <p className="mt-4 text-[15px] leading-relaxed">
-              We have your reservation. Next, we check the piece against its labels and email you photographs and a secure payment link.
+              Your intent to buy is with us. Your personal checkout link will be sent to {fields.email.trim()}.
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed">Nothing has been charged. If it is not what you hoped, you can walk away.</p>
+            <p className="mt-4 text-[14px] leading-relaxed text-muted">No payment is taken until you complete your checkout.</p>
             <button type="button" className="pill-btn mt-8 w-full" onClick={onClose}>
-              Back to the piece
+              Continue shopping
             </button>
           </div>
         ) : (
           <form ref={formRef} className="relative grid gap-5 px-6 py-6" onSubmit={submit} noValidate>
             <Honeypot value={trap} onChange={setTrap} />
-            <ol className="grid gap-2 text-[13px] leading-relaxed text-muted">
-              <li>1. Reserve now. Nothing is charged.</li>
-              <li>2. We confirm the piece and send you photographs.</li>
-              <li>3. Pay by secure link only if you are happy.</li>
-            </ol>
+            <p className="text-[15px] leading-relaxed">
+              Pieces this rare are sold by private checkout. Leave your details and your personal checkout link will follow by email.
+            </p>
             <Field label="Name" error={errors.name}>
               <input className="field" name="name" autoComplete="name" value={fields.name} onChange={(event) => set("name", event.target.value)} />
             </Field>
@@ -195,8 +193,9 @@ function ReserveSheet({ piece, onClose }: { piece: ReservePiece; onClose: () => 
               </p>
             ) : null}
             <button type="submit" className="btn-solid w-full" disabled={pending}>
-              {pending ? "Reserving" : "Reserve, pay later"}
+              {pending ? "Sending" : "Confirm intent to buy"}
             </button>
+            <p className="text-center text-[12px] text-muted">No payment is taken now.</p>
             <PrivacyNote />
           </form>
         )}

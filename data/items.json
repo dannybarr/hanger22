@@ -8,14 +8,12 @@
     "collabId": "col-zellerfeld",
     "category": "footwear",
     "year": 2025,
-    "story": "Moncler's Trailgrip, rebuilt with Zellerfeld, whose 3D-printed sole gives the shoe its shape. This khaki pair dates from 2025. It has never been worn and comes with its dust bag, without tags, in a size of about EU 38. If you are between sizes, tell us when you reserve and we will confirm the insole length before you pay.",
+    "story": "In July 2023 Moncler showed its autumn and winter footwear in a Paris showroom called Studio Ascenti, and the Trailgrip 3D stood apart from everything else in the room. Working with Zellerfeld, Moncler printed its Trailgrip trainer in one piece from a single recyclable material, the house's first move into 3D printing. Pairs were kept for Moncler's own footwear community rather than released to everyone. This khaki pair has never been worn and comes with its dust bag, in a size of about EU 38.",
     "specs": {
       "Colour": "Khaki",
-      "Construction": "3D printed by Zellerfeld",
-      "Year": "2025",
+      "Construction": "3D printed in one piece",
       "Size": "About EU 38",
-      "Includes": "Dust bag",
-      "Tags": "None"
+      "Includes": "Dust bag"
     },
     "images": {
       "front": "/cutouts/trailgrip-front.webp",
@@ -1670,14 +1668,14 @@
     "brand": "Stone Island",
     "collabId": "col-si-ghost",
     "category": "outerwear",
-    "story": "Stone Island's Ghost pieces give up the famous badge. The compass is dyed into the cloth in the jacket's own colour, so it only shows when you are close. Style 4100044 is the light grey all-weather jacket in organic cotton canvas, with virgin wool rib at the stand collar, the sleeves and the hem. It closes on a two-way zip hidden under a placket, carries two flap pockets, and wears the tonal Ghost badge on its left sleeve. This one is new. Tell us your size when you reserve and we will confirm it is available before you pay.",
+    "story": "In 2011 Stone Island stripped its jackets back to a single colour and called them Ghost Pieces. Everything goes the same shade, even the famous compass badge, so the mark only shows itself up close. Style 4100044 carries that idea in light grey all weather cotton canvas. Virgin wool rib finishes the stand collar, the sleeves and the hem. A concealed two way zip keeps the front clean, two flap pockets sit on the body, and the tonal badge rides on the left sleeve. It is a jacket for people who know exactly what they are looking at and would rather the rest of the room did not. This one is new.",
     "specs": {
       "Style": "4100044",
       "Colour": "Light grey",
       "Outer": "Organic cotton canvas",
       "Rib": "Virgin wool",
-      "Fastening": "Concealed two-way zip",
-      "Size": "Confirmed when you reserve"
+      "Fastening": "Concealed two way zip",
+      "Size": "Confirmed at checkout"
     },
     "images": {
       "front": "/cutouts/ghost-4100044.webp",
@@ -1729,12 +1727,11 @@
     "brand": "Moncler x Palm Angels",
     "collabId": "col-palm",
     "category": "outerwear",
-    "story": "Palm Angels was one of the eight original Moncler Genius collections, 8 Moncler Palm Angels, announced in Milan in February 2018. This is a black Moncler x Palm Angels padded jacket in polyester, size M, listed in very good condition. Its exact style and season aren't on our record yet, so we will read both from the labels and send you photographs before you pay.",
+    "story": "Francesco Ragazzi was creative director at Moncler when he began photographing skaters in Los Angeles. The pictures became a book in 2014, the book became a label called Palm Angels, and its first collection arrived for autumn and winter 2015. When Moncler announced Genius in Milan in February 2018, eight designers were invited to remake the house, and 8 Moncler Palm Angels was one of them. It put California skate culture into mountain down. This black padded jacket in polyester carries both names. It comes in size M and is in very good condition.",
     "specs": {
       "Colour": "Black",
       "Material": "Polyester",
-      "Size": "M",
-      "Condition": "Very good, as listed"
+      "Size": "M"
     },
     "images": {
       "front": "/cutouts/palm-72059216.webp",
@@ -1781,17 +1778,17 @@
   {
     "id": "h22-komae-70832580",
     "slug": "moncler-1952-komae-70832580",
-    "title": "2 Moncler 1952 Komae reversible down jacket",
-    "shortTitle": "Komae reversible down jacket",
+    "title": "2 Moncler 1952 reversible down jacket",
+    "shortTitle": "Reversible down jacket",
     "brand": "Moncler Genius",
     "collabId": null,
     "category": "outerwear",
     "year": 2021,
-    "story": "A reversible down jacket in black polyamide, never worn, size M. Its previous owner identifies it as the Komae from 2 Moncler 1952, part of the autumn/winter 2021 Moncler Genius collection. 2 Moncler 1952 takes its name from the year the house was founded, and Genius is the programme Moncler built for guest designers. Two jackets in one. We will check the labels and send you photographs of both sides before you pay.",
+    "story": "Moncler was founded in 1952, in a village in the mountains near Grenoble. When the house launched its Genius programme it gave that year its own line, 2 Moncler 1952, which takes the classic Moncler down jacket and pushes it further. Sergio Zambon and Veronica Leoni have both designed for it. This jacket is two pieces in one. Wear it one way for a clean black polyamide shell, then turn it inside out for its other face. It has never been worn and comes in size M.",
     "specs": {
       "Colour": "Black",
       "Material": "Polyamide",
-      "Season": "Autumn/winter 2021",
+      "Fill": "Down",
       "Reversible": "Yes",
       "Size": "M"
     },
@@ -1845,7 +1842,7 @@
     "brand": "Kapital",
     "collabId": null,
     "category": "outerwear",
-    "story": "Kapital is the Okayama label known for bandana cotton and reconstructed cloth, and this jacket is both at once: purple bandana prints pieced together into a single patchwork coat. It has never been worn and still carries its tag. It is marked size 4, which its previous owner says fits a men's small to medium. Laid flat, it measures 22 inches across the chest, 22 inches from the shoulder to the hem and 24 inches from the shoulder to the cuff.",
+    "story": "Kapital was founded in 1985 by Toshikiyo Hirata in Kojima, the Okayama town known as the denim capital of Japan. His son Kiro joined in 2002 and brought the bandana with him, and the print has run through the label ever since. This jacket is that idea at full volume. Purple bandana cloth is cut and pieced together into a single patchwork coat, in the spirit of boro, the patched and mended cloth of old Japan. It has never been worn and still carries its tag. It is marked size 4, which fits a men's small to medium, and measures 22 inches across the chest, 22 inches from shoulder to hem and 24 inches from shoulder to cuff.",
     "specs": {
       "Colour": "Purple",
       "Material": "Cotton",
@@ -1905,9 +1902,9 @@
     "brand": "Supreme x Stone Island",
     "collabId": "col-supreme-si",
     "category": "outerwear",
-    "story": "Supreme and Stone Island have worked together across several seasons. This jacket carries both names. It is listed as black in a synthetic shell, though it can read dark navy in photographs, size S, described by its previous owner as in good condition. The season and style name aren't on our record yet. We will read both from the labels and send you close photographs of the colour and any wear before you pay.",
+    "story": "Supreme and Stone Island first worked together for autumn and winter 2014, when a Raso Gommato jacket, fleeces and a cap went on sale that October. The pairing came back every year until 2017 and returned again in 2019, joining Supreme's New York graphics to Stone Island's research into cloth. This shell jacket carries both names on its label. It is dark navy to black depending on the light, comes in size S and is in good condition.",
     "specs": {
-      "Colour": "Black, as listed. Can read dark navy",
+      "Colour": "Dark navy to black",
       "Material": "Synthetic",
       "Size": "S"
     },

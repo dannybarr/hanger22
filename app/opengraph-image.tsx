@@ -20,7 +20,7 @@ export default function Image() {
       >
         <div style={{ fontSize: 28, letterSpacing: 6 }}>ZERO STOCK</div>
         <div style={{ fontSize: 92 }}>Hanger 22</div>
-        <div style={{ fontSize: 28 }}>Rare collabs and grails, sourced to order. London.</div>
+        <div style={{ fontSize: 28 }}>Limited editions and rare collaborations. London.</div>
       </div>
     ),
     size,

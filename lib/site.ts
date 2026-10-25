@@ -1,14 +1,14 @@
 export const SITE_NAME = "Hanger 22";
 
-export const SITE_DESCRIPTION = "Hanger 22, London. Rare collabs and grails.";
+export const SITE_DESCRIPTION = "Hanger 22, London. Limited editions, rare collaborations and grails.";
 
 export const MARQUEE_PHRASE = "STONE ISLAND  •  MONCLER  •  KAPITAL  •  SUPREME  •  PALACE  •  ";
 
 /** Shown in the utility bar. Each line must stay true to how the shop actually works. */
 export const PROMISES = [
-  "Reserve now. Pay only once we confirm",
+  "Limited editions and rare collaborations",
+  "Private checkout on every piece",
   "14 days to change your mind",
-  "Photographs before you pay",
 ] as const;
 
 export const CATEGORY_LABEL = {
@@ -22,11 +22,11 @@ export const CATEGORY_LABEL = {
 } as const;
 
 export const CONDITION_COPY = {
-  new: { label: "New", note: "Described as never worn. We confirm it with photographs before you pay." },
-  "new-with-defects": { label: "New, with a mark", note: "Described as never worn, with a small flaw. We photograph it for you before you pay." },
-  excellent: { label: "Excellent", note: "Described as lightly worn. We photograph the condition for you before you pay." },
-  good: { label: "Good", note: "Worn, with signs of use. We photograph any wear for you before you pay." },
-  fair: { label: "Fair", note: "Clearly worn. We photograph every mark for you before you pay." },
+  new: { label: "New", note: "Never worn." },
+  "new-with-defects": { label: "New, with a mark", note: "Unworn, with a small mark described in the details." },
+  excellent: { label: "Excellent", note: "Worn with care and kept beautifully." },
+  good: { label: "Good", note: "Worn and well kept, with light signs of use." },
+  fair: { label: "Fair", note: "Clearly worn, with visible signs of use." },
 } as const;
 
 export const PHOTO_LICENCE =

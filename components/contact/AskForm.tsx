@@ -66,7 +66,7 @@ export function AskForm() {
     return (
       <div role="status" className="border-t border-ink pt-8">
         <p className="display text-[32px] text-ink">Thank you</p>
-        <p className="mt-4 max-w-md text-[15px] leading-relaxed">We have your message and will reply by email. If we find your piece, we will send photographs and a price before anything else.</p>
+        <p className="mt-4 max-w-md text-[15px] leading-relaxed">We have your message and our team will come back to you by email.</p>
       </div>
     );
   }

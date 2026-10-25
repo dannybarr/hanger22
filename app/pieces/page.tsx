@@ -9,7 +9,7 @@ import { CATEGORY_LABEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Shop all",
-  description: "Every piece on the Hanger 22 rail. Rare collaborations and hard-to-find pieces.",
+  description: "Every piece on the Hanger 22 rail. Limited editions and rare collaborations, chosen one by one.",
 };
 
 type SP = Record<string, string | string[] | undefined>;

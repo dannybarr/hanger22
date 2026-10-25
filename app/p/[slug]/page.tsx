@@ -1,11 +1,11 @@
-import { ArrowsClockwise, Camera, Lock } from "@phosphor-icons/react/dist/ssr";
+import { ArrowsClockwise, Lock, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 import { PieceCard } from "@/components/piece/PieceCard";
 import { ProductStage, type StageImage } from "@/components/product/ProductStage";
-import { ReserveButton } from "@/components/product/ReserveSheet";
+import { BuyButton } from "@/components/product/BuySheet";
 import { housesFor } from "@/lib/brands";
 import { getItem, getPublicItems, similarItems } from "@/lib/data";
 import { productJsonLd } from "@/lib/jsonld";
@@ -15,7 +15,7 @@ import type { PublicItem } from "@/lib/schema";
 
 type Params = { slug: string };
 
-/** A size the buyer can rely on, or null when we confirm it at reservation. */
+/** A size the buyer can rely on, or null when it is confirmed at checkout. */
 function knownSize(item: PublicItem) {
   const size = item.specs.Size;
   if (!size || /confirm|request/i.test(size)) return null;
@@ -89,7 +89,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             <ProductStage front={frontImage(item)} spin={item.images.spin ?? []} title={item.shortTitle} />
             {item.images.studio ? (
               <p className="mt-2 text-[12px] leading-relaxed text-muted">
-                Studio image, rebuilt from the seller&rsquo;s photograph. We send you real photographs of this piece before you pay.
+                Studio image of this piece. Every detail is described in full below.
               </p>
             ) : null}
           </div>
@@ -119,7 +119,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
                   {size ? (
                     <span className="inline-flex min-h-11 items-center border border-ink px-4 text-[14px] font-medium text-ink">{size}</span>
                   ) : (
-                    <span className="text-[15px] text-ink">Tell us your size when you reserve. We confirm it before you pay.</span>
+                    <span className="text-[15px] text-ink">Tell us your size and we confirm it with your checkout.</span>
                   )}
                 </dd>
               </div>
@@ -132,24 +132,22 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             </dl>
 
             <div className="mt-8">
-              <ReserveButton
-                piece={{ id: item.id, brand: item.brand, title: item.shortTitle, price, size, image: item.images.front }}
-              />
-              <p className="mt-3 text-center text-[13px] text-muted">Nothing is charged until you have seen the photographs and said yes.</p>
+              <BuyButton piece={{ id: item.id, brand: item.brand, title: item.shortTitle, price, size, image: item.images.front }} />
+              <p className="mt-3 text-center text-[13px] text-muted">Private checkout. Your personal checkout link arrives by email.</p>
             </div>
 
             <ul className="mt-8 grid gap-4 border-y border-line py-6 text-[14px]">
               <li className="flex gap-3">
                 <Lock size={18} className="mt-0.5 shrink-0" aria-hidden />
-                <span>Reserve first. Pay by secure link once we confirm the piece.</span>
+                <span>Private checkout, sent to you personally.</span>
               </li>
               <li className="flex gap-3">
-                <Camera size={18} className="mt-0.5 shrink-0" aria-hidden />
-                <span>Photographs of the labels and any wear, sent to you before you pay.</span>
+                <SealCheck size={18} className="mt-0.5 shrink-0" aria-hidden />
+                <span>Condition graded and described in full.</span>
               </li>
               <li className="flex gap-3">
                 <ArrowsClockwise size={18} className="mt-0.5 shrink-0" aria-hidden />
-                <span>14 days to change your mind after it arrives.</span>
+                <span>14 days to change your mind after delivery.</span>
               </li>
             </ul>
 
@@ -171,18 +169,18 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
               ) : null}
               <Fold title="Delivery and returns">
                 <p className="text-[15px] leading-relaxed">
-                  We secure each piece once you reserve it, so we confirm the delivery method and date with you before you pay. You have 14 days from delivery to change your mind.
+                  Your delivery date and method are confirmed with your checkout. You have 14 days from delivery to change your mind.
                 </p>
                 <Link href="/legal/returns" className="nav-link mt-4 inline-block">
                   Delivery and returns
                 </Link>
               </Fold>
-              <Fold title="How reserving works">
+              <Fold title="How to buy">
                 <p className="text-[15px] leading-relaxed">
-                  Reserving asks us to secure the piece for you. We check it, photograph the labels and any wear, and email you everything with a payment link. If anything is not as described, or the piece has gone, you owe nothing.
+                  Press Buy now and leave your details. We send your personal checkout link by email, and you complete your order there.
                 </p>
-                <Link href="/reserving" className="nav-link mt-4 inline-block">
-                  Read more
+                <Link href="/how-to-buy" className="nav-link mt-4 inline-block">
+                  More on buying
                 </Link>
               </Fold>
             </div>

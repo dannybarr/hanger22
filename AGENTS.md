@@ -1,16 +1,24 @@
 # Hanger 22: instructions for agents
 
-Hanger 22 is a small, reserve-then-pay boutique of rare collaborations and grails. Customers reserve a piece and pay nothing. We secure the piece, photograph it and send a payment link, and they pay only if they are happy. Trust is the product, so every rule below exists because breaking it would mislead a buyer or leak the business.
+Hanger 22 is a London store for limited editions, rare collaborations and grails: the pieces most people never get to see. To a customer it is a simple, confident shop. They choose a piece, press Buy now, express their intent to buy in a popup, and receive a personal checkout link by email. Behind the scenes, pieces are sourced from partners once a request arrives, and Danny sends the checkout link only when the piece is secured. **The customer never sees that process.**
 
 Owner: Danny Barr. Pushing to `main` deploys to https://hanger22.vercel.app.
 
+## Positioning and voice
+
+- **Confident and simple.** Write like a premium store selling its own stock. Never mention sourcing, partners, marketplaces, sellers, previous owners, listings, "securing", "confirming the piece", photographs before payment, or "if it can be found". The only process a customer sees is: Buy now, express intent to buy, private checkout link by email, delivery, 14 days to change your mind.
+- **Every product story is about the product.** When it launched, who made it and why, the collaboration or line it belongs to, what makes it rare, then its colour, material, size and condition. 60 to 140 words.
+- **Human language.** British English, short sentences. No dashes of any kind used as punctuation, no semicolons, no hyphenated compounds where plain words work ("hard to find", not "hard-to-find"), no buzzwords, no exclamation marks.
+- **Honest within the confidence.** Never claim stock, delivery speed, authentication or "one of one" unless it is literally true. If a fact cannot be verified, leave it out rather than hedge in the copy.
+- Buy requests and personal shopping enquiries go to Danny's inbox through `lib/inbox.ts` on the server. Never put the inbox address in client code or copy.
+
 ## Ground rules
 
-- **Never invent.** Stories, specs, conditions, sizes, seasons and brand history must come from the listing, the label or a cited source. If you cannot verify a fact, leave it out. "Not on our record yet, we confirm it from the labels before you pay" is always acceptable.
+- **Never invent.** Stories, specs, conditions, sizes, seasons and brand history must come from the listing, the label or a cited source. If you cannot verify a fact, leave it out.
 - **The business model stays private.** Marketplace names, seller names, source prices, listing URLs, markups and research notes live only in private fields (`notes`, `costBasis`, `markupPct`, `estimatedMarginGBP`, `demandSignal`, `priceProvisional`, `authRoute`, `sourceListingIds`, `images.credit`, `images.sourceUrl`, `images.licence`) and in `data/sources.json`. Never put them in `story`, `specs`, `title` or `shortTitle`.
 - **Client components receive `ShopItem` only** (`toShopItem` in `lib/data.ts`). Never pass a full item to a `"use client"` component.
-- **No stock claims.** Pieces are sourced to order, so `availability` is `"sourced"`. Never write "in stock", "ships now", "one of one" or "authenticated" unless it is literally true.
-- **Copy is British English, short and human.** No em dashes, no buzzwords, no exclamation marks.
+- **Data stays truthful.** Pieces are sourced to order, so `availability` is `"sourced"`.
+- **Copy follows the voice rules above.**
 - Do not change the conveyor rail, the brand wall or the type system unless asked.
 
 ## Adding a product
@@ -30,7 +38,7 @@ Owner: Danny Barr. Pushing to `main` deploys to https://hanger22.vercel.app.
    - `title`: full and descriptive. `shortTitle`: 2 to 4 words, unique on the site (no two "Black jacket"s).
    - `brand`: exactly as the house names itself. Write a collaboration as `"A x B"` so the brand pages find both houses.
    - `category`: one of the schema values. `condition`: `new`, `new-with-defects`, `excellent`, `good` or `fair`, matching the listing and never better than it.
-   - `story`: 60 to 140 words for a buyer. What it is, the collaboration or drop, why it is hard to find, and the size and condition. Facts only.
+   - `story`: 60 to 140 words told as the story of this product: when it launched, who made it and why, the line or collaboration, what makes it rare, then colour, material, size and condition. Facts only, voice rules apply.
    - `specs`: buyer-facing only (colour, material, size, measurements, season if verified).
    - `notes`: your research, privately. `status: "available-to-source"`, `availability: "sourced"`, `authConfidence: "medium"` unless the authentication evidence is strong.
    - `sourceListingIds: ["src-<item id>"]`.

@@ -43,7 +43,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           ))}
         </nav>
         <div className="lg:hidden">
-          <MobileMenu links={[...links, { href: "/reserving", label: "How reserving works" }, { href: "/contact", label: "Contact" }]} />
+          <MobileMenu links={[...links, { href: "/how-to-buy", label: "How to buy" }, { href: "/contact", label: "Personal shopping" }]} />
         </div>
         <Link href="/" aria-label="Hanger 22, home">
           <Wordmark />
@@ -52,8 +52,8 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <Link href="/pieces#search" className="nav-link hidden sm:inline-block">
             Search
           </Link>
-          <Link href="/reserving" className="nav-link hidden lg:inline-block">
-            How it works
+          <Link href="/how-to-buy" className="nav-link hidden lg:inline-block">
+            How to buy
           </Link>
           <Link href="/contact" className="nav-link">
             Contact
@@ -72,16 +72,16 @@ export function SiteFooter() {
         <div className="max-w-xs">
           <Wordmark />
           <p className="mt-5 text-[14px] leading-relaxed text-muted">
-            A small rail of rare collaborations and hard-to-find pieces, based in London.
+            A London store for limited editions, rare collaborations and the pieces most people never get to see.
           </p>
         </div>
         <FooterColumn title="Shop" links={shop} />
         <FooterColumn
           title="Help"
           links={[
-            { href: "/reserving", label: "How reserving works" },
+            { href: "/how-to-buy", label: "How to buy" },
             { href: "/legal/returns", label: "Delivery and returns" },
-            { href: "/contact", label: "Contact" },
+            { href: "/contact", label: "Personal shopping" },
           ]}
         />
         <FooterColumn

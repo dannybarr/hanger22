@@ -9,19 +9,19 @@ export default function TermsPage() {
       <p className="eyebrow">Hanger 22</p>
       <h1 className="display text-[48px] text-ink sm:text-[64px]">Terms</h1>
 
-      <h2>Reserving</h2>
+      <h2>Expressing intent to buy</h2>
       <p>
-        Reserving a piece asks us to secure it and confirm it with you. A reservation is not a purchase and costs nothing. Either of us can cancel it before you pay, and we will tell you straight away if a piece is no longer available.
+        When you press Buy now and send your details, you are telling us you intend to buy that piece. It is not a purchase and costs nothing. If a piece becomes unavailable before you complete your checkout, we will let you know and you will not be charged.
       </p>
 
       <h2>Buying</h2>
       <p>
-        Your purchase is agreed when you pay the payment link we send you. Before then we will have sent you photographs of the piece, its condition and the delivery method and date. Prices are in pounds sterling and are the price shown when we send your link.
+        Your purchase is agreed when you complete the personal checkout link we send you by email. Your checkout confirms the piece, the price, and the delivery method and date. Prices are in pounds sterling.
       </p>
 
       <h2>Pieces and condition</h2>
       <p>
-        Most pieces are pre-owned or no longer sold in shops. We describe the condition of each one and photograph any wear before you pay. Measurements and sizes come from the labels and, where noted, from the previous owner.
+        Many pieces are previously owned or no longer sold in shops. Each one is graded for condition and described in full on its page, and any size we confirm at checkout is shown as such.
       </p>
 
       <h2>Delivery and returns</h2>

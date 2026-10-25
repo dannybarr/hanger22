@@ -26,7 +26,7 @@ ${origin}/brands
 - Terms: ${origin}/legal/terms
 - Privacy: ${origin}/legal/privacy
 - Delivery and returns: ${origin}/legal/returns
-- How reserving works: ${origin}/reserving
+- How to buy: ${origin}/how-to-buy
 
 ## Contact
 

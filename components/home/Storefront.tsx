@@ -4,18 +4,18 @@ import { PieceCard } from "@/components/piece/PieceCard";
 import { HOUSES, housesFor } from "@/lib/brands";
 import type { PublicItem } from "@/lib/schema";
 
-const STEPS = [
+const PROMISES = [
   {
-    title: "Reserve",
-    body: "Choose a piece and tell us your size. It takes a minute and nothing is charged.",
+    title: "Rare by design",
+    body: "Every piece is a limited edition, a collaboration or a rarity from its range. If it is easy to find, it is not here.",
   },
   {
-    title: "We confirm",
-    body: "We secure the piece, check it against its labels and send you photographs of the details and any wear.",
+    title: "Its story, told",
+    body: "Each piece comes with its own story. When it launched, why it was made and what makes it hard to find.",
   },
   {
-    title: "Pay, then wear",
-    body: "Happy with what you see? Pay by secure link and we send it on. You still have 14 days to change your mind.",
+    title: "Private checkout",
+    body: "Choose your piece and we send a checkout link made for you. You have 14 days from delivery to change your mind.",
   },
 ];
 
@@ -46,23 +46,23 @@ export function Storefront({ items }: { items: PublicItem[] }) {
         </ul>
       </section>
 
-      <section className="tile" aria-labelledby="how-title">
+      <section className="tile" aria-labelledby="promise-title">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
             <div>
-              <p className="eyebrow">How buying works</p>
-              <h2 id="how-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
-                See it before you pay
+              <p className="eyebrow">The Hanger 22 promise</p>
+              <h2 id="promise-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
+                Pieces you will not see twice
               </h2>
               <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-muted">
-                Rare pieces deserve a careful handover. You pay nothing until you have seen the piece up close and said yes.
+                We stock what the high street never will. Limited runs, rare collaborations and the grails people search for, chosen one by one.
               </p>
-              <Link href="/reserving" className="nav-link mt-8 inline-block">
-                How reserving works
+              <Link href="/how-to-buy" className="nav-link mt-8 inline-block">
+                How to buy
               </Link>
             </div>
             <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
-              {STEPS.map((step, index) => (
+              {PROMISES.map((step, index) => (
                 <li key={step.title} className="border-t border-ink pt-5">
                   <p className="mono text-[12px] text-muted">{String(index + 1).padStart(2, "0")}</p>
                   <h3 className="display mt-4 text-[26px] text-ink">{step.title}</h3>
@@ -106,19 +106,19 @@ export function Storefront({ items }: { items: PublicItem[] }) {
         </section>
       ) : null}
 
-      <section className="border-t border-line" aria-labelledby="hunt-title">
+      <section className="border-t border-line" aria-labelledby="shopping-title">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[1fr_auto] md:items-end">
           <div className="max-w-2xl">
-            <p className="eyebrow">Looking for something else</p>
-            <h2 id="hunt-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
-              Tell us the grail. We will hunt it down
+            <p className="eyebrow">Personal shopping</p>
+            <h2 id="shopping-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
+              Looking for something else?
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-muted">
-              The rail is small on purpose. If it is not here, we will look for it.
+              The edit is small on purpose. Tell us the piece you are after and our team will find it for you.
             </p>
           </div>
           <Link href="/contact" className="pill-btn">
-            Ask for a piece
+            Ask our team
           </Link>
         </div>
       </section>

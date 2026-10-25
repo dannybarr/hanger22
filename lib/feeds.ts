@@ -18,7 +18,7 @@ function acpAvailability(item: PublicItem) {
 function fulfilmentLine(item: PublicItem) {
   return item.availability === "in_vault"
     ? "In the Vault, ships now."
-    : "Sourced to order. The delivery date is confirmed when you reserve.";
+    : "Delivery date confirmed at checkout.";
 }
 
 export function toCatalog(origin: string, generatedAt = new Date().toISOString()) {
@@ -60,9 +60,9 @@ export function toAcpFeed(origin: string, generatedAt = new Date().toISOString()
           `${cutLabel(item.cutReason)}.`,
           fulfilmentLine(item),
           item.images.imageStatus === "placeholder"
-            ? "Image is a placeholder silhouette; no listing photograph on file."
+            ? "Image is a placeholder."
             : "",
-          `${priceOf(item)} GBP. Reserve on the site; payment follows once Hanger 22 confirms the piece.`,
+          `${priceOf(item)} GBP. Buy on Hanger 22 by private checkout.`,
         ]
           .filter(Boolean)
           .join(" "),
