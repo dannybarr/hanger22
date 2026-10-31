@@ -14,7 +14,13 @@ export type HouseStory = {
   /** One line, our words, set under the name. */
   line: string;
   intro: string;
+  /** The person or people behind the house, told as a story. */
+  founder?: { name: string; body: string };
   chapters: Chapter[];
+  /** Who the house was made for, then and now. */
+  audience?: string;
+  /** What the house stands for. This is Hanger 22's point of view. */
+  meaning?: string;
   codes: Code[];
   sources: { label: string; url: string }[];
 };
@@ -67,51 +73,233 @@ export const HOUSE_STORIES: Record<string, HouseStory> = {
     ],
   },
 
+  rolex: {
+    "founded": "1905",
+    "origin": "London, then Geneva",
+    "founders": "Hans Wilsdorf and Alfred Davis",
+    "line": "Built to prove a point, worn as proof of one.",
+    "intro": "Rolex began in London in 1905, when Hans Wilsdorf and Alfred Davis set up Wilsdorf and Davis to bring Swiss movements to Britain and fit them in cases of their own choosing. At the time a wristwatch was seen as a delicate novelty. Wilsdorf believed it could be precise enough and tough enough to replace the pocket watch, and he spent the rest of his life proving it.",
+    "founder": {
+      "name": "Hans Wilsdorf",
+      "body": "Wilsdorf was born in Kulmbach, Bavaria, in 1881 and lost both parents by the age of twelve. His uncles sold the family business and sent the children to boarding school, so he learned early to make his own way. He trained with a pearl exporter, then in 1900 moved to La Chaux de Fonds in Switzerland to work for a watch firm, where he wound and checked pocket watches and learned the trade from the inside. In 1908 he registered the name Rolex. He wanted a word short enough to fit on a dial and easy to say in any language."
+    },
+    "chapters": [
+      {
+        "year": "1910",
+        "title": "Proof of precision",
+        "body": "Rolex became the first watchmaker to win official chronometer certification for a wristwatch, a small ladies' model. It was the first answer to anyone who doubted a watch could be both small and exact."
+      },
+      {
+        "year": "1919",
+        "title": "Geneva",
+        "body": "Heavy taxes on luxury imports and duties on silver and gold made Britain expensive after the war. Wilsdorf moved the company to Switzerland and settled it in Geneva, where Rolex has stayed ever since."
+      },
+      {
+        "year": "1926",
+        "title": "The Oyster",
+        "body": "Rolex sealed the movement inside a case it called the Oyster, built to keep out water and dust. The next year the swimmer Mercedes Gleitze crossed the English Channel with an Oyster, and the waterproof wristwatch had its proof."
+      },
+      {
+        "year": "1931",
+        "title": "Perpetual",
+        "body": "A rotor that winds the watch with every movement of the wrist meant an Oyster no longer had to be wound by hand. Perpetual still appears on Rolex dials today."
+      },
+      {
+        "year": "1953",
+        "title": "Everest and the deep",
+        "body": "In the year Everest was first climbed, Rolex launched the Explorer to celebrate the ascent, and the Submariner, water resistant to 100 metres. The professional watch became the language of the house."
+      },
+      {
+        "year": "1960",
+        "title": "The foundation",
+        "body": "In the mid 1940s Wilsdorf set up the Hans Wilsdorf Foundation and left it his Rolex shares. When he died in Geneva in 1960, the foundation took over, and it still owns and runs the company today."
+      }
+    ],
+    "audience": "Rolex was built around people who do difficult things: explorers, divers, aviators and racing drivers. Its partnerships, from the Le Mans 24 Hours to the US Open, keep it in that company. Rolex is estimated to make around 1.2 million watches a year, and it has kept its reputation as a status symbol for generations of buyers who want a watch that means something.",
+    "meaning": "A Rolex means something before you look at the time. It stands for proof: a watch tested in the sea, on mountains and in the air before it was ever a symbol. Owned by a foundation rather than shareholders, it has never needed to chase a trend, and it has barely needed to change. That is the point. You are buying the idea Hans Wilsdorf had in 1905, refined for more than a century.",
+    "codes": [
+      {
+        "name": "The Oyster",
+        "body": "The sealed case of 1926 that made the waterproof wristwatch real. The name lives on across the collection."
+      },
+      {
+        "name": "Perpetual",
+        "body": "The self winding rotor of 1931. The watch powers itself as long as it is worn."
+      },
+      {
+        "name": "Chronometer",
+        "body": "Precision certified from the very start. Rolex built its name on proving accuracy on the wrist."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia, Rolex",
+        "url": "https://en.wikipedia.org/wiki/Rolex"
+      },
+      {
+        "label": "Wikipedia, Hans Wilsdorf",
+        "url": "https://en.wikipedia.org/wiki/Hans_Wilsdorf"
+      }
+    ]
+  },
+
   moncler: {
-    founded: "1952",
-    origin: "Monestier-de-Clermont, France",
-    founders: "René Ramillon and André Vincent",
-    line: "From the mountain to the city, in down.",
-    intro:
-      "Moncler takes its name from the village where it began, Monestier-de-Clermont, in the mountains near Grenoble. René Ramillon and André Vincent started out making quilted sleeping bags, tents and padded jackets for people who worked in the cold.",
-    chapters: [
+    "founded": "1952",
+    "origin": "Monestier-de-Clermont, France",
+    "founders": "René Ramillon and André Vincent",
+    "line": "From mountain workwear to luxury, always in down.",
+    "intro": "Moncler began in 1952 in Monestier-de-Clermont, a mountain village near Grenoble that gave the brand its name. René Ramillon and André Vincent started by making what people in the mountains needed: padded sleeping bags, a hooded cape and tents that folded away.",
+    "founder": {
+      "name": "Ramillon and Vincent, then Remo Ruffini",
+      "body": "The founders built Moncler for function. In 1954 they made their first down jackets for the workers in their own factory, and the jackets were good enough to catch the eye of the mountaineer Lionel Terray, whose input shaped a specialist range, Moncler pour Lionel Terray. Half a century later the house found its second founder. In 2003 Remo Ruffini bought Moncler, moved it to Milan and relaunched it as a luxury brand, with the down jacket still at its heart."
+    },
+    "chapters": [
       {
-        year: "1952",
-        title: "A village name",
-        body: "Ramillon and Vincent founded the company in Monestier-de-Clermont. The early line was practical: sleeping bags, tents and quilted jackets for mountain workers.",
+        "year": "1954",
+        "title": "K2",
+        "body": "Moncler jackets went with the Italian expedition to K2, whose climbers reached the summit. A year later Moncler equipped the French team that conquered Makalu."
       },
       {
-        year: "1954",
-        title: "Terray and K2",
-        body: "The mountaineer Lionel Terray saw what the jackets could do and helped shape a specialist line made for him. That same year Moncler equipped the Italian expedition to K2, which Achille Compagnoni and Lino Lacedelli summited.",
+        "year": "1968",
+        "title": "Grenoble",
+        "body": "At the Winter Olympics in Grenoble, Moncler was the official supplier to the French downhill ski team, and the jacket moved from survival kit to sporting style."
       },
       {
-        year: "1968",
-        title: "Grenoble",
-        body: "At the Grenoble Winter Olympics, Moncler was the official supplier to the French downhill ski team.",
+        "year": "1980s",
+        "title": "Into the city",
+        "body": "The glossy quilted jacket came down from the mountains onto the streets of Italian cities, where it became the uniform of the Paninari youth movement. The designer Chantal Thomass worked with the house until 1989."
       },
       {
-        year: "2003",
-        title: "Ruffini",
-        body: "Remo Ruffini acquired the company and began to reposition it, keeping the down jacket at the centre while taking the house into the city.",
+        "year": "1992",
+        "title": "An Italian house",
+        "body": "Pepper Industries acquired the company, and Moncler became an Italian brand."
       },
       {
-        year: "2018",
-        title: "Genius",
-        body: "In February 2018 Moncler unveiled Genius in Milan: eight collections by different designers, each reinterpreting the house. Among them were Craig Green, Simone Rocha and Palm Angels.",
+        "year": "2003",
+        "title": "Ruffini",
+        "body": "Remo Ruffini bought Moncler, moved it to Milan and set out to make it a luxury house."
       },
+      {
+        "year": "2013",
+        "title": "Milan Stock Exchange",
+        "body": "Moncler listed in Milan in December 2013. Its shares rose 47 per cent on the first day of trading."
+      },
+      {
+        "year": "2018",
+        "title": "Genius",
+        "body": "Moncler Genius launched in Milan in February, pairing the house with eight designers at once, among them Pierpaolo Piccioli, Craig Green, Simone Rocha and Palm Angels."
+      },
+      {
+        "year": "2020",
+        "title": "Stone Island",
+        "body": "Moncler bought Stone Island for €1.15 billion, bringing two houses built on outerwear together."
+      }
     ],
-    codes: [
-      { name: "Down", body: "Moncler dates its first nylon down jacket to 1954. Everything since has grown from it." },
-      { name: "The mountain", body: "Expeditions and an Olympic team before fashion. The technical story is the brand story." },
-      { name: "Genius", body: "One house, many voices. Guest designers are invited to remake Moncler in their own image." },
+    "audience": "Moncler's first customers were factory workers and alpinists who needed to stay warm. In the 1980s Italian teenagers made it a badge of belonging. Today it is a global luxury house with revenue of more than €3 billion in 2025, yet the people who wear it still want what those first workers wanted: to be warm, and to look right doing it.",
+    "meaning": "Moncler means warmth with a record behind it. Every jacket carries the memory of K2 and the Grenoble slopes, even on a city street. Its signature product began as real equipment for real conditions, and that honesty is why a Moncler down jacket still feels like the genuine article.",
+    "codes": [
+      {
+        "name": "Down",
+        "body": "The first jackets of 1954 were made for the factory floor. Everything since has grown from them."
+      },
+      {
+        "name": "The felt badge",
+        "body": "The cockerel, the M and the felt appliqué badge on the sleeve, recognised the world over."
+      },
+      {
+        "name": "Genius",
+        "body": "One house, many voices. Guest designers are invited to remake Moncler in their own image."
+      }
     ],
-    sources: [
-      { label: "Moncler Group, History", url: "https://www.monclergroup.com/en/moncler/history" },
-      { label: "Moncler Annual Report 2020", url: "https://www.monclergroup.com/investor-relations/Moncler-Annual-report-2020-DEF/24-Moncler-Annual-report-2020.html" },
-      { label: "Dezeen, Moncler Genius launch", url: "https://www.dezeen.com/2018/02/22/moncler-genius-project-craig-green-simone-rocha-milan-fashion-week/" },
-      { label: "Wikipedia, Moncler", url: "https://en.wikipedia.org/wiki/Moncler" },
+    "sources": [
+      {
+        "label": "Wikipedia, Moncler",
+        "url": "https://en.wikipedia.org/wiki/Moncler"
+      },
+      {
+        "label": "Dezeen, Moncler Genius launch",
+        "url": "https://www.dezeen.com/2018/02/22/moncler-genius-project-craig-green-simone-rocha-milan-fashion-week/"
+      }
+    ]
+  },
+
+  kith: {
+    "founded": "2011",
+    "origin": "New York, United States",
+    "founders": "Ronnie Fieg",
+    "line": "A sneaker kid from Queens who built a world around the shop.",
+    "intro": "Kith opened on 11 November 2011 in New York, first in Brooklyn and then in Manhattan, as a small boutique for footwear and clothing. Its founder, Ronnie Fieg, had already spent most of his life on the shop floor, and he built Kith around everything he had learned there.",
+    "founder": {
+      "name": "Ronnie Fieg",
+      "body": "Fieg was born in Queens in 1982 and started work at thirteen as a stock boy at David Z, his uncle's footwear chain. He rose to salesman, manager and finally head buyer. In 2007 he reworked the Asics Gel Lyte III in three colourways of 252 pairs each, The 252 Pack. They sold out within a day and made the cover of The Wall Street Journal. Four years later he opened Kith, starting with small shops at the back of Atrium stores in Brooklyn and SoHo."
+    },
+    "chapters": [
+      {
+        "year": "2011",
+        "title": "Kith opens",
+        "body": "The first Kith stores opened in Brooklyn and Manhattan in November, built for footwear first."
+      },
+      {
+        "year": "2012",
+        "title": "Its own clothes",
+        "body": "Kith launched its own apparel line, the start of a brand in its own right rather than a shop that stocked other people's."
+      },
+      {
+        "year": "2015",
+        "title": "Kith Treats",
+        "body": "The Brooklyn store was rebuilt with a cereal bar called Kith Treats and 750 white Air Jordan 2s hanging from the ceiling, turning a shop into somewhere to spend an afternoon."
+      },
+      {
+        "year": "2016",
+        "title": "The runway",
+        "body": "Kith held its first show at New York Fashion Week."
+      },
+      {
+        "year": "2020",
+        "title": "Beyond fashion",
+        "body": "Collaborations reached far past clothing, including a BMW M4 Competition made in just 150 examples."
+      },
+      {
+        "year": "2022",
+        "title": "The Knicks",
+        "body": "Fieg became the first ever creative director of the New York Knicks."
+      },
+      {
+        "year": "2025",
+        "title": "Institution",
+        "body": "Kith staged its first runway show in six years outside its rebuilt Manhattan flagship on Lafayette Street. It now runs more than 20 stores across three continents, including a London flagship with its own restaurant."
+      }
     ],
+    "audience": "Kith started with New York's sneaker community, the collectors who queued for Fieg's Asics releases. It grew with them into clothing, then food and hospitality, and its collaborations now reach well beyond fashion. The people who shop Kith care about the details, and they treat a release as an occasion.",
+    "meaning": "Kith means taste you can trust. Fieg built it from inside the sneaker trade, and every collaboration, every store and every bowl of cereal at Kith Treats comes from the same instinct for what feels right. The name is an old English word for friends and neighbours, the kith in kith and kin, and the brand has always treated its community that way.",
+    "codes": [
+      {
+        "name": "The collaboration",
+        "body": "From The 252 Pack to cars, Kith made the partnership its signature."
+      },
+      {
+        "name": "The shop as a destination",
+        "body": "Cereal bars, restaurants and clubs. A Kith store is a place to go, not only a place to buy."
+      },
+      {
+        "name": "New York",
+        "body": "Born in Queens, raised in Brooklyn and Manhattan. The city runs through everything Kith makes."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia, Ronnie Fieg",
+        "url": "https://en.wikipedia.org/wiki/Ronnie_Fieg"
+      },
+      {
+        "label": "Business of Fashion, Ronnie Fieg",
+        "url": "https://www.businessoffashion.com/community/people/ronnie-fieg"
+      },
+      {
+        "label": "Boardroom, Kith and Ronnie Fieg",
+        "url": "https://boardroom.tv/?p=43403"
+      }
+    ]
   },
 
   "palm-angels": {

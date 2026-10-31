@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PieceCard } from "@/components/piece/PieceCard";
-import { HOUSES, housesFor } from "@/lib/brands";
+import { HOUSES } from "@/lib/brands";
+import { HOUSE_STORIES } from "@/lib/houseStories";
 import type { PublicItem } from "@/lib/schema";
 
 const PROMISES = [
@@ -21,7 +22,7 @@ const PROMISES = [
 
 export function Storefront({ items }: { items: PublicItem[] }) {
   if (items.length === 0) return null;
-  const carried = HOUSES.filter((house) => items.some((item) => housesFor(item.brand).includes(house)));
+  const told = HOUSES.filter((house) => HOUSE_STORIES[house.slug]);
 
   return (
     <>
@@ -74,23 +75,23 @@ export function Storefront({ items }: { items: PublicItem[] }) {
         </div>
       </section>
 
-      {carried.length > 0 ? (
+      {told.length > 0 ? (
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="houses-title">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="eyebrow">The houses</p>
               <h2 id="houses-title" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
-                Brands on the rail
+                Brand stories
               </h2>
             </div>
             <Link href="/brands" className="nav-link mb-2 shrink-0">
               All brands
             </Link>
           </div>
-          <ul className="mt-10 grid grid-cols-2 border-t border-l border-line sm:grid-cols-4">
-            {carried.map((house) => (
+          <ul className="mt-10 grid grid-cols-2 border-t border-l border-line sm:grid-cols-3">
+            {told.map((house) => (
               <li key={house.slug} className="border-r border-b border-line">
-                <Link href={`/brands/${house.slug}`} className="group flex h-32 items-center justify-center px-8 sm:h-40" aria-label={house.name}>
+                <Link href={`/brands/${house.slug}`} className="group flex h-32 items-center justify-center px-8 sm:h-40" aria-label={`The story of ${house.name}`}>
                   <Image
                     src={`/brands/${house.file}`}
                     alt=""
