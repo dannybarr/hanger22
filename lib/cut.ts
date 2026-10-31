@@ -13,6 +13,7 @@ export const MARKET_NOTE: Record<Item["sourceMarket"], string> = {
   EU: "From Europe",
   US: "From the United States",
   CN: "Retail reference, China",
+  KR: "From Korea",
 };
 
 export function cutLabel(reason: Item["cutReason"]) {
