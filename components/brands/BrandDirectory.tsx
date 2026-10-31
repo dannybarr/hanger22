@@ -18,13 +18,13 @@ export function BrandDirectory({ entries, totalPieces }: { entries: Entry[]; tot
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="all-brands">
+    <section className="mx-auto max-w-7xl px-5 pt-10 pb-24 sm:px-8" aria-labelledby="all-brands">
       <div className="flex flex-wrap items-end justify-between gap-6 border-b border-ink pb-8">
         <div>
           <p className="eyebrow">Brands</p>
-          <h2 id="all-brands" className="display mt-3 text-[40px] text-ink sm:text-[56px]">
+          <h1 id="all-brands" className="display mt-3 text-[48px] text-ink sm:text-[64px]">
             All brands
-          </h2>
+          </h1>
         </div>
         <Link href="/pieces" className="btn-solid px-10">
           Shop all {totalPieces} pieces

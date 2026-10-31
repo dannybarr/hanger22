@@ -63,7 +63,7 @@ export default async function HousePage({ params }: { params: Promise<Params> })
           <div className="mx-auto flex min-h-[calc(88dvh-97px)] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center">
             <nav aria-label="Breadcrumb" className="mono text-[11px] tracking-[0.2em] text-[#bfae95] uppercase">
               <Link href="/brands" className="hover:text-[#f3e8d6]">
-                The houses
+                All brands
               </Link>
             </nav>
             <div className="rise-in mt-12 w-full">
