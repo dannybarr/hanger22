@@ -1949,5 +1949,322 @@
     "notes": "Research, 21 October 2026. This is a black synthetic Supreme x Stone Island jacket, Vestiaire Collective reference 69748871, listed by GustavsArchive in the Netherlands. On 21 October 2026 the page showed Add to Bag and Make an Offer at $548, size S International, condition good. Vestiaire includes a physical inspection before delivery. The seller is a professional account, profile 33772930, and the listing has been online since 9 August 2026. The description field was empty, so the page does not name a season, a jacket style, or a run size. Supreme and Stone Island have worked together before. That is context for the two names on the label, not a season this listing states. The photograph is the seller’s flat lay of the jacket alone.\n\nSpecs as recorded: {\"Reference\":\"69748871\",\"Colour\":\"Black\",\"Size\":\"S International\",\"Seller\":\"GustavsArchive, Netherlands\",\"Condition\":\"Good\",\"Checked\":\"21 October 2026\"}",
     "priceGBP": 560,
     "priceProvisional": true
+  },
+  {
+    "id": "h22-gucci-tnf-26804231",
+    "slug": "gucci-the-north-face-2020-jacket",
+    "title": "Gucci x The North Face 2020 hooded jacket",
+    "shortTitle": "Off white anorak",
+    "brand": "Gucci x The North Face",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2020,
+    "story": "The North Face began in 1966. In December 2020 Alessandro Michele, then creative director at Gucci, showed a collection with the outdoor house. The clothes looked back to North Face outerwear of the 1970s, and the shared logo set The North Face curved mark with Gucci's green, red and green stripe. Shops in China received it at the end of that December, and the rest of the world in January 2021. This off white hooded jacket is from that season. Drawcords close the hood, a short placket of press studs sits at the neck, and a wide pocket crosses the front. A logo patch sits at the hem. The cloth is a cotton blend. It has been worn and is in good condition.",
+    "specs": {
+      "Colour": "Off white",
+      "Cloth": "Cotton blend",
+      "Hood": "Drawcord",
+      "Fastening": "Press stud placket",
+      "Pocket": "Across the front",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-gucci-tnf-26804231-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the off white hooded jacket, reference 26804231.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/gucci-pre-owned-x-the-north-face-2020-jacket-item-26804231.aspx",
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.79,
+      "spin": [
+        "/cutouts/h22-gucci-tnf-26804231-front.webp"
+      ],
+      "studio": false
+    },
+    "art": "gucci-the-north-face-2020-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 1120,
+      "max": 1260
+    },
+    "priceGBP": 1340,
+    "priceProvisional": true,
+    "condition": "good",
+    "authRoute": "Page checked 31 October 2026 at £935 with import duties included, last one left, condition good, style GUC790UO. The garment is not in hand. A third party photo pass is planned before any checkout link is sent.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 935,
+      "currency": "GBP"
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 255,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-gucci-tnf-26804231"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved the public price at £1,340, the landed cost rule of about 1.4. economics.mjs on the £935 page price gives the guide £1,120 to £1,260, markupPct 27.3 and estimatedMarginGBP 255. Those listing-only figures are stored as the test requires. The public price sits above that guide and stays provisional.\n\nThe page, fetched 31 October 2026, showed £935, import duties included, last 1 left, delivery 3 to 9 November 2026, condition good, circa 2020, colour named white, cotton blend, drawstring hood, front button placket, logo patch, straight hem, style GUC790UO. The photograph is an off white anorak with a short press stud placket, drawcords, a wide front pocket and a logo patch at the hem, so the public colour is off white. The composition line on the page (polyurethane, polyamide, polyester and cotton percentages that do not describe one cloth) is not used in the specs.\n\nWWD, 22 December 2020, and Gucci's own campaign story: Alessandro Michele, campaign by Daniel Shea in the Alps, pieces based on 1970s North Face designs, shared logo of The North Face curve with the green red green stripe, China from 29 December 2020, the rest of the world in January 2021. The North Face founded 1966, per WWD. No size was printed. No run size is claimed.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+  },
+  {
+    "id": "h22-moncler-ryuha-39226893",
+    "slug": "moncler-fragment-ryuha-jacket",
+    "title": "Moncler x Fragment Ryūha reversible jacket",
+    "shortTitle": "Ryūha check jacket",
+    "brand": "Moncler x Fragment",
+    "collabId": null,
+    "category": "outerwear",
+    "story": "Hiroshi Fujiwara designs Fragment. In June 2018 Moncler opened its Genius programme with his line, 7 Moncler Fragment. The Ryūha jacket continues that partnership. It is reversible. One face is black and green cotton flannel in a check, with a corduroy collar, snap fastenings and a drawstring at the hem. Elastic holds the cuffs. The other face is nylon. It is cut as a shirt jacket, fitted through the shoulders and easier at the waist. This one is new.",
+    "specs": {
+      "Colour": "Black and green",
+      "Outer": "Cotton flannel",
+      "Reverse": "Nylon",
+      "Collar": "Corduroy",
+      "Reversible": "Yes",
+      "Fastening": "Snap",
+      "Style": "L209U1A00001N1124",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-moncler-ryuha-39226893-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black and green Ryūha jacket, reference 39226893.",
+      "sourceUrl": "https://www.farfetch.com/shopping/men/moncler-x-fragment-ryuha-reversible-jacket-item-39226893.aspx",
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.84,
+      "spin": [
+        "/cutouts/h22-moncler-ryuha-39226893-front.webp"
+      ],
+      "studio": false
+    },
+    "art": "moncler-fragment-ryuha-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 2160,
+      "max": 2430
+    },
+    "priceGBP": 2550,
+    "priceProvisional": true,
+    "condition": "new",
+    "authRoute": "Page checked 31 October 2026 at $2,385 with import duties included, new, style M1A00001N1124, colour black and green. The same style is on Moncler's own page as the black and green Ryūha, code L209U1A00001N1124F89. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 2385,
+      "currency": "USD"
+    },
+    "markupPct": 27.8,
+    "estimatedMarginGBP": 499,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-moncler-ryuha-39226893"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved the public price at £2,550. economics.mjs on $2,385 gives guide £2,160 to £2,430, markupPct 27.8, estimatedMarginGBP 499. The public price is the approved landed figure and stays provisional.\n\nPage fetched 31 October 2026: $2,385, import duties included, new season, black/green cotton check, corduroy collar, press studs, logo print to the rear, two side pockets, style M1A00001N1124, outer cotton, trims cotton, lining polyamide. No size printed.\n\nMoncler US product page for the black and green Ryūha, code L209U1A00001N1124F89, price $2,385: reversible check cotton flannel and nylon canvas, corduroy collar, snap closure, snap pockets, welt pockets on the reverse, elastic cuffs, drawstring hem, shirt jacket with fitted shoulders and a boxier waist. Length 70 cm is given for the size the model wears, so it is not stored as this piece's measurement. Moncler Group press PDF: 7 Moncler Fragment Hiroshi Fujiwara first launch 14 June 2018. This Ryūha is a later piece in that partnership, not claimed as the 2018 drop.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+  },
+  {
+    "id": "h22-junya-carhartt-25093264",
+    "slug": "junya-watanabe-carhartt-check-jacket",
+    "title": "Junya Watanabe MAN x Carhartt buffalo check jacket",
+    "shortTitle": "Buffalo check jacket",
+    "brand": "Junya Watanabe MAN x Carhartt",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2024,
+    "story": "For autumn and winter 2024, Junya Watanabe MAN worked with Carhartt on jackets in workwear cloth. This one is style WNJ906. The body is black and red buffalo check cotton, with black cloth across the shoulders and the upper sleeves. A corduroy collar stands at the neck. Press studs close the front, a Carhartt patch sits on the chest, and the pockets close with zips. The cuffs use a touch strap. The lining is polyester. It is new.",
+    "specs": {
+      "Colour": "Black and red",
+      "Pattern": "Buffalo check",
+      "Outer": "Cotton",
+      "Lining": "Polyester",
+      "Collar": "Corduroy",
+      "Style": "WNJ906",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-junya-carhartt-25093264-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black and red check jacket, reference 25093264.",
+      "sourceUrl": "https://www.farfetch.com/shopping/men/junya-watanabe-man-x-carhartt-jacket-item-25093264.aspx",
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.791,
+      "spin": [
+        "/cutouts/h22-junya-carhartt-25093264-front.webp"
+      ],
+      "studio": false
+    },
+    "art": "junya-watanabe-carhartt-check-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 800,
+      "max": 900
+    },
+    "priceGBP": 970,
+    "priceProvisional": true,
+    "condition": "new",
+    "authRoute": "Page checked 31 October 2026 at $885 with import duties included, new, style WNJ906, black and red cotton check. The same style is catalogued as WN-J906, autumn winter 2024. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 885,
+      "currency": "USD"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 183,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-junya-carhartt-25093264"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved the public price at £970. economics.mjs on $885 gives guide £800 to £900, markupPct 27.5, estimatedMarginGBP 183. The public price is the approved landed figure and stays provisional.\n\nPage fetched 31 October 2026: $885, import duties included, black/red cotton check, press stud and zip, corduroy collar, drop shoulder, touch strap cuffs, logo patch at the chest, zip pockets, polyester lining, style WNJ906. The model is 1.85 m wearing size L. In stock sizes were not printed, so size stays confirmed at checkout. The photograph shows black cloth on the shoulders and upper sleeves and buffalo check on the body.\n\nCDG archive lists Carhartt buffalo check corduroy collar jacket, eYe Junya Watanabe, product code WN-J906-100-1-4, season A/W 2024, outer cotton. A Japanese retail note dates the Carhartt WIP and Junya Watanabe MAN 24AW jackets to 3 August 2024. The page itself names the house Junya Watanabe MAN x Carhartt.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+  },
+  {
+    "id": "h22-sacai-levis-39861256",
+    "slug": "sacai-levis-denim-blouson",
+    "title": "sacai x Levi's faded denim blouson",
+    "shortTitle": "Denim blouson",
+    "brand": "sacai x Levi's",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2026,
+    "story": "Chitose Abe started sacai in Tokyo in 1999. For autumn and winter 2026 the house worked with Levi's for a third time, cutting familiar denim into new shapes. This blouson is style 2604006M401, in faded blue cotton. A zip runs beside a buttoned stand collar. Two flap pockets sit on the chest, a zip pocket sits on the sleeve, and the cuffs and the hem are elastic. The buttons are gold tone. A Levi's tab sits on the chest. It is new.",
+    "specs": {
+      "Colour": "Faded blue",
+      "Cloth": "Cotton denim",
+      "Style": "2604006M401",
+      "Season": "Autumn and winter 2026",
+      "Fastening": "Zip and buttons",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-sacai-levis-39861256-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the faded blue denim blouson, reference 39861256.",
+      "sourceUrl": "https://www.farfetch.com/shopping/men/sacai-x-levi-strauss-hybrid-panelled-denim-jacket-item-39861256.aspx",
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.757,
+      "spin": [
+        "/cutouts/h22-sacai-levis-39861256-front.webp"
+      ],
+      "studio": false
+    },
+    "art": "sacai-levis-denim-blouson",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 740,
+      "max": 830
+    },
+    "priceGBP": 900,
+    "priceProvisional": true,
+    "condition": "new",
+    "authRoute": "Page checked 31 October 2026 at $819 with import duties included, new, style 2604006M401, faded blue cotton. Antonia lists the same model as the Levi's x sacai blouson for FW26. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 819,
+      "currency": "USD"
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 168,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-sacai-levis-39861256"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved the public price at £900. economics.mjs on $819 gives guide £740 to £830, markupPct 27.3, estimatedMarginGBP 168. The public price is the approved landed figure and stays provisional.\n\nPage fetched 31 October 2026: $819, import duties included, new season, blue faded wash, cotton, zip, button collar, sleeve utility pocket, two chest flap pockets, elastic cuffs and hem, gold tone hardware, style 2604006M401. The photograph matches that blouson, including a Levi's tab and pleats at the front. No size was printed.\n\nThis is not the May 2025 Type II and Type III hybrid jacket. Antonia lists model 2604006M401 as the blue denim blouson, season FW26-27, cotton. Dover Street Market London lists style 26-04006M as the washed indigo Levi's blouson for AW26. Levi's, September 2026, and Vogue, 30 September 2026, describe the third sacai collaboration and a blouson with a sleeve pocket and elastic cuffs and hem. Chitose Abe started sacai in 1999, per that Vogue piece. Made in Japan and made in China both appear on retailer pages for this style, so origin is left out.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+  },
+  {
+    "id": "h22-jwa-guinness-38459217",
+    "slug": "jw-anderson-guinness-chore-jacket",
+    "title": "JW Anderson x Guinness chore jacket",
+    "shortTitle": "Guinness chore jacket",
+    "brand": "JW Anderson x Guinness",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2026,
+    "story": "Jonathan Anderson founded JW Anderson in London in 2008. A first capsule with Guinness arrived in November 2024. In March 2026 the two houses returned with a larger collection drawn from old brewery uniforms. This chore jacket is from that second collection. It is cotton canvas, garment dyed to cornflower blue. A printed harp sits on the chest between the figures 17 and 59, Guinness letters are applied on the back, and the sleeve is embroidered with the JW Anderson name. Corozo buttons close the front. It was made in Portugal, and it is new.",
+    "specs": {
+      "Colour": "Cornflower blue",
+      "Cloth": "Cotton canvas",
+      "Fastening": "Corozo buttons",
+      "Origin": "Portugal",
+      "Style": "JK0422PG1962835",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-jwa-guinness-38459217-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the cornflower blue chore jacket, reference 38459217.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/jw-anderson-x-guinness-workwear-chore-jacket-item-38459217.aspx",
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.709,
+      "spin": [
+        "/cutouts/h22-jwa-guinness-38459217-front.webp"
+      ],
+      "studio": false
+    },
+    "art": "jw-anderson-guinness-chore-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 680,
+      "max": 770
+    },
+    "priceGBP": 830,
+    "priceProvisional": true,
+    "condition": "new",
+    "authRoute": "UK page checked 31 October 2026 at £570, reduced from £760, import duties included, new. The same chore jacket is on jwanderson.com, style JK0422PG1962835, cornflower blue cotton canvas. The garment is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 570,
+      "currency": "GBP"
+    },
+    "markupPct": 27.2,
+    "estimatedMarginGBP": 155,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-jwa-guinness-38459217"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved the public price at £830. economics.mjs on £570 gives guide £680 to £770, markupPct 27.2, estimatedMarginGBP 155. The public price is the approved landed figure and stays provisional.\n\nUK page fetched 31 October 2026: was £760, now £570, import duties included, new season, cotton canvas, garment dyed, Guinness letter appliqué on the back, printed harp on the chest, JW Anderson embroidery on the sleeve, corozo buttons. The model is 1.87 m wearing size M. In stock sizes were not printed.\n\nJW Anderson's own page for this jacket, SKU JK0422PG1962835: cornflower blue, cotton canvas, garment dyed, harp print, letter appliqué, sleeve embroidery, corozo buttons, made in Portugal. The photograph shows 17 and 59 either side of the harp. Arthur Guinness founded the brewery in 1759. TheIndustry.fashion, 17 June 2024: Jonathan Anderson established JW Anderson in 2008, and the first Guinness capsule was shown that month for a November 2024 launch. Harper's Bazaar UK dates that first four piece capsule to 15 November 2024. FashionNetwork, 9 March 2026: the second, larger capsule, including chore jackets drawn from vintage brewery uniforms.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
   }
 ]

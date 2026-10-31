@@ -73,10 +73,14 @@ const RAIL_SEQUENCE = [
   "h22-komae-70832580",
   "h22-kapital-42633272",
   "h22-supreme-si-69748871",
+  "h22-gucci-tnf-26804231",
+  "h22-junya-carhartt-25093264",
+  "h22-sacai-levis-39861256",
+  "h22-jwa-guinness-38459217",
 ];
 
 /**
- * The home rail is the five checked pilot jackets.
+ * The pilot jackets stay first. Later jackets follow in the order they were added.
  * Flat-lay outerwear fills more of its box than a side-on shirt, so the
  * ceiling is 0.8. A near-solid frame still stays off.
  */
