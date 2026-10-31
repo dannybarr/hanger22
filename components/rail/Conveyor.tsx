@@ -21,12 +21,12 @@ type Fit = { box: number[]; collar: number[]; pivot: number[] | null; px: number
 const FIT = fitJson as Record<string, Fit>;
 
 const G = 2400; // px/s², gravity at screen scale
-const DAMP = 1.7; // per second
-const AIR = 0.00045; // lean while the rail runs at speed
-const V_MAX = 680; // px/s
-const ACCEL = 650; // motor pull-away, px/s²
-const BRAKE = 520; // motor brake, px/s²
-const SWING_CAP = 0.42; // radians. A garment never swings off its hook.
+const DAMP = 2.3; // per second
+const AIR = 0.0003; // lean while the rail runs at speed
+const V_MAX = 420; // px/s. A calm conveyor, not a sprint.
+const ACCEL = 340; // motor pull-away, px/s²
+const BRAKE = 280; // motor brake, px/s²
+const SWING_CAP = 0.3; // radians. A garment never swings off its hook.
 const TICKET_LEN = 38;
 
 type Piece = {
@@ -130,7 +130,8 @@ export function Conveyor({
       const aspect = ((bx1 - bx0) * pw) / ((by1 - by0) * ph);
       const variation = 0.9 + ((hangLength(item.id) - 0.74) / 0.26) * 0.1;
       let garmentH = baseH * 0.9 * variation;
-      const widthCap = width < 640 ? 0.8 : 0.72;
+      // About twice as many pieces on show as before: each takes roughly a quarter of a wide screen.
+      const widthCap = width < 640 ? 0.42 : 0.24;
       if (garmentH * aspect > width * widthCap) garmentH = (width * widthCap) / aspect;
       const imgH = garmentH / (by1 - by0);
       const imgW = imgH * (pw / ph);
@@ -146,7 +147,8 @@ export function Conveyor({
         width: garmentH * aspect,
         hookLen,
         ownHook,
-        pendulum: hookLen + garmentH * 0.46,
+        // Smaller garments would swing faster than real ones, so the swing is timed as if full size.
+        pendulum: (hookLen + garmentH * 0.46) * 1.9,
         base: 0,
         phi: prior?.phi ?? 0,
         omega: prior?.omega ?? 0,
@@ -157,7 +159,7 @@ export function Conveyor({
     });
 
     const widest = Math.max(...pieces.map((piece) => piece.width));
-    const gap = Math.max(28, width * 0.035);
+    const gap = Math.max(22, width * 0.022);
     let cursor = 0;
     pieces.forEach((piece, index) => {
       if (index > 0) cursor += pieces[index - 1]!.width / 2 + gap + piece.width / 2;
@@ -405,7 +407,7 @@ export function Conveyor({
       introDone.current = true;
       seek(target);
     }, 380);
-    const hintTimer = window.setTimeout(() => setHint(true), 2800);
+    const hintTimer = window.setTimeout(() => setHint(true), 4200);
     return () => {
       window.clearTimeout(start);
       window.clearTimeout(hintTimer);

@@ -52,7 +52,7 @@ export function HomeHero({ items }: { items: ShopItem[] }) {
     <section
       aria-label="The rail"
       data-vault={gold ? "open" : "closed"}
-      className="relative h-[min(calc(100dvh-97px),calc(100vw*1.05+230px))] min-h-[540px] lg:h-[calc(100dvh-97px)]"
+      className="relative h-[clamp(430px,calc(100vw*0.62+150px),540px)] lg:h-[clamp(470px,56vh,580px)]"
     >
       <h1 className="sr-only">Hanger 22, London. Limited editions and rare collaborations</h1>
       <div className="absolute top-3 right-5 z-20 flex items-center gap-5 sm:right-8">

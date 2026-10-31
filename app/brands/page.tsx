@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BrandDirectory } from "@/components/brands/BrandDirectory";
 import { TrophyWall } from "@/components/brands/TrophyWall";
 import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 import { HOUSES, housesFor, type House } from "@/lib/brands";
@@ -44,7 +44,6 @@ export default function BrandsPage() {
   const stocked = new Set(items.flatMap((item) => housesFor(item.brand)).map((house) => house.slug));
   const featured = new Set([...stocked, ...Object.keys(HOUSE_STORIES)]);
   const wall = arrange(HOUSES, featured);
-  const index = [...HOUSES].sort((a, b) => Number(featured.has(b.slug)) - Number(featured.has(a.slug)) || a.name.localeCompare(b.name));
 
   return (
     <>
@@ -71,36 +70,14 @@ export default function BrandsPage() {
           </p>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8" aria-labelledby="archive">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="eyebrow">The archive</p>
-              <h2 id="archive" className="display mt-3 text-[40px] text-ink sm:text-[48px]">
-                Every house on the wall
-              </h2>
-            </div>
-            <Link href="/pieces" className="nav-link mb-2">
-              Shop all
-            </Link>
-          </div>
-          <ol className="mt-10 border-t border-ink">
-            {index.map((house, position) => {
-              const story = HOUSE_STORIES[house.slug];
-              const onRail = stocked.has(house.slug);
-              return (
-                <li key={house.slug} className="border-b border-line">
-                  <Link href={`/brands/${house.slug}`} className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-4 sm:grid-cols-[3rem_1.4fr_1fr_1fr_auto]">
-                    <span className="mono text-[12px] text-muted">{String(position + 1).padStart(2, "0")}</span>
-                    <span className="display text-[22px] text-ink transition-transform duration-300 group-hover:translate-x-1 sm:text-[26px]">{house.name}</span>
-                    <span className="hidden text-[13px] text-muted sm:block">{story ? `${story.origin}, ${story.founded}` : ""}</span>
-                    <span className="hidden text-[13px] sm:block">{onRail ? "On the rail now" : <span className="text-muted">Ask us</span>}</span>
-                    <span className="text-[12px] font-medium tracking-[0.1em] text-ink uppercase">{story ? "Read the story" : "View"}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
+        <BrandDirectory
+          totalPieces={items.length}
+          entries={HOUSES.map((house) => ({
+            house,
+            pieces: items.filter((item) => housesFor(item.brand).includes(house)).length,
+            story: Boolean(HOUSE_STORIES[house.slug]),
+          }))}
+        />
       </main>
       <SiteFooter />
     </>

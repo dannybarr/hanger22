@@ -59,7 +59,7 @@ Owner: Danny Barr. Pushing to `main` deploys to https://hanger22.vercel.app.
 
    Publishing copies the image into `public/cutouts`, records credit and source, flags it as a studio image (the product page discloses that), backs up `items.json` and refreshes `data/fit.json`.
 
-5. **360 view (optional).** Run the same command with `--view right`, `--view back` and `--view left`, each from a **real photograph of that side**. Never generate a side nobody photographed. The 360 toggle appears only once a piece has four views.
+5. **360 view (optional).** Run the same command with `--view right`, `--view back` and `--view left`, each from a **real photograph of that side**. Never generate a side nobody photographed. The 360 toggle appears once a piece has a second real view. Front and back give a half turn. Front, right, back and left give the full turn.
 
 6. **The rail (optional).** The home conveyor shows outerwear and apparel listed in `RAIL_SEQUENCE` in `lib/data.ts`. Add the id there to hang it. The Ghost jacket stays first.
 

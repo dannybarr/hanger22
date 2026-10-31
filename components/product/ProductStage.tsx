@@ -6,16 +6,17 @@ import { useEffect, useRef, useState } from "react";
 
 export type StageImage = { src: string; alt: string; width: number; height: number };
 
-const FRAME_PX = 140; // drag distance that turns the piece by one view
-const MIN_VIEWS = 4; // fewer real views than this is not a turn, so no 360 toggle
+const FRAME_PX = 180; // drag distance that turns the piece from one view to the next
 
 /**
  * The piece in full focus on its own tile. Tap or click to look closer; the zoom
- * follows your pointer or finger. When we have at least four real views of the
- * piece, the 360 toggle lets you turn it by dragging.
+ * follows your pointer or finger. When the piece has a second real view, the 360
+ * toggle lets you turn it horizontally by dragging: front, sides and back, in order.
  */
 export function ProductStage({ front, spin, title }: { front: StageImage; spin: string[]; title: string }) {
-  const canSpin = spin.length >= MIN_VIEWS;
+  // The front leads, then every other real view in turning order. Never an invented side.
+  const views = [front.src, ...spin.filter((src) => src !== front.src)];
+  const canSpin = views.length >= 2;
   const [mode, setMode] = useState<"still" | "zoom" | "spin">("still");
   const [origin, setOrigin] = useState({ x: 50, y: 50 });
   const tileRef = useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ export function ProductStage({ front, spin, title }: { front: StageImage; spin: 
         }}
       >
         {mode === "spin" ? (
-          <Spin frames={spin} title={title} />
+          <Spin frames={views} title={title} />
         ) : (
           <div className="rise-in absolute inset-[7%]">
             <div
@@ -79,7 +80,7 @@ export function ProductStage({ front, spin, title }: { front: StageImage; spin: 
         {canSpin && mode !== "spin" ? (
           // Mounted early and hidden, so every view is loaded before the first turn.
           <div aria-hidden className="pointer-events-none absolute inset-0 opacity-0">
-            {spin.map((src) => (
+            {views.map((src) => (
               <Image key={src} src={src} alt="" fill quality={92} sizes="(max-width: 1024px) 92vw, 640px" className="object-contain" />
             ))}
           </div>
@@ -119,7 +120,10 @@ export function ProductStage({ front, spin, title }: { front: StageImage; spin: 
   );
 }
 
-/** A turntable built from real views. Neighbouring views cross over as the piece turns. */
+/**
+ * A horizontal turntable built from real views. As you drag, the piece turns
+ * edge on, darkening slightly as it leaves the light, and the next view turns in.
+ */
 function Spin({ frames, title }: { frames: string[]; title: string }) {
   const count = frames.length;
   const [angle, setAngle] = useState(0);
@@ -160,7 +164,6 @@ function Spin({ frames, title }: { frames: string[]; title: string }) {
   const from = Math.floor(wrapped) % count;
   const to = (from + 1) % count;
   const t = wrapped - Math.floor(wrapped);
-  const blend = t * t * (3 - 2 * t);
   const snapped = ((Math.round(angle) % count) + count) % count;
   const degrees = Math.round((snapped / count) * 360) % 360;
 
@@ -211,14 +214,28 @@ function Spin({ frames, title }: { frames: string[]; title: string }) {
         event.preventDefault();
       }}
     >
-      {frames.map((src, index) => {
-        const opacity = index === from ? 1 - blend : index === to ? blend : 0;
-        return (
-          <div key={src} className="absolute inset-[7%]" style={{ opacity }}>
-            <Image src={src} alt="" fill quality={92} sizes="(max-width: 1024px) 92vw, 640px" className="pointer-events-none object-contain [filter:drop-shadow(0_26px_22px_rgba(39,31,23,0.2))]" draggable={false} />
-          </div>
-        );
-      })}
+      <div className="absolute inset-[7%] [perspective:1600px]">
+        {frames.map((src, index) => {
+          // First half of a step: the current view turns away to edge on.
+          // Second half: the next view turns in from the other edge.
+          const showing = t < 0.5 ? index === from : index === to;
+          const turn = t < 0.5 ? t * 180 : (t - 1) * 180;
+          const edge = Math.abs(Math.sin((turn * Math.PI) / 180));
+          return (
+            <div
+              key={src}
+              className="absolute inset-0 [backface-visibility:hidden] [transform-style:preserve-3d]"
+              style={{
+                visibility: showing ? "visible" : "hidden",
+                transform: `rotateY(${turn.toFixed(2)}deg)`,
+                filter: `brightness(${(1 - edge * 0.22).toFixed(3)})`,
+              }}
+            >
+              <Image src={src} alt="" fill quality={92} sizes="(max-width: 1024px) 92vw, 640px" className="pointer-events-none object-contain [filter:drop-shadow(0_26px_22px_rgba(39,31,23,0.2))]" draggable={false} />
+            </div>
+          );
+        })}
+      </div>
       <div aria-hidden className="absolute top-3 right-3 h-9 w-9 rounded-full border border-line bg-paper/80">
         <span
           className="absolute top-1/2 left-1/2 h-1.5 w-1.5 rounded-full bg-ink"
