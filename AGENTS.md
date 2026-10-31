@@ -35,7 +35,7 @@ Owner: Danny Barr. Pushing to `main` deploys to https://hanger22.vercel.app.
 
 3. **Write the item** in `data/items.json`, using an existing piece as the template:
    - `id`: `h22-<short-name>-<listing ref>`. `slug` is lowercase, hyphenated and readable.
-   - `title`: full and descriptive. `shortTitle`: 2 to 4 words, unique on the site (no two "Black jacket"s).
+   - `title`: full and descriptive. `shortTitle`: the name shown everywhere, and it leads with the exclusivity. Put the collaboration or rare line first, then the piece, in title case: "Moncler x Palm Angels Jacket", "Stone Island Ghost Jacket", "sacai x Levi's Denim Blouson". It must be unique on the site.
    - `brand`: exactly as the house names itself. Write a collaboration as `"A x B"` so the brand pages find both houses.
    - `category`: one of the schema values. `condition`: `new`, `new-with-defects`, `excellent`, `good` or `fair`, matching the listing and never better than it.
    - `story`: 60 to 140 words told as the story of this product: when it launched, who made it and why, the line or collaboration, what makes it rare, then colour, material, size and condition. Facts only, voice rules apply.
