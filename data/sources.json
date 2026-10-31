@@ -526,5 +526,95 @@
       "authGuarantee": true
     },
     "licence": "Listing facts recorded from the live page. The photograph is the seller\u2019s."
-  }
+  },
+    {
+      "id": "src-h22-gucci-tnf-26804231",
+      "itemId": "h22-gucci-tnf-26804231",
+      "platform": "farfetch",
+      "url": "https://www.farfetch.com/uk/shopping/men/gucci-pre-owned-x-the-north-face-2020-jacket-item-26804231.aspx",
+      "priceShown": {
+        "amount": 935,
+        "currency": "GBP"
+      },
+      "condition": "Pre-owned, good. Colour named white. Last 1 left. Size not in the rendered text.",
+      "seenAt": "2026-10-31T17:55:00.000Z",
+      "sold": false,
+      "note": "Fetched 31 October 2026. \u00a3935, import duties included, last 1 left, delivery 3 to 9 November 2026. Style GUC790UO. Photograph is the jacket alone.",
+      "sellerTrust": {
+        "authGuarantee": true
+      },
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    },
+    {
+      "id": "src-h22-moncler-ryuha-39226893",
+      "itemId": "h22-moncler-ryuha-39226893",
+      "platform": "farfetch",
+      "url": "https://www.farfetch.com/shopping/men/moncler-x-fragment-ryuha-reversible-jacket-item-39226893.aspx",
+      "priceShown": {
+        "amount": 2385,
+        "currency": "USD"
+      },
+      "condition": "New. Black and green. Size not in the rendered text.",
+      "seenAt": "2026-10-31T17:55:00.000Z",
+      "sold": false,
+      "note": "Fetched 31 October 2026. $2,385, import duties included, new season. Style M1A00001N1124. Matches Moncler black and green Ry\u016bha L209U1A00001N1124F89.",
+      "sellerTrust": {
+        "authGuarantee": true
+      },
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    },
+    {
+      "id": "src-h22-junya-carhartt-25093264",
+      "itemId": "h22-junya-carhartt-25093264",
+      "platform": "farfetch",
+      "url": "https://www.farfetch.com/shopping/men/junya-watanabe-man-x-carhartt-jacket-item-25093264.aspx",
+      "priceShown": {
+        "amount": 885,
+        "currency": "USD"
+      },
+      "condition": "New. Black and red check. Model wears L. In stock sizes not printed.",
+      "seenAt": "2026-10-31T17:55:00.000Z",
+      "sold": false,
+      "note": "Fetched 31 October 2026. $885, import duties included. Style WNJ906. Autumn winter 2024, same code as WN-J906.",
+      "sellerTrust": {
+        "authGuarantee": true
+      },
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    },
+    {
+      "id": "src-h22-sacai-levis-39861256",
+      "itemId": "h22-sacai-levis-39861256",
+      "platform": "farfetch",
+      "url": "https://www.farfetch.com/shopping/men/sacai-x-levi-strauss-hybrid-panelled-denim-jacket-item-39861256.aspx",
+      "priceShown": {
+        "amount": 819,
+        "currency": "USD"
+      },
+      "condition": "New. Faded blue. Size not in the rendered text.",
+      "seenAt": "2026-10-31T17:55:00.000Z",
+      "sold": false,
+      "note": "Fetched 31 October 2026. $819, import duties included, new season. Style 2604006M401, the FW26 blouson, not the May 2025 Type II and Type III jacket.",
+      "sellerTrust": {
+        "authGuarantee": true
+      },
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    },
+    {
+      "id": "src-h22-jwa-guinness-38459217",
+      "itemId": "h22-jwa-guinness-38459217",
+      "platform": "farfetch",
+      "url": "https://www.farfetch.com/uk/shopping/men/jw-anderson-x-guinness-workwear-chore-jacket-item-38459217.aspx",
+      "priceShown": {
+        "amount": 570,
+        "currency": "GBP"
+      },
+      "condition": "New. Reduced from \u00a3760 to \u00a3570. Model wears M. In stock sizes not printed.",
+      "seenAt": "2026-10-31T17:55:00.000Z",
+      "sold": false,
+      "note": "Fetched 31 October 2026. UK page, \u00a3570 after 25 percent off \u00a3760, import duties included, new season. Same jacket as JW Anderson JK0422PG1962835.",
+      "sellerTrust": {
+        "authGuarantee": true
+      },
+      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    }
 ]
