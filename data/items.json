@@ -424,42 +424,55 @@
   },
   {
     "id": "h22-si-dior",
-    "slug": "stone-island-dior-technical-jacket",
-    "title": "Stone Island x Dior Technical Jacket",
-    "shortTitle": "Dior Technical Jacket",
-    "brand": "Stone Island",
+    "slug": "dior-stone-island-canvas-jacket",
+    "title": "Dior x Stone Island black cotton canvas jacket",
+    "shortTitle": "Dior x Stone Island Canvas Jacket",
+    "brand": "Dior x Stone Island",
     "collabId": "col-si-dior",
     "category": "outerwear",
     "year": 2024,
-    "story": "The 2024 Dior and Stone Island technical jacket, Kim Jones’s cut on a Stone Island cloth. No live marketplace listing is pinned. The price is a desk comp for what we would pay, and the hanger is a labelled placeholder until a photograph is cut out. Sourced to order.",
+    "story": "For autumn 2024 Kim Jones at Dior asked Stone Island to work with the house on cloth and colour. This jacket is black cotton canvas, style 493D496A385X, with a washed grey finish. Four patch pockets sit on the body. A leather pocket on the chest carries a compass and the Dior name. The front closes with metal buttons. It was made in Italy, and this one is new.",
     "specs": {
-      "Season": "2024",
-      "Cloth": "Technical",
-      "Listing": "None pinned",
-      "Photograph": "Placeholder"
+      "Style": "493D496A385X",
+      "Colour": "Black, washed grey",
+      "Cloth": "Cotton canvas",
+      "Pockets": "Four patch pockets and a leather chest pocket",
+      "Season": "Autumn 2024",
+      "Origin": "Italy",
+      "Size": "Confirmed at checkout"
     },
     "images": {
-      "front": "/art/placeholder.svg",
-      "placeholder": true,
-      "imageStatus": "placeholder"
+      "front": "/cutouts/h22-si-dior-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black cotton canvas jacket, style 493D496A385X.",
+      "sourceUrl": "https://sidekicks.co.uk/products/dior-x-stone-island-cotton-canvas-jacket-black",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "spin": [
+        "/cutouts/h22-si-dior-front.webp"
+      ],
+      "alphaCoverage": 0.796
     },
     "art": "si-dior",
     "suspension": "wood",
     "guidePriceGBP": {
-      "min": 2520,
-      "max": 2840
+      "min": 5600,
+      "max": 6300
     },
-    "condition": "excellent",
-    "authRoute": "If a jacket surfaces, we check the Stone Island badge, the Dior labels, and the seller’s photographs against the cloth before it is bought. We do not treat a brand homepage as proof of a specific used piece.",
+    "condition": "new",
+    "authRoute": "UK retailer page checked 31 October 2026 at £4,670, style 493D496A385X_C987, authenticated by the retailer. The jacket is not in hand.",
     "status": "available-to-source",
     "availability": "sourced",
     "costBasis": {
-      "amount": 2100,
+      "amount": 4670,
       "currency": "GBP"
     },
-    "markupPct": 27.6,
-    "estimatedMarginGBP": 580,
-    "demandSignal": 0.63,
+    "markupPct": 27.4,
+    "estimatedMarginGBP": 1280,
+    "demandSignal": 0.55,
     "sourceListingIds": [
       "src-si-dior"
     ],
@@ -470,8 +483,84 @@
       "outerwear"
     ],
     "cutReason": "collab",
-    "sourceMarket": "EU",
-    "authConfidence": "medium"
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "priceGBP": 6600,
+    "priceProvisional": true,
+    "notes": "Research, 31 October 2026. Danny approved £6,600. economics.mjs on £4,670 gives guide £5,600 to £6,300, markupPct 27.4, estimatedMarginGBP 1280.\n\nPage on 31 October 2026 showed £4,670, style 493D496A385X_C987, duties included. No pre-owned grade, so condition is new. Dior's description of this style: black cotton canvas, four patch pockets, leather chest pocket, button closure, made in Italy. Back length 77 cm is for a size 48, so it is not stored as this piece's measurement. Dior GB: Kim Jones, Fall 2024. The photograph reads washed grey, so the public colour says so."
+  },
+  {
+    "id": "h22-ap-travis",
+    "slug": "audemars-piguet-travis-scott-royal-oak",
+    "title": "Audemars Piguet x Travis Scott Royal Oak perpetual calendar",
+    "shortTitle": "Travis Scott Royal Oak",
+    "brand": "Audemars Piguet x Travis Scott",
+    "collabId": "col-ap-travis",
+    "category": "watches",
+    "rarity": {
+      "edition": 200,
+      "note": "Limited to 200. Reference 26585CM.OO.D301VE.01."
+    },
+    "story": "In November 2023 Audemars Piguet and Travis Scott made a Royal Oak through his Cactus Jack label. Reference 26585CM.OO.D301VE.01 is limited to 200, and it is the first Royal Oak in brown ceramic. The case is 41 millimetres. An openworked dial shows the self winding calibre 5135, with the day, the date, the month and a moon phase. The calendar letters follow Scott's hand, and the moon carries the Cactus Jack face. This example was made in 2023. It has light wear, it is on a dark leather strap, and it comes with its box and papers.",
+    "specs": {
+      "Reference": "26585CM.OO.D301VE.01",
+      "Case": "Brown ceramic, 41 mm",
+      "Movement": "Self winding calibre 5135",
+      "Functions": "Perpetual calendar",
+      "Strap": "Dark leather",
+      "Edition": "200",
+      "Year": "2023",
+      "Papers": "Box and papers"
+    },
+    "images": {
+      "front": "/cutouts/h22-ap-travis-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the brown ceramic Royal Oak, reference 26585CM.OO.D301VE.01.",
+      "sourceUrl": "https://www.chrono24.com/audemarspiguet/royal-oak-26585cmood301ve01-travis-scott-cactus-jack-perpetual-calendar-openworked-limited-edition-of-200-2023--id49526083.htm",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "spin": [
+        "/cutouts/h22-ap-travis-front.webp"
+      ],
+      "alphaCoverage": 0.685
+    },
+    "art": "royal-oak",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 578450,
+      "max": 650750
+    },
+    "condition": "good",
+    "authRoute": "Listing 49526083 checked 31 October 2026 at $640,000, New York dealer, used and very good, original box and papers, partner certified by the dealer's watchmaker. The watch is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "US",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 640000,
+      "currency": "USD"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 132552,
+    "demandSignal": 0.7,
+    "sourceListingIds": [
+      "src-ap-travis"
+    ],
+    "tags": [
+      "audemars piguet",
+      "travis scott",
+      "royal oak",
+      "collab"
+    ],
+    "vaultCandidate": true,
+    "year": 2023,
+    "priceGBP": 755000,
+    "priceProvisional": true,
+    "notes": "Research, 31 October 2026. Danny approved £755,000. economics.mjs on $640,000 gives guide £578,450 to £650,750, markupPct 27.5, estimatedMarginGBP 132552. The public price stays provisional.\n\nListing 49526083, New York, in stock, $640,000, year 2023, very good with minor scratches, original box and papers, partner certified. The table says the strap is rubber. The photograph shows a dark leather strap, which matches the calfskin strap described for this reference, so the public spec follows the photograph.\n\nAudemars Piguet and Hodinkee, 30 November 2023: brown ceramic, a first for the Royal Oak, limited to 200, openworked calibre 5135, calendar lettering from Travis Scott's hand, Cactus Jack moon. Case 41 mm."
   },
   {
     "id": "h22-si-ghost",
@@ -677,60 +766,6 @@
     "cutReason": "collab",
     "sourceMarket": "US",
     "authConfidence": "medium"
-  },
-  {
-    "id": "h22-ap-travis",
-    "slug": "audemars-piguet-travis-scott-royal-oak",
-    "title": "Audemars Piguet x Travis Scott Royal Oak",
-    "shortTitle": "AP Royal Oak",
-    "brand": "Audemars Piguet",
-    "collabId": "col-ap-travis",
-    "category": "watches",
-    "rarity": {
-      "note": "The collaboration is the cut. No reference is pinned, and none is in the building."
-    },
-    "story": "Audemars Piguet and Travis Scott, the Royal Oak they made together. There is no price floor and no ceiling on this rail: the piece is here because the collaboration is the thing, not the number. No papers are in the building and no live listing is pinned. The dial is a labelled placeholder. If one surfaces, an independent watchmaker sees it before anyone else does.",
-    "specs": {
-      "Houses": "Audemars Piguet and Travis Scott",
-      "Model": "Royal Oak",
-      "Listing": "None pinned",
-      "Photograph": "Placeholder"
-    },
-    "images": {
-      "front": "/art/placeholder.svg",
-      "placeholder": true,
-      "imageStatus": "placeholder"
-    },
-    "art": "royal-oak",
-    "suspension": "strap",
-    "guidePriceGBP": {
-      "min": 198000,
-      "max": 222750
-    },
-    "condition": "excellent",
-    "authRoute": "Not in hand. An independent watchmaker, the papers, and the seller’s photographs in the same room before any offer. A brand homepage is not authentication.",
-    "status": "available-to-source",
-    "availability": "sourced",
-    "cutReason": "collab",
-    "sourceMarket": "US",
-    "authConfidence": "medium",
-    "costBasis": {
-      "amount": 165000,
-      "currency": "GBP"
-    },
-    "markupPct": 27.5,
-    "estimatedMarginGBP": 45375,
-    "demandSignal": 0.88,
-    "sourceListingIds": [
-      "src-ap-travis"
-    ],
-    "tags": [
-      "audemars piguet",
-      "travis scott",
-      "royal oak",
-      "collab"
-    ],
-    "vaultCandidate": true
   },
   {
     "id": "h22-vault-sample",
@@ -2266,5 +2301,189 @@
       "approved-2026-10-31"
     ],
     "notes": "Research, 31 October 2026. Danny approved the public price at £830. economics.mjs on £570 gives guide £680 to £770, markupPct 27.2, estimatedMarginGBP 155. The public price is the approved landed figure and stays provisional.\n\nUK page fetched 31 October 2026: was £760, now £570, import duties included, new season, cotton canvas, garment dyed, Guinness letter appliqué on the back, printed harp on the chest, JW Anderson embroidery on the sleeve, corozo buttons. The model is 1.87 m wearing size M. In stock sizes were not printed.\n\nJW Anderson's own page for this jacket, SKU JK0422PG1962835: cornflower blue, cotton canvas, garment dyed, harp print, letter appliqué, sleeve embroidery, corozo buttons, made in Portugal. The photograph shows 17 and 59 either side of the harp. Arthur Guinness founded the brewery in 1759. TheIndustry.fashion, 17 June 2024: Jonathan Anderson established JW Anderson in 2008, and the first Guinness capsule was shown that month for a November 2024 launch. Harper's Bazaar UK dates that first four piece capsule to 15 November 2024. FashionNetwork, 9 March 2026: the second, larger capsule, including chore jackets drawn from vintage brewery uniforms.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+  },
+  {
+    "id": "h22-dior-si-elbow-36434990",
+    "slug": "dior-stone-island-elbow-jacket",
+    "title": "Dior x Stone Island black jacket with leather panels",
+    "shortTitle": "Dior x Stone Island Elbow Jacket",
+    "brand": "Dior x Stone Island",
+    "collabId": "col-si-dior",
+    "category": "outerwear",
+    "story": "This black jacket brings Dior and Stone Island together. Calf leather panels sit on the lower pockets, each marked with a compass, and leather tabs close the collar. The outer cloth is cotton with polyurethane. A zip and press studs run down the front, and four flap pockets sit on the body. The cuffs close with press studs. The hardware is silver in tone. It was made in France, and it is in excellent condition.",
+    "specs": {
+      "Colour": "Black",
+      "Outer": "Cotton with polyurethane",
+      "Leather": "Calf, on the lower pockets and collar tabs",
+      "Fastening": "Zip and press studs",
+      "Origin": "France",
+      "Size": "Confirmed at checkout"
+    },
+    "images": {
+      "front": "/cutouts/h22-dior-si-elbow-36434990-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black jacket with leather panels, reference 36434990.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/christian-dior-pre-owned-2010s-x-stone-island-elbow-patch-jacket-item-36434990.aspx",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.772,
+      "spin": [
+        "/cutouts/h22-dior-si-elbow-36434990-front.webp"
+      ]
+    },
+    "art": "dior-stone-island-elbow-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 3350,
+      "max": 3770
+    },
+    "priceGBP": 4040,
+    "priceProvisional": true,
+    "condition": "excellent",
+    "authRoute": "UK page checked 31 October 2026 at £2,790, reduced from £3,283, duties included, last one left, condition excellent, made in France. The jacket is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 2790,
+      "currency": "GBP"
+    },
+    "markupPct": 27.6,
+    "estimatedMarginGBP": 770,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-dior-si-elbow-36434990"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved £4,040. economics.mjs on £2,790 gives guide £3,350 to £3,770, markupPct 27.6, estimatedMarginGBP 770.\n\nUK page: was £3,283, now £2,790, last 1 left, excellent, made in France, style id 1058496. Highlights include elbow patches. The photograph shows calf leather on the lower pockets and tabs at the collar. The title says 2010s, but that year is not used in the story because the style id does not match a verified 2010s code."
+  },
+  {
+    "id": "h22-dior-si-leather-69432683",
+    "slug": "dior-stone-island-leather-jacket",
+    "title": "Dior x Stone Island brown leather jacket",
+    "shortTitle": "Dior x Stone Island Leather Jacket",
+    "brand": "Dior x Stone Island",
+    "collabId": "col-si-dior",
+    "category": "outerwear",
+    "story": "This brown leather jacket carries both Dior and Stone Island. A zip closes the front. Two flap pockets sit on the chest, and the compass badge is set on the left one, under the Dior name. The size is 48 IT. Measured flat, the length is 25.6 inches and the sleeve is 24.8 inches. It has been worn and is in good condition.",
+    "specs": {
+      "Colour": "Brown",
+      "Material": "Leather",
+      "Size": "48 IT",
+      "Length": "25.6 in",
+      "Sleeve": "24.8 in"
+    },
+    "images": {
+      "front": "/cutouts/h22-dior-si-leather-69432683-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the brown leather jacket, reference 69432683.",
+      "sourceUrl": "https://us.vestiairecollective.com/men-clothing/jackets/dior-x-stone-island/brown-leather-dior-x-stone-island-jacket-69432683.shtml",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.829,
+      "spin": [
+        "/cutouts/h22-dior-si-leather-69432683-front.webp"
+      ]
+    },
+    "art": "dior-stone-island-leather-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 6800,
+      "max": 7650
+    },
+    "priceGBP": 10950,
+    "priceProvisional": true,
+    "condition": "good",
+    "authRoute": "Listing 69432683 checked 31 October 2026 at $7,513, size 48 IT, good, brown leather, seller in Japan. The jacket is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "JP",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 7513,
+      "currency": "USD"
+    },
+    "markupPct": 27.7,
+    "estimatedMarginGBP": 1566,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-dior-si-leather-69432683"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved £10,950. economics.mjs on $7,513 gives guide £6,800 to £7,650, markupPct 27.7, estimatedMarginGBP 1566.\n\nPage: $7,513, size 48 IT, good, brown leather, length 25.6 in, sleeve 24.8 in, online since 30 July 2026, seller in Japan. No season on the page. The photograph shows a zip, two flap pockets, the Dior name and a compass badge. A hanger sat above the collar and a swing tag remains at the neck."
+  },
+  {
+    "id": "h22-dior-si-ring-7503587",
+    "slug": "dior-stone-island-signet-ring",
+    "title": "Dior x Stone Island silver signet ring",
+    "shortTitle": "Dior x Stone Island Signet Ring",
+    "brand": "Dior x Stone Island",
+    "collabId": "col-si-dior",
+    "category": "accessories",
+    "year": 2024,
+    "story": "In 2024 Dior and Stone Island made a signet ring in silver. The face is black resin, with the word Dior repeated around a compass star, the mark Stone Island has long worn on a sleeve. The band is plain silver. This one is a size M and it has not been worn. It belongs with the clothes the two houses made that year.",
+    "specs": {
+      "Metal": "Silver",
+      "Face": "Black resin",
+      "Size": "M",
+      "Year": "2024"
+    },
+    "images": {
+      "front": "/cutouts/h22-dior-si-ring-7503587-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the silver signet ring, reference 7503587.",
+      "sourceUrl": "https://kream.co.kr/products/stock/7503587",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.764,
+      "spin": [
+        "/cutouts/h22-dior-si-ring-7503587-front.webp"
+      ]
+    },
+    "art": "dior-stone-island-signet-ring",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 640,
+      "max": 720
+    },
+    "priceGBP": 1030,
+    "priceProvisional": true,
+    "condition": "new",
+    "authRoute": "Stock 7503587 checked 31 October 2026 at 950,000 won, size M, graded unused. The ring is not in hand.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "KR",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 950000,
+      "currency": "KRW"
+    },
+    "markupPct": 28.2,
+    "estimatedMarginGBP": 150,
+    "demandSignal": 0.55,
+    "sourceListingIds": [
+      "src-h22-dior-si-ring-7503587"
+    ],
+    "tags": [
+      "approved-2026-10-31"
+    ],
+    "notes": "Research, 31 October 2026. Danny approved £1,030. Payable price 950,000 won. Bank of England, 29 October 2026, £1 = 1,791.45 won, stored as KRW 0.00055821. economics.mjs gives guide £640 to £720, markupPct 28.2, estimatedMarginGBP 150.\n\nStock 7503587: size M, 950,000 won, unused, 95 points. Release date on the product page is 4 July 2024. The face is black resin with Dior around a compass star."
   }
 ]

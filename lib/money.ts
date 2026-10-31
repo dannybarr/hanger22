@@ -3,13 +3,15 @@ export const FX_TO_GBP = {
   USD: 0.7532,
   EUR: 0.843,
   CNY: 0.1055,
+  // Bank of England, 29 October 2026: £1 = 1,791.45 won.
+  KRW: 0.00055821,
 } as const;
 
 export type Currency = keyof typeof FX_TO_GBP;
 
 /** Illustrative mid-market rates for guide prices, October 2026. Not a live FX feed. */
 export const FX_NOTE =
-  "Guide prices use fixed October 2026 rates (USD 0.7532, EUR 0.843, CNY 0.1055 to GBP), then a sourcing margin of 1.20–1.35, rounded.";
+  "Guide prices use fixed October 2026 rates (USD 0.7532, EUR 0.843, CNY 0.1055, KRW 0.00055821 to GBP), then a sourcing margin of 1.20–1.35, rounded.";
 
 export function toGBP(amount: number, currency: Currency) {
   return amount * FX_TO_GBP[currency];

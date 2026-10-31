@@ -4,12 +4,12 @@
 // comp" fails if a piece's numbers do not match, so this cannot drift silently.
 //
 //   node scripts/economics.mjs 411.39 USD
-const FX_TO_GBP = { GBP: 1, USD: 0.7532, EUR: 0.843, CNY: 0.1055 };
+const FX_TO_GBP = { GBP: 1, USD: 0.7532, EUR: 0.843, CNY: 0.1055, KRW: 0.00055821 };
 
 const [amountArg, currency = "GBP"] = process.argv.slice(2);
 const amount = Number(amountArg);
 if (!Number.isFinite(amount) || !(currency in FX_TO_GBP)) {
-  console.error("usage: node scripts/economics.mjs <source price> <GBP|USD|EUR|CNY>");
+  console.error("usage: node scripts/economics.mjs <source price> <GBP|USD|EUR|CNY|KRW>");
   process.exit(1);
 }
 

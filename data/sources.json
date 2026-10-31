@@ -126,16 +126,19 @@
     "id": "src-si-dior",
     "itemId": "h22-si-dior",
     "platform": "other",
-    "url": "https://www.stoneisland.com/en-gb/",
+    "url": "https://sidekicks.co.uk/products/dior-x-stone-island-cotton-canvas-jacket-black",
     "priceShown": {
-      "amount": 2100,
+      "amount": 4670,
       "currency": "GBP"
     },
-    "condition": "Desk comp, not a live ask",
-    "seenAt": "2026-10-21T00:00:00.000Z",
+    "condition": "Current offer. Not described as pre-owned. Authenticated by the retailer.",
+    "seenAt": "2026-10-31T20:00:00.000Z",
     "sold": false,
-    "note": "Desk comp for the 2024 Dior and Stone Island technical jacket. No live marketplace listing is pinned. The figure is what the desk would pay, not a Stone Island retail price.",
-    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Do not invent a product image."
+    "note": "Fetched 31 October 2026. \u00a34,670, style 493D496A385X_C987. Photograph is the packshot of the same style.",
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+    "sellerTrust": {
+      "authGuarantee": true
+    }
   },
   {
     "id": "src-si-ghost",
@@ -201,16 +204,19 @@
     "id": "src-ap-travis",
     "itemId": "h22-ap-travis",
     "platform": "other",
-    "url": "https://www.audemarspiguet.com/com/en/home.html",
+    "url": "https://www.chrono24.com/audemarspiguet/royal-oak-26585cmood301ve01-travis-scott-cactus-jack-perpetual-calendar-openworked-limited-edition-of-200-2023--id49526083.htm",
     "priceShown": {
-      "amount": 165000,
-      "currency": "GBP"
+      "amount": 640000,
+      "currency": "USD"
     },
-    "condition": "Desk comp, not a live ask",
-    "seenAt": "2026-10-21T00:00:00.000Z",
+    "condition": "Used, very good, original box and papers. Year 2023.",
+    "seenAt": "2026-10-31T20:00:00.000Z",
     "sold": false,
-    "note": "Desk bid for the Audemars Piguet x Travis Scott Royal Oak. No live listing pinned. Not an Audemars Piguet price. The figure is high because the collaboration is scarce, not because the rail has a price floor.",
-    "licence": "No listing photograph in the seed. Desk comp, not a scraped marketplace photo. Audemars Piguet imagery is not reproduced."
+    "note": "Fetched 31 October 2026. In stock at $640,000 in New York. Partner certified. Photograph shows a leather strap. The table says rubber.",
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site.",
+    "sellerTrust": {
+      "authGuarantee": true
+    }
   },
   {
     "id": "src-premoon",
@@ -527,94 +533,148 @@
     },
     "licence": "Listing facts recorded from the live page. The photograph is the seller\u2019s."
   },
-    {
-      "id": "src-h22-gucci-tnf-26804231",
-      "itemId": "h22-gucci-tnf-26804231",
-      "platform": "farfetch",
-      "url": "https://www.farfetch.com/uk/shopping/men/gucci-pre-owned-x-the-north-face-2020-jacket-item-26804231.aspx",
-      "priceShown": {
-        "amount": 935,
-        "currency": "GBP"
-      },
-      "condition": "Pre-owned, good. Colour named white. Last 1 left. Size not in the rendered text.",
-      "seenAt": "2026-10-31T17:55:00.000Z",
-      "sold": false,
-      "note": "Fetched 31 October 2026. \u00a3935, import duties included, last 1 left, delivery 3 to 9 November 2026. Style GUC790UO. Photograph is the jacket alone.",
-      "sellerTrust": {
-        "authGuarantee": true
-      },
-      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  {
+    "id": "src-h22-gucci-tnf-26804231",
+    "itemId": "h22-gucci-tnf-26804231",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/gucci-pre-owned-x-the-north-face-2020-jacket-item-26804231.aspx",
+    "priceShown": {
+      "amount": 935,
+      "currency": "GBP"
     },
-    {
-      "id": "src-h22-moncler-ryuha-39226893",
-      "itemId": "h22-moncler-ryuha-39226893",
-      "platform": "farfetch",
-      "url": "https://www.farfetch.com/shopping/men/moncler-x-fragment-ryuha-reversible-jacket-item-39226893.aspx",
-      "priceShown": {
-        "amount": 2385,
-        "currency": "USD"
-      },
-      "condition": "New. Black and green. Size not in the rendered text.",
-      "seenAt": "2026-10-31T17:55:00.000Z",
-      "sold": false,
-      "note": "Fetched 31 October 2026. $2,385, import duties included, new season. Style M1A00001N1124. Matches Moncler black and green Ry\u016bha L209U1A00001N1124F89.",
-      "sellerTrust": {
-        "authGuarantee": true
-      },
-      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    "condition": "Pre-owned, good. Colour named white. Last 1 left. Size not in the rendered text.",
+    "seenAt": "2026-10-31T17:55:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. \u00a3935, import duties included, last 1 left, delivery 3 to 9 November 2026. Style GUC790UO. Photograph is the jacket alone.",
+    "sellerTrust": {
+      "authGuarantee": true
     },
-    {
-      "id": "src-h22-junya-carhartt-25093264",
-      "itemId": "h22-junya-carhartt-25093264",
-      "platform": "farfetch",
-      "url": "https://www.farfetch.com/shopping/men/junya-watanabe-man-x-carhartt-jacket-item-25093264.aspx",
-      "priceShown": {
-        "amount": 885,
-        "currency": "USD"
-      },
-      "condition": "New. Black and red check. Model wears L. In stock sizes not printed.",
-      "seenAt": "2026-10-31T17:55:00.000Z",
-      "sold": false,
-      "note": "Fetched 31 October 2026. $885, import duties included. Style WNJ906. Autumn winter 2024, same code as WN-J906.",
-      "sellerTrust": {
-        "authGuarantee": true
-      },
-      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-moncler-ryuha-39226893",
+    "itemId": "h22-moncler-ryuha-39226893",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/shopping/men/moncler-x-fragment-ryuha-reversible-jacket-item-39226893.aspx",
+    "priceShown": {
+      "amount": 2385,
+      "currency": "USD"
     },
-    {
-      "id": "src-h22-sacai-levis-39861256",
-      "itemId": "h22-sacai-levis-39861256",
-      "platform": "farfetch",
-      "url": "https://www.farfetch.com/shopping/men/sacai-x-levi-strauss-hybrid-panelled-denim-jacket-item-39861256.aspx",
-      "priceShown": {
-        "amount": 819,
-        "currency": "USD"
-      },
-      "condition": "New. Faded blue. Size not in the rendered text.",
-      "seenAt": "2026-10-31T17:55:00.000Z",
-      "sold": false,
-      "note": "Fetched 31 October 2026. $819, import duties included, new season. Style 2604006M401, the FW26 blouson, not the May 2025 Type II and Type III jacket.",
-      "sellerTrust": {
-        "authGuarantee": true
-      },
-      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+    "condition": "New. Black and green. Size not in the rendered text.",
+    "seenAt": "2026-10-31T17:55:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. $2,385, import duties included, new season. Style M1A00001N1124. Matches Moncler black and green Ry\u016bha L209U1A00001N1124F89.",
+    "sellerTrust": {
+      "authGuarantee": true
     },
-    {
-      "id": "src-h22-jwa-guinness-38459217",
-      "itemId": "h22-jwa-guinness-38459217",
-      "platform": "farfetch",
-      "url": "https://www.farfetch.com/uk/shopping/men/jw-anderson-x-guinness-workwear-chore-jacket-item-38459217.aspx",
-      "priceShown": {
-        "amount": 570,
-        "currency": "GBP"
-      },
-      "condition": "New. Reduced from \u00a3760 to \u00a3570. Model wears M. In stock sizes not printed.",
-      "seenAt": "2026-10-31T17:55:00.000Z",
-      "sold": false,
-      "note": "Fetched 31 October 2026. UK page, \u00a3570 after 25 percent off \u00a3760, import duties included, new season. Same jacket as JW Anderson JK0422PG1962835.",
-      "sellerTrust": {
-        "authGuarantee": true
-      },
-      "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
-    }
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-junya-carhartt-25093264",
+    "itemId": "h22-junya-carhartt-25093264",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/shopping/men/junya-watanabe-man-x-carhartt-jacket-item-25093264.aspx",
+    "priceShown": {
+      "amount": 885,
+      "currency": "USD"
+    },
+    "condition": "New. Black and red check. Model wears L. In stock sizes not printed.",
+    "seenAt": "2026-10-31T17:55:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. $885, import duties included. Style WNJ906. Autumn winter 2024, same code as WN-J906.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-sacai-levis-39861256",
+    "itemId": "h22-sacai-levis-39861256",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/shopping/men/sacai-x-levi-strauss-hybrid-panelled-denim-jacket-item-39861256.aspx",
+    "priceShown": {
+      "amount": 819,
+      "currency": "USD"
+    },
+    "condition": "New. Faded blue. Size not in the rendered text.",
+    "seenAt": "2026-10-31T17:55:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. $819, import duties included, new season. Style 2604006M401, the FW26 blouson, not the May 2025 Type II and Type III jacket.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-jwa-guinness-38459217",
+    "itemId": "h22-jwa-guinness-38459217",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/jw-anderson-x-guinness-workwear-chore-jacket-item-38459217.aspx",
+    "priceShown": {
+      "amount": 570,
+      "currency": "GBP"
+    },
+    "condition": "New. Reduced from \u00a3760 to \u00a3570. Model wears M. In stock sizes not printed.",
+    "seenAt": "2026-10-31T17:55:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. UK page, \u00a3570 after 25 percent off \u00a3760, import duties included, new season. Same jacket as JW Anderson JK0422PG1962835.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-dior-si-elbow-36434990",
+    "itemId": "h22-dior-si-elbow-36434990",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/christian-dior-pre-owned-2010s-x-stone-island-elbow-patch-jacket-item-36434990.aspx",
+    "priceShown": {
+      "amount": 2790,
+      "currency": "GBP"
+    },
+    "condition": "Pre-owned, excellent. Was \u00a33,283, now \u00a32,790. Last 1 left.",
+    "seenAt": "2026-10-31T20:00:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. Duties included. Made in France. Style id 1058496. Title says 2010s. Year not used in the story.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-dior-si-leather-69432683",
+    "itemId": "h22-dior-si-leather-69432683",
+    "platform": "vestiaire",
+    "url": "https://us.vestiairecollective.com/men-clothing/jackets/dior-x-stone-island/brown-leather-dior-x-stone-island-jacket-69432683.shtml",
+    "priceShown": {
+      "amount": 7513,
+      "currency": "USD"
+    },
+    "condition": "Good. Size 48 IT. Brown leather. Seller in Japan.",
+    "seenAt": "2026-10-31T20:00:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. $7,513. Length 25.6 in, sleeve 24.8 in.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-dior-si-ring-7503587",
+    "itemId": "h22-dior-si-ring-7503587",
+    "platform": "other",
+    "url": "https://kream.co.kr/products/stock/7503587",
+    "priceShown": {
+      "amount": 950000,
+      "currency": "KRW"
+    },
+    "condition": "Unused, size M, graded 95.",
+    "seenAt": "2026-10-31T20:00:00.000Z",
+    "sold": false,
+    "note": "Fetched 31 October 2026. 950,000 won. Bank of England 29 October 2026 rate used for the guide.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  }
 ]

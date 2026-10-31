@@ -25,7 +25,7 @@ export const statusSchema = z.enum([
   "vault",
 ]);
 
-export const currencySchema = z.enum(["GBP", "USD", "EUR", "CNY"]);
+export const currencySchema = z.enum(["GBP", "USD", "EUR", "CNY", "KRW"]);
 
 export const platformSchema = z.enum([
   "ebay",
@@ -46,7 +46,7 @@ export const imageStatusSchema = z.enum(["cutout", "listing-photo", "placeholder
 
 export const cutReasonSchema = z.enum(["collab", "limited", "one_off", "rare_from_range"]);
 
-export const sourceMarketSchema = z.enum(["UK", "JP", "EU", "US", "CN"]);
+export const sourceMarketSchema = z.enum(["UK", "JP", "EU", "US", "CN", "KR"]);
 
 export const authConfidenceSchema = z.enum(["high", "medium"]);
 

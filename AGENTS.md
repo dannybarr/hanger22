@@ -28,7 +28,7 @@ Owner: Danny Barr. Pushing to `main` deploys to https://hanger22.vercel.app.
 2. **Work out the price fields** from the source price:
 
    ```
-   node scripts/economics.mjs <price> <GBP|USD|EUR|CNY>
+   node scripts/economics.mjs <price> <GBP|USD|EUR|CNY|KRW>
    ```
 
    Copy `guidePriceGBP`, `priceGBP`, `priceProvisional`, `costBasis`, `markupPct` and `estimatedMarginGBP` exactly. Danny sets the final `priceGBP` later; leave `priceProvisional: true`.

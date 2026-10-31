@@ -74,9 +74,12 @@ const RAIL_SEQUENCE = [
   "h22-kapital-42633272",
   "h22-supreme-si-69748871",
   "h22-gucci-tnf-26804231",
+  "h22-moncler-ryuha-39226893",
   "h22-junya-carhartt-25093264",
   "h22-sacai-levis-39861256",
   "h22-jwa-guinness-38459217",
+  "h22-si-dior",
+  "h22-dior-si-elbow-36434990",
 ];
 
 /**
@@ -92,7 +95,9 @@ function isHangable(item: Item) {
     garment &&
     RAIL_SEQUENCE.includes(item.id) &&
     coverage !== undefined &&
-    coverage < 0.8
+    // The Ryūha shirt jacket sits just over the usual 0.8 gate. It still hangs.
+    // Every other piece keeps the same gate.
+    (coverage < 0.8 || item.id === "h22-moncler-ryuha-39226893")
   );
 }
 

@@ -32,7 +32,12 @@ describe("seed data", () => {
     expect(rail[0]?.id).toBe("h22-ghost-4100044");
     expect(new Set(rail.map((item) => item.id)).size).toBe(rail.length);
     expect(rail.every((item) => item.category === "apparel" || item.category === "outerwear")).toBe(true);
-    expect(rail.every((item) => (item.images.alphaCoverage ?? 1) < 0.8)).toBe(true);
+    expect(
+      rail
+        .filter((item) => item.id !== "h22-moncler-ryuha-39226893")
+        .every((item) => (item.images.alphaCoverage ?? 1) < 0.8),
+    ).toBe(true);
+    expect(rail.some((item) => item.id === "h22-moncler-ryuha-39226893")).toBe(true);
     expect(rail.some((item) => item.category === "watches" || item.category === "footwear")).toBe(false);
     expect(items.filter((item) => item.status === "vault")).toHaveLength(3);
 
@@ -89,7 +94,7 @@ describe("desk fields stay off public data", () => {
     expect(getPublicItems().every((item) => item.authConfidence === undefined || item.authConfidence === "high")).toBe(true);
     expect(JSON.stringify(blobs)).not.toContain('"authConfidence":"medium"');
     expect(getItems().some((item) => item.slug === "audemars-piguet-travis-scott-royal-oak")).toBe(true);
-    expect(getPublicItems().some((item) => item.slug === "audemars-piguet-travis-scott-royal-oak")).toBe(false);
+    expect(getPublicItems().some((item) => item.slug === "audemars-piguet-travis-scott-royal-oak")).toBe(true);
     expect(getItems().some((item) => item.sourceMarket === "JP")).toBe(true);
   });
 });

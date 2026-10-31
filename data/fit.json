@@ -16,6 +16,23 @@
       1024
     ]
   },
+  "/cutouts/h22-si-dior-front.webp": {
+    "box": [
+      0.1475,
+      0.0596,
+      0.8516,
+      0.9395
+    ],
+    "collar": [
+      0.4985,
+      0.0654
+    ],
+    "pivot": null,
+    "px": [
+      1024,
+      1024
+    ]
+  },
   "/cutouts/hoodie-front.webp": {
     "box": [
       0.0102,
@@ -77,6 +94,23 @@
     "collar": [
       0.502,
       0.0635
+    ],
+    "pivot": null,
+    "px": [
+      1024,
+      1024
+    ]
+  },
+  "/cutouts/h22-ap-travis-front.webp": {
+    "box": [
+      0.2383,
+      0.0596,
+      0.7617,
+      0.9395
+    ],
+    "collar": [
+      0.4653,
+      0.0596
     ],
     "pivot": null,
     "px": [
@@ -233,6 +267,57 @@
     "collar": [
       0.4956,
       0.1318
+    ],
+    "pivot": null,
+    "px": [
+      1024,
+      1024
+    ]
+  },
+  "/cutouts/h22-dior-si-elbow-36434990-front.webp": {
+    "box": [
+      0.1787,
+      0.0596,
+      0.8203,
+      0.9395
+    ],
+    "collar": [
+      0.4893,
+      0.0605
+    ],
+    "pivot": null,
+    "px": [
+      1024,
+      1024
+    ]
+  },
+  "/cutouts/h22-dior-si-leather-69432683-front.webp": {
+    "box": [
+      0.1309,
+      0.0596,
+      0.8682,
+      0.9395
+    ],
+    "collar": [
+      0.4956,
+      0.0596
+    ],
+    "pivot": null,
+    "px": [
+      1024,
+      1024
+    ]
+  },
+  "/cutouts/h22-dior-si-ring-7503587-front.webp": {
+    "box": [
+      0.0596,
+      0.1201,
+      0.9395,
+      0.8789
+    ],
+    "collar": [
+      0.4873,
+      0.123
     ],
     "pivot": null,
     "px": [
