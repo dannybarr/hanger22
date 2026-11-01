@@ -43,8 +43,8 @@
     },
     "condition": "New, sealed",
     "seenAt": "2026-10-21T00:00:00.000Z",
-    "sold": false,
-    "note": "Page fetched 21 Oct 2026",
+    "sold": true,
+    "note": "Listing gone 1 Nov 2026 (404), no replacement found",
     "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or Grailed. Not licensed for reuse outside this site."
   },
   {
@@ -89,7 +89,7 @@
     "condition": "Pre-owned, excellent, serviced July 2026",
     "seenAt": "2026-09-25T00:00:00.000Z",
     "sold": true,
-    "note": "Sold 25 Sep 2026 for \u00a33,576.70. Kept as a comparable, not a live listing.",
+    "note": "Sold 25 Sep 2026 for \u00a33,576.70. Checked 1 Nov 2026: no buyable replacement found.",
     "licence": "No listing photograph in the seed. Source URL kept."
   },
   {
