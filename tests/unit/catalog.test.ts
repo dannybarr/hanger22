@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { economicsFromGuide } from "@/lib/desk";
-import { getCollabs, getDrops, getItems, getPublicItems, getRailItems, getSources, getSourcesFor, getVaultItems, toPublicItem, toShopItem } from "@/lib/data";
+import { getCollabs, getDrops, getItem, getItems, getPublicItems, getRailItems, getSources, getSourcesFor, getVaultItems, toPublicItem, toShopItem } from "@/lib/data";
 import { toAcpFeed, toCatalog } from "@/lib/feeds";
 import { productJsonLd } from "@/lib/jsonld";
 import { FX_TO_GBP, guideFromSource, inBand, roundGuide } from "@/lib/money";
@@ -39,7 +39,19 @@ describe("seed data", () => {
     ).toBe(true);
     expect(rail.some((item) => item.id === "h22-moncler-ryuha-39226893")).toBe(true);
     expect(rail.some((item) => item.category === "watches" || item.category === "footwear")).toBe(false);
-    expect(items.filter((item) => item.status === "vault")).toHaveLength(3);
+    expect(items.filter((item) => item.status === "vault")).toHaveLength(5);
+    const withdrawn = ["h22-palace-hood", "h22-speedmaster-3570"];
+    expect(withdrawn.every((id) => items.find((item) => item.id === id)?.status === "vault")).toBe(true);
+    expect(publicItems.some((item) => withdrawn.includes(item.id))).toBe(false);
+    expect(rail.some((item) => withdrawn.includes(item.id))).toBe(false);
+    expect(getItem("palace-oakley-logo-hood-off-white")).toBeUndefined();
+    expect(getItem("omega-speedmaster-3570-50")).toBeUndefined();
+    expect(sources.find((source) => source.id === "src-palace")?.sold).toBe(true);
+    expect(sources.find((source) => source.id === "src-speedy-3570")?.sold).toBe(true);
+    // Shop catalogue order. The Travis Scott Royal Oak stays third.
+    expect(publicItems[2]?.id).toBe("h22-ap-travis");
+    // Conveyor order is unchanged. The third hanger is still the Komae jacket.
+    expect(rail[2]?.id).toBe("h22-komae-70832580");
 
     for (const item of items) {
       expect(item.guidePriceGBP.max).toBeGreaterThanOrEqual(item.guidePriceGBP.min);

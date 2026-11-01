@@ -138,7 +138,7 @@
     },
     "condition": "new",
     "authRoute": "New and sealed, per the Grailed listing. We photograph the seal before it is broken.",
-    "status": "available-to-source",
+    "status": "vault",
     "sourceListingIds": [
       "src-palace"
     ],
@@ -401,7 +401,7 @@
     },
     "condition": "excellent",
     "authRoute": "This comp is sold. A live 3570.50 would go to an independent watchmaker, with the service history read, not assumed.",
-    "status": "available-to-source",
+    "status": "vault",
     "sourceListingIds": [
       "src-speedy-3570"
     ],
