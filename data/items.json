@@ -2444,7 +2444,7 @@
     "images": {
       "front": "/cutouts/h22-dior-si-ring-7503587-front.webp",
       "placeholder": false,
-      "imageStatus": "cutout",
+      "imageStatus": "listing-photo",
       "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
       "credit": "Product photograph of the silver signet ring, reference 7503587.",
       "sourceUrl": "https://kream.co.kr/products/stock/7503587",
@@ -2466,7 +2466,7 @@
     "priceProvisional": true,
     "condition": "new",
     "authRoute": "Stock 7503587 checked 31 October 2026 at 950,000 won, size M, graded unused. The ring is not in hand.",
-    "status": "available-to-source",
+    "status": "vault",
     "availability": "sourced",
     "cutReason": "collab",
     "sourceMarket": "KR",

@@ -670,8 +670,8 @@
     },
     "condition": "Unused, size M, graded 95.",
     "seenAt": "2026-10-31T20:00:00.000Z",
-    "sold": false,
-    "note": "Fetched 31 October 2026. 950,000 won. Bank of England 29 October 2026 rate used for the guide.",
+    "sold": true,
+    "note": "Fetched 31 October 2026 at 950,000 won. Checked 4 Nov 2026: sold, no replacement that keeps the price.",
     "sellerTrust": {
       "authGuarantee": true
     },
