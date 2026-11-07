@@ -83,6 +83,54 @@ describe("seed data", () => {
       expect(full && economicsFromGuide(full.costBasis, full.guidePriceGBP).estimatedMarginGBP).toBe(full?.estimatedMarginGBP);
     }
   });
+
+  it("keeps the 7 November 2026 pieces above an 8 percent after-cost floor", () => {
+    // Buyer card 2 percent of the duties-included source, then a fixed desk cost.
+    // Sale fee is 2.5 percent plus 20p. Profit is what remains, divided by the sale price.
+    const added = [
+      { id: "h22-lv-supreme-33263118", priceGBP: 1890, extrasGBP: 66, size: "46" },
+      { id: "h22-hermes-tambours-36757190", priceGBP: 2650, extrasGBP: 76, size: "50" },
+      { id: "h22-balenciaga-fringe-26873278", priceGBP: 4290, extrasGBP: 71, size: "M" },
+    ];
+    const feeRate = 0.025;
+    const buyerCardRate = 0.02;
+    for (const row of added) {
+      const item = getItems().find((entry) => entry.id === row.id);
+      expect(item?.status).toBe("available-to-source");
+      expect(item?.availability).toBe("sourced");
+      expect(item?.priceGBP).toBe(row.priceGBP);
+      expect(item?.priceProvisional).toBe(false);
+      expect(item?.specs.Size).toBe(row.size);
+      const listing = getSourcesFor(row.id)[0];
+      expect(listing?.sold).toBe(false);
+      expect(listing?.priceShown.currency).toBe("GBP");
+      const source = listing?.priceShown.amount ?? 0;
+      const fixed = source * (1 + buyerCardRate) + row.extrasGBP;
+      const profit = row.priceGBP - fixed - (row.priceGBP * feeRate + 0.2);
+      const floor = (fixed + 0.2) / (1 - feeRate - 0.08);
+      expect(row.priceGBP).toBeGreaterThanOrEqual(Math.ceil(floor));
+      expect(profit / row.priceGBP).toBeGreaterThanOrEqual(0.08);
+      // Listing-cost margin at the guide midpoint is a different figure from after-cost profit.
+      expect(item?.estimatedMarginGBP).not.toBe(Math.round(profit));
+      expect(item?.guidePriceGBP.min).toBeLessThanOrEqual(row.priceGBP);
+      expect(item?.guidePriceGBP.max).toBeGreaterThanOrEqual(row.priceGBP);
+      const story = item?.story ?? "";
+      expect(story.split(/\s+/).filter(Boolean).length).toBeGreaterThanOrEqual(60);
+      expect(story.split(/\s+/).filter(Boolean).length).toBeLessThanOrEqual(140);
+      expect(story).not.toMatch(/farfetch|vestiaire|grailed|markup|cost basis/i);
+      expect(story).not.toMatch(/[;—]| - /);
+    }
+    expect(getItems().some((item) => item.id === "h22-lv-bugs-36674437")).toBe(false);
+    expect(getItems().some((item) => item.id === "h22-fendi-mj-38710603")).toBe(false);
+    expect(getPublicItems()[2]?.id).toBe("h22-ap-travis");
+    const rail = getRailItems();
+    expect(rail[0]?.id).toBe("h22-ghost-4100044");
+    expect(rail[2]?.id).toBe("h22-komae-70832580");
+    for (const row of added) {
+      expect(rail.some((item) => item.id === row.id)).toBe(true);
+    }
+    expect(rail.some((item) => item.category === "footwear" || item.category === "watches")).toBe(false);
+  });
 });
 
 describe("desk fields stay off public data", () => {

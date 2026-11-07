@@ -676,5 +676,59 @@
       "authGuarantee": true
     },
     "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-lv-supreme-33263118",
+    "itemId": "h22-lv-supreme-33263118",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/louis-vuitton-pre-owned-x-supreme-camouflage-effect-jacket-item-33263118.aspx",
+    "priceShown": {
+      "amount": 1461,
+      "currency": "GBP"
+    },
+    "condition": "Excellent. Size 46. Cotton. Made in France. Was \u00a31,948.",
+    "seenAt": "2026-11-07T14:03:00.000Z",
+    "sold": false,
+    "note": "Fetched 7 November 2026. \u00a31,461, import duties included, in stock, last one, size 46.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-hermes-tambours-36757190",
+    "itemId": "h22-hermes-tambours-36757190",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/hermes-pre-owned-1980s-les-tambours-reversible-jacket-item-36757190.aspx",
+    "priceShown": {
+      "amount": 2112,
+      "currency": "GBP"
+    },
+    "condition": "Excellent. Size 50. Silk. Made in France.",
+    "seenAt": "2026-11-07T14:03:00.000Z",
+    "sold": false,
+    "note": "Fetched 7 November 2026. \u00a32,112, import duties included, in stock, last one, size 50. Search card also said L.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-balenciaga-fringe-26873278",
+    "itemId": "h22-balenciaga-fringe-26873278",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/balenciaga-pre-owned-2010-fringed-biker-jacket-item-26873278.aspx",
+    "priceShown": {
+      "amount": 3519,
+      "currency": "GBP"
+    },
+    "condition": "Good. Size M. Sheepskin. Circa 2010.",
+    "seenAt": "2026-11-07T14:06:00.000Z",
+    "sold": false,
+    "note": "Fetched 7 November 2026. \u00a33,519, import duties included, in stock, last one, size M.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
   }
 ]

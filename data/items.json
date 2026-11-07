@@ -2485,5 +2485,200 @@
       "approved-2026-10-31"
     ],
     "notes": "Research, 31 October 2026. Danny approved £1,030. Payable price 950,000 won. Bank of England, 29 October 2026, £1 = 1,791.45 won, stored as KRW 0.00055821. economics.mjs gives guide £640 to £720, markupPct 28.2, estimatedMarginGBP 150.\n\nStock 7503587: size M, 950,000 won, unused, 95 points. Release date on the product page is 4 July 2024. The face is black resin with Dior around a compass star."
+  },
+  {
+    "id": "h22-lv-supreme-33263118",
+    "slug": "louis-vuitton-supreme-camo-jacket",
+    "title": "Louis Vuitton x Supreme camouflage jacket",
+    "shortTitle": "Louis Vuitton x Supreme Camo Jacket",
+    "brand": "Louis Vuitton x Supreme",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2017,
+    "story": "Louis Vuitton and Supreme showed a shared collection at the autumn winter 2017 menswear show in Paris on 19 January 2017. Kim Jones, then menswear artistic director, had worked with James Jebbia for about a year on clothes and leather goods in a combined monogram, camouflage among them. The clothes reached the shops that June, through short pop ups, and London was one of the eight cities. This jacket is cotton, in a khaki green camouflage, with a buttoned front, flap pockets on the chest and a logo patch. It was made in France. The size is 46. It is in excellent condition.",
+    "specs": {
+      "Colour": "Khaki green",
+      "Cloth": "Cotton",
+      "Pattern": "Camouflage",
+      "Fastening": "Buttons",
+      "Pockets": "Flap pockets on the chest",
+      "Origin": "France",
+      "Style": "1031247",
+      "Size": "46"
+    },
+    "images": {
+      "front": "/cutouts/h22-lv-supreme-33263118-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the khaki green camouflage jacket, reference 33263118.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/louis-vuitton-pre-owned-x-supreme-camouflage-effect-jacket-item-33263118.aspx",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.729,
+      "spin": [
+        "/cutouts/h22-lv-supreme-33263118-front.webp"
+      ]
+    },
+    "art": "louis-vuitton-supreme-camo-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 1750,
+      "max": 1970
+    },
+    "priceGBP": 1890,
+    "priceProvisional": false,
+    "condition": "excellent",
+    "authRoute": "UK page checked 7 November 2026 at £1,461, reduced from £1,948, import duties included, last one, condition excellent, size 46, cotton, made in France, style 1031247. The jacket is not in hand. A photo pass is planned before any checkout link is sent.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 1461,
+      "currency": "GBP"
+    },
+    "markupPct": 27.3,
+    "estimatedMarginGBP": 399,
+    "demandSignal": 0.35,
+    "sourceListingIds": [
+      "src-h22-lv-supreme-33263118"
+    ],
+    "tags": [
+      "approved-2026-11-07"
+    ],
+    "notes": "Checked 7 November 2026. Product record: £1,461, was £1,948, import duties included, in stock, last one, size 46, excellent, cotton, made in France, style 1031247. economics.mjs on £1,461 gives guide £1,750 to £1,970, markupPct 27.3, estimatedMarginGBP 399. Those figures are the listing-cost band at the guide midpoint. They are not the after-cost profit.\n\nAfter-cost model, same for this batch. The UK price already includes import duty, so duty and import VAT are not added again. No separate inbound delivery charge was shown, so inbound shipping is treated as included. Buyer card fee 2 percent of the source. Photo authentication £40. Outbound UK tracked delivery £18. Packing £8. Selling fee on a payment link 2.5 percent plus 20p, between a UK card and an overseas card. No returns reserve. Fixed cost £1,556.22. Floor for 8 percent profit on the sale is £1,740. Public price £1,890. Profit about £286, about 15.1 percent of the sale. The price sits inside the guide. This is not treated as a piece that must be pushed down to 8 percent: the source is under £2,000, and the same jacket is already offered at £1,461 with duties included, so £1,890 stays near that ask rather than the old suggestion of £2,170.\n\nAsks seen the same day, not sold prices. The US page of this same listing showed $1,710 with duties included, a geo price, not a second jacket. Justin Reed had a sold out ask at $1,950. Kick Game listed a jacquard denim trucker from $2,986.99 in size M, with a 30 June 2017 release date on that page. Eluxive listed a deadstock size L at $4,450. None of those is this size 46 piece, and no sold price was found. No sell-through is claimed. demandSignal 0.35 is only a quiet desk marker.\n\nVogue, 19 January 2017, Luke Leitch: the collaboration was in the Paris menswear show that day, Kim Jones with James Jebbia, camouflage among the cloths, about a year in development. Vogue, 30 June 2017: the London pop up opened that morning. WWD the same week: eight pop ups, Paris, London, Miami, Los Angeles, Tokyo, Beijing, Seoul and Sydney.\n\nCut-out: OPENAI_API_KEY was not set, so the image model was not called. The page photograph is the jacket alone on white. The white ground was lifted and the piece framed at 1024px and 88 percent. studio is false. A small chain sits inside the collar in the source photograph and was left as it was. Alpha coverage 0.729, so it can hang."
+  },
+  {
+    "id": "h22-hermes-tambours-36757190",
+    "slug": "hermes-les-tambours-jacket",
+    "title": "Hermès 1980s Les Tambours reversible silk jacket",
+    "shortTitle": "Hermès Les Tambours Jacket",
+    "brand": "Hermès",
+    "collabId": null,
+    "category": "outerwear",
+    "story": "This reversible jacket is from the 1980s and carries the Les Tambours print. It is black silk, quilted, with drums, ropes and gold braiding across the cloth. A zip closes the front. The collar is a band, the cuffs and hem are ribbed, and a slit pocket sits at each side. It was made in France. The size is 50. It is in excellent condition.",
+    "specs": {
+      "Colour": "Black",
+      "Cloth": "Silk",
+      "Print": "Les Tambours",
+      "Reversible": "Yes",
+      "Fastening": "Zip",
+      "Collar": "Band",
+      "Origin": "France",
+      "Style": "HE1800BUU",
+      "Size": "50"
+    },
+    "images": {
+      "front": "/cutouts/h22-hermes-tambours-36757190-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black Les Tambours jacket, reference 36757190.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/hermes-pre-owned-1980s-les-tambours-reversible-jacket-item-36757190.aspx",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.71,
+      "spin": [
+        "/cutouts/h22-hermes-tambours-36757190-front.webp"
+      ]
+    },
+    "art": "hermes-les-tambours-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 2530,
+      "max": 2850
+    },
+    "priceGBP": 2650,
+    "priceProvisional": false,
+    "condition": "excellent",
+    "authRoute": "UK page checked 7 November 2026 at £2,112, import duties included, last one, condition excellent, size 50, silk, made in France, style HE1800BUU. The jacket is not in hand. A photo pass is planned before any checkout link is sent.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 2112,
+      "currency": "GBP"
+    },
+    "markupPct": 27.4,
+    "estimatedMarginGBP": 578,
+    "demandSignal": 0.35,
+    "sourceListingIds": [
+      "src-h22-hermes-tambours-36757190"
+    ],
+    "tags": [
+      "approved-2026-11-07"
+    ],
+    "notes": "Checked 7 November 2026. Product record: £2,112, import duties included, in stock, last one, size 50, excellent, silk, made in France, style HE1800BUU, reversible, Les Tambours print. The UK search card the same day listed the only size as L. The product record says 50, so the public size is 50. economics.mjs gives guide £2,530 to £2,850, markupPct 27.4, estimatedMarginGBP 578. That margin is the guide midpoint minus the source. It is not after-cost profit.\n\nSame cost model as the Louis Vuitton jacket, with photo authentication at £50 because it is Hermès silk. Fixed cost £2,230.24. Floor for 8 percent profit on the sale is £2,493. Public price £2,650. Profit about £353, about 13.3 percent of the sale. The price sits inside the guide. Source £2,112 is treated as high ticket, so the old suggestion of £2,770 is compressed. The only verified same-piece UK ask is this £2,112 listing.\n\nNot used as comps. Front General Store, $1,780, is a vintage Hermès reversible silk bomber in size 46 and the fetched title did not name Les Tambours. Leroy Hunt, $550, is titled a 1990s Les Tambours jacket and was not verified as this size 50 piece. Il Ponte sold a worn size 38/40 with defects for €650 on 14 October 2022. That is a historical sale of a different size and condition, not a current ask. No current sold price for this size was found. demandSignal 0.35 is a quiet desk marker, not a demand claim.\n\nThe other face was not in the front photograph, so the story does not describe it.\n\nCut-out: OPENAI_API_KEY was not set. The page photograph is the jacket alone on white. The white ground was lifted and the piece framed at 1024px and 88 percent. studio is false. Alpha coverage 0.710."
+  },
+  {
+    "id": "h22-balenciaga-fringe-26873278",
+    "slug": "balenciaga-fringed-biker-jacket",
+    "title": "Balenciaga 2010 fringed sheepskin biker jacket",
+    "shortTitle": "Balenciaga Fringed Biker Jacket",
+    "brand": "Balenciaga",
+    "collabId": null,
+    "category": "outerwear",
+    "year": 2010,
+    "story": "This biker jacket is dated circa 2010. It is black sheepskin, with an off centre zip, a notched collar and a belt at the waist. Zips close the cuffs and the pockets on the front. Lacing runs along the sleeves, and a fringe hangs below the hem. Red lining shows at the collar, where a Balenciaga label is sewn. The size is M. It is in good condition.",
+    "specs": {
+      "Colour": "Black",
+      "Material": "Sheepskin",
+      "Lining": "Red at the collar",
+      "Fastening": "Off centre zip",
+      "Belt": "Yes",
+      "Detail": "Sleeve lacing and fringe",
+      "Style": "CVBAL3000E",
+      "Size": "M"
+    },
+    "images": {
+      "front": "/cutouts/h22-balenciaga-fringe-26873278-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black fringed biker jacket, reference 26873278.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/balenciaga-pre-owned-2010-fringed-biker-jacket-item-26873278.aspx",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.598,
+      "spin": [
+        "/cutouts/h22-balenciaga-fringe-26873278-front.webp"
+      ]
+    },
+    "art": "balenciaga-fringed-biker-jacket",
+    "suspension": "wood",
+    "guidePriceGBP": {
+      "min": 4220,
+      "max": 4750
+    },
+    "priceGBP": 4290,
+    "priceProvisional": false,
+    "condition": "good",
+    "authRoute": "UK page checked 7 November 2026 at £3,519, import duties included, last one, condition good, size M, sheepskin, circa 2010, style CVBAL3000E. The jacket is not in hand. A photo pass is planned before any checkout link is sent.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "rare_from_range",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 3519,
+      "currency": "GBP"
+    },
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 966,
+    "demandSignal": 0.35,
+    "sourceListingIds": [
+      "src-h22-balenciaga-fringe-26873278"
+    ],
+    "tags": [
+      "approved-2026-11-07"
+    ],
+    "notes": "Checked 7 November 2026. Product record: £3,519, import duties included, in stock, last one, size M, good, sheepskin, circa 2010, style CVBAL3000E. The UK search card also showed size M. economics.mjs gives guide £4,220 to £4,750, markupPct 27.5, estimatedMarginGBP 966. That is listing-cost margin at the guide midpoint, not after-cost profit.\n\nSame cost model, with photo authentication at £45. Fixed cost £3,660.38. Floor for 8 percent profit on the sale is £4,091. Public price £4,290. Profit about £522, about 12.2 percent of the sale. The price sits inside the guide. Source £3,519 is treated as high ticket. The old suggestion of £5,100 would sit well above the only verified UK ask, which is this listing. No independent live ask for the same jacket was found. Other country prices seen in earlier notes were the same listing. No sold price was found. demandSignal 0.35 is a quiet desk marker, not a demand claim. A creative director is not named in the story because this pass did not pin a house source for the 2010 studio.\n\nCut-out: OPENAI_API_KEY was not set. The page photograph is the jacket alone on white, including the fringe. The white ground was lifted and the piece framed at 1024px and 88 percent. studio is false. Alpha coverage 0.598. The fringe keeps the frame from filling the box, so it can hang."
   }
 ]

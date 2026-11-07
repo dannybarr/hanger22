@@ -80,6 +80,9 @@ const RAIL_SEQUENCE = [
   "h22-jwa-guinness-38459217",
   "h22-si-dior",
   "h22-dior-si-elbow-36434990",
+  "h22-lv-supreme-33263118",
+  "h22-hermes-tambours-36757190",
+  "h22-balenciaga-fringe-26873278",
 ];
 
 /**
