@@ -2680,5 +2680,70 @@
       "approved-2026-11-07"
     ],
     "notes": "Checked 7 November 2026. Product record: £3,519, import duties included, in stock, last one, size M, good, sheepskin, circa 2010, style CVBAL3000E. The UK search card also showed size M. economics.mjs gives guide £4,220 to £4,750, markupPct 27.5, estimatedMarginGBP 966. That is listing-cost margin at the guide midpoint, not after-cost profit.\n\nSame cost model, with photo authentication at £45. Fixed cost £3,660.38. Floor for 8 percent profit on the sale is £4,091. Public price £4,290. Profit about £522, about 12.2 percent of the sale. The price sits inside the guide. Source £3,519 is treated as high ticket. The old suggestion of £5,100 would sit well above the only verified UK ask, which is this listing. No independent live ask for the same jacket was found. Other country prices seen in earlier notes were the same listing. No sold price was found. demandSignal 0.35 is a quiet desk marker, not a demand claim. A creative director is not named in the story because this pass did not pin a house source for the 2010 studio.\n\nCut-out: OPENAI_API_KEY was not set. The page photograph is the jacket alone on white, including the fringe. The white ground was lifted and the piece framed at 1024px and 88 percent. studio is false. Alpha coverage 0.598. The fringe keeps the frame from filling the box, so it can hang."
+  },
+  {
+    "id": "h22-chanel-pharrell-38058392",
+    "slug": "chanel-pharrell-logo-mules",
+    "title": "Chanel x Pharrell logo lettering mules",
+    "shortTitle": "Chanel x Pharrell Logo Mules",
+    "brand": "Chanel x Pharrell",
+    "collabId": null,
+    "category": "footwear",
+    "story": "Chanel made these mules with Pharrell. The upper is black calf leather, with an almond toe and a penny strap that carries gold tone logo lettering. The sole is flat rubber and the lining is calf suede. They are a slip on, and the heel is flat. They were made in Italy. The size is 41. The pair is in good condition, with the minimal signs of use that grade records. The brand style is 1401104.",
+    "specs": {
+      "Colour": "Black",
+      "Upper": "Calf leather",
+      "Lining": "Calf suede",
+      "Sole": "Rubber",
+      "Toe": "Almond",
+      "Strap": "Penny strap with gold tone logo lettering",
+      "Style": "1401104",
+      "Origin": "Italy",
+      "Size": "41"
+    },
+    "images": {
+      "front": "/cutouts/h22-chanel-pharrell-38058392-front.webp",
+      "placeholder": false,
+      "imageStatus": "cutout",
+      "licence": "Product photograph from the live page, cut out for the shop. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
+      "credit": "Product photograph of the black logo lettering mules, reference 38058392.",
+      "sourceUrl": "https://www.farfetch.com/uk/shopping/men/chanel-pre-owned-x-pharrell-logo-lettering-mules-item-38058392.aspx",
+      "studio": false,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "alphaCoverage": 0.189,
+      "spin": [
+        "/cutouts/h22-chanel-pharrell-38058392-front.webp"
+      ]
+    },
+    "art": "chanel-pharrell-mules",
+    "suspension": "strap",
+    "guidePriceGBP": {
+      "min": 870,
+      "max": 980
+    },
+    "priceGBP": 950,
+    "priceProvisional": false,
+    "condition": "good",
+    "authRoute": "UK page checked 7 November 2026 at £723, import duties included, last one, condition good, size 41, black calf leather, made in Italy, style 1401104. The mules are not in hand. A photo pass is planned before any checkout link is sent.",
+    "status": "available-to-source",
+    "availability": "sourced",
+    "cutReason": "collab",
+    "sourceMarket": "UK",
+    "authConfidence": "medium",
+    "costBasis": {
+      "amount": 723,
+      "currency": "GBP"
+    },
+    "markupPct": 27.9,
+    "estimatedMarginGBP": 202,
+    "demandSignal": 0.35,
+    "sourceListingIds": [
+      "src-h22-chanel-pharrell-38058392"
+    ],
+    "tags": [
+      "approved-2026-11-07"
+    ],
+    "notes": "Checked 7 November 2026. Product record: £723, import duties included, in stock, last one, size 41, good, black calf leather upper, calf suede lining, rubber sole, almond toe, penny strap, gold tone logo lettering, slip on, flat, made in Italy, style 1401104. economics.mjs gives guide £870 to £980, markupPct 27.9, estimatedMarginGBP 202. That is listing-cost margin at the guide midpoint, not after-cost profit.\n\nSame cost model, with photo authentication at £50, outbound tracked delivery at £12 and packing at £8. Fixed cost £807.46. Floor for 8 percent profit on the sale is £903. Public price £950. Profit about £119, about 12.5 percent of the sale. The price sits inside the guide. Source £723 is not treated as high ticket. The old suggestion of £1,090 sits above the guide maximum. The only verified same piece UK ask is this listing. A yellow pair seen at a higher dollar price is a different colour and a different size, so it is not used. No sold price was found. demandSignal 0.35 is a quiet desk marker, not a demand claim.\n\nCut-out: OPENAI_API_KEY was not set. The page photograph is the mule alone on white, side view, reference 38058392_71402916. The white ground was lifted and the piece framed at 1024px and 88 percent. studio is false. Alpha coverage 0.189. Footwear stays off the rail."
   }
 ]

@@ -730,5 +730,23 @@
       "authGuarantee": true
     },
     "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
+  },
+  {
+    "id": "src-h22-chanel-pharrell-38058392",
+    "itemId": "h22-chanel-pharrell-38058392",
+    "platform": "farfetch",
+    "url": "https://www.farfetch.com/uk/shopping/men/chanel-pre-owned-x-pharrell-logo-lettering-mules-item-38058392.aspx",
+    "priceShown": {
+      "amount": 723,
+      "currency": "GBP"
+    },
+    "condition": "Good. Size 41. Black calf leather. Made in Italy.",
+    "seenAt": "2026-11-07T14:20:00.000Z",
+    "sold": false,
+    "note": "Fetched 7 November 2026. \u00a3723, import duties included, in stock, last one, size 41. Style 1401104.",
+    "sellerTrust": {
+      "authGuarantee": true
+    },
+    "licence": "Marketplace photograph shown only to identify the piece. Copyright stays with the seller or the marketplace. Not licensed for reuse outside this site."
   }
 ]

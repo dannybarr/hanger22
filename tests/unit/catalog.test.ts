@@ -88,9 +88,10 @@ describe("seed data", () => {
     // Buyer card 2 percent of the duties-included source, then a fixed desk cost.
     // Sale fee is 2.5 percent plus 20p. Profit is what remains, divided by the sale price.
     const added = [
-      { id: "h22-lv-supreme-33263118", priceGBP: 1890, extrasGBP: 66, size: "46" },
-      { id: "h22-hermes-tambours-36757190", priceGBP: 2650, extrasGBP: 76, size: "50" },
-      { id: "h22-balenciaga-fringe-26873278", priceGBP: 4290, extrasGBP: 71, size: "M" },
+      { id: "h22-lv-supreme-33263118", priceGBP: 1890, extrasGBP: 66, size: "46", onRail: true },
+      { id: "h22-hermes-tambours-36757190", priceGBP: 2650, extrasGBP: 76, size: "50", onRail: true },
+      { id: "h22-balenciaga-fringe-26873278", priceGBP: 4290, extrasGBP: 71, size: "M", onRail: true },
+      { id: "h22-chanel-pharrell-38058392", priceGBP: 950, extrasGBP: 70, size: "41", onRail: false },
     ];
     const feeRate = 0.025;
     const buyerCardRate = 0.02;
@@ -127,8 +128,10 @@ describe("seed data", () => {
     expect(rail[0]?.id).toBe("h22-ghost-4100044");
     expect(rail[2]?.id).toBe("h22-komae-70832580");
     for (const row of added) {
-      expect(rail.some((item) => item.id === row.id)).toBe(true);
+      expect(rail.some((item) => item.id === row.id)).toBe(row.onRail);
     }
+    const mules = getItems().find((item) => item.id === "h22-chanel-pharrell-38058392");
+    expect(mules?.category).toBe("footwear");
     expect(rail.some((item) => item.category === "footwear" || item.category === "watches")).toBe(false);
   });
 });
