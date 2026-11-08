@@ -27,7 +27,6 @@ const V_MAX = 420; // px/s. A calm conveyor, not a sprint.
 const ACCEL = 340; // motor pull-away, px/s²
 const BRAKE = 280; // motor brake, px/s²
 const SWING_CAP = 0.3; // radians. A garment never swings off its hook.
-const TICKET_LEN = 38;
 
 type Piece = {
   item: ShopItem;
@@ -43,8 +42,6 @@ type Piece = {
   /** Bottom displacement angle, positive to the right. */
   phi: number;
   omega: number;
-  ticket: number;
-  ticketOmega: number;
   lastBrush: number;
 };
 
@@ -85,7 +82,6 @@ export function Conveyor({
   const router = useRouter();
   const stageRef = useRef<HTMLDivElement>(null);
   const groupRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const ticketRefs = useRef<(HTMLDivElement | null)[]>([]);
   const piecesRef = useRef<Piece[]>([]);
   const layoutRef = useRef<Layout>({ width: 0, height: 0, railY: 0, loop: 1, hatch: 0 });
   const offsetRef = useRef(0);
@@ -152,8 +148,6 @@ export function Conveyor({
         base: 0,
         phi: prior?.phi ?? 0,
         omega: prior?.omega ?? 0,
-        ticket: prior?.ticket ?? 0,
-        ticketOmega: prior?.ticketOmega ?? 0,
         lastBrush: 0,
       };
     });
@@ -341,7 +335,6 @@ export function Conveyor({
         if (!reducedRef.current) {
           const air = AIR * pieceVelocity * Math.abs(pieceVelocity);
           const drive = pieceAccel + air;
-          const tieArm = piece.hookLen * 0.7 + 6;
           for (let s = 0; s < substeps; s += 1) {
             const alpha = (-G * Math.sin(piece.phi) - drive * Math.cos(piece.phi)) / piece.pendulum - DAMP * piece.omega;
             piece.omega += alpha * dt;
@@ -350,15 +343,9 @@ export function Conveyor({
               piece.phi = Math.sign(piece.phi) * SWING_CAP;
               piece.omega *= -0.3;
             }
-            const tieAccel = drive + tieArm * alpha;
-            const ticketAlpha = (-G * Math.sin(piece.ticket) - tieAccel * Math.cos(piece.ticket)) / TICKET_LEN - 2.2 * piece.ticketOmega;
-            piece.ticketOmega += ticketAlpha * dt;
-            piece.ticket += piece.ticketOmega * dt;
-            piece.ticket = Math.max(-0.9, Math.min(0.9, piece.ticket));
           }
         } else {
           piece.phi = 0;
-          piece.ticket = 0;
         }
 
         const group = groupRefs.current[index];
@@ -367,11 +354,6 @@ export function Conveyor({
           const rise = lifted * -Math.max(28, railY * 0.6);
           const angle = (-piece.phi * (1 - lifted) * 180) / Math.PI;
           group.style.transform = `translate3d(${x.toFixed(2)}px, ${(railY + rise).toFixed(2)}px, 0) rotate(${angle.toFixed(3)}deg) scale(${(1 + lifted * 0.04).toFixed(4)})`;
-        }
-        const ticket = ticketRefs.current[index];
-        if (ticket) {
-          const relative = ((-(piece.ticket - piece.phi)) * 180) / Math.PI;
-          ticket.style.transform = `rotate(${relative.toFixed(3)}deg)`;
         }
       });
 
@@ -610,15 +592,6 @@ export function Conveyor({
                       }}
                       fetchPriority={index < 3 ? "high" : "auto"}
                     />
-                    <div
-                      ref={(node) => {
-                        ticketRefs.current[index] = node;
-                      }}
-                      className="absolute"
-                      style={{ left: 5, top: piece.ownHook ? Math.max(10, piece.imgH * 0.05) : piece.hookLen * 0.62, transformOrigin: "0 0" }}
-                    >
-                      <Ticket number={index + 1} gold={gold} />
-                    </div>
                   </div>
                 );
               })}
@@ -748,20 +721,6 @@ function Hook({ length, gold }: { length: number; gold: boolean }) {
   );
 }
 
-function Ticket({ number, gold }: { number: number; gold: boolean }) {
-  return (
-    <div className="flex flex-col items-start" aria-hidden>
-      <span className="block h-4 w-px bg-[#8b7a62]" />
-      <span
-        className="mono -mt-px block border border-[#cdb98f] px-1.5 pt-1.5 pb-1 text-[10px] leading-[1.25] text-[#3a2c20] shadow-[0_2px_3px_rgba(39,31,23,0.18)]"
-        style={{ background: gold ? "#f3dfa8" : "var(--color-ticket)" }}
-      >
-        <span className="mx-auto mb-1 block h-1 w-1 rounded-full bg-[#3a2c20]/40" />
-        No.{String(number).padStart(2, "0")}
-      </span>
-    </div>
-  );
-}
 
 function Hatch({ side, layout }: { side: "left" | "right"; layout: Layout }) {
   const toward = side === "left" ? "90deg" : "270deg";
