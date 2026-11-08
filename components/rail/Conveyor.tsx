@@ -617,7 +617,7 @@ export function Conveyor({
                       className="absolute"
                       style={{ left: 5, top: piece.ownHook ? Math.max(10, piece.imgH * 0.05) : piece.hookLen * 0.62, transformOrigin: "0 0" }}
                     >
-                      <Ticket number={index + 1} price={formatGBP(priceOf(piece.item))} gold={gold} />
+                      <Ticket number={index + 1} gold={gold} />
                     </div>
                   </div>
                 );
@@ -748,7 +748,7 @@ function Hook({ length, gold }: { length: number; gold: boolean }) {
   );
 }
 
-function Ticket({ number, price, gold }: { number: number; price: string; gold: boolean }) {
+function Ticket({ number, gold }: { number: number; gold: boolean }) {
   return (
     <div className="flex flex-col items-start" aria-hidden>
       <span className="block h-4 w-px bg-[#8b7a62]" />
@@ -758,8 +758,6 @@ function Ticket({ number, price, gold }: { number: number; price: string; gold: 
       >
         <span className="mx-auto mb-1 block h-1 w-1 rounded-full bg-[#3a2c20]/40" />
         No.{String(number).padStart(2, "0")}
-        <br />
-        {price}
       </span>
     </div>
   );
