@@ -4,17 +4,17 @@ import { SiteFooter, SiteHeader } from "@/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
   title: "How to buy",
-  description: "Buying from Hanger 22 is simple. Choose your piece, express your intent to buy, and complete your private checkout.",
+  description: "Buying from Hanger 22 is simple. Choose your piece, secure it, and complete your private checkout.",
 };
 
 const STEPS = [
   {
     title: "Choose your piece",
-    body: "Every piece in the edit is limited, a collaboration or a rarity from its range. Read its story, check the size and condition, and press Buy now.",
+    body: "Every piece in the edit is limited, a collaboration or a rarity from its range. Read its story, check the size and condition, and press Secure it.",
   },
   {
-    title: "Express your intent to buy",
-    body: "Leave your name, email and size. It takes a moment and no payment is taken at this stage.",
+    title: "Commit to buy",
+    body: "Leave your name, email, phone and size. We get in touch personally, and no payment is taken at this stage.",
   },
   {
     title: "Complete your private checkout",
@@ -33,7 +33,7 @@ const QUESTIONS = [
   },
   {
     q: "When do I pay?",
-    a: "Only when you complete your private checkout. Expressing your intent to buy is free and does not commit you to anything.",
+    a: "Only when you complete your private checkout. Committing to buy is free, and nothing is charged until you approve and complete your checkout.",
   },
   {
     q: "What if I change my mind?",

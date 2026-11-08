@@ -41,14 +41,14 @@ export async function POST(request: Request) {
   const piece = full ? getItem(full.slug) : undefined;
   const origin = siteOrigin(new URL(request.url).origin);
   const subject = piece
-    ? `Intent to buy: ${piece.brand}, ${piece.shortTitle} (${formatGBP(priceOf(piece))})`
+    ? `Commitment to buy: ${piece.brand}, ${piece.shortTitle} (${formatGBP(priceOf(piece))})`
     : `Personal shopping request from ${data.name}`;
 
   const result = await sendToInbox({
     subject,
     replyTo: data.email,
     fields: {
-      "Request": piece ? "Expression of intent to buy" : "Personal shopping",
+      "Request": piece ? "Commitment to buy" : "Personal shopping",
       "Piece": piece ? `${piece.brand}, ${piece.title}` : undefined,
       "Price": piece ? formatGBP(priceOf(piece)) : undefined,
       "Page": piece ? `${origin}/p/${piece.slug}` : undefined,

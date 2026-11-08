@@ -24,7 +24,7 @@ export default function ContactPage() {
               <div>
                 <dt className="field-label">About a piece in the edit</dt>
                 <dd className="mt-2 leading-relaxed">
-                  Press Buy now on its page, or write below and name it.
+                  Press Secure it on its page, or write below and name it.
                 </dd>
               </div>
               <div>

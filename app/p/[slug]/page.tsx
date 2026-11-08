@@ -56,6 +56,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
   const json = productJsonLd(slug, origin);
   const price = formatGBP(priceOf(item));
   const size = knownSize(item);
+  const needsSize = ["apparel", "outerwear", "footwear"].includes(item.category);
   const condition = CONDITION_COPY[item.condition];
   const houses = housesFor(item.brand);
   const specs = Object.entries(item.specs).filter(([key]) => key !== "Size");
@@ -113,7 +114,8 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             </div>
 
             <dl className="mt-8 grid gap-6 border-t border-line pt-6">
-              <div>
+              {needsSize || size ? (
+                <div>
                 <dt className="field-label">Size</dt>
                 <dd className="mt-2">
                   {size ? (
@@ -122,7 +124,8 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
                     <span className="text-[15px] text-ink">Tell us your size and we confirm it with your checkout.</span>
                   )}
                 </dd>
-              </div>
+                </div>
+              ) : null}
               <div>
                 <dt className="field-label">Condition</dt>
                 <dd className="mt-2 text-[15px] text-ink">
@@ -132,8 +135,8 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             </dl>
 
             <div className="mt-8">
-              <BuyButton piece={{ id: item.id, brand: item.brand, title: item.shortTitle, price, size, image: item.images.front }} />
-              <p className="mt-3 text-center text-[13px] text-muted">Private checkout. Your personal checkout link arrives by email.</p>
+              <BuyButton piece={{ id: item.id, brand: item.brand, title: item.shortTitle, price, size, needsSize, image: item.images.front }} />
+              <p className="mt-3 text-center text-[13px] text-muted">No payment is taken until you approve your private checkout.</p>
             </div>
 
             <ul className="mt-8 grid gap-4 border-y border-line py-6 text-[14px]">
@@ -152,11 +155,13 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             </ul>
 
             <div className="divide-y divide-line border-b border-line">
-              <Fold title="The story" open>
-                <p className="text-[15px] leading-relaxed">{item.story}</p>
-              </Fold>
+              {item.storyline ? null : (
+                <Fold title="The story" open>
+                  <p className="text-[15px] leading-relaxed">{item.story}</p>
+                </Fold>
+              )}
               {specs.length > 0 ? (
-                <Fold title="Details">
+                <Fold title="Details" open={Boolean(item.storyline)}>
                   <dl className="grid grid-cols-[minmax(0,9rem)_1fr] gap-x-6 gap-y-2.5 text-[14px]">
                     {specs.map(([key, value]) => (
                       <div key={key} className="contents">
@@ -177,7 +182,7 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
               </Fold>
               <Fold title="How to buy">
                 <p className="text-[15px] leading-relaxed">
-                  Press Buy now and leave your details. We send your personal checkout link by email, and you complete your order there.
+                  Press Secure it and leave your details. We get in touch personally with your private checkout link, and you complete your order there.
                 </p>
                 <Link href="/how-to-buy" className="nav-link mt-4 inline-block">
                   More on buying
@@ -186,6 +191,32 @@ export default async function PiecePage({ params }: { params: Promise<Params> })
             </div>
           </div>
         </div>
+
+        {item.storyline ? (
+          <section className="mt-24 border-t border-line pt-14 sm:mt-28 sm:pt-20" aria-labelledby="story">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-16">
+              <div className="lg:sticky lg:top-8 lg:self-start">
+                <p className="eyebrow">The story</p>
+                <h2 id="story" className="display mt-3 text-[36px] text-ink sm:text-[46px]">
+                  {item.shortTitle}
+                </h2>
+              </div>
+              <ol className="grid gap-12 sm:gap-14">
+                {item.storyline.map((chapter, index) => (
+                  <li key={chapter.title} className="grid gap-3 border-t border-line pt-6 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+                    <span className="text-[13px] font-medium tracking-[0.1em] text-muted tabular-nums" aria-hidden>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="display text-[26px] text-ink sm:text-[30px]">{chapter.title}</h3>
+                      <p className="mt-3 max-w-[60ch] text-[16px] leading-relaxed sm:text-[17px]">{chapter.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+        ) : null}
 
         {similar.length > 0 ? (
           <section className="mt-24" aria-labelledby="more">

@@ -13,6 +13,8 @@ export type BuyPiece = {
   title: string;
   price: string;
   size: string | null;
+  /** Clothing and shoes ask for a size. Watches and objects do not. */
+  needsSize: boolean;
   image: string;
 };
 
@@ -23,7 +25,7 @@ export function BuyButton({ piece }: { piece: BuyPiece }) {
   return (
     <>
       <button type="button" className="btn-solid w-full" onClick={() => setOpen(true)}>
-        Buy now
+        Secure it
       </button>
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper/95 px-5 py-3 backdrop-blur lg:hidden">
         <div className="flex items-center gap-4">
@@ -32,7 +34,7 @@ export function BuyButton({ piece }: { piece: BuyPiece }) {
             <p className="text-[16px] font-medium text-ink">{piece.price}</p>
           </div>
           <button type="button" className="btn-solid min-h-12 shrink-0 px-8" onClick={() => setOpen(true)}>
-            Buy now
+            Secure it
           </button>
         </div>
       </div>
@@ -83,7 +85,7 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
     const next: Partial<Record<keyof Fields, string>> = {};
     if (!fields.name.trim()) next.name = "Enter your name";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.trim())) next.email = "Enter an email we can reach you on";
-    if (!piece.size && !fields.size.trim()) next.size = "Tell us your size";
+    if (piece.needsSize && !piece.size && !fields.size.trim()) next.size = "Tell us your size";
     setErrors(next);
     if (Object.keys(next).length) {
       requestAnimationFrame(() => focusFirstError(formRef.current));
@@ -131,7 +133,7 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
       >
         <div className="flex items-center justify-between border-b border-line px-6 py-4">
           <p className="eyebrow" id={titleId}>
-            {done ? "Request received" : "Expression of intent to buy"}
+            {done ? "Commitment received" : "Commitment to buy"}
           </p>
           <button type="button" className="-mr-2 flex h-10 w-10 items-center justify-center text-ink" aria-label="Close" onClick={onClose}>
             <X size={20} />
@@ -152,9 +154,9 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
           <div className="px-6 py-8" role="status">
             <p className="display text-[32px] text-ink">Thank you{done ? `, ${done}` : ""}</p>
             <p className="mt-4 text-[15px] leading-relaxed">
-              Your intent to buy is with us. Your personal checkout link will be sent to {fields.email.trim()}.
+              Your commitment to buy the {piece.title} is with us. We will be in touch at {fields.email.trim()} shortly with your private checkout link.
             </p>
-            <p className="mt-4 text-[14px] leading-relaxed text-muted">No payment is taken until you complete your checkout.</p>
+            <p className="mt-4 text-[14px] leading-relaxed text-muted">No payment is taken until you approve your checkout.</p>
             <button type="button" className="pill-btn mt-8 w-full" onClick={onClose}>
               Continue shopping
             </button>
@@ -163,7 +165,7 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
           <form ref={formRef} className="relative grid gap-5 px-6 py-6" onSubmit={submit} noValidate>
             <Honeypot value={trap} onChange={setTrap} />
             <p className="text-[15px] leading-relaxed">
-              Pieces this rare are sold by private checkout. Leave your details and your personal checkout link will follow by email.
+              Leave your details to secure this piece. We will be in touch personally to arrange your private checkout.
             </p>
             <Field label="Name" error={errors.name}>
               <input className="field" name="name" autoComplete="name" value={fields.name} onChange={(event) => set("name", event.target.value)} />
@@ -171,7 +173,7 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
             <Field label="Email" error={errors.email}>
               <input className="field" name="email" type="email" autoComplete="email" value={fields.email} onChange={(event) => set("email", event.target.value)} />
             </Field>
-            <Field label="Phone, optional" error={errors.phone}>
+            <Field label="Phone, so we can reach you quickly" error={errors.phone}>
               <input className="field" name="phone" type="tel" autoComplete="tel" value={fields.phone} onChange={(event) => set("phone", event.target.value)} />
             </Field>
             {piece.size ? (
@@ -179,11 +181,11 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
                 <p className="field-label">Size</p>
                 <p className="mt-2 inline-flex min-h-11 items-center border border-ink px-4 text-[14px] font-medium text-ink">{piece.size}</p>
               </div>
-            ) : (
+            ) : piece.needsSize ? (
               <Field label="Your size" error={errors.size}>
                 <input className="field" name="size" placeholder="M, or 50" value={fields.size} onChange={(event) => set("size", event.target.value)} />
               </Field>
-            )}
+            ) : null}
             <Field label="Anything we should know, optional" error={errors.notes}>
               <textarea className="field min-h-24" name="notes" value={fields.notes} onChange={(event) => set("notes", event.target.value)} />
             </Field>
@@ -193,9 +195,9 @@ function BuySheet({ piece, onClose }: { piece: BuyPiece; onClose: () => void }) 
               </p>
             ) : null}
             <button type="submit" className="btn-solid w-full" disabled={pending}>
-              {pending ? "Sending" : "Confirm intent to buy"}
+              {pending ? "Sending" : "Commit to buy"}
             </button>
-            <p className="text-center text-[12px] text-muted">No payment is taken now.</p>
+            <p className="text-center text-[12px] text-muted">No payment is taken until you approve your checkout.</p>
             <PrivacyNote />
           </form>
         )}

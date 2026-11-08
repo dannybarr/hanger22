@@ -11,7 +11,7 @@ export default function PrivacyPage() {
 
       <h2>What we collect</h2>
       <p>
-        When you express your intent to buy or write to us, we receive your name, your email address and anything else you choose to add, such as a phone number, your size, a budget or a note.
+        When you commit to buy or write to us, we receive your name, your email address and anything else you choose to add, such as a phone number, your size, a budget or a note.
       </p>
 
       <h2>How we use it</h2>

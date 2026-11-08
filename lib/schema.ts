@@ -71,6 +71,12 @@ export const itemSchema = z.object({
     })
     .optional(),
   story: z.string().min(1),
+  /** The product's story told in short chapters. Shown on the product page when present. */
+  storyline: z
+    .array(z.object({ title: z.string().min(1), body: z.string().min(1) }))
+    .min(3)
+    .max(7)
+    .optional(),
   /** Desk research behind the story. Server and /studio only. */
   notes: z.string().optional(),
   specs: z.record(z.string(), z.string()),

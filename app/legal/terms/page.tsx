@@ -9,9 +9,9 @@ export default function TermsPage() {
       <p className="eyebrow">Hanger 22</p>
       <h1 className="display text-[48px] text-ink sm:text-[64px]">Terms</h1>
 
-      <h2>Expressing intent to buy</h2>
+      <h2>Committing to buy</h2>
       <p>
-        When you press Buy now and send your details, you are telling us you intend to buy that piece. It is not a purchase and costs nothing. If a piece becomes unavailable before you complete your checkout, we will let you know and you will not be charged.
+        When you press Secure it and send your details, you are telling us you are committed to buying that piece. It is not yet a purchase and costs nothing. If a piece becomes unavailable before you complete your checkout, we will let you know and you will not be charged.
       </p>
 
       <h2>Buying</h2>
