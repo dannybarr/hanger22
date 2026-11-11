@@ -39,17 +39,19 @@ describe("seed data", () => {
     ).toBe(true);
     expect(rail.some((item) => item.id === "h22-moncler-ryuha-39226893")).toBe(true);
     expect(rail.some((item) => item.category === "watches" || item.category === "footwear")).toBe(false);
-    expect(items.filter((item) => item.status === "vault")).toHaveLength(6);
-    const withdrawn = ["h22-palace-hood", "h22-speedmaster-3570", "h22-dior-si-ring-7503587"];
+    expect(items.filter((item) => item.status === "vault")).toHaveLength(7);
+    const withdrawn = ["h22-palace-hood", "h22-speedmaster-3570", "h22-dior-si-ring-7503587", "h22-chanel-pharrell-38058392"];
     expect(withdrawn.every((id) => items.find((item) => item.id === id)?.status === "vault")).toBe(true);
     expect(publicItems.some((item) => withdrawn.includes(item.id))).toBe(false);
     expect(rail.some((item) => withdrawn.includes(item.id))).toBe(false);
     expect(getItem("palace-oakley-logo-hood-off-white")).toBeUndefined();
     expect(getItem("omega-speedmaster-3570-50")).toBeUndefined();
     expect(getItem("dior-stone-island-signet-ring")).toBeUndefined();
+    expect(getItem("chanel-pharrell-logo-mules")).toBeUndefined();
     expect(sources.find((source) => source.id === "src-palace")?.sold).toBe(true);
     expect(sources.find((source) => source.id === "src-speedy-3570")?.sold).toBe(true);
     expect(sources.find((source) => source.id === "src-h22-dior-si-ring-7503587")?.sold).toBe(true);
+    expect(sources.find((source) => source.id === "src-h22-chanel-pharrell-38058392")?.sold).toBe(true);
     // Shop catalogue order. The Travis Scott Royal Oak stays third.
     expect(publicItems[2]?.id).toBe("h22-ap-travis");
     // Conveyor order is unchanged. The third hanger is still the Komae jacket.
@@ -97,13 +99,13 @@ describe("seed data", () => {
     const buyerCardRate = 0.02;
     for (const row of added) {
       const item = getItems().find((entry) => entry.id === row.id);
-      expect(item?.status).toBe("available-to-source");
+      expect(item?.status).toBe(row.id === "h22-chanel-pharrell-38058392" ? "vault" : "available-to-source");
       expect(item?.availability).toBe("sourced");
       expect(item?.priceGBP).toBe(row.priceGBP);
       expect(item?.priceProvisional).toBe(false);
       expect(item?.specs.Size).toBe(row.size);
       const listing = getSourcesFor(row.id)[0];
-      expect(listing?.sold).toBe(false);
+      expect(listing?.sold).toBe(row.id === "h22-chanel-pharrell-38058392");
       expect(listing?.priceShown.currency).toBe("GBP");
       const source = listing?.priceShown.amount ?? 0;
       const fixed = source * (1 + buyerCardRate) + row.extrasGBP;
@@ -131,7 +133,10 @@ describe("seed data", () => {
       expect(rail.some((item) => item.id === row.id)).toBe(row.onRail);
     }
     const mules = getItems().find((item) => item.id === "h22-chanel-pharrell-38058392");
+    expect(mules?.status).toBe("vault");
     expect(mules?.category).toBe("footwear");
+    expect(getPublicItems().some((item) => item.id === "h22-chanel-pharrell-38058392")).toBe(false);
+    expect(getItem("chanel-pharrell-logo-mules")).toBeUndefined();
     expect(rail.some((item) => item.category === "footwear" || item.category === "watches")).toBe(false);
   });
 });
