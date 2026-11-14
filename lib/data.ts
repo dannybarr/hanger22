@@ -77,7 +77,6 @@ const RAIL_SEQUENCE = [
   "h22-moncler-ryuha-39226893",
   "h22-junya-carhartt-25093264",
   "h22-sacai-levis-39861256",
-  "h22-jwa-guinness-38459217",
   "h22-si-dior",
   "h22-dior-si-elbow-36434990",
   "h22-lv-supreme-33263118",

@@ -39,8 +39,8 @@ describe("seed data", () => {
     ).toBe(true);
     expect(rail.some((item) => item.id === "h22-moncler-ryuha-39226893")).toBe(true);
     expect(rail.some((item) => item.category === "watches" || item.category === "footwear")).toBe(false);
-    expect(items.filter((item) => item.status === "vault")).toHaveLength(7);
-    const withdrawn = ["h22-palace-hood", "h22-speedmaster-3570", "h22-dior-si-ring-7503587", "h22-chanel-pharrell-38058392"];
+    expect(items.filter((item) => item.status === "vault")).toHaveLength(8);
+    const withdrawn = ["h22-palace-hood", "h22-speedmaster-3570", "h22-dior-si-ring-7503587", "h22-chanel-pharrell-38058392", "h22-jwa-guinness-38459217"];
     expect(withdrawn.every((id) => items.find((item) => item.id === id)?.status === "vault")).toBe(true);
     expect(publicItems.some((item) => withdrawn.includes(item.id))).toBe(false);
     expect(rail.some((item) => withdrawn.includes(item.id))).toBe(false);
@@ -48,10 +48,12 @@ describe("seed data", () => {
     expect(getItem("omega-speedmaster-3570-50")).toBeUndefined();
     expect(getItem("dior-stone-island-signet-ring")).toBeUndefined();
     expect(getItem("chanel-pharrell-logo-mules")).toBeUndefined();
+    expect(getItem("jw-anderson-guinness-chore-jacket")).toBeUndefined();
     expect(sources.find((source) => source.id === "src-palace")?.sold).toBe(true);
     expect(sources.find((source) => source.id === "src-speedy-3570")?.sold).toBe(true);
     expect(sources.find((source) => source.id === "src-h22-dior-si-ring-7503587")?.sold).toBe(true);
     expect(sources.find((source) => source.id === "src-h22-chanel-pharrell-38058392")?.sold).toBe(true);
+    expect(sources.find((source) => source.id === "src-h22-jwa-guinness-38459217")?.sold).toBe(true);
     // Shop catalogue order. The Travis Scott Royal Oak stays third.
     expect(publicItems[2]?.id).toBe("h22-ap-travis");
     // Conveyor order is unchanged. The third hanger is still the Komae jacket.
