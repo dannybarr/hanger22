@@ -71,7 +71,6 @@ const RAIL_SEQUENCE = [
   "h22-ghost-4100044",
   "h22-palm-72059216",
   "h22-komae-70832580",
-  "h22-kapital-42633272",
   "h22-supreme-si-69748871",
   "h22-gucci-tnf-26804231",
   "h22-moncler-ryuha-39226893",
