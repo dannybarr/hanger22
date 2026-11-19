@@ -2226,7 +2226,7 @@
       "imageStatus": "cutout",
       "licence": "Product photograph from the live page, rebuilt as a studio cut-out for the rail. Copyright stays with the photographer or the marketplace. Not licensed for reuse outside this site.",
       "credit": "Product photograph of the faded blue denim blouson, reference 39861256.",
-      "sourceUrl": "https://www.farfetch.com/shopping/men/sacai-x-levi-strauss-hybrid-panelled-denim-jacket-item-39861256.aspx",
+      "sourceUrl": "https://www.farfetch.com/shopping/men/sacai-x-levis-zip-up-denim-jacket-item-40141288.aspx",
       "pixelWidth": 1024,
       "pixelHeight": 1024,
       "alphaCoverage": 0.757,
@@ -2238,8 +2238,8 @@
     "art": "sacai-levis-denim-blouson",
     "suspension": "wood",
     "guidePriceGBP": {
-      "min": 740,
-      "max": 830
+      "min": 680,
+      "max": 760
     },
     "priceGBP": 900,
     "priceProvisional": true,
@@ -2251,11 +2251,11 @@
     "sourceMarket": "US",
     "authConfidence": "medium",
     "costBasis": {
-      "amount": 819,
+      "amount": 750,
       "currency": "USD"
     },
-    "markupPct": 27.3,
-    "estimatedMarginGBP": 168,
+    "markupPct": 27.5,
+    "estimatedMarginGBP": 155,
     "demandSignal": 0.55,
     "sourceListingIds": [
       "src-h22-sacai-levis-39861256"
@@ -2263,7 +2263,7 @@
     "tags": [
       "approved-2026-10-31"
     ],
-    "notes": "Research, 31 October 2026. Danny approved the public price at £900. economics.mjs on $819 gives guide £740 to £830, markupPct 27.3, estimatedMarginGBP 168. The public price is the approved landed figure and stays provisional.\n\nPage fetched 31 October 2026: $819, import duties included, new season, blue faded wash, cotton, zip, button collar, sleeve utility pocket, two chest flap pockets, elastic cuffs and hem, gold tone hardware, style 2604006M401. The photograph matches that blouson, including a Levi's tab and pleats at the front. No size was printed.\n\nThis is not the May 2025 Type II and Type III hybrid jacket. Antonia lists model 2604006M401 as the blue denim blouson, season FW26-27, cotton. Dover Street Market London lists style 26-04006M as the washed indigo Levi's blouson for AW26. Levi's, September 2026, and Vogue, 30 September 2026, describe the third sacai collaboration and a blouson with a sleeve pocket and elastic cuffs and hem. Chitose Abe started sacai in 1999, per that Vogue piece. Made in Japan and made in China both appear on retailer pages for this style, so origin is left out.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt."
+    "notes": "Research, 31 October 2026. Danny approved the public price at £900. economics.mjs on $819 gives guide £740 to £830, markupPct 27.3, estimatedMarginGBP 168. The public price is the approved landed figure and stays provisional.\n\nPage fetched 31 October 2026: $819, import duties included, new season, blue faded wash, cotton, zip, button collar, sleeve utility pocket, two chest flap pockets, elastic cuffs and hem, gold tone hardware, style 2604006M401. The photograph matches that blouson, including a Levi's tab and pleats at the front. No size was printed.\n\nThis is not the May 2025 Type II and Type III hybrid jacket. Antonia lists model 2604006M401 as the blue denim blouson, season FW26-27, cotton. Dover Street Market London lists style 26-04006M as the washed indigo Levi's blouson for AW26. Levi's, September 2026, and Vogue, 30 September 2026, describe the third sacai collaboration and a blouson with a sleeve pocket and elastic cuffs and hem. Chitose Abe started sacai in 1999, per that Vogue piece. Made in Japan and made in China both appear on retailer pages for this style, so origin is left out.\n\nCut-out: the page photograph is already the garment alone on white. OPENAI_API_KEY was not in the environment, so gpt-image-2 was not called. The white ground was lifted and the piece was framed at 1024px and 88 percent with scripts/process-images.ts, the same framer the Wardrobe Vaulted script uses after the model. studio is false because the cloth was not rebuilt.\n\nSource swap, 19 November 2026. Farfetch item 39861256 redirects to item 40141288, the same blouson, brand style ID 2604006M, identical photograph. economics.mjs on $750 gives guide £680 to £760, markupPct 27.5, estimatedMarginGBP 155. The public price stays £900."
   },
   {
     "id": "h22-jwa-guinness-38459217",
